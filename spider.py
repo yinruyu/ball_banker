@@ -138,69 +138,94 @@ def parse_odds_data(html_content):
             'current_kelly': []
         }
         
-        # 解析欧赔数据
-        odds_table = row.select('td table.pl_table_data')[0]
-        if odds_table:
-            # 初盘赔率（第一行）
-            initial_odds_cells = odds_table.select('tr.tr_bdb td')
-            for cell in initial_odds_cells:
-                if cell.text.strip() and cell.text.strip().replace('.', '', 1).isdigit():
-                    company_data['initial_odds'].append(float(cell.text.strip()))
+        try:
+            # 解析欧赔数据
+            odds_tables = row.select('td table.pl_table_data')
+            if len(odds_tables) > 0:
+                odds_table = odds_tables[0]
+                # 尝试找到所有行
+                all_rows = odds_table.select('tr')
+                
+                # 初盘赔率（第一行）
+                if len(all_rows) > 0:
+                    initial_odds_cells = all_rows[0].select('td')
+                    for cell in initial_odds_cells:
+                        if cell.text.strip() and cell.text.strip().replace('.', '', 1).isdigit():
+                            company_data['initial_odds'].append(round(float(cell.text.strip()), 4))
+                
+                # 即时赔率（第二行）
+                if len(all_rows) > 1:
+                    current_odds_cells = all_rows[1].select('td')
+                    for cell in current_odds_cells:
+                        if cell.text.strip() and cell.text.strip().replace('.', '', 1).isdigit():
+                            company_data['current_odds'].append(round(float(cell.text.strip()), 4))
             
-            # 即时赔率（第二行）
-            current_odds_cells = odds_table.select('tr:not(.tr_bdb) td')
-            for cell in current_odds_cells:
-                if cell.text.strip() and cell.text.strip().replace('.', '', 1).isdigit():
-                    company_data['current_odds'].append(float(cell.text.strip()))
-        
-        # 解析概率数据
-        prob_table = row.select('td table.pl_table_data')[1]
-        if prob_table:
-            # 初盘概率（第一行）
-            initial_prob_cells = prob_table.select('tr.tr_bdb td')
-            for cell in initial_prob_cells:
-                text = cell.text.strip()
-                if text and text.replace('.', '', 1).replace('%', '').isdigit():
-                    company_data['initial_probabilities'].append(float(text.strip('%')) / 100)
+            # 解析概率数据
+            if len(odds_tables) > 1:
+                prob_table = odds_tables[1]
+                all_rows = prob_table.select('tr')
+                
+                # 初盘概率（第一行）
+                if len(all_rows) > 0:
+                    initial_prob_cells = all_rows[0].select('td')
+                    for cell in initial_prob_cells:
+                        text = cell.text.strip()
+                        if text and text.replace('.', '', 1).replace('%', '').isdigit():
+                            company_data['initial_probabilities'].append(round(float(text.strip('%')) / 100, 4))
+                
+                # 即时概率（第二行）
+                if len(all_rows) > 1:
+                    current_prob_cells = all_rows[1].select('td')
+                    for cell in current_prob_cells:
+                        text = cell.text.strip()
+                        if text and text.replace('.', '', 1).replace('%', '').isdigit():
+                            company_data['current_probabilities'].append(round(float(text.strip('%')) / 100, 4))
             
-            # 即时概率（第二行）
-            current_prob_cells = prob_table.select('tr:not(.tr_bdb) td')
-            for cell in current_prob_cells:
-                text = cell.text.strip()
-                if text and text.replace('.', '', 1).replace('%', '').isdigit():
-                    company_data['current_probabilities'].append(float(text.strip('%')) / 100)
-        
-        # 解析返还率数据
-        return_rate_table = row.select('td table.pl_table_data')[2]
-        if return_rate_table:
-            # 初盘返还率（第一行）
-            initial_return_rate_cell = return_rate_table.select_one('tr.tr_bdb td')
-            if initial_return_rate_cell:
-                text = initial_return_rate_cell.text.strip()
-                if text and text.replace('.', '', 1).replace('%', '').isdigit():
-                    company_data['initial_return_rate'] = float(text.strip('%')) / 100
+            # 解析返还率数据
+            if len(odds_tables) > 2:
+                return_rate_table = odds_tables[2]
+                all_rows = return_rate_table.select('tr')
+                
+                # 初盘返还率（第一行）
+                if len(all_rows) > 0:
+                    initial_return_rate_cell = all_rows[0].select_one('td')
+                    if initial_return_rate_cell:
+                        text = initial_return_rate_cell.text.strip()
+                        if text and text.replace('.', '', 1).replace('%', '').isdigit():
+                            company_data['initial_return_rate'] = round(float(text.strip('%')) / 100, 4)
+                
+                # 即时返还率（第二行）
+                if len(all_rows) > 1:
+                    current_return_rate_cell = all_rows[1].select_one('td')
+                    if current_return_rate_cell:
+                        text = current_return_rate_cell.text.strip()
+                        if text and text.replace('.', '', 1).replace('%', '').isdigit():
+                            company_data['current_return_rate'] = round(float(text.strip('%')) / 100, 4)
+                        else:
+                            # 如果无法解析即时返还率，则使用初始返还率
+                            company_data['current_return_rate'] = company_data['initial_return_rate']
             
-            # 即时返还率（第二行）
-            current_return_rate_cell = return_rate_table.select_one('tr:not(.tr_bdb) td')
-            if current_return_rate_cell:
-                text = current_return_rate_cell.text.strip()
-                if text and text.replace('.', '', 1).replace('%', '').isdigit():
-                    company_data['current_return_rate'] = float(text.strip('%')) / 100
-        
-        # 解析凯利指数数据
-        kelly_table = row.select('td table.pl_table_data')[3]
-        if kelly_table:
-            # 初盘凯利指数（第一行）
-            initial_kelly_cells = kelly_table.select('tr.tr_bdb td')
-            for cell in initial_kelly_cells:
-                if cell.text.strip() and cell.text.strip().replace('.', '', 1).isdigit():
-                    company_data['initial_kelly'].append(float(cell.text.strip()))
-            
-            # 即时凯利指数（第二行）
-            current_kelly_cells = kelly_table.select('tr:not(.tr_bdb) td')
-            for cell in current_kelly_cells:
-                if cell.text.strip() and cell.text.strip().replace('.', '', 1).isdigit():
-                    company_data['current_kelly'].append(float(cell.text.strip()))
+            # 解析凯利指数数据
+            if len(odds_tables) > 3:
+                kelly_table = odds_tables[3]
+                all_rows = kelly_table.select('tr')
+                
+                # 初盘凯利指数（第一行）
+                if len(all_rows) > 0:
+                    initial_kelly_cells = all_rows[0].select('td')
+                    for cell in initial_kelly_cells:
+                        if cell.text.strip() and cell.text.strip().replace('.', '', 1).isdigit():
+                            company_data['initial_kelly'].append(round(float(cell.text.strip()), 4))
+                
+                # 即时凯利指数（第二行）
+                if len(all_rows) > 1:
+                    current_kelly_cells = all_rows[1].select('td')
+                    for cell in current_kelly_cells:
+                        if cell.text.strip() and cell.text.strip().replace('.', '', 1).isdigit():
+                            company_data['current_kelly'].append(round(float(cell.text.strip()), 4))
+                
+        except Exception as e:
+            print(f"解析公司 {company_name} 数据时出错: {str(e)}")
         
         # 添加该公司的数据
         odds_data[company_name] = company_data
