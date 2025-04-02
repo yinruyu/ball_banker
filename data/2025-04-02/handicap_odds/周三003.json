@@ -1,0 +1,282 @@
+{
+  "竞彩官方": {
+    "handicap": "1",
+    "initial_odds": [
+      1.43,
+      3.85,
+      5.9
+    ],
+    "current_odds": [
+      1.47,
+      3.7,
+      5.6
+    ],
+    "initial_probabilities": [
+      0.6197,
+      0.2302,
+      0.1502
+    ],
+    "current_probabilities": [
+      0.6025,
+      0.2394,
+      0.1582
+    ],
+    "initial_return_rate": 0.8861,
+    "current_return_rate": 0.8857,
+    "initial_kelly": [
+      0.84,
+      0.9,
+      1.07
+    ],
+    "current_kelly": [
+      0.86,
+      0.86,
+      1.01
+    ]
+  },
+  "立博": {
+    "handicap": "2",
+    "initial_odds": [
+      1.12,
+      7.5,
+      13.0
+    ],
+    "current_odds": [
+      1.15,
+      7.0,
+      11.0
+    ],
+    "initial_probabilities": [
+      0.8094,
+      0.1209,
+      0.0697
+    ],
+    "current_probabilities": [
+      0.7881,
+      0.1295,
+      0.0824
+    ],
+    "initial_return_rate": 0.9065,
+    "current_return_rate": 0.9063,
+    "initial_kelly": [
+      0.89,
+      0.99,
+      1.0
+    ],
+    "current_kelly": [
+      0.91,
+      0.92,
+      0.84
+    ]
+  },
+  "Bet365": {
+    "handicap": "3",
+    "initial_odds": [
+      1.04,
+      17.0,
+      34.0
+    ],
+    "current_odds": [
+      1.04,
+      17.0,
+      34.0
+    ],
+    "initial_probabilities": [
+      0.9159,
+      0.056,
+      0.028
+    ],
+    "current_probabilities": [
+      0.9159,
+      0.056,
+      0.028
+    ],
+    "initial_return_rate": 0.9526,
+    "current_return_rate": 0.9526,
+    "initial_kelly": [
+      0.94,
+      1.11,
+      1.02
+    ],
+    "current_kelly": [
+      0.94,
+      1.11,
+      1.02
+    ]
+  },
+  "伟德": {
+    "handicap": "4",
+    "initial_odds": [
+      1.01,
+      11.0,
+      26.0
+    ],
+    "current_odds": [
+      1.01,
+      11.0,
+      26.0
+    ],
+    "initial_probabilities": [
+      0.8844,
+      0.0812,
+      0.0344
+    ],
+    "current_probabilities": [
+      0.8844,
+      0.0812,
+      0.0344
+    ],
+    "initial_return_rate": 0.8933,
+    "current_return_rate": 0.8933,
+    "initial_kelly": [
+      0.89,
+      0.89,
+      0.89
+    ],
+    "current_kelly": [
+      0.89,
+      0.89,
+      0.89
+    ]
+  },
+  "Bwin": {
+    "handicap": "2",
+    "initial_odds": [
+      1.13,
+      7.5,
+      13.5
+    ],
+    "current_odds": [
+      1.15,
+      7.0,
+      12.0
+    ],
+    "initial_probabilities": [
+      0.8101,
+      0.1221,
+      0.0678
+    ],
+    "current_probabilities": [
+      0.7936,
+      0.1304,
+      0.0761
+    ],
+    "initial_return_rate": 0.9154,
+    "current_return_rate": 0.9126,
+    "initial_kelly": [
+      0.89,
+      0.99,
+      1.03
+    ],
+    "current_kelly": [
+      0.91,
+      0.92,
+      0.92
+    ]
+  },
+  "Pinnacle平博": {
+    "handicap": "3",
+    "initial_odds": [
+      1.04,
+      17.26,
+      37.56
+    ],
+    "current_odds": [
+      1.04,
+      17.26,
+      39.64
+    ],
+    "initial_probabilities": [
+      0.9192,
+      0.0554,
+      0.0255
+    ],
+    "current_probabilities": [
+      0.9204,
+      0.0555,
+      0.0241
+    ],
+    "initial_return_rate": 0.9559,
+    "current_return_rate": 0.9572,
+    "initial_kelly": [
+      0.94,
+      1.13,
+      1.12
+    ],
+    "current_kelly": [
+      0.94,
+      1.13,
+      1.18
+    ]
+  },
+  "10BET": {
+    "handicap": "1",
+    "initial_odds": [
+      1.48,
+      3.85,
+      5.5
+    ],
+    "current_odds": [
+      1.55,
+      3.65,
+      5.0
+    ],
+    "initial_probabilities": [
+      0.6048,
+      0.2325,
+      0.1627
+    ],
+    "current_probabilities": [
+      0.5765,
+      0.2448,
+      0.1787
+    ],
+    "initial_return_rate": 0.8951,
+    "current_return_rate": 0.8935,
+    "initial_kelly": [
+      0.87,
+      0.9,
+      1.0
+    ],
+    "current_kelly": [
+      0.91,
+      0.85,
+      0.91
+    ]
+  },
+  "Coral": {
+    "handicap": "2",
+    "initial_odds": [
+      1.12,
+      7.5,
+      13.0
+    ],
+    "current_odds": [
+      1.15,
+      7.0,
+      11.0
+    ],
+    "initial_probabilities": [
+      0.8094,
+      0.1209,
+      0.0697
+    ],
+    "current_probabilities": [
+      0.7881,
+      0.1295,
+      0.0824
+    ],
+    "initial_return_rate": 0.9065,
+    "current_return_rate": 0.9063,
+    "initial_kelly": [
+      0.89,
+      0.99,
+      1.0
+    ],
+    "current_kelly": [
+      0.91,
+      0.92,
+      0.84
+    ]
+  }
+}
