@@ -78,6 +78,11 @@ def get_match_data(date):
             if away_team:
                 match_info['away_team'] = away_team.text.strip()
             
+            # 获取比赛结果
+            result_elem = row.select_one('td.td-team .team-vs .score')
+            if result_elem:
+                match_info['result'] = result_elem.text.strip()
+            
             if match_info:
                 matches.append(match_info)
                 print(f"已解析比赛: {match_info.get('match_id', '')} - {match_info.get('home_team', '')} vs {match_info.get('away_team', '')}")
