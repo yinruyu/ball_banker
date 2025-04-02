@@ -408,6 +408,152 @@ def parse_size_data(html_content):
     
     return size_data
 
+def parse_handicap_data(html_content):
+    """解析让球数据"""
+    soup = BeautifulSoup(html_content, 'lxml')
+    data = {}
+
+    # 获取所有赔率行
+    rows = soup.select('tr[id][ttl="zy"]')
+    if not rows:
+        print("未找到让球赔率行数据")
+        # 无数据时返回默认结构
+        data["未知公司"] = {
+            'handicap': "",
+            'initial_odds': [],
+            'current_odds': [],
+            'initial_probabilities': [],
+            'current_probabilities': [],
+            'initial_return_rate': 0,
+            'current_return_rate': 0,
+            'initial_kelly': [],
+            'current_kelly': []
+        }
+        return data
+    
+    for row in rows:
+        # 获取公司名称
+        company_name_elem = row.select_one('td.tb_plgs span.quancheng')
+        company_name = "未知公司"
+        if company_name_elem:
+            company_name = company_name_elem.text.strip()
+            print(f"找到公司名称: {company_name}")
+        
+        # 获取让球值
+        handicap_value = ""
+        handicap_td = row.select_one('td[row="1"]:nth-of-type(3)')
+        if handicap_td:
+            handicap_value = handicap_td.text.strip()
+            print(f"找到让球值: {handicap_value}")
+        
+        # 初始化该公司的数据结构
+        company_data = {
+            'handicap': handicap_value,
+            'initial_odds': [],
+            'current_odds': [],
+            'initial_probabilities': [],
+            'current_probabilities': [],
+            'initial_return_rate': 0,
+            'current_return_rate': 0,
+            'initial_kelly': [],
+            'current_kelly': []
+        }
+        
+        try:
+            # 解析让球赔率数据
+            odds_tables = row.select('td table.pl_table_data')
+            if len(odds_tables) > 0:
+                odds_table = odds_tables[0]
+                # 尝试找到所有行
+                all_rows = odds_table.select('tr')
+                
+                # 初盘赔率（第一行）
+                if len(all_rows) > 0:
+                    initial_odds_cells = all_rows[0].select('td')
+                    for cell in initial_odds_cells:
+                        if cell.text.strip() and cell.text.strip().replace('.', '', 1).isdigit():
+                            company_data['initial_odds'].append(round(float(cell.text.strip()), 2))
+                
+                # 即时赔率（第二行）
+                if len(all_rows) > 1:
+                    current_odds_cells = all_rows[1].select('td')
+                    for cell in current_odds_cells:
+                        if cell.text.strip() and cell.text.strip().replace('.', '', 1).isdigit():
+                            company_data['current_odds'].append(round(float(cell.text.strip()), 2))
+            
+            # 解析概率数据
+            if len(odds_tables) > 1:
+                prob_table = odds_tables[1]
+                all_rows = prob_table.select('tr')
+                
+                # 初盘概率（第一行）
+                if len(all_rows) > 0:
+                    initial_prob_cells = all_rows[0].select('td')
+                    for cell in initial_prob_cells:
+                        text = cell.text.strip()
+                        if text and text.replace('.', '', 1).replace('%', '').isdigit():
+                            value = text.rstrip('%') if '%' in text else text
+                            company_data['initial_probabilities'].append(round(float(value) / 100, 4))
+                
+                # 即时概率（第二行）
+                if len(all_rows) > 1:
+                    current_prob_cells = all_rows[1].select('td')
+                    for cell in current_prob_cells:
+                        text = cell.text.strip()
+                        if text and text.replace('.', '', 1).replace('%', '').isdigit():
+                            value = text.rstrip('%') if '%' in text else text
+                            company_data['current_probabilities'].append(round(float(value) / 100, 4))
+            
+            # 解析返还率数据
+            if len(odds_tables) > 2:
+                return_rate_table = odds_tables[2]
+                all_rows = return_rate_table.select('tr')
+                
+                # 初盘返还率（第一行）
+                if len(all_rows) > 0:
+                    initial_return_rate_cell = all_rows[0].select_one('td')
+                    if initial_return_rate_cell:
+                        text = initial_return_rate_cell.text.strip()
+                        if text and text.replace('.', '', 1).replace('%', '').isdigit():
+                            value = text.rstrip('%') if '%' in text else text
+                            company_data['initial_return_rate'] = round(float(value) / 100, 4)
+                
+                # 即时返还率（第二行）
+                if len(all_rows) > 1:
+                    current_return_rate_cell = all_rows[1].select_one('td')
+                    if current_return_rate_cell:
+                        text = current_return_rate_cell.text.strip()
+                        if text and text.replace('.', '', 1).replace('%', '').isdigit():
+                            value = text.rstrip('%') if '%' in text else text
+                            company_data['current_return_rate'] = round(float(value) / 100, 4)
+            
+            # 解析凯利指数数据
+            if len(odds_tables) > 3:
+                kelly_table = odds_tables[3]
+                all_rows = kelly_table.select('tr')
+                
+                # 初盘凯利指数（第一行）
+                if len(all_rows) > 0:
+                    initial_kelly_cells = all_rows[0].select('td')
+                    for cell in initial_kelly_cells:
+                        if cell.text.strip() and cell.text.strip().replace('.', '', 1).isdigit():
+                            company_data['initial_kelly'].append(round(float(cell.text.strip()), 2))
+                
+                # 即时凯利指数（第二行）
+                if len(all_rows) > 1:
+                    current_kelly_cells = all_rows[1].select('td')
+                    for cell in current_kelly_cells:
+                        if cell.text.strip() and cell.text.strip().replace('.', '', 1).isdigit():
+                            company_data['current_kelly'].append(round(float(cell.text.strip()), 2))
+                
+        except Exception as e:
+            print(f"解析公司 {company_name} 让球数据时出错: {str(e)}")
+        
+        # 添加该公司的数据
+        data[company_name] = company_data
+    
+    return data
+
 def debug_match(fixture_id, match_id, date):
     # 创建欧赔文件夹
     odds_dir = os.path.join('data', date, 'ou_odds')
@@ -417,11 +563,18 @@ def debug_match(fixture_id, match_id, date):
     size_dir = os.path.join('data', date, 'size_odds')
     os.makedirs(size_dir, exist_ok=True)
     
+    # 创建让球文件夹
+    handicap_dir = os.path.join('data', date, 'handicap_odds')
+    os.makedirs(handicap_dir, exist_ok=True)
+    
     # 欧赔URL
     odds_url = f'https://odds.500.com/fenxi/ouzhi-{fixture_id}.shtml?ctype=2'
     
     # 大小球URL
     size_url = f'https://odds.500.com/fenxi/daxiao-{fixture_id}.shtml'
+    
+    # 让球URL
+    handicap_url = f'https://odds.500.com/fenxi/rangqiu-{fixture_id}.shtml'
     
     # 模拟浏览器请求头
     headers = {
@@ -500,6 +653,38 @@ def debug_match(fixture_id, match_id, date):
         
         if not size_data:
             print(f"警告：未解析到 {match_id} 的大小球数据")
+        
+        # 获取让球数据
+        print(f"正在获取让球数据: {handicap_url}")
+        response = session.get(handicap_url, headers=headers, timeout=10)
+        response.encoding = 'gb2312'
+        
+        # 添加随机延迟
+        time.sleep(random.uniform(1, 3))
+        
+        if response.status_code == 403:
+            print(f"访问被拒绝 (403 Forbidden): {handicap_url}")
+            return
+        
+        # 临时保存让球HTML文件
+        temp_handicap_html_path = os.path.join(handicap_dir, f'temp_{match_id}.html')
+        with open(temp_handicap_html_path, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+        print(f"已保存临时让球HTML文件: {temp_handicap_html_path}")
+        
+        # 解析让球HTML内容
+        with open(temp_handicap_html_path, 'r', encoding='utf-8') as f:
+            handicap_html_content = f.read()
+            handicap_data = parse_handicap_data(handicap_html_content)
+        
+        # 保存让球数据
+        handicap_file_path = os.path.join(handicap_dir, f'{match_id}.json')
+        with open(handicap_file_path, 'w', encoding='utf-8') as f:
+            json.dump(handicap_data, f, ensure_ascii=False, indent=2)
+        print(f"已保存让球数据到: {handicap_file_path}")
+        
+        if not handicap_data:
+            print(f"警告：未解析到 {match_id} 的让球数据")
             
     except requests.exceptions.RequestException as e:
         print(f"网络请求错误: {str(e)}")
@@ -531,6 +716,18 @@ def clean_temp_html_files(date):
                 try:
                     os.remove(file_path)
                     print(f"已删除大小球临时文件: {file_path}")
+                except Exception as e:
+                    print(f"删除文件 {file_path} 时出错: {str(e)}")
+    
+    # 清理让球文件夹中的临时HTML文件
+    handicap_dir = os.path.join('data', date, 'handicap_odds')
+    if os.path.exists(handicap_dir):
+        for file in os.listdir(handicap_dir):
+            if file.startswith('temp_') and file.endswith('.html'):
+                file_path = os.path.join(handicap_dir, file)
+                try:
+                    os.remove(file_path)
+                    print(f"已删除让球临时文件: {file_path}")
                 except Exception as e:
                     print(f"删除文件 {file_path} 时出错: {str(e)}")
     

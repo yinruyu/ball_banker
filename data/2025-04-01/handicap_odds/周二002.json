@@ -1,0 +1,247 @@
+{
+  "竞彩官方": {
+    "handicap": "-1",
+    "initial_odds": [
+      1.7,
+      3.9,
+      3.52
+    ],
+    "current_odds": [
+      1.66,
+      3.95,
+      3.65
+    ],
+    "initial_probabilities": [
+      0.5211,
+      0.2272,
+      0.2517
+    ],
+    "current_probabilities": [
+      0.5333,
+      0.2241,
+      0.2426
+    ],
+    "initial_return_rate": 0.8859,
+    "current_return_rate": 0.8853,
+    "initial_kelly": [
+      0.94,
+      0.88,
+      0.77
+    ],
+    "current_kelly": [
+      0.92,
+      0.89,
+      0.8
+    ]
+  },
+  "立博": {
+    "handicap": "-1",
+    "initial_odds": [
+      1.75,
+      3.75,
+      3.6
+    ],
+    "current_odds": [
+      1.67,
+      3.8,
+      4.0
+    ],
+    "initial_probabilities": [
+      0.5121,
+      0.239,
+      0.2489
+    ],
+    "current_probabilities": [
+      0.5385,
+      0.2367,
+      0.2248
+    ],
+    "initial_return_rate": 0.8962,
+    "current_return_rate": 0.8993,
+    "initial_kelly": [
+      0.97,
+      0.84,
+      0.79
+    ],
+    "current_kelly": [
+      0.93,
+      0.85,
+      0.88
+    ]
+  },
+  "Bet365": {
+    "handicap": "1",
+    "initial_odds": [
+      1.1,
+      9.5,
+      21.0
+    ],
+    "current_odds": [
+      1.07,
+      12.0,
+      23.0
+    ],
+    "initial_probabilities": [
+      0.856,
+      0.0991,
+      0.0448
+    ],
+    "current_probabilities": [
+      0.8805,
+      0.0785,
+      0.041
+    ],
+    "initial_return_rate": 0.9416,
+    "current_return_rate": 0.9422,
+    "initial_kelly": [
+      0.96,
+      0.81,
+      0.84
+    ],
+    "current_kelly": [
+      0.94,
+      1.02,
+      0.92
+    ]
+  },
+  "伟德": {
+    "handicap": "2",
+    "initial_odds": [
+      1.02,
+      10.0,
+      26.0
+    ],
+    "current_odds": [
+      1.01,
+      10.5,
+      26.0
+    ],
+    "initial_probabilities": [
+      0.8762,
+      0.0894,
+      0.0344
+    ],
+    "current_probabilities": [
+      0.881,
+      0.0847,
+      0.0342
+    ],
+    "initial_return_rate": 0.8938,
+    "current_return_rate": 0.8898,
+    "initial_kelly": [
+      0.9,
+      0.85,
+      0.89
+    ],
+    "current_kelly": [
+      0.89,
+      0.89,
+      0.89
+    ]
+  },
+  "Bwin": {
+    "handicap": "-1",
+    "initial_odds": [
+      1.85,
+      3.6,
+      3.3
+    ],
+    "current_odds": [
+      1.65,
+      3.8,
+      4.0
+    ],
+    "initial_probabilities": [
+      0.482,
+      0.2477,
+      0.2702
+    ],
+    "current_probabilities": [
+      0.5415,
+      0.2351,
+      0.2234
+    ],
+    "initial_return_rate": 0.8918,
+    "current_return_rate": 0.8935,
+    "initial_kelly": [
+      1.03,
+      0.81,
+      0.73
+    ],
+    "current_kelly": [
+      0.92,
+      0.85,
+      0.88
+    ]
+  },
+  "Pinnacle平博": {
+    "handicap": "1",
+    "initial_odds": [
+      1.08,
+      11.67,
+      25.31
+    ],
+    "current_odds": [
+      1.06,
+      14.89,
+      37.98
+    ],
+    "initial_probabilities": [
+      0.8809,
+      0.0815,
+      0.0376
+    ],
+    "current_probabilities": [
+      0.9098,
+      0.0648,
+      0.0254
+    ],
+    "initial_return_rate": 0.9514,
+    "current_return_rate": 0.9644,
+    "initial_kelly": [
+      0.94,
+      0.99,
+      1.02
+    ],
+    "current_kelly": [
+      0.93,
+      1.27,
+      1.53
+    ]
+  },
+  "10BET": {
+    "handicap": "1",
+    "initial_odds": [
+      1.06,
+      8.0,
+      19.0
+    ],
+    "current_odds": [
+      1.05,
+      8.5,
+      19.0
+    ],
+    "initial_probabilities": [
+      0.8415,
+      0.1115,
+      0.0469
+    ],
+    "current_probabilities": [
+      0.8483,
+      0.1048,
+      0.0469
+    ],
+    "initial_return_rate": 0.892,
+    "current_return_rate": 0.8907,
+    "initial_kelly": [
+      0.93,
+      0.68,
+      0.76
+    ],
+    "current_kelly": [
+      0.92,
+      0.72,
+      0.76
+    ]
+  }
+}
