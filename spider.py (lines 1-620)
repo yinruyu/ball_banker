@@ -1,0 +1,187 @@
+def parse_size_data(html_content):
+    soup = BeautifulSoup(html_content, 'html.parser')
+    size_data = {}
+
+    # 查找所有大小球行
+    rows = soup.select('tr.tableline')
+    if not rows:
+        print("未找到大小球数据，尝试其他选择器")
+        rows = soup.select('tr[class*="line"]')
+    
+    if not rows:
+        print("仍未找到大小球数据，尝试查找所有行")
+        rows = soup.select('table.pub_table tr:not(:first-child)')
+    
+    if not rows:
+        print("未找到任何可能的大小球数据行")
+        return size_data
+    
+    print(f"找到 {len(rows)} 行大小球数据")
+    
+    for row in rows:
+        company_name_elem = row.select_one('td.tb_plgs')
+        
+        if company_name_elem:
+            quancheng = company_name_elem.select_one('p a span.quancheng')
+            if quancheng:
+                company_name = quancheng.text.strip()
+            else:
+                company_name = company_name_elem.text.strip().split('\n')[0].strip()
+        else:
+            print("未找到公司名称，跳过该行")
+            continue
+            
+        print(f"解析公司: {company_name}")
+        
+        company_data = {
+            'current_size': {
+                'over': '',
+                'size': '',
+                'under': '',
+                'update_time': ''
+            },
+            'initial_size': {
+                'over': '',
+                'size': '',
+                'under': '',
+                'update_time': ''
+            }
+        }
+        
+        try:
+            tables = row.select('table.pl_table_data')
+            if tables:
+                odds_rows = tables[0].select('tr')
+                if len(odds_rows) > 0:
+                    current_cells = odds_rows[0].select('td')
+                    if len(current_cells) >= 3:
+                        over_value = current_cells[0].text.strip().replace('↑', '').replace('↓', '')
+                        under_value = current_cells[2].text.strip().replace('↑', '').replace('↓', '')
+                        
+                        company_data['current_size']['over'] = over_value
+                        company_data['current_size']['size'] = current_cells[1].text.strip()
+                        company_data['current_size']['under'] = under_value
+                        print(f"即时大小球数据: {company_data['current_size']}")
+                
+                if len(odds_rows) > 1:
+                    initial_cells = odds_rows[1].select('td')
+                    if len(initial_cells) >= 3:
+                        over_value = initial_cells[0].text.strip().replace('↑', '').replace('↓', '')
+                        under_value = initial_cells[2].text.strip().replace('↑', '').replace('↓', '')
+                        
+                        company_data['initial_size']['over'] = over_value
+                        company_data['initial_size']['size'] = initial_cells[1].text.strip()
+                        company_data['initial_size']['under'] = under_value
+                        print(f"初始大小球数据: {company_data['initial_size']}")
+            
+            update_time_cells = row.select('td.odds_uptime')
+            if update_time_cells:
+                company_data['current_size']['update_time'] = update_time_cells[0].text.strip()
+                print(f"即时大小球更新时间: {company_data['current_size']['update_time']}")
+            
+            begin_time_cells = row.select('td.odds_begin_uptime')
+            if begin_time_cells:
+                company_data['initial_size']['update_time'] = begin_time_cells[0].text.strip()
+                print(f"初始大小球更新时间: {company_data['initial_size']['update_time']}")
+        
+        except Exception as e:
+            print(f"解析公司 {company_name} 数据时出错: {str(e)}")
+            continue
+        
+        if (company_data['current_size']['over'] or company_data['initial_size']['over']):
+            size_data[company_name] = company_data
+        else:
+            print(f"未能解析到公司 {company_name} 的有效数据，跳过")
+    
+    if not size_data:
+        print("未能从HTML中解析到任何大小球数据")
+    
+    return size_data
+
+def debug_match(fixture_id, match_id, date):
+    # 创建欧赔文件夹
+    odds_dir = os.path.join('data', date, 'ou_odds')
+    os.makedirs(odds_dir, exist_ok=True)
+    
+    # 创建大小球文件夹
+    size_dir = os.path.join('data', date, 'size_odds')
+    os.makedirs(size_dir, exist_ok=True)
+    
+    # 欧赔URL
+    odds_url = f'https://odds.500.com/fenxi/ouzhi-{fixture_id}.shtml?ctype=2'
+    
+    # 大小球URL
+    size_url = f'https://odds.500.com/fenxi/daxiao-{fixture_id}.shtml'
+    
+    # 模拟浏览器请求头
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+        'Connection': 'keep-alive',
+        'Referer': 'https://odds.500.com/',
+        'Upgrade-Insecure-Requests': '1'
+    }
+    
+    try:
+        # 使用会话保持
+        session = requests.Session()
+        
+        # 获取欧赔数据
+        print(f"正在获取欧赔数据: {odds_url}")
+        response = session.get(odds_url, headers=headers, timeout=10)
+        response.encoding = 'gb2312'
+        
+        if response.status_code == 403:
+            print(f"访问被拒绝 (403 Forbidden): {odds_url}")
+            return
+        
+        # 临时保存HTML文件
+        temp_html_path = os.path.join(odds_dir, f'temp_{match_id}.html')
+        with open(temp_html_path, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+        print(f"已保存临时HTML文件: {temp_html_path}")
+        
+        # 解析HTML内容
+        odds_data = parse_odds_data(response.text)
+        
+        # 保存欧赔数据
+        file_path = os.path.join(odds_dir, f'{match_id}.json')
+        with open(file_path, 'w', encoding='utf-8') as f:
+            json.dump(odds_data, f, ensure_ascii=False, indent=2)
+        print(f"已保存欧赔数据到: {file_path}")
+        
+        if not odds_data:
+            print(f"警告：未解析到 {match_id} 的欧赔数据")
+        
+        # 获取大小球数据
+        print(f"正在获取大小球数据: {size_url}")
+        response = session.get(size_url, headers=headers, timeout=10)
+        response.encoding = 'gb2312'
+        
+        if response.status_code == 403:
+            print(f"访问被拒绝 (403 Forbidden): {size_url}")
+            return
+        
+        # 临时保存大小球HTML文件
+        temp_size_html_path = os.path.join(size_dir, f'temp_{match_id}.html')
+        with open(temp_size_html_path, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+        print(f"已保存临时大小球HTML文件: {temp_size_html_path}")
+        
+        # 解析大小球HTML内容
+        size_data = parse_size_data(response.text)
+        
+        # 保存大小球数据
+        size_file_path = os.path.join(size_dir, f'{match_id}.json')
+        with open(size_file_path, 'w', encoding='utf-8') as f:
+            json.dump(size_data, f, ensure_ascii=False, indent=2)
+        print(f"已保存大小球数据到: {size_file_path}")
+        
+        if not size_data:
+            print(f"警告：未解析到 {match_id} 的大小球数据")
+            
+    except requests.exceptions.RequestException as e:
+        print(f"网络请求错误: {str(e)}")
+    except Exception as e:
+        print(f"处理 {match_id} 时出错: {str(e)}") 
