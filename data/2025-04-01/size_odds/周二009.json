@@ -195,20 +195,6 @@
       "update_time": "03-22 23:27"
     }
   },
-  "BetOnline": {
-    "current_size": {
-      "over": "0.80",
-      "size": "2",
-      "under": "1.05",
-      "update_time": "04-01 22:11"
-    },
-    "initial_size": {
-      "over": "0.98",
-      "size": "2",
-      "under": "0.85",
-      "update_time": "03-31 15:12"
-    }
-  },
   "Bovada.lv": {
     "current_size": {
       "over": "0.87",
@@ -221,6 +207,20 @@
       "size": "2",
       "under": "1.05",
       "update_time": "03-30 22:11"
+    }
+  },
+  "BetOnline": {
+    "current_size": {
+      "over": "0.80",
+      "size": "2",
+      "under": "1.05",
+      "update_time": "04-01 22:11"
+    },
+    "initial_size": {
+      "over": "0.98",
+      "size": "2",
+      "under": "0.85",
+      "update_time": "03-31 15:12"
     }
   },
   "CMD368.com": {
