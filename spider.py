@@ -612,6 +612,20 @@ def debug_match(fixture_id, match_id, date):
         with open(temp_html_path, 'r', encoding='utf-8') as f:
             html_content = f.read()
             odds_data = parse_odds_data(html_content)
+            
+            # 获取历史赔率变化数据
+            print(f"开始获取历史赔率变化数据...")
+            odds_history = parse_odds_history(html_content, fixture_id, date)
+            
+            # 将历史赔率数据添加到欧赔数据中
+            if odds_history:
+                print(f"成功获取到历史赔率变化数据, 公司数量: {len(odds_history)}")
+                for company_name, history_data in odds_history.items():
+                    if company_name in odds_data:
+                        odds_data[company_name]['odds_history'] = history_data
+                        print(f"已添加 {company_name} 的历史赔率变化数据, 记录数: {len(history_data)}")
+            else:
+                print(f"未获取到任何历史赔率变化数据")
         
         # 保存欧赔数据
         file_path = os.path.join(odds_dir, f'{match_id}.json')
@@ -781,8 +795,9 @@ def main():
                                 test_size_data_write(match['match_id'], target_date)
         
         # 如果不需要保留HTML文件，则清理
-        if not keep_html:
-            clean_temp_html_files(target_date)
+        # 注释掉删除HTML文件的逻辑，等待后续添加新的处理逻辑
+        # if not keep_html:
+        #     clean_temp_html_files(target_date)
                 
     else:
         print(f"未获取到 {target_date} 的比赛数据")
@@ -863,6 +878,109 @@ def test_size_data_write(match_id, date):
     except Exception as e:
         print(f"测试写入数据时出错: {str(e)}")
         return False
+
+def parse_odds_history(html_content, fixture_id, date):
+    """解析HTML中的赔率历史变化URL并获取数据"""
+    print("开始解析赔率历史变化...")
+    
+    soup = BeautifulSoup(html_content, 'html.parser')
+    odds_history_data = {}
+    
+    try:
+        # 查找所有赔率公司行
+        company_rows = soup.select('tr[id][ttl="zy"]')
+        
+        for row in company_rows:
+            try:
+                # 获取公司名称
+                company_name_elem = row.select_one('td.tb_plgs span.quancheng')
+                if not company_name_elem:
+                    continue
+                    
+                company_name = company_name_elem.text.strip()
+                company_id = None
+                
+                # 尝试获取公司ID
+                company_link = row.select_one('td.tb_plgs a')
+                if company_link and company_link.get('href'):
+                    href = company_link.get('href')
+                    if 'cid=' in href:
+                        company_id = href.split('cid=')[1].split('&')[0] if '&' in href.split('cid=')[1] else href.split('cid=')[1]
+                
+                if not company_id:
+                    # 尝试从复选框ID获取
+                    checkbox = row.select_one('input[type="checkbox"]')
+                    if checkbox and checkbox.get('id'):
+                        checkbox_id = checkbox.get('id')
+                        if checkbox_id.startswith('ck'):
+                            company_id = checkbox_id[2:]
+                
+                if company_id:
+                    # 构建历史赔率URL
+                    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                    timestamp = int(time.time() * 1000)  # 当前毫秒时间戳
+                    encoded_time = current_time.replace(' ', '+').replace(':', '%3A')
+                    history_url = f"https://odds.500.com/fenxi1/json/ouzhi.php?_={timestamp}&fid={fixture_id}&cid={company_id}&r=1&time={encoded_time}&type=europe"
+                    
+                    print(f"尝试获取 {company_name} 的历史赔率数据: {history_url}")
+                    
+                    # 设置请求头
+                    headers = {
+                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+                        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+                        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+                        'Referer': f'https://odds.500.com/fenxi/ouzhi-{fixture_id}.shtml',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                    
+                    try:
+                        # 添加随机延迟避免被限制
+                        time.sleep(random.uniform(0.5, 1.5))
+                        
+                        # 发送请求获取历史数据
+                        response = requests.get(history_url, headers=headers, timeout=10)
+                        
+                        if response.status_code == 200:
+                            # 解析JSON响应
+                            history_data = response.json()
+                            if history_data:
+                                # 解析历史数据, 格式为 [[胜, 平, 负, 返还率, 时间, 胜变化, 平变化, 负变化], ...]
+                                parsed_history = []
+                                for item in history_data:
+                                    if len(item) >= 8:
+                                        history_item = {
+                                            'win_odds': float(item[0]),
+                                            'draw_odds': float(item[1]),
+                                            'lose_odds': float(item[2]),
+                                            'return_rate': float(item[3]),
+                                            'update_time': item[4],
+                                            'win_change': int(item[5]),  # 1:上升, 0:不变, -1:下降
+                                            'draw_change': int(item[6]),
+                                            'lose_change': int(item[7])
+                                        }
+                                        parsed_history.append(history_item)
+                                
+                                odds_history_data[company_name] = parsed_history
+                                print(f"成功获取 {company_name} 的历史赔率数据, 共 {len(parsed_history)} 条记录")
+                            else:
+                                print(f"未获取到 {company_name} 的有效历史赔率数据")
+                        else:
+                            print(f"请求 {company_name} 历史赔率失败, 状态码: {response.status_code}")
+                    
+                    except Exception as e:
+                        print(f"获取 {company_name} 历史赔率时出错: {str(e)}")
+                        continue
+                else:
+                    print(f"未能获取 {company_name} 的公司ID")
+            
+            except Exception as e:
+                print(f"解析公司行时出错: {str(e)}")
+                continue
+    
+    except Exception as e:
+        print(f"解析历史赔率数据时出错: {str(e)}")
+    
+    return odds_history_data
 
 if __name__ == '__main__':
     # 检查命令行参数

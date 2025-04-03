@@ -1,0 +1,387 @@
+{
+  "竞彩官方": {
+    "handicap": "-1",
+    "initial_odds": [
+      6.5,
+      4.0,
+      1.38
+    ],
+    "current_odds": [
+      6.5,
+      4.0,
+      1.38
+    ],
+    "initial_probabilities": [
+      0.1363,
+      0.2215,
+      0.6421
+    ],
+    "current_probabilities": [
+      0.1363,
+      0.2215,
+      0.6421
+    ],
+    "initial_return_rate": 0.8861,
+    "current_return_rate": 0.8861,
+    "initial_kelly": [
+      1.01,
+      0.86,
+      0.87
+    ],
+    "current_kelly": [
+      1.01,
+      0.86,
+      0.87
+    ]
+  },
+  "立博": {
+    "handicap": "2",
+    "initial_odds": [
+      1.14,
+      7.0,
+      11.0
+    ],
+    "current_odds": [
+      1.12,
+      7.5,
+      13.0
+    ],
+    "initial_probabilities": [
+      0.7896,
+      0.1286,
+      0.0818
+    ],
+    "current_probabilities": [
+      0.8094,
+      0.1209,
+      0.0697
+    ],
+    "initial_return_rate": 0.9001,
+    "current_return_rate": 0.9065,
+    "initial_kelly": [
+      0.93,
+      0.85,
+      0.74
+    ],
+    "current_kelly": [
+      0.91,
+      0.91,
+      0.87
+    ]
+  },
+  "Bet365": {
+    "handicap": "3",
+    "initial_odds": [
+      1.03,
+      19.0,
+      34.0
+    ],
+    "current_odds": [
+      1.03,
+      19.0,
+      34.0
+    ],
+    "initial_probabilities": [
+      0.9221,
+      0.05,
+      0.0279
+    ],
+    "current_probabilities": [
+      0.9221,
+      0.05,
+      0.0279
+    ],
+    "initial_return_rate": 0.9497,
+    "current_return_rate": 0.9497,
+    "initial_kelly": [
+      0.93,
+      1.25,
+      1.09
+    ],
+    "current_kelly": [
+      0.93,
+      1.25,
+      1.09
+    ]
+  },
+  "Bwin": {
+    "handicap": "2",
+    "initial_odds": [
+      1.15,
+      7.25,
+      12.0
+    ],
+    "current_odds": [
+      1.12,
+      7.75,
+      13.5
+    ],
+    "initial_probabilities": [
+      0.7972,
+      0.1264,
+      0.0764
+    ],
+    "current_probabilities": [
+      0.8147,
+      0.1177,
+      0.0676
+    ],
+    "initial_return_rate": 0.9167,
+    "current_return_rate": 0.9124,
+    "initial_kelly": [
+      0.93,
+      0.88,
+      0.81
+    ],
+    "current_kelly": [
+      0.91,
+      0.94,
+      0.91
+    ]
+  },
+  "10BET": {
+    "handicap": "2",
+    "initial_odds": [
+      1.13,
+      7.0,
+      11.0
+    ],
+    "current_odds": [
+      1.11,
+      7.0,
+      13.0
+    ],
+    "initial_probabilities": [
+      0.791,
+      0.1277,
+      0.0813
+    ],
+    "current_probabilities": [
+      0.8039,
+      0.1275,
+      0.0686
+    ],
+    "initial_return_rate": 0.8939,
+    "current_return_rate": 0.8923,
+    "initial_kelly": [
+      0.92,
+      0.85,
+      0.74
+    ],
+    "current_kelly": [
+      0.9,
+      0.85,
+      0.87
+    ]
+  },
+  "Coral": {
+    "handicap": "2",
+    "initial_odds": [
+      1.14,
+      7.0,
+      11.0
+    ],
+    "current_odds": [
+      1.12,
+      7.5,
+      13.0
+    ],
+    "initial_probabilities": [
+      0.7896,
+      0.1286,
+      0.0818
+    ],
+    "current_probabilities": [
+      0.8094,
+      0.1209,
+      0.0697
+    ],
+    "initial_return_rate": 0.9001,
+    "current_return_rate": 0.9065,
+    "initial_kelly": [
+      0.93,
+      0.85,
+      0.74
+    ],
+    "current_kelly": [
+      0.91,
+      0.91,
+      0.87
+    ]
+  },
+  "Unibet (优胜客)": {
+    "handicap": "1",
+    "initial_odds": [
+      1.52,
+      3.95,
+      5.3
+    ],
+    "current_odds": [
+      1.5,
+      3.95,
+      5.3
+    ],
+    "initial_probabilities": [
+      0.5982,
+      0.2302,
+      0.1716
+    ],
+    "current_probabilities": [
+      0.6014,
+      0.2284,
+      0.1702
+    ],
+    "initial_return_rate": 0.9093,
+    "current_return_rate": 0.9021,
+    "initial_kelly": [
+      0.95,
+      0.85,
+      0.85
+    ],
+    "current_kelly": [
+      0.93,
+      0.85,
+      0.85
+    ]
+  },
+  "SportingBet (博天堂)": {
+    "handicap": "2",
+    "initial_odds": [
+      1.15,
+      7.25,
+      12.0
+    ],
+    "current_odds": [
+      1.12,
+      7.75,
+      13.5
+    ],
+    "initial_probabilities": [
+      0.7972,
+      0.1264,
+      0.0764
+    ],
+    "current_probabilities": [
+      0.8147,
+      0.1177,
+      0.0676
+    ],
+    "initial_return_rate": 0.9167,
+    "current_return_rate": 0.9124,
+    "initial_kelly": [
+      0.93,
+      0.88,
+      0.81
+    ],
+    "current_kelly": [
+      0.91,
+      0.94,
+      0.91
+    ]
+  },
+  "Betsson": {
+    "handicap": "2",
+    "initial_odds": [
+      1.12,
+      7.5,
+      15.0
+    ],
+    "current_odds": [
+      1.12,
+      7.5,
+      15.0
+    ],
+    "initial_probabilities": [
+      0.817,
+      0.122,
+      0.061
+    ],
+    "current_probabilities": [
+      0.817,
+      0.122,
+      0.061
+    ],
+    "initial_return_rate": 0.915,
+    "current_return_rate": 0.915,
+    "initial_kelly": [
+      0.91,
+      0.91,
+      1.01
+    ],
+    "current_kelly": [
+      0.91,
+      0.91,
+      1.01
+    ]
+  },
+  "Betway(必威)": {
+    "handicap": "1",
+    "initial_odds": [
+      1.53,
+      4.0,
+      5.0
+    ],
+    "current_odds": [
+      1.45,
+      4.2,
+      5.75
+    ],
+    "initial_probabilities": [
+      0.5922,
+      0.2265,
+      0.1812
+    ],
+    "current_probabilities": [
+      0.626,
+      0.2161,
+      0.1579
+    ],
+    "initial_return_rate": 0.9061,
+    "current_return_rate": 0.9077,
+    "initial_kelly": [
+      0.95,
+      0.86,
+      0.81
+    ],
+    "current_kelly": [
+      0.9,
+      0.91,
+      0.93
+    ]
+  },
+  "Boylesports": {
+    "handicap": "1",
+    "initial_odds": [
+      1.5,
+      4.0,
+      5.0
+    ],
+    "current_odds": [
+      1.44,
+      4.0,
+      6.0
+    ],
+    "initial_probabilities": [
+      0.597,
+      0.2239,
+      0.1791
+    ],
+    "current_probabilities": [
+      0.625,
+      0.225,
+      0.15
+    ],
+    "initial_return_rate": 0.8955,
+    "current_return_rate": 0.9,
+    "initial_kelly": [
+      0.93,
+      0.86,
+      0.81
+    ],
+    "current_kelly": [
+      0.9,
+      0.86,
+      0.97
+    ]
+  }
+}

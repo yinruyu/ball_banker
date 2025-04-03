@@ -24,14 +24,14 @@
     "initial_return_rate": 0.8867,
     "current_return_rate": 0.8852,
     "initial_kelly": [
-      0.82,
-      0.86,
-      0.93
+      0.72,
+      0.84,
+      0.99
     ],
     "current_kelly": [
-      0.99,
-      0.88,
-      0.85
+      0.87,
+      0.87,
+      0.9
     ]
   },
   "立博": {
@@ -42,9 +42,9 @@
       6.0
     ],
     "current_odds": [
-      1.33,
-      5.0,
-      6.0
+      1.4,
+      4.6,
+      5.75
     ],
     "initial_probabilities": [
       0.6722,
@@ -52,21 +52,21 @@
       0.149
     ],
     "current_probabilities": [
-      0.6722,
-      0.1788,
-      0.149
+      0.6461,
+      0.1966,
+      0.1573
     ],
     "initial_return_rate": 0.894,
-    "current_return_rate": 0.894,
+    "current_return_rate": 0.9045,
     "initial_kelly": [
-      0.9,
-      0.9,
-      0.85
+      0.87,
+      0.96,
+      0.91
     ],
     "current_kelly": [
-      0.9,
-      0.9,
-      0.85
+      0.92,
+      0.89,
+      0.87
     ]
   },
   "Bet365": {
@@ -95,13 +95,13 @@
     "current_return_rate": 0.9201,
     "initial_kelly": [
       0.94,
-      0.89,
-      0.82
+      0.94,
+      0.8
     ],
     "current_kelly": [
       0.91,
-      0.95,
-      0.95
+      0.99,
+      0.92
     ]
   },
   "伟德": {
@@ -147,9 +147,9 @@
       6.25
     ],
     "current_odds": [
-      1.34,
-      5.0,
-      6.25
+      1.39,
+      4.6,
+      5.75
     ],
     "initial_probabilities": [
       0.6746,
@@ -157,21 +157,21 @@
       0.1446
     ],
     "current_probabilities": [
-      0.6746,
-      0.1808,
-      0.1446
+      0.6477,
+      0.1957,
+      0.1566
     ],
     "initial_return_rate": 0.9039,
-    "current_return_rate": 0.9039,
+    "current_return_rate": 0.9003,
     "initial_kelly": [
-      0.91,
-      0.9,
-      0.89
+      0.88,
+      0.96,
+      0.94
     ],
     "current_kelly": [
       0.91,
-      0.9,
-      0.89
+      0.89,
+      0.87
     ]
   },
   "Pinnacle平博": {
@@ -183,8 +183,8 @@
     ],
     "current_odds": [
       1.04,
-      24.15,
-      51.21
+      22.67,
+      47.81
     ],
     "initial_probabilities": [
       0.9395,
@@ -192,21 +192,21 @@
       0.0192
     ],
     "current_probabilities": [
-      0.9404,
-      0.0405,
-      0.0191
+      0.9367,
+      0.043,
+      0.0204
     ],
     "initial_return_rate": 0.9677,
-    "current_return_rate": 0.978,
+    "current_return_rate": 0.9741,
     "initial_kelly": [
-      0.94,
-      1.45,
-      1.53
+      0.93,
+      1.5,
+      1.58
     ],
     "current_kelly": [
       0.94,
-      1.49,
-      1.55
+      1.46,
+      1.5
     ]
   },
   "10BET": {
@@ -217,9 +217,9 @@
       1.2
     ],
     "current_odds": [
-      8.0,
-      5.75,
-      1.22
+      9.5,
+      6.25,
+      1.17
     ],
     "initial_probabilities": [
       0.1111,
@@ -227,21 +227,21 @@
       0.7407
     ],
     "current_probabilities": [
-      0.1117,
-      0.1555,
-      0.7328
+      0.094,
+      0.1429,
+      0.7632
     ],
     "initial_return_rate": 0.8889,
-    "current_return_rate": 0.894,
+    "current_return_rate": 0.8929,
     "initial_kelly": [
-      0.91,
-      0.9,
-      0.88
+      0.76,
+      0.84,
+      0.92
     ],
     "current_kelly": [
-      0.91,
-      0.87,
-      0.9
+      0.9,
+      0.88,
+      0.89
     ]
   }
 }

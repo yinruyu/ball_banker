@@ -5,7 +5,8 @@
     "league": "日职",
     "match_time": "04-02 18:00",
     "home_team": "东京绿茵",
-    "away_team": "东京FC"
+    "away_team": "东京FC",
+    "result": "2:2"
   },
   {
     "match_id": "周三002",
@@ -13,7 +14,8 @@
     "league": "日职",
     "match_time": "04-02 18:00",
     "home_team": "广岛三箭",
-    "away_team": "鹿岛鹿角"
+    "away_team": "鹿岛鹿角",
+    "result": "1:0"
   },
   {
     "match_id": "周三003",
@@ -21,7 +23,8 @@
     "league": "日职",
     "match_time": "04-02 18:00",
     "home_team": "大阪钢巴",
-    "away_team": "町田泽维"
+    "away_team": "町田泽维",
+    "result": "0:1"
   },
   {
     "match_id": "周三004",
@@ -29,7 +32,8 @@
     "league": "日职",
     "match_time": "04-02 18:00",
     "home_team": "川崎前锋",
-    "away_team": "湘南海洋"
+    "away_team": "湘南海洋",
+    "result": "2:0"
   },
   {
     "match_id": "周三005",
@@ -126,13 +130,5 @@
     "match_time": "04-03 03:30",
     "home_team": "马竞",
     "away_team": "巴萨"
-  },
-  {
-    "match_id": "周四001",
-    "fixture_id": "1147619",
-    "league": "英超",
-    "match_time": "04-04 03:00",
-    "home_team": "切尔西",
-    "away_team": "热刺"
   }
 ]

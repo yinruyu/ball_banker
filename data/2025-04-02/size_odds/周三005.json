@@ -4,7 +4,7 @@
       "over": "0.80",
       "size": "2.5↓",
       "under": "0.95",
-      "update_time": "04-02 19:38"
+      "update_time": "04-03 01:54"
     },
     "initial_size": {
       "over": "0.83",
@@ -15,10 +15,10 @@
   },
   "澳门": {
     "current_size": {
-      "over": "0.75",
+      "over": "0.80",
       "size": "2.5↓",
-      "under": "0.95",
-      "update_time": "04-02 12:19"
+      "under": "0.90",
+      "update_time": "04-02 23:04"
     },
     "initial_size": {
       "over": "0.87",
@@ -43,16 +43,30 @@
   },
   "Bet365": {
     "current_size": {
-      "over": "0.85",
-      "size": "2.5↓",
-      "under": "0.95",
-      "update_time": "04-02 19:41"
+      "over": "1.05",
+      "size": "2.5/3↓",
+      "under": "0.75",
+      "update_time": "04-03 01:15"
     },
     "initial_size": {
       "over": "0.92",
       "size": "3",
       "under": "0.92",
       "update_time": "02-24 15:02"
+    }
+  },
+  "SNAI": {
+    "current_size": {
+      "over": "0.77",
+      "size": "2.5",
+      "under": "0.92",
+      "update_time": "04-03 01:36"
+    },
+    "initial_size": {
+      "over": "0.75",
+      "size": "2.5",
+      "under": "0.97",
+      "update_time": "04-02 12:37"
     }
   },
   "Interwetten": {
@@ -69,26 +83,12 @@
       "update_time": "04-02 12:53"
     }
   },
-  "SNAI": {
-    "current_size": {
-      "over": "0.75",
-      "size": "2.5",
-      "under": "0.92",
-      "update_time": "04-02 19:35"
-    },
-    "initial_size": {
-      "over": "0.75",
-      "size": "2.5",
-      "under": "0.97",
-      "update_time": "04-02 12:37"
-    }
-  },
   "皇冠": {
     "current_size": {
-      "over": "0.93",
+      "over": "0.91",
       "size": "2.5↓",
-      "under": "0.95",
-      "update_time": "04-02 19:34"
+      "under": "0.97",
+      "update_time": "04-03 01:46"
     },
     "initial_size": {
       "over": "0.91",
@@ -101,8 +101,8 @@
     "current_size": {
       "over": "0.86",
       "size": "2.5↓",
-      "under": "0.97",
-      "update_time": "04-02 19:41"
+      "under": "0.95",
+      "update_time": "04-03 01:57"
     },
     "initial_size": {
       "over": "0.94",
@@ -113,10 +113,10 @@
   },
   "伟德": {
     "current_size": {
-      "over": "0.82",
+      "over": "0.83",
       "size": "2.5↓",
-      "under": "0.86",
-      "update_time": "04-02 19:42"
+      "under": "0.84",
+      "update_time": "04-03 01:57"
     },
     "initial_size": {
       "over": "0.77",
@@ -130,7 +130,7 @@
       "over": "0.80",
       "size": "2.5",
       "under": "0.88",
-      "update_time": "04-02 19:33"
+      "update_time": "04-03 01:28"
     },
     "initial_size": {
       "over": "0.71",
@@ -141,10 +141,10 @@
   },
   "Pinnacle平博": {
     "current_size": {
-      "over": "0.92",
+      "over": "0.91",
       "size": "2.5↓",
-      "under": "0.97",
-      "update_time": "04-02 19:33"
+      "under": "0.98",
+      "update_time": "04-03 01:44"
     },
     "initial_size": {
       "over": "0.83",
@@ -153,26 +153,12 @@
       "update_time": "03-30 23:12"
     }
   },
-  "10BET": {
-    "current_size": {
-      "over": "0.81",
-      "size": "2.5↓",
-      "under": "0.93",
-      "update_time": "04-02 19:37"
-    },
-    "initial_size": {
-      "over": "0.86",
-      "size": "3",
-      "under": "0.84",
-      "update_time": "02-24 14:58"
-    }
-  },
   "Coral": {
     "current_size": {
-      "over": "0.80",
+      "over": "0.83",
       "size": "2.5",
       "under": "0.91",
-      "update_time": "04-02 19:35"
+      "update_time": "04-03 01:29"
     },
     "initial_size": {
       "over": "0.73",
@@ -181,12 +167,26 @@
       "update_time": "04-02 12:22"
     }
   },
-  "利记": {
+  "10BET": {
     "current_size": {
-      "over": "0.93",
+      "over": "0.81",
       "size": "2.5↓",
       "under": "0.93",
-      "update_time": "04-02 19:37"
+      "update_time": "04-03 00:16"
+    },
+    "initial_size": {
+      "over": "0.86",
+      "size": "3",
+      "under": "0.84",
+      "update_time": "02-24 14:58"
+    }
+  },
+  "利记": {
+    "current_size": {
+      "over": "0.92",
+      "size": "2.5↓",
+      "under": "0.94",
+      "update_time": "04-03 01:58"
     },
     "initial_size": {
       "over": "0.93",
@@ -197,10 +197,10 @@
   },
   "Unibet (优胜客)": {
     "current_size": {
-      "over": "0.78",
-      "size": "2.5↓",
-      "under": "1.02",
-      "update_time": "04-02 15:00"
+      "over": "0.98",
+      "size": "2.5/3",
+      "under": "0.81",
+      "update_time": "04-03 01:50"
     },
     "initial_size": {
       "over": "0.83",
@@ -214,7 +214,7 @@
       "over": "0.80",
       "size": "2.5",
       "under": "0.88",
-      "update_time": "04-02 19:34"
+      "update_time": "04-03 01:29"
     },
     "initial_size": {
       "over": "0.71",
@@ -225,10 +225,10 @@
   },
   "Mansion88 (明升)": {
     "current_size": {
-      "over": "0.92",
+      "over": "0.88",
       "size": "2.5↓",
-      "under": "0.98",
-      "update_time": "04-02 19:34"
+      "under": "1.02",
+      "update_time": "04-03 01:58"
     },
     "initial_size": {
       "over": "0.99",
@@ -237,26 +237,12 @@
       "update_time": "03-31 15:42"
     }
   },
-  "香港马会": {
-    "current_size": {
-      "over": "0.75",
-      "size": "2.5↓",
-      "under": "0.95",
-      "update_time": "04-02 19:37"
-    },
-    "initial_size": {
-      "over": "0.80",
-      "size": "2.5/3",
-      "under": "0.90",
-      "update_time": "03-31 19:31"
-    }
-  },
   "金宝博": {
     "current_size": {
-      "over": "0.90",
+      "over": "0.92",
       "size": "2.5↓",
-      "under": "1.00",
-      "update_time": "04-02 19:31"
+      "under": "0.98",
+      "update_time": "04-03 01:46"
     },
     "initial_size": {
       "over": "0.96",
@@ -265,12 +251,26 @@
       "update_time": "03-31 13:34"
     }
   },
+  "香港马会": {
+    "current_size": {
+      "over": "0.93",
+      "size": "2.5/3",
+      "under": "0.77",
+      "update_time": "04-03 00:56"
+    },
+    "initial_size": {
+      "over": "0.80",
+      "size": "2.5/3",
+      "under": "0.90",
+      "update_time": "03-31 19:31"
+    }
+  },
   "12BET (壹�E博)": {
     "current_size": {
-      "over": "0.90",
+      "over": "0.84",
       "size": "2.5↓",
-      "under": "0.94",
-      "update_time": "04-02 19:34"
+      "under": "1.00",
+      "update_time": "04-03 01:33"
     },
     "initial_size": {
       "over": "0.93",
@@ -283,8 +283,8 @@
     "current_size": {
       "over": "0.88",
       "size": "2.5↓",
-      "under": "0.97",
-      "update_time": "04-02 19:35"
+      "under": "0.96",
+      "update_time": "04-03 01:57"
     },
     "initial_size": {
       "over": "0.89",
@@ -298,7 +298,7 @@
       "over": "0.84",
       "size": "2.5",
       "under": "0.92",
-      "update_time": "04-02 19:35"
+      "update_time": "04-03 01:35"
     },
     "initial_size": {
       "over": "0.76",
@@ -307,12 +307,40 @@
       "update_time": "04-02 12:16"
     }
   },
+  "Boylesports": {
+    "current_size": {
+      "over": "0.75",
+      "size": "2.5",
+      "under": "0.91",
+      "update_time": "04-03 01:32"
+    },
+    "initial_size": {
+      "over": "0.73",
+      "size": "2.5",
+      "under": "0.95",
+      "update_time": "04-02 12:17"
+    }
+  },
+  "BetOnline": {
+    "current_size": {
+      "over": "0.89",
+      "size": "2.5↓",
+      "under": "0.93",
+      "update_time": "04-03 01:48"
+    },
+    "initial_size": {
+      "over": "0.90",
+      "size": "2.5/3",
+      "under": "0.92",
+      "update_time": "03-30 23:37"
+    }
+  },
   "Betway(必威)": {
     "current_size": {
-      "over": "0.85",
+      "over": "0.80",
       "size": "2.5",
-      "under": "0.85",
-      "update_time": "04-02 19:35"
+      "under": "0.91",
+      "update_time": "04-02 20:09"
     },
     "initial_size": {
       "over": "0.73",
@@ -326,7 +354,7 @@
       "over": "0.78",
       "size": "2.5",
       "under": "0.90",
-      "update_time": "04-02 19:38"
+      "update_time": "04-03 00:18"
     },
     "initial_size": {
       "over": "0.71",
@@ -340,7 +368,7 @@
       "over": "0.85",
       "size": "2.5↓",
       "under": "0.98",
-      "update_time": "04-02 19:38"
+      "update_time": "04-03 00:17"
     },
     "initial_size": {
       "over": "0.93",
@@ -349,40 +377,26 @@
       "update_time": "02-24 23:58"
     }
   },
-  "Boylesports": {
+  "CashPoint": {
     "current_size": {
-      "over": "0.80",
+      "over": "0.81",
       "size": "2.5",
-      "under": "0.87",
-      "update_time": "04-02 19:34"
+      "under": "0.93",
+      "update_time": "04-02 23:55"
     },
     "initial_size": {
-      "over": "0.73",
+      "over": "0.75",
       "size": "2.5",
-      "under": "0.95",
-      "update_time": "04-02 12:17"
-    }
-  },
-  "BetOnline": {
-    "current_size": {
-      "over": "0.90",
-      "size": "2.5↓",
-      "under": "0.92",
-      "update_time": "04-02 19:34"
-    },
-    "initial_size": {
-      "over": "0.90",
-      "size": "2.5/3",
-      "under": "0.92",
-      "update_time": "03-30 23:37"
+      "under": "1.01",
+      "update_time": "04-02 12:28"
     }
   },
   "CMD368.com": {
     "current_size": {
-      "over": "0.94",
+      "over": "0.89",
       "size": "2.5↓",
-      "under": "0.96",
-      "update_time": "04-02 19:36"
+      "under": "1.01",
+      "update_time": "04-03 01:33"
     },
     "initial_size": {
       "over": "0.93",
@@ -391,26 +405,12 @@
       "update_time": "03-31 00:34"
     }
   },
-  "CashPoint": {
-    "current_size": {
-      "over": "0.75",
-      "size": "2.5",
-      "under": "1.01",
-      "update_time": "04-02 12:28"
-    },
-    "initial_size": {
-      "over": "0.75",
-      "size": "2.5",
-      "under": "1.01",
-      "update_time": "04-02 12:28"
-    }
-  },
   "Dafabet (大发)": {
     "current_size": {
-      "over": "0.92",
+      "over": "0.88",
       "size": "2.5↓",
-      "under": "0.98",
-      "update_time": "04-02 19:34"
+      "under": "1.02",
+      "update_time": "04-03 01:57"
     },
     "initial_size": {
       "over": "0.82",
