@@ -858,9 +858,8 @@ def main():
                                 test_size_data_write(match['match_id'], target_date)
         
         # 如果不需要保留HTML文件，则清理
-        # 注释掉删除HTML文件的逻辑，等待后续添加新的处理逻辑
-        # if not keep_html:
-        #     clean_temp_html_files(target_date)
+        if not keep_html:
+            clean_temp_html_files(target_date)
                 
     else:
         print(f"未获取到 {target_date} 的比赛数据")
@@ -969,14 +968,26 @@ def parse_odds_history(html_content, fixture_id, date):
                     href = company_link.get('href')
                     if 'cid=' in href:
                         company_id = href.split('cid=')[1].split('&')[0] if '&' in href.split('cid=')[1] else href.split('cid=')[1]
+                        print(f"从链接获取到 {company_name} 的公司ID: {company_id}")
+                
+                if not company_id:
+                    # 尝试从tr的cid属性获取
+                    cid_attr = row.get('cid')
+                    if cid_attr:
+                        company_id = cid_attr
+                        print(f"从tr标签的cid属性获取到 {company_name} 的公司ID: {company_id}")
                 
                 if not company_id:
                     # 尝试从复选框ID获取
                     checkbox = row.select_one('input[type="checkbox"]')
-                    if checkbox and checkbox.get('id'):
+                    if checkbox and checkbox.get('value'):
+                        company_id = checkbox.get('value')
+                        print(f"从复选框value获取到 {company_name} 的公司ID: {company_id}")
+                    elif checkbox and checkbox.get('id'):
                         checkbox_id = checkbox.get('id')
                         if checkbox_id.startswith('ck'):
                             company_id = checkbox_id[2:]
+                            print(f"从复选框id获取到 {company_name} 的公司ID: {company_id}")
                 
                 if company_id:
                     # 构建历史赔率URL
@@ -1254,13 +1265,23 @@ def parse_handicap_history(html_content, fixture_id):
                         print(f"从链接获取到 {company_name} 的公司ID: {company_id}")
                 
                 if not company_id:
+                    # 尝试从tr的cid属性获取
+                    cid_attr = row.get('cid')
+                    if cid_attr:
+                        company_id = cid_attr
+                        print(f"从tr标签的cid属性获取到 {company_name} 的公司ID: {company_id}")
+                
+                if not company_id:
                     # 尝试从复选框ID获取
                     checkbox = row.select_one('input[type="checkbox"]')
-                    if checkbox and checkbox.get('id'):
+                    if checkbox and checkbox.get('value'):
+                        company_id = checkbox.get('value')
+                        print(f"从复选框value获取到 {company_name} 的公司ID: {company_id}")
+                    elif checkbox and checkbox.get('id'):
                         checkbox_id = checkbox.get('id')
                         if checkbox_id.startswith('ck'):
                             company_id = checkbox_id[2:]
-                            print(f"从复选框获取到 {company_name} 的公司ID: {company_id}")
+                            print(f"从复选框id获取到 {company_name} 的公司ID: {company_id}")
                 
                 if company_id:
                     # 构建历史让球赔率URL
