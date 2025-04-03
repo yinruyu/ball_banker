@@ -658,6 +658,20 @@ def debug_match(fixture_id, match_id, date):
         with open(temp_size_html_path, 'r', encoding='utf-8') as f:
             size_html_content = f.read()
             size_data = parse_size_data(size_html_content)
+            
+            # 获取大小球历史赔率变化数据
+            print(f"开始获取大小球历史赔率变化数据...")
+            size_history = parse_size_history(size_html_content, fixture_id)
+            
+            # 将历史赔率数据添加到大小球数据中
+            if size_history:
+                print(f"成功获取到大小球历史赔率变化数据, 公司数量: {len(size_history)}")
+                for company_name, history_data in size_history.items():
+                    if company_name in size_data:
+                        size_data[company_name]['size_history'] = history_data
+                        print(f"已添加 {company_name} 的大小球历史赔率变化数据, 记录数: {len(history_data)}")
+            else:
+                print(f"未获取到任何大小球历史赔率变化数据")
         
         # 保存大小球数据
         size_file_path = os.path.join(size_dir, f'{match_id}.json')
@@ -981,6 +995,170 @@ def parse_odds_history(html_content, fixture_id, date):
         print(f"解析历史赔率数据时出错: {str(e)}")
     
     return odds_history_data
+
+def parse_size_history(html_content, fixture_id):
+    """解析大小球历史变化数据"""
+    print("开始解析大小球历史变化数据...")
+    
+    soup = BeautifulSoup(html_content, 'html.parser')
+    size_history_data = {}
+    
+    try:
+        # 查找所有大小球公司行
+        company_rows = soup.select('tr[class*="tr"][id]')
+        if not company_rows:
+            company_rows = soup.select('tr.tableline')
+        if not company_rows:
+            company_rows = soup.select('tr[class*="line"]')
+        
+        print(f"找到 {len(company_rows)} 个公司行")
+        
+        for row in company_rows:
+            try:
+                # 获取公司名称
+                company_name_elem = row.select_one('td.tb_plgs')
+                company_name = "未知公司"
+                
+                if company_name_elem:
+                    # 尝试方式1：通过 span.quancheng
+                    quancheng = company_name_elem.select_one('span.quancheng')
+                    if quancheng:
+                        company_name = quancheng.text.strip()
+                    else:
+                        # 尝试方式2：直接获取 td.tb_plgs 的文本
+                        company_name = company_name_elem.text.strip()
+                        # 清理文本中可能的多余内容
+                        company_name = company_name.split('\n')[0].strip()
+                else:
+                    # 尝试使用第一个单元格作为公司名称
+                    first_td = row.select_one('td')
+                    if first_td and first_td.text.strip() and len(first_td.text.strip()) < 30:
+                        company_name = first_td.text.strip()
+                
+                print(f"处理公司: {company_name}")
+                
+                # 获取公司ID
+                company_id = None
+                
+                # 尝试从行ID获取
+                row_id = row.get('id')
+                if row_id and row_id.startswith('tr'):
+                    company_id = row_id[2:]
+                
+                # 尝试从链接中获取
+                if not company_id:
+                    company_link = row.select_one('a[href*="id="]')
+                    if company_link and company_link.get('href'):
+                        href = company_link.get('href')
+                        if 'id=' in href:
+                            company_id = href.split('id=')[1].split('&')[0] if '&' in href.split('id=')[1] else href.split('id=')[1]
+                
+                # 尝试从复选框ID获取
+                if not company_id:
+                    checkbox = row.select_one('input[type="checkbox"]')
+                    if checkbox and checkbox.get('id'):
+                        checkbox_id = checkbox.get('id')
+                        if checkbox_id.startswith('ck'):
+                            company_id = checkbox_id[2:]
+                
+                if company_id:
+                    # 构建历史大小球数据URL
+                    timestamp = int(time.time() * 1000)  # 当前毫秒时间戳
+                    history_url = f"https://odds.500.com/fenxi1/inc/daxiaoajax.php?fid={fixture_id}&id={company_id}&t={timestamp}"
+                    
+                    print(f"尝试获取 {company_name} 的历史大小球数据: {history_url}")
+                    
+                    # 设置请求头
+                    headers = {
+                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+                        'Accept': 'application/json, text/javascript, */*; q=0.01',
+                        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+                        'Referer': f'https://odds.500.com/fenxi/daxiao-{fixture_id}.shtml',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                    
+                    try:
+                        # 添加随机延迟避免被限制
+                        time.sleep(random.uniform(0.5, 1.5))
+                        
+                        # 发送请求获取历史数据
+                        response = requests.get(history_url, headers=headers, timeout=10)
+                        
+                        if response.status_code == 200:
+                            # 解析JSON响应
+                            try:
+                                history_data = response.json()
+                                if history_data and isinstance(history_data, list):
+                                    # 解析历史数据，格式为 ["<tr><td class='tips_down'>0.88</td><td class=''>3/3.5</td><td class='tips_up'>0.92</td><td class=''>04-03 13:06</td></tr>", ...]
+                                    parsed_history = []
+                                    
+                                    for html_item in history_data:
+                                        try:
+                                            # 解析HTML片段
+                                            item_soup = BeautifulSoup(html_item, 'html.parser')
+                                            cells = item_soup.select('td')
+                                            
+                                            if len(cells) >= 4:
+                                                # 判断是否有上升下降指示
+                                                over_cell_class = cells[0].get('class', [])
+                                                over_change = 0  # 默认不变
+                                                if 'tips_up' in over_cell_class:
+                                                    over_change = 1  # 上升
+                                                elif 'tips_down' in over_cell_class:
+                                                    over_change = -1  # 下降
+                                                
+                                                under_cell_class = cells[2].get('class', [])
+                                                under_change = 0  # 默认不变
+                                                if 'tips_up' in under_cell_class:
+                                                    under_change = 1  # 上升
+                                                elif 'tips_down' in under_cell_class:
+                                                    under_change = -1  # 下降
+                                                
+                                                # 解析数据
+                                                over_odds = cells[0].text.strip()
+                                                size_value = cells[1].text.strip()
+                                                under_odds = cells[2].text.strip()
+                                                update_time = cells[3].text.strip()
+                                                
+                                                history_item = {
+                                                    'over_odds': float(over_odds),
+                                                    'size': size_value,
+                                                    'under_odds': float(under_odds),
+                                                    'update_time': update_time,
+                                                    'over_change': over_change,
+                                                    'under_change': under_change
+                                                }
+                                                parsed_history.append(history_item)
+                                        except Exception as e:
+                                            print(f"解析单条历史记录时出错: {str(e)}")
+                                            continue
+                                    
+                                    if parsed_history:
+                                        size_history_data[company_name] = parsed_history
+                                        print(f"成功获取 {company_name} 的历史大小球数据, 共 {len(parsed_history)} 条记录")
+                                    else:
+                                        print(f"未解析到 {company_name} 的有效历史大小球数据记录")
+                                else:
+                                    print(f"未获取到 {company_name} 的有效历史大小球数据, 响应: {response.text[:100]}")
+                            except Exception as e:
+                                print(f"解析 {company_name} 历史大小球JSON响应时出错: {str(e)}")
+                        else:
+                            print(f"请求 {company_name} 历史大小球数据失败, 状态码: {response.status_code}")
+                    
+                    except Exception as e:
+                        print(f"获取 {company_name} 历史大小球数据时出错: {str(e)}")
+                        continue
+                else:
+                    print(f"未能获取 {company_name} 的公司ID，无法请求历史数据")
+            
+            except Exception as e:
+                print(f"解析公司行时出错: {str(e)}")
+                continue
+    
+    except Exception as e:
+        print(f"解析历史大小球数据时出错: {str(e)}")
+    
+    return size_history_data
 
 if __name__ == '__main__':
     # 检查命令行参数
