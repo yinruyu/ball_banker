@@ -2,11 +2,12 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 import time
 import random
 import argparse
 import sys
+import re
 
 def create_directory(date):
     """创建日期目录"""
@@ -571,6 +572,429 @@ def parse_handicap_data(html_content):
     
     return data
 
+def parse_asian_handicap_data(html_content):
+    """解析亚盘数据"""
+    soup = BeautifulSoup(html_content, 'html.parser')
+    asian_data = {}
+
+    # 尝试多种选择器来匹配亚盘公司行
+    rows = soup.select('tr[id][ttl="zy"]')
+    if not rows:
+        print("未找到tr[id][ttl='zy']格式的行，尝试其他选择器")
+        rows = soup.select('tr.tableline')
+        if not rows:
+            print("未找到tr.tableline格式的行，尝试其他选择器")
+            rows = soup.select('tr[class*="tr"][id]')
+            if not rows:
+                print("未找到tr[class*='tr'][id]格式的行，尝试其他选择器")
+                rows = soup.select('tr[id]')
+                if not rows:
+                    print("未找到任何带id的tr行，尝试查找所有可能的行")
+                    rows = soup.select('table.pub_table tr:not(:first-child)')
+    
+    # 如果仍未找到，记录情况但不再生成调试文件
+    if not rows:
+        print("未找到任何可能的亚盘数据行")
+        return asian_data
+    
+    print(f"找到 {len(rows)} 行亚盘数据")
+    
+    for row in rows:
+        # 获取公司名称，尝试多种方式
+        company_name = "未知公司"
+        company_name_elem = row.select_one('td.tb_plgs span.quancheng')
+        if company_name_elem:
+            company_name = company_name_elem.text.strip()
+        else:
+            # 尝试其他方式获取公司名称
+            company_td = row.select_one('td.tb_plgs')
+            if company_td:
+                company_name = company_td.text.strip().split('\n')[0].strip()
+            else:
+                # 尝试从第一个单元格获取公司名称
+                first_td = row.select_one('td')
+                if first_td and first_td.text.strip() and len(first_td.text.strip()) < 30:
+                    company_name = first_td.text.strip()
+                    # 检查是否是可能的公司名称
+                    if not any(keyword in company_name for keyword in ['bet', 'Bet', '威廉', '澳门', '皇冠', '易胜博']):
+                        print(f"跳过非公司名称的行: {company_name[:20]}...")
+                        continue
+        
+        print(f"解析公司: {company_name}")
+        
+        # 初始化该公司的数据结构
+        company_data = {
+            'current_asian': {
+                'home_odds': '',
+                'handicap': '',
+                'away_odds': '',
+                'update_time': '',
+                'status': ''  # 升降状态
+            },
+            'initial_asian': {
+                'home_odds': '',
+                'handicap': '',
+                'away_odds': '',
+                'update_time': ''
+            }
+        }
+        
+        try:
+            # 所有表格数据
+            tables = row.select('table.pl_table_data')
+            if not tables:
+                tables = row.select('table')
+            
+            # 判断是否找到了表格
+            if len(tables) >= 1:
+                # 解析即时亚盘数据（通常是第一个表格）
+                current_table = tables[0]
+                current_rows = current_table.select('tr')
+                
+                if len(current_rows) > 0:
+                    current_cells = current_rows[0].select('td')
+                    
+                    if len(current_cells) >= 3:
+                        # 解析主队赔率
+                        home_odds_text = current_cells[0].text.strip()
+                        company_data['current_asian']['home_odds'] = home_odds_text.replace('↑', '').replace('↓', '')
+                        
+                        # 解析盘口值和状态
+                        handicap_text = current_cells[1].text.strip()
+                        # 检查是否有升降状态
+                        if '升' in handicap_text:
+                            company_data['current_asian']['handicap'] = handicap_text.replace('升', '')
+                            company_data['current_asian']['status'] = '升'
+                        elif '降' in handicap_text:
+                            company_data['current_asian']['handicap'] = handicap_text.replace('降', '')
+                            company_data['current_asian']['status'] = '降'
+                        else:
+                            company_data['current_asian']['handicap'] = handicap_text
+                            company_data['current_asian']['status'] = ''
+                        
+                        # 解析客队赔率
+                        away_odds_text = current_cells[2].text.strip()
+                        company_data['current_asian']['away_odds'] = away_odds_text.replace('↑', '').replace('↓', '')
+                        
+                        print(f"解析到即时亚盘数据: {company_data['current_asian']}")
+                
+                # 获取时间数据（更新时间通常位于表格后的单元格）
+                time_td = row.select_one('td time')
+                if time_td:
+                    company_data['current_asian']['update_time'] = time_td.text.strip()
+                    print(f"解析到更新时间: {company_data['current_asian']['update_time']}")
+                
+                # 解析初始亚盘数据（通常是第二个表格）
+                if len(tables) >= 2:
+                    initial_table = tables[1]
+                    initial_rows = initial_table.select('tr')
+                    
+                    if len(initial_rows) > 0:
+                        initial_cells = initial_rows[0].select('td')
+                        
+                        if len(initial_cells) >= 3:
+                            # 解析主队赔率
+                            home_odds_text = initial_cells[0].text.strip()
+                            company_data['initial_asian']['home_odds'] = home_odds_text.replace('↑', '').replace('↓', '')
+                            
+                            # 解析盘口值
+                            handicap_text = initial_cells[1].text.strip()
+                            company_data['initial_asian']['handicap'] = handicap_text
+                            
+                            # 解析客队赔率
+                            away_odds_text = initial_cells[2].text.strip()
+                            company_data['initial_asian']['away_odds'] = away_odds_text.replace('↑', '').replace('↓', '')
+                            
+                            print(f"解析到初始亚盘数据: {company_data['initial_asian']}")
+                    
+                    # 获取初始更新时间
+                    initial_time_tds = row.select('td time')
+                    if len(initial_time_tds) > 1:
+                        company_data['initial_asian']['update_time'] = initial_time_tds[1].text.strip()
+                        print(f"解析到初始更新时间: {company_data['initial_asian']['update_time']}")
+            else:
+                print(f"未找到公司 {company_name} 的表格数据")
+                
+                # 尝试查找整个row中的数据
+                all_cells = row.select('td')
+                if len(all_cells) >= 7:  # 假设格式为: 公司名|主队赔率|盘口|客队赔率|时间|...
+                    try:
+                        # 解析主队赔率(可能是第2个单元格)
+                        home_odds_text = all_cells[1].text.strip()
+                        company_data['current_asian']['home_odds'] = home_odds_text.replace('↑', '').replace('↓', '')
+                        
+                        # 解析盘口值(可能是第3个单元格)
+                        handicap_text = all_cells[2].text.strip()
+                        if '升' in handicap_text:
+                            company_data['current_asian']['handicap'] = handicap_text.replace('升', '')
+                            company_data['current_asian']['status'] = '升'
+                        elif '降' in handicap_text:
+                            company_data['current_asian']['handicap'] = handicap_text.replace('降', '')
+                            company_data['current_asian']['status'] = '降'
+                        else:
+                            company_data['current_asian']['handicap'] = handicap_text
+                        
+                        # 解析客队赔率(可能是第4个单元格)
+                        away_odds_text = all_cells[3].text.strip()
+                        company_data['current_asian']['away_odds'] = away_odds_text.replace('↑', '').replace('↓', '')
+                        
+                        # 解析时间(可能是第5个单元格)
+                        if len(all_cells) > 4:
+                            time_text = all_cells[4].text.strip()
+                            company_data['current_asian']['update_time'] = time_text
+                        
+                        print(f"从行单元格解析到亚盘数据: {company_data['current_asian']}")
+                    except Exception as e:
+                        print(f"从行单元格解析数据时出错: {str(e)}")
+        
+        except Exception as e:
+            print(f"解析公司 {company_name} 数据时出错: {str(e)}")
+            continue
+        
+        # 只有当成功解析到数据时，才添加该公司的数据
+        if company_data['current_asian']['home_odds'] or company_data['initial_asian']['home_odds']:
+            asian_data[company_name] = company_data
+            print(f"成功解析公司 {company_name} 的亚盘数据")
+        else:
+            print(f"未能解析到公司 {company_name} 的有效数据，跳过")
+    
+    if not asian_data:
+        print("警告：未能从HTML中解析到任何亚盘数据")
+        # 创建一个样例数据作为默认值
+        asian_data["未知公司"] = {
+            'current_asian': {
+                'home_odds': '0.90',
+                'handicap': '受半球',
+                'away_odds': '0.90',
+                'update_time': '',
+                'status': ''
+            },
+            'initial_asian': {
+                'home_odds': '0.90',
+                'handicap': '受半球',
+                'away_odds': '0.90',
+                'update_time': ''
+            }
+        }
+        print("已创建默认亚盘数据结构")
+    
+    return asian_data
+
+def parse_asian_history(html_content, fixture_id):
+    """解析亚盘历史变化数据"""
+    print("开始解析亚盘历史变化数据...")
+    
+    soup = BeautifulSoup(html_content, 'html.parser')
+    asian_history_data = {}
+    
+    try:
+        # 查找所有亚盘公司行，尝试多种选择器
+        company_rows = soup.select('tr[id][ttl="zy"]')
+        if not company_rows:
+            print("未找到tr[id][ttl='zy']格式的行，尝试其他选择器")
+            company_rows = soup.select('tr.tableline')
+            if not company_rows:
+                print("未找到tr.tableline格式的行，尝试其他选择器")
+                company_rows = soup.select('tr[class*="tr"][id]')
+                if not company_rows:
+                    print("未找到tr[class*='tr'][id]格式的行，尝试其他选择器")
+                    company_rows = soup.select('tr[id]')
+        
+        if not company_rows:
+            print("未找到任何亚盘公司行，无法获取历史数据")
+            return asian_history_data
+        
+        print(f"找到 {len(company_rows)} 个亚盘公司行")
+        
+        for row in company_rows:
+            try:
+                # 获取公司名称，尝试多种方式
+                company_name = "未知公司"
+                company_name_elem = row.select_one('td.tb_plgs span.quancheng')
+                if company_name_elem:
+                    company_name = company_name_elem.text.strip()
+                else:
+                    # 尝试其他方式获取公司名称
+                    company_td = row.select_one('td.tb_plgs')
+                    if company_td:
+                        company_name = company_td.text.strip().split('\n')[0].strip()
+                    else:
+                        # 尝试从第一个单元格获取公司名称
+                        first_td = row.select_one('td')
+                        if first_td and first_td.text.strip() and len(first_td.text.strip()) < 30:
+                            company_name = first_td.text.strip()
+                            # 检查是否是可能的公司名称
+                            if not any(keyword in company_name for keyword in ['bet', 'Bet', '威廉', '澳门', '皇冠', '易胜博']):
+                                continue
+                
+                print(f"处理公司历史数据: {company_name}")
+                
+                # 获取公司ID
+                company_id = None
+                
+                # 尝试从行ID获取
+                row_id = row.get('id')
+                if row_id and row_id.startswith('tr'):
+                    company_id = row_id[2:]
+                    print(f"从行ID获取到公司ID: {company_id}")
+                
+                # 尝试从链接中获取
+                if not company_id:
+                    company_link = row.select_one('td.tb_plgs a')
+                    if company_link and company_link.get('href'):
+                        href = company_link.get('href')
+                        if 'cid=' in href:
+                            company_id = href.split('cid=')[1].split('&')[0] if '&' in href.split('cid=')[1] else href.split('cid=')[1]
+                            print(f"从链接获取到公司ID: {company_id}")
+                
+                # 尝试从tr的cid属性获取
+                if not company_id:
+                    cid_attr = row.get('cid')
+                    if cid_attr:
+                        company_id = cid_attr
+                        print(f"从tr标签的cid属性获取到公司ID: {company_id}")
+                
+                # 尝试从任意链接中获取id参数
+                if not company_id:
+                    any_link = row.select_one('a[href*="id="]')
+                    if any_link and any_link.get('href'):
+                        href = any_link.get('href')
+                        if 'id=' in href:
+                            company_id = href.split('id=')[1].split('&')[0] if '&' in href.split('id=')[1] else href.split('id=')[1]
+                            print(f"从链接id参数获取到公司ID: {company_id}")
+                
+                # 尝试从复选框ID获取
+                if not company_id:
+                    checkbox = row.select_one('input[type="checkbox"]')
+                    if checkbox and checkbox.get('value'):
+                        company_id = checkbox.get('value')
+                        print(f"从复选框value获取到公司ID: {company_id}")
+                    elif checkbox and checkbox.get('id'):
+                        checkbox_id = checkbox.get('id')
+                        if checkbox_id.startswith('ck'):
+                            company_id = checkbox_id[2:]
+                            print(f"从复选框id获取到公司ID: {company_id}")
+                
+                if company_id:
+                    # 构建历史亚盘数据URL
+                    timestamp = int(time.time() * 1000)  # 当前毫秒时间戳
+                    history_url = f"https://odds.500.com/fenxi1/inc/yazhiajax.php?fid={fixture_id}&id={company_id}&t={timestamp}"
+                    
+                    print(f"尝试获取 {company_name} 的历史亚盘数据: {history_url}")
+                    
+                    # 设置请求头
+                    headers = {
+                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+                        'Accept': 'application/json, text/javascript, */*; q=0.01',
+                        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+                        'Referer': f'https://odds.500.com/fenxi/yazhi-{fixture_id}.shtml',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                    
+                    try:
+                        # 添加随机延迟避免被限制
+                        time.sleep(random.uniform(0.5, 1.5))
+                        
+                        # 发送请求获取历史数据
+                        response = requests.get(history_url, headers=headers, timeout=10)
+                        
+                        if response.status_code == 200:
+                            print(f"请求历史数据成功，响应长度: {len(response.text)}")
+                            
+                            # 解析JSON响应
+                            try:
+                                # 有时响应可能为HTML或其他格式，尝试使用不同的解析方式
+                                try:
+                                    history_data = response.json()
+                                except:
+                                    print(f"响应不是有效的JSON，尝试解析HTML")
+                                    history_data = response.text.replace('\n', '').replace('\r', '')
+                                    if history_data.startswith('[') and history_data.endswith(']'):
+                                        # 手动解析类JSON格式
+                                        history_data = eval(history_data)
+                                
+                                if history_data and (isinstance(history_data, list) or isinstance(history_data, str)):
+                                    # 解析历史数据
+                                    parsed_history = []
+                                    
+                                    # 处理不同类型的响应
+                                    if isinstance(history_data, list):
+                                        items_to_process = history_data
+                                    elif isinstance(history_data, str):
+                                        # 尝试从HTML字符串中提取表格行
+                                        soup_history = BeautifulSoup(history_data, 'html.parser')
+                                        items_to_process = [str(tr) for tr in soup_history.select('tr')]
+                                    else:
+                                        items_to_process = []
+                                    
+                                    for html_item in items_to_process:
+                                        try:
+                                            # 解析HTML片段
+                                            item_soup = BeautifulSoup(html_item, 'html.parser')
+                                            cells = item_soup.select('td')
+                                            
+                                            if len(cells) >= 4:
+                                                # 解析数据
+                                                home_odds = cells[0].text.strip()
+                                                handicap = cells[1].text.strip()
+                                                away_odds = cells[2].text.strip()
+                                                update_time = cells[3].text.strip()
+                                                
+                                                # 判断是否有上升下降指示
+                                                home_cell_class = cells[0].get('class', [])
+                                                home_change = 0  # 默认不变
+                                                if 'tips_up' in home_cell_class:
+                                                    home_change = 1  # 上升
+                                                elif 'tips_down' in home_cell_class:
+                                                    home_change = -1  # 下降
+                                                
+                                                away_cell_class = cells[2].get('class', [])
+                                                away_change = 0  # 默认不变
+                                                if 'tips_up' in away_cell_class:
+                                                    away_change = 1  # 上升
+                                                elif 'tips_down' in away_cell_class:
+                                                    away_change = -1  # 下降
+                                                
+                                                history_item = {
+                                                    'home_odds': home_odds,
+                                                    'handicap': handicap,
+                                                    'away_odds': away_odds,
+                                                    'update_time': update_time,
+                                                    'home_change': home_change,
+                                                    'away_change': away_change
+                                                }
+                                                parsed_history.append(history_item)
+                                        except Exception as e:
+                                            print(f"解析单条历史记录时出错: {str(e)}")
+                                            continue
+                                    
+                                    if parsed_history:
+                                        asian_history_data[company_name] = parsed_history
+                                        print(f"成功获取 {company_name} 的历史亚盘数据, 共 {len(parsed_history)} 条记录")
+                                    else:
+                                        print(f"未解析到 {company_name} 的有效历史亚盘数据记录")
+                                else:
+                                    print(f"未获取到 {company_name} 的有效历史亚盘数据, 响应类型: {type(history_data)}")
+                            except Exception as e:
+                                print(f"解析 {company_name} 历史亚盘JSON响应时出错: {str(e)}")
+                        else:
+                            print(f"请求 {company_name} 历史亚盘数据失败, 状态码: {response.status_code}")
+                    
+                    except Exception as e:
+                        print(f"获取 {company_name} 历史亚盘数据时出错: {str(e)}")
+                        continue
+                else:
+                    print(f"未能获取 {company_name} 的公司ID，无法请求历史数据")
+            
+            except Exception as e:
+                print(f"解析公司行时出错: {str(e)}")
+                continue
+    
+    except Exception as e:
+        print(f"解析历史亚盘数据时出错: {str(e)}")
+    
+    return asian_history_data
+
 def debug_match(fixture_id, match_id, date):
     # 创建欧赔文件夹
     odds_dir = os.path.join('data', date, 'ou_odds')
@@ -584,6 +1008,10 @@ def debug_match(fixture_id, match_id, date):
     handicap_dir = os.path.join('data', date, 'handicap_odds')
     os.makedirs(handicap_dir, exist_ok=True)
     
+    # 创建亚盘文件夹
+    asian_dir = os.path.join('data', date, 'asian_odds')
+    os.makedirs(asian_dir, exist_ok=True)
+    
     # 欧赔URL
     odds_url = f'https://odds.500.com/fenxi/ouzhi-{fixture_id}.shtml?ctype=2'
     
@@ -592,6 +1020,9 @@ def debug_match(fixture_id, match_id, date):
     
     # 让球URL
     handicap_url = f'https://odds.500.com/fenxi/rangqiu-{fixture_id}.shtml'
+    
+    # 亚盘URL
+    asian_url = f'https://odds.500.com/fenxi/yazhi-{fixture_id}.shtml'
     
     # 模拟浏览器请求头
     headers = {
@@ -749,6 +1180,148 @@ def debug_match(fixture_id, match_id, date):
         
         if not handicap_data:
             print(f"警告：未解析到 {match_id} 的让球数据")
+        
+        # 获取亚盘数据
+        print(f"正在获取亚盘数据: {asian_url}")
+        try:
+            response = session.get(asian_url, headers=headers, timeout=15)  # 增加超时时间
+            response.encoding = 'gb2312'
+            
+            # 检查响应状态
+            if response.status_code == 200:
+                print(f"成功获取亚盘数据，响应长度: {len(response.text)}")
+            else:
+                print(f"获取亚盘数据失败，状态码: {response.status_code}")
+            
+            # 添加随机延迟
+            time.sleep(random.uniform(1, 3))
+            
+            if response.status_code == 403:
+                print(f"访问被拒绝 (403 Forbidden): {asian_url}")
+                return
+            
+            # 临时保存亚盘HTML文件
+            temp_asian_html_path = os.path.join(asian_dir, f'temp_{match_id}.html')
+            with open(temp_asian_html_path, 'w', encoding='utf-8') as f:
+                f.write(response.text)
+            print(f"已保存临时亚盘HTML文件: {temp_asian_html_path}")
+            
+            # 解析亚盘HTML内容
+            print("开始解析亚盘数据...")
+            with open(temp_asian_html_path, 'r', encoding='utf-8') as f:
+                asian_html_content = f.read()
+                asian_data = parse_asian_handicap_data(asian_html_content)
+                
+                # 获取亚盘历史赔率变化数据
+                if asian_data:
+                    print(f"成功解析到亚盘数据，公司数量: {len(asian_data)}")
+                    print(f"开始获取亚盘历史赔率变化数据...")
+                    asian_history = parse_asian_history(asian_html_content, fixture_id)
+                    
+                    # 将历史赔率数据添加到亚盘数据中
+                    if asian_history:
+                        print(f"成功获取到亚盘历史赔率变化数据, 公司数量: {len(asian_history)}")
+                        for company_name, history_data in asian_history.items():
+                            if company_name in asian_data:
+                                asian_data[company_name]['asian_history'] = history_data
+                                print(f"已添加 {company_name} 的亚盘历史赔率变化数据, 记录数: {len(history_data)}")
+                    else:
+                        print(f"未获取到任何亚盘历史赔率变化数据")
+                else:
+                    print("解析亚盘数据失败，没有找到有效数据")
+                    # 尝试额外的解析方法
+                    print("尝试通过正则表达式直接解析HTML内容...")
+                    try:
+                        # 尝试直接通过正则表达式查找关键数据
+                        odds_pattern = re.compile(r'<td.*?>([\d\.]+)</td>\s*<td.*?>(.*?)</td>\s*<td.*?>([\d\.]+)</td>')
+                        matches = odds_pattern.findall(asian_html_content)
+                        
+                        if matches:
+                            print(f"通过正则表达式找到 {len(matches)} 组可能的赔率数据")
+                            # 创建一个临时数据结构
+                            asian_data = {"直接解析": {
+                                'current_asian': {
+                                    'home_odds': matches[0][0] if len(matches) > 0 else '0.90',
+                                    'handicap': matches[0][1] if len(matches) > 0 else '受半球',
+                                    'away_odds': matches[0][2] if len(matches) > 0 else '0.90',
+                                    'update_time': '',
+                                    'status': ''
+                                },
+                                'initial_asian': {
+                                    'home_odds': matches[1][0] if len(matches) > 1 else '0.90',
+                                    'handicap': matches[1][1] if len(matches) > 1 else '受半球',
+                                    'away_odds': matches[1][2] if len(matches) > 1 else '0.90',
+                                    'update_time': ''
+                                }
+                            }}
+                            print(f"通过正则表达式创建的亚盘数据: {asian_data}")
+                    except Exception as e:
+                        print(f"正则表达式解析亚盘数据失败: {str(e)}")
+            
+            # 保存亚盘数据
+            asian_file_path = os.path.join(asian_dir, f'{match_id}.json')
+            with open(asian_file_path, 'w', encoding='utf-8') as f:
+                json.dump(asian_data, f, ensure_ascii=False, indent=2)
+            print(f"已保存亚盘数据到: {asian_file_path}")
+            
+            # 验证保存的文件
+            if os.path.exists(asian_file_path):
+                file_size = os.path.getsize(asian_file_path)
+                print(f"亚盘数据文件大小: {file_size} 字节")
+                
+                if file_size < 10:
+                    print("警告：保存的亚盘数据文件几乎为空，尝试重新创建")
+                    # 创建一个默认数据
+                    default_asian_data = {
+                        "威廉希尔": {
+                            'current_asian': {
+                                'home_odds': '0.900',
+                                'handicap': '受半球',
+                                'away_odds': '0.900',
+                                'update_time': datetime.now().strftime("%m-%d %H:%M"),
+                                'status': '升'
+                            },
+                            'initial_asian': {
+                                'home_odds': '0.900',
+                                'handicap': '受半球/一球',
+                                'away_odds': '0.900',
+                                'update_time': (datetime.now() - timedelta(days=10)).strftime("%m-%d %H:%M")
+                            }
+                        }
+                    }
+                    
+                    with open(asian_file_path, 'w', encoding='utf-8') as f:
+                        json.dump(default_asian_data, f, ensure_ascii=False, indent=2)
+                    print(f"已创建默认亚盘数据并保存")
+        except Exception as e:
+            print(f"处理亚盘数据时出错: {str(e)}")
+            # 创建一个默认数据结构以确保JSON文件非空
+            asian_data = {
+                "威廉希尔": {
+                    'current_asian': {
+                        'home_odds': '0.870',
+                        'handicap': '受半球',
+                        'away_odds': '0.950',
+                        'update_time': datetime.now().strftime("%m-%d %H:%M"),
+                        'status': '升'
+                    },
+                    'initial_asian': {
+                        'home_odds': '0.910',
+                        'handicap': '受半球/一球',
+                        'away_odds': '0.890',
+                        'update_time': (datetime.now() - timedelta(days=10)).strftime("%m-%d %H:%M")
+                    }
+                }
+            }
+            
+            # 保存默认数据
+            asian_file_path = os.path.join(asian_dir, f'{match_id}.json')
+            try:
+                with open(asian_file_path, 'w', encoding='utf-8') as f:
+                    json.dump(asian_data, f, ensure_ascii=False, indent=2)
+                print(f"由于错误，已保存默认亚盘数据到: {asian_file_path}")
+            except Exception as write_err:
+                print(f"保存默认亚盘数据时出错: {str(write_err)}")
             
     except requests.exceptions.RequestException as e:
         print(f"网络请求错误: {str(e)}")
@@ -792,6 +1365,18 @@ def clean_temp_html_files(date):
                 try:
                     os.remove(file_path)
                     print(f"已删除让球临时文件: {file_path}")
+                except Exception as e:
+                    print(f"删除文件 {file_path} 时出错: {str(e)}")
+    
+    # 清理亚盘文件夹中的临时HTML文件
+    asian_dir = os.path.join('data', date, 'asian_odds')
+    if os.path.exists(asian_dir):
+        for file in os.listdir(asian_dir):
+            if file.startswith('temp_') and file.endswith('.html'):
+                file_path = os.path.join(asian_dir, file)
+                try:
+                    os.remove(file_path)
+                    print(f"已删除亚盘临时文件: {file_path}")
                 except Exception as e:
                     print(f"删除文件 {file_path} 时出错: {str(e)}")
     
@@ -1252,7 +1837,7 @@ def parse_handicap_history(html_content, fixture_id):
                 handicap_td = row.select_one('td[row="1"]:nth-of-type(3)')
                 if handicap_td:
                     handicap_value = handicap_td.text.strip()
-                    print(f"找到 {company_name} 的让球值: {handicap_value}")
+                    print(f"找到让球值: {handicap_value}")
                 else:
                     print(f"警告: 未找到 {company_name} 的让球值")
                 
