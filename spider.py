@@ -1388,12 +1388,16 @@ def main():
     parser.add_argument('-d', '--date', help='指定日期 (格式: YYYY-MM-DD)', default=datetime.now().strftime('%Y-%m-%d'))
     parser.add_argument('--keep-html', action='store_true', help='保留临时HTML文件')
     parser.add_argument('-m', '--match', help='只处理指定的比赛编号 (例如: 周四001)')
+    parser.add_argument('-start', help='指定开始的比赛编号 (例如: 周日001)')
+    parser.add_argument('-end', help='指定结束的比赛编号 (例如: 周日003)')
     args = parser.parse_args()
     
     # 使用指定日期或当前日期
     target_date = args.date
     keep_html = args.keep_html
     target_match = args.match
+    start_match = args.start
+    end_match = args.end
     
     # 创建data目录
     if not os.path.exists('data'):
@@ -1417,6 +1421,45 @@ def main():
                 print(f"找到指定比赛: {target_match}")
             else:
                 print(f"未找到指定比赛: {target_match}")
+                return
+        # 如果指定了比赛范围，则按范围筛选
+        elif start_match and end_match:
+            print(f"处理比赛范围: {start_match} 至 {end_match}")
+            # 提取前缀(如"周日")和编号
+            start_prefix = ''.join(filter(lambda c: not c.isdigit(), start_match))
+            end_prefix = ''.join(filter(lambda c: not c.isdigit(), end_match))
+            
+            # 确保前缀相同
+            if start_prefix != end_prefix:
+                print(f"错误: 开始和结束比赛的前缀不同 ({start_prefix} vs {end_prefix})")
+                return
+                
+            # 提取编号部分
+            try:
+                start_num = int(''.join(filter(lambda c: c.isdigit(), start_match)))
+                end_num = int(''.join(filter(lambda c: c.isdigit(), end_match)))
+                
+                if start_num > end_num:
+                    print(f"错误: 开始编号 {start_num} 大于结束编号 {end_num}")
+                    return
+                    
+                # 筛选比赛
+                filtered_matches = []
+                for match in matches:
+                    match_id = match.get('match_id', '')
+                    if match_id.startswith(start_prefix):
+                        match_num = int(''.join(filter(lambda c: c.isdigit(), match_id)))
+                        if start_num <= match_num <= end_num:
+                            filtered_matches.append(match)
+                
+                if filtered_matches:
+                    matches = filtered_matches
+                    print(f"找到符合范围的比赛: {len(matches)} 场")
+                else:
+                    print(f"未找到范围 {start_match} 至 {end_match} 的比赛")
+                    return
+            except ValueError:
+                print(f"错误: 无法解析比赛编号")
                 return
         
         # 处理所有比赛
@@ -1962,7 +2005,7 @@ def parse_handicap_history(html_content, fixture_id):
 if __name__ == '__main__':
     # 检查命令行参数
     if len(sys.argv) > 1:
-        if sys.argv[1] == '-d' or sys.argv[1] == '--date' or sys.argv[1] == '-m' or sys.argv[1] == '--match':
+        if sys.argv[1] in ['-d', '--date', '-m', '--match', '-start', '-end', '--keep-html']:
             main()  # 运行主函数
         else:
             print(f"未知参数: {sys.argv[1]}")
