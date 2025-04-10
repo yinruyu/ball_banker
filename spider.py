@@ -8,6 +8,7 @@ import random
 import argparse
 import sys
 import re
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 def create_directory(date):
     """创建日期目录"""
@@ -1026,7 +1027,7 @@ def debug_match(fixture_id, match_id, date):
     
     # 模拟浏览器请求头
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+        'User-Agent': f'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{random.randint(80, 110)}.0.{random.randint(1000, 9999)}.{random.randint(10, 999)} Safari/537.36',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
         'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
         'Connection': 'keep-alive',
@@ -1034,299 +1035,211 @@ def debug_match(fixture_id, match_id, date):
         'Upgrade-Insecure-Requests': '1'
     }
     
+    success_count = 0
+    error_count = 0
+    
     try:
         # 使用会话保持
         session = requests.Session()
         
+        print(f"[{match_id}] 开始获取数据...")
+        
         # 获取欧赔数据
-        print(f"正在获取欧赔数据: {odds_url}")
-        response = session.get(odds_url, headers=headers, timeout=10)
-        response.encoding = 'gb2312'
-        
-        # 添加随机延迟
-        time.sleep(random.uniform(1, 3))
-        
-        if response.status_code == 403:
-            print(f"访问被拒绝 (403 Forbidden): {odds_url}")
-            return
-        
-        # 临时保存HTML文件
-        temp_html_path = os.path.join(odds_dir, f'temp_{match_id}.html')
-        with open(temp_html_path, 'w', encoding='utf-8') as f:
-            f.write(response.text)
-        print(f"已保存临时HTML文件: {temp_html_path}")
-        
-        # 解析HTML内容
-        with open(temp_html_path, 'r', encoding='utf-8') as f:
-            html_content = f.read()
-            odds_data = parse_odds_data(html_content)
-            
-            # 获取历史赔率变化数据
-            print(f"开始获取历史赔率变化数据...")
-            odds_history = parse_odds_history(html_content, fixture_id, date)
-            
-            # 将历史赔率数据添加到欧赔数据中
-            if odds_history:
-                print(f"成功获取到历史赔率变化数据, 公司数量: {len(odds_history)}")
-                for company_name, history_data in odds_history.items():
-                    if company_name in odds_data:
-                        odds_data[company_name]['odds_history'] = history_data
-                        print(f"已添加 {company_name} 的历史赔率变化数据, 记录数: {len(history_data)}")
-            else:
-                print(f"未获取到任何历史赔率变化数据")
-        
-        # 保存欧赔数据
-        file_path = os.path.join(odds_dir, f'{match_id}.json')
-        with open(file_path, 'w', encoding='utf-8') as f:
-            json.dump(odds_data, f, ensure_ascii=False, indent=2)
-        print(f"已保存欧赔数据到: {file_path}")
-            
-        if not odds_data:
-            print(f"警告：未解析到 {match_id} 的欧赔数据")
-        
-        # 获取大小球数据
-        print(f"正在获取大小球数据: {size_url}")
-        response = session.get(size_url, headers=headers, timeout=10)
-        response.encoding = 'gb2312'
-        
-        # 添加随机延迟
-        time.sleep(random.uniform(1, 3))
-        
-        if response.status_code == 403:
-            print(f"访问被拒绝 (403 Forbidden): {size_url}")
-            return
-        
-        # 临时保存大小球HTML文件
-        temp_size_html_path = os.path.join(size_dir, f'temp_{match_id}.html')
-        with open(temp_size_html_path, 'w', encoding='utf-8') as f:
-            f.write(response.text)
-        print(f"已保存临时大小球HTML文件: {temp_size_html_path}")
-        
-        # 解析大小球HTML内容
-        with open(temp_size_html_path, 'r', encoding='utf-8') as f:
-            size_html_content = f.read()
-            size_data = parse_size_data(size_html_content)
-            
-            # 获取大小球历史赔率变化数据
-            print(f"开始获取大小球历史赔率变化数据...")
-            size_history = parse_size_history(size_html_content, fixture_id)
-            
-            # 将历史赔率数据添加到大小球数据中
-            if size_history:
-                print(f"成功获取到大小球历史赔率变化数据, 公司数量: {len(size_history)}")
-                for company_name, history_data in size_history.items():
-                    if company_name in size_data:
-                        size_data[company_name]['size_history'] = history_data
-                        print(f"已添加 {company_name} 的大小球历史赔率变化数据, 记录数: {len(history_data)}")
-            else:
-                print(f"未获取到任何大小球历史赔率变化数据")
-        
-        # 保存大小球数据
-        size_file_path = os.path.join(size_dir, f'{match_id}.json')
-        with open(size_file_path, 'w', encoding='utf-8') as f:
-            json.dump(size_data, f, ensure_ascii=False, indent=2)
-        print(f"已保存大小球数据到: {size_file_path}")
-        
-        if not size_data:
-            print(f"警告：未解析到 {match_id} 的大小球数据")
-        
-        # 获取让球数据
-        print(f"正在获取让球数据: {handicap_url}")
-        response = session.get(handicap_url, headers=headers, timeout=10)
-        response.encoding = 'gb2312'
-        
-        # 添加随机延迟
-        time.sleep(random.uniform(1, 3))
-        
-        if response.status_code == 403:
-            print(f"访问被拒绝 (403 Forbidden): {handicap_url}")
-            return
-        
-        # 临时保存让球HTML文件
-        temp_handicap_html_path = os.path.join(handicap_dir, f'temp_{match_id}.html')
-        with open(temp_handicap_html_path, 'w', encoding='utf-8') as f:
-            f.write(response.text)
-        print(f"已保存临时让球HTML文件: {temp_handicap_html_path}")
-        
-        # 解析让球HTML内容
-        with open(temp_handicap_html_path, 'r', encoding='utf-8') as f:
-            handicap_html_content = f.read()
-            handicap_data = parse_handicap_data(handicap_html_content)
-            
-            # 获取让球历史赔率变化数据
-            print(f"开始获取让球历史赔率变化数据...")
-            handicap_history = parse_handicap_history(handicap_html_content, fixture_id)
-            
-            # 将历史赔率数据添加到让球数据中
-            if handicap_history:
-                print(f"成功获取到让球历史赔率变化数据, 公司数量: {len(handicap_history)}")
-                for company_name, handicap_values in handicap_history.items():
-                    if company_name in handicap_data:
-                        for handicap_value, history_data in handicap_values.items():
-                            # 查找对应让球值的数据
-                            for handicap_item in handicap_data[company_name]['handicap_list']:
-                                if handicap_item['handicap'] == handicap_value:
-                                    handicap_item['handicap_history'] = history_data
-                                    print(f"已添加 {company_name} 的让球历史赔率变化数据 (让球值: {handicap_value}), 记录数: {len(history_data)}")
-                                    break
-            else:
-                print(f"未获取到任何让球历史赔率变化数据")
-        
-        # 保存让球数据
-        handicap_file_path = os.path.join(handicap_dir, f'{match_id}.json')
-        with open(handicap_file_path, 'w', encoding='utf-8') as f:
-            json.dump(handicap_data, f, ensure_ascii=False, indent=2)
-        print(f"已保存让球数据到: {handicap_file_path}")
-        
-        if not handicap_data:
-            print(f"警告：未解析到 {match_id} 的让球数据")
-        
-        # 获取亚盘数据
-        print(f"正在获取亚盘数据: {asian_url}")
+        print(f"[{match_id}] 正在获取欧赔数据")
         try:
-            response = session.get(asian_url, headers=headers, timeout=15)  # 增加超时时间
+            response = session.get(odds_url, headers=headers, timeout=10)
             response.encoding = 'gb2312'
             
-            # 检查响应状态
-            if response.status_code == 200:
-                print(f"成功获取亚盘数据，响应长度: {len(response.text)}")
-            else:
-                print(f"获取亚盘数据失败，状态码: {response.status_code}")
-            
-            # 添加随机延迟
-            time.sleep(random.uniform(1, 3))
+            # 添加随机延迟，减轻并发压力
+            time.sleep(random.uniform(0.5, 2))
             
             if response.status_code == 403:
-                print(f"访问被拒绝 (403 Forbidden): {asian_url}")
-                return
-            
-            # 临时保存亚盘HTML文件
-            temp_asian_html_path = os.path.join(asian_dir, f'temp_{match_id}.html')
-            with open(temp_asian_html_path, 'w', encoding='utf-8') as f:
-                f.write(response.text)
-            print(f"已保存临时亚盘HTML文件: {temp_asian_html_path}")
-            
-            # 解析亚盘HTML内容
-            print("开始解析亚盘数据...")
-            with open(temp_asian_html_path, 'r', encoding='utf-8') as f:
-                asian_html_content = f.read()
-                asian_data = parse_asian_handicap_data(asian_html_content)
+                print(f"[{match_id}] 访问被拒绝 (403 Forbidden): {odds_url}")
+                error_count += 1
+            else:
+                # 临时保存HTML文件
+                temp_html_path = os.path.join(odds_dir, f'temp_{match_id}.html')
+                with open(temp_html_path, 'w', encoding='utf-8') as f:
+                    f.write(response.text)
                 
-                # 获取亚盘历史赔率变化数据
-                if asian_data:
-                    print(f"成功解析到亚盘数据，公司数量: {len(asian_data)}")
-                    print(f"开始获取亚盘历史赔率变化数据...")
+                # 解析HTML内容
+                with open(temp_html_path, 'r', encoding='utf-8') as f:
+                    html_content = f.read()
+                    odds_data = parse_odds_data(html_content)
+                    
+                    # 获取历史赔率变化数据
+                    odds_history = parse_odds_history(html_content, fixture_id, date)
+                    
+                    # 将历史赔率数据添加到欧赔数据中
+                    if odds_history:
+                        for company_name, history_data in odds_history.items():
+                            if company_name in odds_data:
+                                odds_data[company_name]['odds_history'] = history_data
+                
+                # 保存欧赔数据
+                file_path = os.path.join(odds_dir, f'{match_id}.json')
+                with open(file_path, 'w', encoding='utf-8') as f:
+                    json.dump(odds_data, f, ensure_ascii=False, indent=2)
+                
+                if odds_data:
+                    success_count += 1
+                else:
+                    print(f"[{match_id}] 警告：未解析到欧赔数据")
+                    error_count += 1
+        except Exception as e:
+            print(f"[{match_id}] 获取欧赔数据出错: {str(e)}")
+            error_count += 1
+        
+        # 获取大小球数据
+        print(f"[{match_id}] 正在获取大小球数据")
+        try:
+            response = session.get(size_url, headers=headers, timeout=10)
+            response.encoding = 'gb2312'
+            
+            # 添加随机延迟，减轻并发压力
+            time.sleep(random.uniform(0.5, 2))
+            
+            if response.status_code == 403:
+                print(f"[{match_id}] 访问被拒绝 (403 Forbidden): {size_url}")
+                error_count += 1
+            else:
+                # 临时保存大小球HTML文件
+                temp_size_html_path = os.path.join(size_dir, f'temp_{match_id}.html')
+                with open(temp_size_html_path, 'w', encoding='utf-8') as f:
+                    f.write(response.text)
+                
+                # 解析大小球HTML内容
+                with open(temp_size_html_path, 'r', encoding='utf-8') as f:
+                    size_html_content = f.read()
+                    size_data = parse_size_data(size_html_content)
+                    
+                    # 获取大小球历史赔率变化数据
+                    size_history = parse_size_history(size_html_content, fixture_id)
+                    
+                    # 将历史赔率数据添加到大小球数据中
+                    if size_history:
+                        for company_name, history_data in size_history.items():
+                            if company_name in size_data:
+                                size_data[company_name]['size_history'] = history_data
+                
+                # 保存大小球数据
+                size_file_path = os.path.join(size_dir, f'{match_id}.json')
+                with open(size_file_path, 'w', encoding='utf-8') as f:
+                    json.dump(size_data, f, ensure_ascii=False, indent=2)
+                
+                if size_data:
+                    success_count += 1
+                else:
+                    print(f"[{match_id}] 警告：未解析到大小球数据")
+                    error_count += 1
+        except Exception as e:
+            print(f"[{match_id}] 获取大小球数据出错: {str(e)}")
+            error_count += 1
+        
+        # 获取让球数据
+        print(f"[{match_id}] 正在获取让球数据")
+        try:
+            response = session.get(handicap_url, headers=headers, timeout=10)
+            response.encoding = 'gb2312'
+            
+            # 添加随机延迟，减轻并发压力
+            time.sleep(random.uniform(0.5, 2))
+            
+            if response.status_code == 403:
+                print(f"[{match_id}] 访问被拒绝 (403 Forbidden): {handicap_url}")
+                error_count += 1
+            else:
+                # 临时保存让球HTML文件
+                temp_handicap_html_path = os.path.join(handicap_dir, f'temp_{match_id}.html')
+                with open(temp_handicap_html_path, 'w', encoding='utf-8') as f:
+                    f.write(response.text)
+                
+                # 解析让球HTML内容
+                with open(temp_handicap_html_path, 'r', encoding='utf-8') as f:
+                    handicap_html_content = f.read()
+                    handicap_data = parse_handicap_data(handicap_html_content)
+                    
+                    # 获取让球历史赔率变化数据
+                    handicap_history = parse_handicap_history(handicap_html_content, fixture_id)
+                    
+                    # 将历史赔率数据添加到让球数据中
+                    if handicap_history:
+                        for company_name, handicap_values in handicap_history.items():
+                            if company_name in handicap_data:
+                                for handicap_value, history_data in handicap_values.items():
+                                    # 查找对应让球值的数据
+                                    for handicap_item in handicap_data[company_name]['handicap_list']:
+                                        if handicap_item['handicap'] == handicap_value:
+                                            handicap_item['handicap_history'] = history_data
+                                            break
+                
+                # 保存让球数据
+                handicap_file_path = os.path.join(handicap_dir, f'{match_id}.json')
+                with open(handicap_file_path, 'w', encoding='utf-8') as f:
+                    json.dump(handicap_data, f, ensure_ascii=False, indent=2)
+                
+                if handicap_data:
+                    success_count += 1
+                else:
+                    print(f"[{match_id}] 警告：未解析到让球数据")
+                    error_count += 1
+        except Exception as e:
+            print(f"[{match_id}] 获取让球数据出错: {str(e)}")
+            error_count += 1
+        
+        # 获取亚盘数据
+        print(f"[{match_id}] 正在获取亚盘数据")
+        try:
+            response = session.get(asian_url, headers=headers, timeout=10)
+            response.encoding = 'gb2312'
+            
+            # 添加随机延迟，减轻并发压力
+            time.sleep(random.uniform(0.5, 2))
+            
+            if response.status_code == 403:
+                print(f"[{match_id}] 访问被拒绝 (403 Forbidden): {asian_url}")
+                error_count += 1
+            else:
+                # 临时保存亚盘HTML文件
+                temp_asian_html_path = os.path.join(asian_dir, f'temp_{match_id}.html')
+                with open(temp_asian_html_path, 'w', encoding='utf-8') as f:
+                    f.write(response.text)
+                
+                # 解析亚盘HTML内容
+                with open(temp_asian_html_path, 'r', encoding='utf-8') as f:
+                    asian_html_content = f.read()
+                    asian_data = parse_asian_handicap_data(asian_html_content)
+                    
+                    # 获取亚盘历史变化数据
                     asian_history = parse_asian_history(asian_html_content, fixture_id)
                     
-                    # 将历史赔率数据添加到亚盘数据中
+                    # 将历史数据添加到亚盘数据中
                     if asian_history:
-                        print(f"成功获取到亚盘历史赔率变化数据, 公司数量: {len(asian_history)}")
-                        for company_name, history_data in asian_history.items():
+                        for company_name, company_history in asian_history.items():
                             if company_name in asian_data:
-                                asian_data[company_name]['asian_history'] = history_data
-                                print(f"已添加 {company_name} 的亚盘历史赔率变化数据, 记录数: {len(history_data)}")
-                    else:
-                        print(f"未获取到任何亚盘历史赔率变化数据")
-                else:
-                    print("解析亚盘数据失败，没有找到有效数据")
-                    # 尝试额外的解析方法
-                    print("尝试通过正则表达式直接解析HTML内容...")
-                    try:
-                        # 尝试直接通过正则表达式查找关键数据
-                        odds_pattern = re.compile(r'<td.*?>([\d\.]+)</td>\s*<td.*?>(.*?)</td>\s*<td.*?>([\d\.]+)</td>')
-                        matches = odds_pattern.findall(asian_html_content)
-                        
-                        if matches:
-                            print(f"通过正则表达式找到 {len(matches)} 组可能的赔率数据")
-                            # 创建一个临时数据结构
-                            asian_data = {"直接解析": {
-                                'current_asian': {
-                                    'home_odds': matches[0][0] if len(matches) > 0 else '0.90',
-                                    'handicap': matches[0][1] if len(matches) > 0 else '受半球',
-                                    'away_odds': matches[0][2] if len(matches) > 0 else '0.90',
-                                    'update_time': '',
-                                    'status': ''
-                                },
-                                'initial_asian': {
-                                    'home_odds': matches[1][0] if len(matches) > 1 else '0.90',
-                                    'handicap': matches[1][1] if len(matches) > 1 else '受半球',
-                                    'away_odds': matches[1][2] if len(matches) > 1 else '0.90',
-                                    'update_time': ''
-                                }
-                            }}
-                            print(f"通过正则表达式创建的亚盘数据: {asian_data}")
-                    except Exception as e:
-                        print(f"正则表达式解析亚盘数据失败: {str(e)}")
-            
-            # 保存亚盘数据
-            asian_file_path = os.path.join(asian_dir, f'{match_id}.json')
-            with open(asian_file_path, 'w', encoding='utf-8') as f:
-                json.dump(asian_data, f, ensure_ascii=False, indent=2)
-            print(f"已保存亚盘数据到: {asian_file_path}")
-            
-            # 验证保存的文件
-            if os.path.exists(asian_file_path):
-                file_size = os.path.getsize(asian_file_path)
-                print(f"亚盘数据文件大小: {file_size} 字节")
+                                asian_data[company_name]['asian_history'] = company_history
                 
-                if file_size < 10:
-                    print("警告：保存的亚盘数据文件几乎为空，尝试重新创建")
-                    # 创建一个默认数据
-                    default_asian_data = {
-                        "威廉希尔": {
-                            'current_asian': {
-                                'home_odds': '0.900',
-                                'handicap': '受半球',
-                                'away_odds': '0.900',
-                                'update_time': datetime.now().strftime("%m-%d %H:%M"),
-                                'status': '升'
-                            },
-                            'initial_asian': {
-                                'home_odds': '0.900',
-                                'handicap': '受半球/一球',
-                                'away_odds': '0.900',
-                                'update_time': (datetime.now() - timedelta(days=10)).strftime("%m-%d %H:%M")
-                            }
-                        }
-                    }
-                    
-                    with open(asian_file_path, 'w', encoding='utf-8') as f:
-                        json.dump(default_asian_data, f, ensure_ascii=False, indent=2)
-                    print(f"已创建默认亚盘数据并保存")
-        except Exception as e:
-            print(f"处理亚盘数据时出错: {str(e)}")
-            # 创建一个默认数据结构以确保JSON文件非空
-            asian_data = {
-                "威廉希尔": {
-                    'current_asian': {
-                        'home_odds': '0.870',
-                        'handicap': '受半球',
-                        'away_odds': '0.950',
-                        'update_time': datetime.now().strftime("%m-%d %H:%M"),
-                        'status': '升'
-                    },
-                    'initial_asian': {
-                        'home_odds': '0.910',
-                        'handicap': '受半球/一球',
-                        'away_odds': '0.890',
-                        'update_time': (datetime.now() - timedelta(days=10)).strftime("%m-%d %H:%M")
-                    }
-                }
-            }
-            
-            # 保存默认数据
-            asian_file_path = os.path.join(asian_dir, f'{match_id}.json')
-            try:
+                # 保存亚盘数据
+                asian_file_path = os.path.join(asian_dir, f'{match_id}.json')
                 with open(asian_file_path, 'w', encoding='utf-8') as f:
                     json.dump(asian_data, f, ensure_ascii=False, indent=2)
-                print(f"由于错误，已保存默认亚盘数据到: {asian_file_path}")
-            except Exception as write_err:
-                print(f"保存默认亚盘数据时出错: {str(write_err)}")
-            
-    except requests.exceptions.RequestException as e:
-        print(f"网络请求错误: {str(e)}")
+                
+                if asian_data:
+                    success_count += 1
+                else:
+                    print(f"[{match_id}] 警告：未解析到亚盘数据")
+                    error_count += 1
+        except Exception as e:
+            print(f"[{match_id}] 获取亚盘数据出错: {str(e)}")
+            error_count += 1
+        
+        # 返回处理结果
+        print(f"[{match_id}] 数据获取完成: 成功 {success_count}/4, 失败 {error_count}/4")
+        return success_count > 0
+    
     except Exception as e:
-        print(f"处理 {match_id} 时出错: {str(e)}")
+        print(f"[{match_id}] 处理比赛时出错: {str(e)}")
+        return False
 
 def clean_temp_html_files(date):
     """清理临时HTML文件"""
@@ -1390,6 +1303,7 @@ def main():
     parser.add_argument('-m', '--match', help='只处理指定的比赛编号 (例如: 周四001)')
     parser.add_argument('-start', help='指定开始的比赛编号 (例如: 周日001)')
     parser.add_argument('-end', help='指定结束的比赛编号 (例如: 周日003)')
+    parser.add_argument('-t', '--threads', type=int, help='设置线程数 (默认: 4)', default=4)
     args = parser.parse_args()
     
     # 使用指定日期或当前日期
@@ -1398,6 +1312,7 @@ def main():
     target_match = args.match
     start_match = args.start
     end_match = args.end
+    max_threads = args.threads
     
     # 创建data目录
     if not os.path.exists('data'):
@@ -1462,28 +1377,57 @@ def main():
                 print(f"错误: 无法解析比赛编号")
                 return
         
-        # 处理所有比赛
-        for match in matches:
-            if 'fixture_id' in match:
-                print(f"正在处理: {match['match_id']} - {match.get('home_team', '')} vs {match.get('away_team', '')}")
-                # 特殊处理周二001
-                if match['match_id'] == '周二001':
-                    print(f"特殊处理周二001...")
-                    # 尝试多次获取数据，使用不同的选择器和解析策略
-                    # 额外的处理逻辑...
-                
-                debug_match(match['fixture_id'], match['match_id'], target_date)
-                
-                # 特殊处理周二001，检查是否成功获取数据
-                if match['match_id'] == '周二001':
-                    size_file_path = os.path.join('data', target_date, 'size_odds', f"{match['match_id']}.json")
-                    if os.path.exists(size_file_path):
-                        with open(size_file_path, 'r', encoding='utf-8') as f:
-                            data = f.read()
-                            if data.strip() == '{}' or len(data) < 10:
-                                print(f"周二001数据为空，尝试重新解析...")
-                                # 重新调用测试函数尝试解析数据
-                                test_size_data_write(match['match_id'], target_date)
+        # 使用多线程处理比赛数据
+        print(f"使用 {max_threads} 个线程处理 {len(matches)} 场比赛...")
+        
+        # 创建目录结构（防止线程竞争创建目录）
+        odds_dir = os.path.join('data', target_date, 'ou_odds')
+        size_dir = os.path.join('data', target_date, 'size_odds')
+        handicap_dir = os.path.join('data', target_date, 'handicap_odds')
+        asian_dir = os.path.join('data', target_date, 'asian_odds')
+        os.makedirs(odds_dir, exist_ok=True)
+        os.makedirs(size_dir, exist_ok=True)
+        os.makedirs(handicap_dir, exist_ok=True)
+        os.makedirs(asian_dir, exist_ok=True)
+
+        successful_matches = 0
+        failed_matches = 0
+        
+        # 使用线程池处理所有比赛
+        with ThreadPoolExecutor(max_workers=max_threads) as executor:
+            # 提交所有任务
+            future_to_match = {
+                executor.submit(debug_match, match['fixture_id'], match['match_id'], target_date): match 
+                for match in matches if 'fixture_id' in match
+            }
+            
+            # 处理任务结果
+            for future in as_completed(future_to_match):
+                match = future_to_match[future]
+                try:
+                    result = future.result()
+                    if result:
+                        print(f"成功处理比赛: {match['match_id']} - {match.get('home_team', '')} vs {match.get('away_team', '')}")
+                        successful_matches += 1
+                    else:
+                        print(f"处理比赛失败: {match['match_id']}")
+                        failed_matches += 1
+                        
+                    # 特殊处理周二001的结果
+                    if match['match_id'] == '周二001':
+                        size_file_path = os.path.join('data', target_date, 'size_odds', f"{match['match_id']}.json")
+                        if os.path.exists(size_file_path):
+                            with open(size_file_path, 'r', encoding='utf-8') as f:
+                                data = f.read()
+                                if data.strip() == '{}' or len(data) < 10:
+                                    print(f"周二001数据为空，尝试重新解析...")
+                                    # 重新调用测试函数尝试解析数据
+                                    test_size_data_write(match['match_id'], target_date)
+                except Exception as e:
+                    print(f"处理比赛 {match['match_id']} 时出错: {str(e)}")
+                    failed_matches += 1
+        
+        print(f"所有比赛处理完成: 成功 {successful_matches} 场, 失败 {failed_matches} 场")
         
         # 如果不需要保留HTML文件，则清理
         if not keep_html:
@@ -2005,7 +1949,7 @@ def parse_handicap_history(html_content, fixture_id):
 if __name__ == '__main__':
     # 检查命令行参数
     if len(sys.argv) > 1:
-        if sys.argv[1] in ['-d', '--date', '-m', '--match', '-start', '-end', '--keep-html']:
+        if sys.argv[1] in ['-d', '--date', '-m', '--match', '-start', '-end', '--keep-html', '-t', '--threads']:
             main()  # 运行主函数
         else:
             print(f"未知参数: {sys.argv[1]}")
