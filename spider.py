@@ -1295,6 +1295,71 @@ def clean_temp_html_files(date):
     
     print(f"清理临时HTML文件完成")
 
+def add_handicap_to_main_json(date):
+    """将让球赔率数据添加到main.json文件中"""
+    print(f"开始将让球值添加到main.json文件...")
+    
+    # 读取main.json文件
+    main_file_path = os.path.join('data', date, f'{date}_main.json')
+    if not os.path.exists(main_file_path):
+        print(f"未找到main.json文件: {main_file_path}")
+        return False
+    
+    try:
+        with open(main_file_path, 'r', encoding='utf-8') as f:
+            main_data = json.load(f)
+        
+        # 让球赔率文件夹路径
+        handicap_dir = os.path.join('data', date, 'handicap_odds')
+        if not os.path.exists(handicap_dir):
+            print(f"未找到让球赔率文件夹: {handicap_dir}")
+            return False
+        
+        # 遍历所有比赛
+        for match in main_data:
+            match_id = match.get('match_id')
+            if not match_id:
+                continue
+            
+            # 让球赔率文件路径
+            handicap_file_path = os.path.join(handicap_dir, f'{match_id}.json')
+            if not os.path.exists(handicap_file_path):
+                print(f"未找到让球赔率文件: {handicap_file_path}")
+                continue
+            
+            try:
+                with open(handicap_file_path, 'r', encoding='utf-8') as f:
+                    handicap_data = json.load(f)
+                
+                # 获取竞彩官方的让球值
+                if "竞彩官方" in handicap_data and "handicap_list" in handicap_data["竞彩官方"]:
+                    handicap_list = handicap_data["竞彩官方"]["handicap_list"]
+                    if handicap_list and len(handicap_list) > 0:
+                        handicap_value = handicap_list[0].get("handicap", "")
+                        
+                        # 添加让球值到main数据中
+                        match["handicap"] = handicap_value
+                        print(f"已为 {match_id} 添加让球值: {handicap_value}")
+                    else:
+                        print(f"未找到 {match_id} 的让球值数据")
+                else:
+                    print(f"未找到 {match_id} 的竞彩官方让球数据")
+            
+            except Exception as e:
+                print(f"处理 {match_id} 的让球数据时出错: {str(e)}")
+                continue
+        
+        # 保存更新后的main.json文件
+        with open(main_file_path, 'w', encoding='utf-8') as f:
+            json.dump(main_data, f, ensure_ascii=False, indent=2)
+        
+        print(f"让球值已成功添加到main.json文件")
+        return True
+    
+    except Exception as e:
+        print(f"处理main.json文件时出错: {str(e)}")
+        return False
+
 def main():
     # 创建命令行参数解析器
     parser = argparse.ArgumentParser(description='爬取足球比赛赔率数据')
@@ -1432,6 +1497,9 @@ def main():
         # 如果不需要保留HTML文件，则清理
         if not keep_html:
             clean_temp_html_files(target_date)
+        
+        # 在所有处理完成后，将让球值添加到main.json文件中
+        add_handicap_to_main_json(target_date)
                 
     else:
         print(f"未获取到 {target_date} 的比赛数据")
