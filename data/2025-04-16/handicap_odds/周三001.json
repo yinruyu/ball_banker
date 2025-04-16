@@ -1,0 +1,2284 @@
+{
+  "竞彩官方": {
+    "handicap_list": [
+      {
+        "handicap": "-1",
+        "initial_odds": [
+          5.5,
+          3.95,
+          1.44
+        ],
+        "current_odds": [
+          5.25,
+          3.95,
+          1.46
+        ],
+        "initial_probabilities": [
+          0.161,
+          0.2242,
+          0.6149
+        ],
+        "current_probabilities": [
+          0.1688,
+          0.2243,
+          0.6069
+        ],
+        "initial_return_rate": 0.8854,
+        "current_return_rate": 0.8861,
+        "initial_kelly": [
+          1.02,
+          0.85,
+          0.86
+        ],
+        "current_kelly": [
+          0.97,
+          0.85,
+          0.87
+        ]
+      }
+    ]
+  },
+  "立博": {
+    "handicap_list": [
+      {
+        "handicap": "-2",
+        "initial_odds": [
+          11.0,
+          7.0,
+          1.14
+        ],
+        "current_odds": [
+          10.0,
+          7.0,
+          1.15
+        ],
+        "initial_probabilities": [
+          0.0818,
+          0.1286,
+          0.7896
+        ],
+        "current_probabilities": [
+          0.0899,
+          0.1284,
+          0.7817
+        ],
+        "initial_return_rate": 0.9001,
+        "current_return_rate": 0.8989,
+        "initial_kelly": [
+          0.89,
+          0.9,
+          0.9
+        ],
+        "current_kelly": [
+          0.8,
+          0.9,
+          0.91
+        ],
+        "handicap_history": [
+          {
+            "home_odds": 10.0,
+            "draw_odds": 7.0,
+            "away_odds": 1.15,
+            "return_rate": 89.89,
+            "update_time": "2025-04-15 16:56:33",
+            "home_change": -1,
+            "draw_change": 0,
+            "away_change": 0
+          },
+          {
+            "home_odds": 11.0,
+            "draw_odds": 7.0,
+            "away_odds": 1.15,
+            "return_rate": 90.63,
+            "update_time": "2025-04-14 20:15:50",
+            "home_change": 0,
+            "draw_change": 0,
+            "away_change": 1
+          },
+          {
+            "home_odds": 11.0,
+            "draw_odds": 7.0,
+            "away_odds": 1.14,
+            "return_rate": 90.01,
+            "update_time": "2025-04-12 18:05:21",
+            "home_change": 0,
+            "draw_change": 0,
+            "away_change": 0
+          }
+        ]
+      },
+      {
+        "handicap": "-1",
+        "initial_odds": [
+          5.0,
+          4.0,
+          1.5
+        ],
+        "current_odds": [
+          4.6,
+          4.0,
+          1.53
+        ],
+        "initial_probabilities": [
+          0.1791,
+          0.2239,
+          0.597
+        ],
+        "current_probabilities": [
+          0.1939,
+          0.223,
+          0.5831
+        ],
+        "initial_return_rate": 0.8955,
+        "current_return_rate": 0.8921,
+        "initial_kelly": [
+          0.92,
+          0.86,
+          0.9
+        ],
+        "current_kelly": [
+          0.85,
+          0.86,
+          0.92
+        ]
+      },
+      {
+        "handicap": "1",
+        "initial_odds": [
+          1.4,
+          4.33,
+          5.5
+        ],
+        "current_odds": [
+          1.4,
+          4.4,
+          5.5
+        ],
+        "initial_probabilities": [
+          0.6338,
+          0.2049,
+          0.1613
+        ],
+        "current_probabilities": [
+          0.6358,
+          0.2023,
+          0.1618
+        ],
+        "initial_return_rate": 0.8873,
+        "current_return_rate": 0.8902,
+        "initial_kelly": [
+          0.9,
+          0.87,
+          0.86
+        ],
+        "current_kelly": [
+          0.9,
+          0.89,
+          0.86
+        ]
+      }
+    ]
+  },
+  "Bet365": {
+    "handicap_list": [
+      {
+        "handicap": "-3",
+        "initial_odds": [
+          29.0,
+          17.0,
+          1.03
+        ],
+        "current_odds": [
+          29.0,
+          17.0,
+          1.04
+        ],
+        "initial_probabilities": [
+          0.0324,
+          0.0553,
+          0.9123
+        ],
+        "current_probabilities": [
+          0.0327,
+          0.0558,
+          0.9115
+        ],
+        "initial_return_rate": 0.9397,
+        "current_return_rate": 0.948,
+        "initial_kelly": [
+          1.02,
+          1.15,
+          0.92
+        ],
+        "current_kelly": [
+          1.02,
+          1.15,
+          0.93
+        ]
+      },
+      {
+        "handicap": "-2",
+        "initial_odds": [
+          12.0,
+          7.5,
+          1.14
+        ],
+        "current_odds": [
+          12.0,
+          7.5,
+          1.14
+        ],
+        "initial_probabilities": [
+          0.0762,
+          0.1219,
+          0.8019
+        ],
+        "current_probabilities": [
+          0.0762,
+          0.1219,
+          0.8019
+        ],
+        "initial_return_rate": 0.9142,
+        "current_return_rate": 0.9142,
+        "initial_kelly": [
+          0.97,
+          0.97,
+          0.9
+        ],
+        "current_kelly": [
+          0.97,
+          0.97,
+          0.9
+        ]
+      },
+      {
+        "handicap": "-1",
+        "initial_odds": [
+          5.0,
+          4.33,
+          1.5
+        ],
+        "current_odds": [
+          5.0,
+          4.33,
+          1.53
+        ],
+        "initial_probabilities": [
+          0.1822,
+          0.2104,
+          0.6074
+        ],
+        "current_probabilities": [
+          0.1844,
+          0.2129,
+          0.6026
+        ],
+        "initial_return_rate": 0.9111,
+        "current_return_rate": 0.922,
+        "initial_kelly": [
+          0.92,
+          0.94,
+          0.9
+        ],
+        "current_kelly": [
+          0.92,
+          0.94,
+          0.92
+        ]
+      },
+      {
+        "handicap": "1",
+        "initial_odds": [
+          1.4,
+          4.5,
+          6.0
+        ],
+        "current_odds": [
+          1.4,
+          4.5,
+          6.0
+        ],
+        "initial_probabilities": [
+          0.6475,
+          0.2014,
+          0.1511
+        ],
+        "current_probabilities": [
+          0.6475,
+          0.2014,
+          0.1511
+        ],
+        "initial_return_rate": 0.9065,
+        "current_return_rate": 0.9065,
+        "initial_kelly": [
+          0.9,
+          0.91,
+          0.94
+        ],
+        "current_kelly": [
+          0.9,
+          0.91,
+          0.94
+        ]
+      },
+      {
+        "handicap": "2",
+        "initial_odds": [
+          1.11,
+          8.5,
+          15.0
+        ],
+        "current_odds": [
+          1.11,
+          8.5,
+          15.0
+        ],
+        "initial_probabilities": [
+          0.8302,
+          0.1084,
+          0.0614
+        ],
+        "current_probabilities": [
+          0.8302,
+          0.1084,
+          0.0614
+        ],
+        "initial_return_rate": 0.9215,
+        "current_return_rate": 0.9215,
+        "initial_kelly": [
+          0.91,
+          0.99,
+          1.01
+        ],
+        "current_kelly": [
+          0.91,
+          0.99,
+          1.01
+        ]
+      }
+    ]
+  },
+  "伟德": {
+    "handicap_list": [
+      {
+        "handicap": "-4",
+        "initial_odds": [
+          26.0,
+          11.0,
+          1.01
+        ],
+        "current_odds": [
+          23.0,
+          11.0,
+          1.01
+        ],
+        "initial_probabilities": [
+          0.0344,
+          0.0812,
+          0.8844
+        ],
+        "current_probabilities": [
+          0.0387,
+          0.0808,
+          0.8805
+        ],
+        "initial_return_rate": 0.8933,
+        "current_return_rate": 0.8893,
+        "initial_kelly": [
+          1.01,
+          0.89,
+          0.89
+        ],
+        "current_kelly": [
+          0.89,
+          0.89,
+          0.89
+        ],
+        "handicap_history": [
+          {
+            "home_odds": 23.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 88.93,
+            "update_time": "2025-04-16 11:59:15",
+            "home_change": -1,
+            "draw_change": 0,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-16 11:11:15",
+            "home_change": 1,
+            "draw_change": 0,
+            "away_change": 0
+          },
+          {
+            "home_odds": 23.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 88.93,
+            "update_time": "2025-04-16 10:52:02",
+            "home_change": -1,
+            "draw_change": 0,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-16 10:00:23",
+            "home_change": 1,
+            "draw_change": 0,
+            "away_change": 0
+          },
+          {
+            "home_odds": 23.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 88.93,
+            "update_time": "2025-04-16 09:21:51",
+            "home_change": -1,
+            "draw_change": 0,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-16 06:50:41",
+            "home_change": 1,
+            "draw_change": 0,
+            "away_change": 0
+          },
+          {
+            "home_odds": 23.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 88.93,
+            "update_time": "2025-04-16 00:19:04",
+            "home_change": -1,
+            "draw_change": 0,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-16 00:17:54",
+            "home_change": 1,
+            "draw_change": 0,
+            "away_change": 0
+          },
+          {
+            "home_odds": 23.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 88.93,
+            "update_time": "2025-04-16 00:13:14",
+            "home_change": 1,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 13.0,
+            "draw_odds": 19.0,
+            "away_odds": 1.01,
+            "return_rate": 89.31,
+            "update_time": "2025-04-16 00:12:03",
+            "home_change": -1,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 23.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 88.93,
+            "update_time": "2025-04-15 16:59:02",
+            "home_change": -1,
+            "draw_change": 0,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-15 16:56:44",
+            "home_change": 1,
+            "draw_change": 0,
+            "away_change": 0
+          },
+          {
+            "home_odds": 23.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 88.93,
+            "update_time": "2025-04-15 16:53:17",
+            "home_change": -1,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-15 10:10:23",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-15 08:29:55",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-15 08:27:23",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-15 07:48:05",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-15 06:39:31",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-15 06:25:09",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-15 06:08:26",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-15 06:04:48",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-15 06:02:21",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-15 05:53:54",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-15 05:52:44",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-15 05:38:31",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-15 05:37:20",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-15 05:34:59",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-15 05:31:25",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-15 05:09:54",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-15 05:03:57",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-15 05:00:21",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-15 04:59:09",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-15 04:55:35",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-15 04:53:13",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-15 04:48:23",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-15 04:46:01",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-15 04:31:41",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-15 04:29:17",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-15 04:13:45",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-15 04:11:21",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-15 04:08:59",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-14 21:21:54",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-14 20:55:46",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-14 20:54:37",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-14 20:38:23",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-14 20:14:01",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-14 18:33:22",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-14 15:02:30",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-14 14:50:57",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-14 13:16:03",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-14 12:41:16",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-14 12:31:01",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-14 12:21:51",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-14 02:05:31",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-13 19:08:07",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-13 13:46:22",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-12 23:58:36",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-12 23:57:18",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-12 23:41:37",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-12 23:40:18",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-12 23:07:28",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-12 23:03:21",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-12 22:59:05",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-12 22:55:08",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-12 22:52:28",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-12 22:49:50",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-12 22:41:55",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-12 22:37:51",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-12 22:32:37",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 10.5,
+            "away_odds": 1.01,
+            "return_rate": 88.98,
+            "update_time": "2025-04-12 13:32:02",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 26.0,
+            "draw_odds": 11.0,
+            "away_odds": 1.01,
+            "return_rate": 89.33,
+            "update_time": "2025-04-12 13:26:23",
+            "home_change": 0,
+            "draw_change": 0,
+            "away_change": 0
+          }
+        ]
+      },
+      {
+        "handicap": "-3",
+        "initial_odds": [
+          19.0,
+          10.0,
+          1.04
+        ],
+        "current_odds": [
+          17.0,
+          9.5,
+          1.04
+        ],
+        "initial_probabilities": [
+          0.0472,
+          0.0898,
+          0.863
+        ],
+        "current_probabilities": [
+          0.0523,
+          0.0935,
+          0.8542
+        ],
+        "initial_return_rate": 0.8975,
+        "current_return_rate": 0.8884,
+        "initial_kelly": [
+          0.67,
+          0.68,
+          0.93
+        ],
+        "current_kelly": [
+          0.6,
+          0.64,
+          0.93
+        ]
+      },
+      {
+        "handicap": "-2",
+        "initial_odds": [
+          12.0,
+          6.5,
+          1.13
+        ],
+        "current_odds": [
+          10.5,
+          6.5,
+          1.15
+        ],
+        "initial_probabilities": [
+          0.0743,
+          0.1371,
+          0.7886
+        ],
+        "current_probabilities": [
+          0.0851,
+          0.1375,
+          0.7773
+        ],
+        "initial_return_rate": 0.8912,
+        "current_return_rate": 0.8939,
+        "initial_kelly": [
+          0.97,
+          0.84,
+          0.89
+        ],
+        "current_kelly": [
+          0.84,
+          0.84,
+          0.91
+        ],
+        "handicap_history": [
+          {
+            "home_odds": 10.5,
+            "draw_odds": 6.5,
+            "away_odds": 1.15,
+            "return_rate": 89.39,
+            "update_time": "2025-04-16 04:56:11",
+            "home_change": 0,
+            "draw_change": 1,
+            "away_change": -1
+          },
+          {
+            "home_odds": 10.5,
+            "draw_odds": 6.0,
+            "away_odds": 1.17,
+            "return_rate": 89.56,
+            "update_time": "2025-04-16 04:04:56",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 1
+          },
+          {
+            "home_odds": 10.5,
+            "draw_odds": 6.5,
+            "away_odds": 1.15,
+            "return_rate": 89.39,
+            "update_time": "2025-04-15 16:56:44",
+            "home_change": -1,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 11.0,
+            "draw_odds": 6.0,
+            "away_odds": 1.15,
+            "return_rate": 88.72,
+            "update_time": "2025-04-12 13:32:02",
+            "home_change": 0,
+            "draw_change": -1,
+            "away_change": 1
+          },
+          {
+            "home_odds": 11.0,
+            "draw_odds": 6.5,
+            "away_odds": 1.14,
+            "return_rate": 89.13,
+            "update_time": "2025-04-12 13:29:15",
+            "home_change": -1,
+            "draw_change": 0,
+            "away_change": 1
+          },
+          {
+            "home_odds": 12.0,
+            "draw_odds": 6.5,
+            "away_odds": 1.13,
+            "return_rate": 89.12,
+            "update_time": "2025-04-12 13:26:23",
+            "home_change": 0,
+            "draw_change": 0,
+            "away_change": 0
+          }
+        ]
+      },
+      {
+        "handicap": "-1",
+        "initial_odds": [
+          5.75,
+          4.33,
+          1.4
+        ],
+        "current_odds": [
+          5.25,
+          4.0,
+          1.47
+        ],
+        "initial_probabilities": [
+          0.1554,
+          0.2064,
+          0.6382
+        ],
+        "current_probabilities": [
+          0.17,
+          0.2231,
+          0.607
+        ],
+        "initial_return_rate": 0.8935,
+        "current_return_rate": 0.8923,
+        "initial_kelly": [
+          1.06,
+          0.94,
+          0.84
+        ],
+        "current_kelly": [
+          0.97,
+          0.86,
+          0.88
+        ]
+      },
+      {
+        "handicap": "1",
+        "initial_odds": [
+          1.44,
+          4.1,
+          5.4
+        ],
+        "current_odds": [
+          1.4,
+          4.33,
+          5.75
+        ],
+        "initial_probabilities": [
+          0.6181,
+          0.2171,
+          0.1648
+        ],
+        "current_probabilities": [
+          0.6382,
+          0.2064,
+          0.1554
+        ],
+        "initial_return_rate": 0.8901,
+        "current_return_rate": 0.8935,
+        "initial_kelly": [
+          0.93,
+          0.83,
+          0.84
+        ],
+        "current_kelly": [
+          0.9,
+          0.87,
+          0.9
+        ]
+      },
+      {
+        "handicap": "2",
+        "initial_odds": [
+          1.14,
+          6.5,
+          11.0
+        ],
+        "current_odds": [
+          1.13,
+          7.0,
+          12.0
+        ],
+        "initial_probabilities": [
+          0.7818,
+          0.1371,
+          0.081
+        ],
+        "current_probabilities": [
+          0.7964,
+          0.1286,
+          0.075
+        ],
+        "initial_return_rate": 0.8913,
+        "current_return_rate": 0.9,
+        "initial_kelly": [
+          0.93,
+          0.76,
+          0.74
+        ],
+        "current_kelly": [
+          0.92,
+          0.82,
+          0.81
+        ]
+      },
+      {
+        "handicap": "3",
+        "initial_odds": [
+          1.04,
+          9.5,
+          19.0
+        ],
+        "current_odds": [
+          1.04,
+          10.0,
+          19.0
+        ],
+        "initial_probabilities": [
+          0.859,
+          0.094,
+          0.047
+        ],
+        "current_probabilities": [
+          0.863,
+          0.0898,
+          0.0472
+        ],
+        "initial_return_rate": 0.8933,
+        "current_return_rate": 0.8975,
+        "initial_kelly": [
+          0.94,
+          0.62,
+          0.59
+        ],
+        "current_kelly": [
+          0.94,
+          0.65,
+          0.59
+        ]
+      },
+      {
+        "handicap": "4",
+        "initial_odds": [
+          1.01,
+          11.0,
+          26.0
+        ],
+        "current_odds": [
+          1.01,
+          11.0,
+          26.0
+        ],
+        "initial_probabilities": [
+          0.8844,
+          0.0812,
+          0.0344
+        ],
+        "current_probabilities": [
+          0.8844,
+          0.0812,
+          0.0344
+        ],
+        "initial_return_rate": 0.8933,
+        "current_return_rate": 0.8933,
+        "initial_kelly": [
+          0.89,
+          0.89,
+          0.89
+        ],
+        "current_kelly": [
+          0.89,
+          0.89,
+          0.89
+        ],
+        "handicap_history": [
+          {
+            "home_odds": 1.01,
+            "draw_odds": 11.0,
+            "away_odds": 26.0,
+            "return_rate": 89.33,
+            "update_time": "2025-04-12 13:26:23",
+            "home_change": 0,
+            "draw_change": 0,
+            "away_change": 0
+          }
+        ]
+      }
+    ]
+  },
+  "Bwin": {
+    "handicap_list": [
+      {
+        "handicap": "-2",
+        "initial_odds": [
+          11.5,
+          7.25,
+          1.15
+        ],
+        "current_odds": [
+          10.5,
+          7.0,
+          1.16
+        ],
+        "initial_probabilities": [
+          0.0795,
+          0.126,
+          0.7945
+        ],
+        "current_probabilities": [
+          0.0866,
+          0.1299,
+          0.7836
+        ],
+        "initial_return_rate": 0.9137,
+        "current_return_rate": 0.909,
+        "initial_kelly": [
+          0.93,
+          0.94,
+          0.91
+        ],
+        "current_kelly": [
+          0.84,
+          0.9,
+          0.92
+        ]
+      },
+      {
+        "handicap": "-1",
+        "initial_odds": [
+          5.0,
+          4.1,
+          1.49
+        ],
+        "current_odds": [
+          4.75,
+          4.1,
+          1.52
+        ],
+        "initial_probabilities": [
+          0.1794,
+          0.2187,
+          0.6019
+        ],
+        "current_probabilities": [
+          0.1893,
+          0.2193,
+          0.5915
+        ],
+        "initial_return_rate": 0.8968,
+        "current_return_rate": 0.899,
+        "initial_kelly": [
+          0.92,
+          0.89,
+          0.89
+        ],
+        "current_kelly": [
+          0.88,
+          0.89,
+          0.91
+        ],
+        "handicap_history": [
+          {
+            "home_odds": 4.75,
+            "draw_odds": 4.1,
+            "away_odds": 1.52,
+            "return_rate": 89.9,
+            "update_time": "2025-04-16 00:17:05",
+            "home_change": 0,
+            "draw_change": 0,
+            "away_change": 1
+          },
+          {
+            "home_odds": 4.75,
+            "draw_odds": 4.1,
+            "away_odds": 1.51,
+            "return_rate": 89.55,
+            "update_time": "2025-04-15 16:56:47",
+            "home_change": -1,
+            "draw_change": 1,
+            "away_change": 1
+          },
+          {
+            "home_odds": 4.8,
+            "draw_odds": 4.0,
+            "away_odds": 1.5,
+            "return_rate": 88.89,
+            "update_time": "2025-04-14 20:15:58",
+            "home_change": -1,
+            "draw_change": -1,
+            "away_change": 1
+          },
+          {
+            "home_odds": 5.0,
+            "draw_odds": 4.1,
+            "away_odds": 1.49,
+            "return_rate": 89.68,
+            "update_time": "2025-04-12 18:03:20",
+            "home_change": 0,
+            "draw_change": 0,
+            "away_change": 0
+          }
+        ]
+      },
+      {
+        "handicap": "1",
+        "initial_odds": [
+          1.42,
+          4.33,
+          5.75
+        ],
+        "current_odds": [
+          1.41,
+          4.4,
+          5.5
+        ],
+        "initial_probabilities": [
+          0.635,
+          0.2082,
+          0.1568
+        ],
+        "current_probabilities": [
+          0.6342,
+          0.2032,
+          0.1626
+        ],
+        "initial_return_rate": 0.9016,
+        "current_return_rate": 0.8942,
+        "initial_kelly": [
+          0.91,
+          0.87,
+          0.9
+        ],
+        "current_kelly": [
+          0.91,
+          0.89,
+          0.86
+        ],
+        "handicap_history": [
+          {
+            "home_odds": 1.41,
+            "draw_odds": 4.4,
+            "away_odds": 5.5,
+            "return_rate": 89.42,
+            "update_time": "2025-04-16 00:17:05",
+            "home_change": -1,
+            "draw_change": 1,
+            "away_change": 1
+          },
+          {
+            "home_odds": 1.43,
+            "draw_odds": 4.33,
+            "away_odds": 5.25,
+            "return_rate": 89.23,
+            "update_time": "2025-04-15 23:39:40",
+            "home_change": 1,
+            "draw_change": 0,
+            "away_change": -1
+          },
+          {
+            "home_odds": 1.42,
+            "draw_odds": 4.33,
+            "away_odds": 5.5,
+            "return_rate": 89.53,
+            "update_time": "2025-04-15 16:56:47",
+            "home_change": 1,
+            "draw_change": 0,
+            "away_change": -1
+          },
+          {
+            "home_odds": 1.41,
+            "draw_odds": 4.33,
+            "away_odds": 5.75,
+            "return_rate": 89.76,
+            "update_time": "2025-04-14 20:15:58",
+            "home_change": -1,
+            "draw_change": 0,
+            "away_change": 0
+          },
+          {
+            "home_odds": 1.42,
+            "draw_odds": 4.33,
+            "away_odds": 5.75,
+            "return_rate": 90.16,
+            "update_time": "2025-04-12 18:03:20",
+            "home_change": 0,
+            "draw_change": 0,
+            "away_change": 0
+          }
+        ]
+      }
+    ]
+  },
+  "Pinnacle平博": {
+    "handicap_list": [
+      {
+        "handicap": "-3",
+        "initial_odds": [
+          32.3,
+          16.36,
+          1.05
+        ],
+        "current_odds": [
+          36.65,
+          17.59,
+          1.05
+        ],
+        "initial_probabilities": [
+          0.0296,
+          0.0585,
+          0.9118
+        ],
+        "current_probabilities": [
+          0.0263,
+          0.0548,
+          0.9188
+        ],
+        "initial_return_rate": 0.9574,
+        "current_return_rate": 0.9648,
+        "initial_kelly": [
+          1.14,
+          1.11,
+          0.94
+        ],
+        "current_kelly": [
+          1.29,
+          1.19,
+          0.94
+        ],
+        "handicap_history": [
+          {
+            "home_odds": 36.65,
+            "draw_odds": 17.59,
+            "away_odds": 1.05,
+            "return_rate": 96.48,
+            "update_time": "2025-04-16 06:03:56",
+            "home_change": 1,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 34.93,
+            "draw_odds": 17.1,
+            "away_odds": 1.05,
+            "return_rate": 96.2,
+            "update_time": "2025-04-16 00:30:33",
+            "home_change": -1,
+            "draw_change": -1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 36.9,
+            "draw_odds": 17.73,
+            "away_odds": 1.05,
+            "return_rate": 96.54,
+            "update_time": "2025-04-16 00:22:57",
+            "home_change": 1,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 35.01,
+            "draw_odds": 17.14,
+            "away_odds": 1.05,
+            "return_rate": 96.22,
+            "update_time": "2025-04-15 18:08:24",
+            "home_change": 1,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 33.37,
+            "draw_odds": 16.67,
+            "away_odds": 1.05,
+            "return_rate": 95.94,
+            "update_time": "2025-04-15 16:54:02",
+            "home_change": -1,
+            "draw_change": -1,
+            "away_change": 1
+          },
+          {
+            "home_odds": 36.21,
+            "draw_odds": 17.59,
+            "away_odds": 1.04,
+            "return_rate": 95.6,
+            "update_time": "2025-04-15 09:44:35",
+            "home_change": 1,
+            "draw_change": 1,
+            "away_change": -1
+          },
+          {
+            "home_odds": 33.9,
+            "draw_odds": 16.82,
+            "away_odds": 1.05,
+            "return_rate": 96.03,
+            "update_time": "2025-04-15 06:06:27",
+            "home_change": 1,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 32.3,
+            "draw_odds": 16.36,
+            "away_odds": 1.05,
+            "return_rate": 95.74,
+            "update_time": "2025-04-14 21:16:24",
+            "home_change": 0,
+            "draw_change": 0,
+            "away_change": 0
+          }
+        ]
+      },
+      {
+        "handicap": "-2",
+        "initial_odds": [
+          12.48,
+          7.46,
+          1.17
+        ],
+        "current_odds": [
+          13.2,
+          7.83,
+          1.18
+        ],
+        "initial_probabilities": [
+          0.075,
+          0.1254,
+          0.7996
+        ],
+        "current_probabilities": [
+          0.0721,
+          0.1215,
+          0.8064
+        ],
+        "initial_return_rate": 0.9356,
+        "current_return_rate": 0.9515,
+        "initial_kelly": [
+          1.0,
+          0.96,
+          0.92
+        ],
+        "current_kelly": [
+          1.06,
+          1.01,
+          0.93
+        ]
+      },
+      {
+        "handicap": "-1",
+        "initial_odds": [
+          5.08,
+          4.47,
+          1.54
+        ],
+        "current_odds": [
+          5.23,
+          4.6,
+          1.56
+        ],
+        "initial_probabilities": [
+          0.184,
+          0.2091,
+          0.6069
+        ],
+        "current_probabilities": [
+          0.1822,
+          0.2071,
+          0.6107
+        ],
+        "initial_return_rate": 0.9347,
+        "current_return_rate": 0.9527,
+        "initial_kelly": [
+          0.94,
+          0.97,
+          0.92
+        ],
+        "current_kelly": [
+          0.97,
+          0.99,
+          0.93
+        ],
+        "handicap_history": [
+          {
+            "home_odds": 5.23,
+            "draw_odds": 4.6,
+            "away_odds": 1.56,
+            "return_rate": 95.27,
+            "update_time": "2025-04-16 06:34:08",
+            "home_change": 1,
+            "draw_change": 1,
+            "away_change": -1
+          },
+          {
+            "home_odds": 5.14,
+            "draw_odds": 4.59,
+            "away_odds": 1.57,
+            "return_rate": 95.3,
+            "update_time": "2025-04-16 06:03:56",
+            "home_change": 1,
+            "draw_change": 1,
+            "away_change": 1
+          },
+          {
+            "home_odds": 5.09,
+            "draw_odds": 4.55,
+            "away_odds": 1.56,
+            "return_rate": 94.58,
+            "update_time": "2025-04-16 00:30:33",
+            "home_change": -1,
+            "draw_change": 1,
+            "away_change": 1
+          },
+          {
+            "home_odds": 5.19,
+            "draw_odds": 4.53,
+            "away_odds": 1.55,
+            "return_rate": 94.47,
+            "update_time": "2025-04-16 00:22:57",
+            "home_change": -1,
+            "draw_change": -1,
+            "away_change": 1
+          },
+          {
+            "home_odds": 5.29,
+            "draw_odds": 4.58,
+            "away_odds": 1.54,
+            "return_rate": 94.63,
+            "update_time": "2025-04-16 00:11:09",
+            "home_change": 1,
+            "draw_change": -1,
+            "away_change": -1
+          },
+          {
+            "home_odds": 5.18,
+            "draw_odds": 4.59,
+            "away_odds": 1.55,
+            "return_rate": 94.69,
+            "update_time": "2025-04-16 00:07:54",
+            "home_change": -1,
+            "draw_change": -1,
+            "away_change": 1
+          },
+          {
+            "home_odds": 5.26,
+            "draw_odds": 4.65,
+            "away_odds": 1.54,
+            "return_rate": 94.83,
+            "update_time": "2025-04-16 00:03:36",
+            "home_change": 1,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 5.19,
+            "draw_odds": 4.63,
+            "away_odds": 1.54,
+            "return_rate": 94.52,
+            "update_time": "2025-04-15 18:08:24",
+            "home_change": 1,
+            "draw_change": 1,
+            "away_change": 0
+          },
+          {
+            "home_odds": 5.15,
+            "draw_odds": 4.6,
+            "away_odds": 1.54,
+            "return_rate": 94.26,
+            "update_time": "2025-04-15 16:54:02",
+            "home_change": -1,
+            "draw_change": 1,
+            "away_change": 1
+          },
+          {
+            "home_odds": 5.27,
+            "draw_odds": 4.58,
+            "away_odds": 1.53,
+            "return_rate": 94.19,
+            "update_time": "2025-04-15 16:51:52",
+            "home_change": -1,
+            "draw_change": -1,
+            "away_change": 1
+          },
+          {
+            "home_odds": 5.34,
+            "draw_odds": 4.59,
+            "away_odds": 1.52,
+            "return_rate": 94.07,
+            "update_time": "2025-04-15 09:44:35",
+            "home_change": 1,
+            "draw_change": 1,
+            "away_change": -1
+          },
+          {
+            "home_odds": 5.13,
+            "draw_odds": 4.51,
+            "away_odds": 1.55,
+            "return_rate": 94.18,
+            "update_time": "2025-04-15 06:06:27",
+            "home_change": 1,
+            "draw_change": 1,
+            "away_change": 1
+          },
+          {
+            "home_odds": 5.08,
+            "draw_odds": 4.47,
+            "away_odds": 1.54,
+            "return_rate": 93.47,
+            "update_time": "2025-04-14 21:16:24",
+            "home_change": 0,
+            "draw_change": 0,
+            "away_change": 0
+          }
+        ]
+      },
+      {
+        "handicap": "1",
+        "initial_odds": [
+          1.42,
+          4.87,
+          6.23
+        ],
+        "current_odds": [
+          1.45,
+          4.97,
+          6.34
+        ],
+        "initial_probabilities": [
+          0.6581,
+          0.1919,
+          0.15
+        ],
+        "current_probabilities": [
+          0.6577,
+          0.1919,
+          0.1504
+        ],
+        "initial_return_rate": 0.9345,
+        "current_return_rate": 0.9537,
+        "initial_kelly": [
+          0.91,
+          0.98,
+          0.97
+        ],
+        "current_kelly": [
+          0.93,
+          1.0,
+          0.99
+        ]
+      },
+      {
+        "handicap": "2",
+        "initial_odds": [
+          1.13,
+          8.76,
+          15.92
+        ],
+        "current_odds": [
+          1.14,
+          9.21,
+          17.01
+        ],
+        "initial_probabilities": [
+          0.8334,
+          0.1075,
+          0.0592
+        ],
+        "current_probabilities": [
+          0.8398,
+          0.1039,
+          0.0563
+        ],
+        "initial_return_rate": 0.9417,
+        "current_return_rate": 0.9573,
+        "initial_kelly": [
+          0.92,
+          1.02,
+          1.07
+        ],
+        "current_kelly": [
+          0.93,
+          1.07,
+          1.14
+        ]
+      },
+      {
+        "handicap": "3",
+        "initial_odds": [
+          1.03,
+          20.31,
+          41.81
+        ],
+        "current_odds": [
+          1.04,
+          21.68,
+          47.43
+        ],
+        "initial_probabilities": [
+          0.9299,
+          0.0472,
+          0.0229
+        ],
+        "current_probabilities": [
+          0.9347,
+          0.0448,
+          0.0205
+        ],
+        "initial_return_rate": 0.9578,
+        "current_return_rate": 0.9721,
+        "initial_kelly": [
+          0.93,
+          1.32,
+          1.29
+        ],
+        "current_kelly": [
+          0.94,
+          1.41,
+          1.46
+        ]
+      }
+    ]
+  },
+  "10BET": {
+    "handicap_list": [
+      {
+        "handicap": "-1",
+        "initial_odds": [
+          5.25,
+          4.2,
+          1.45
+        ],
+        "current_odds": [
+          5.0,
+          3.95,
+          1.5
+        ],
+        "initial_probabilities": [
+          0.1703,
+          0.2129,
+          0.6167
+        ],
+        "current_probabilities": [
+          0.1786,
+          0.2261,
+          0.5953
+        ],
+        "initial_return_rate": 0.8943,
+        "current_return_rate": 0.893,
+        "initial_kelly": [
+          0.97,
+          0.91,
+          0.87
+        ],
+        "current_kelly": [
+          0.92,
+          0.85,
+          0.9
+        ]
+      },
+      {
+        "handicap": "1",
+        "initial_odds": [
+          1.5,
+          4.0,
+          5.0
+        ],
+        "current_odds": [
+          1.42,
+          4.2,
+          5.75
+        ],
+        "initial_probabilities": [
+          0.597,
+          0.2239,
+          0.1791
+        ],
+        "current_probabilities": [
+          0.6309,
+          0.2133,
+          0.1558
+        ],
+        "initial_return_rate": 0.8955,
+        "current_return_rate": 0.8959,
+        "initial_kelly": [
+          0.96,
+          0.81,
+          0.78
+        ],
+        "current_kelly": [
+          0.91,
+          0.85,
+          0.9
+        ]
+      }
+    ]
+  },
+  "Coral": {
+    "handicap_list": [
+      {
+        "handicap": "-2",
+        "initial_odds": [
+          11.0,
+          7.0,
+          1.14
+        ],
+        "current_odds": [
+          10.0,
+          7.0,
+          1.15
+        ],
+        "initial_probabilities": [
+          0.0818,
+          0.1286,
+          0.7896
+        ],
+        "current_probabilities": [
+          0.0899,
+          0.1284,
+          0.7817
+        ],
+        "initial_return_rate": 0.9001,
+        "current_return_rate": 0.8989,
+        "initial_kelly": [
+          0.89,
+          0.9,
+          0.9
+        ],
+        "current_kelly": [
+          0.8,
+          0.9,
+          0.91
+        ],
+        "handicap_history": [
+          {
+            "home_odds": 10.0,
+            "draw_odds": 7.0,
+            "away_odds": 1.15,
+            "return_rate": 89.89,
+            "update_time": "2025-04-15 16:59:08",
+            "home_change": -1,
+            "draw_change": 0,
+            "away_change": 0
+          },
+          {
+            "home_odds": 11.0,
+            "draw_odds": 7.0,
+            "away_odds": 1.15,
+            "return_rate": 90.63,
+            "update_time": "2025-04-14 20:16:44",
+            "home_change": 0,
+            "draw_change": 0,
+            "away_change": 1
+          },
+          {
+            "home_odds": 11.0,
+            "draw_odds": 7.0,
+            "away_odds": 1.14,
+            "return_rate": 90.01,
+            "update_time": "2025-04-12 18:03:54",
+            "home_change": 0,
+            "draw_change": 0,
+            "away_change": 0
+          }
+        ]
+      },
+      {
+        "handicap": "-1",
+        "initial_odds": [
+          5.0,
+          4.0,
+          1.5
+        ],
+        "current_odds": [
+          4.6,
+          4.0,
+          1.53
+        ],
+        "initial_probabilities": [
+          0.1791,
+          0.2239,
+          0.597
+        ],
+        "current_probabilities": [
+          0.1939,
+          0.223,
+          0.5831
+        ],
+        "initial_return_rate": 0.8955,
+        "current_return_rate": 0.8921,
+        "initial_kelly": [
+          0.92,
+          0.86,
+          0.9
+        ],
+        "current_kelly": [
+          0.85,
+          0.86,
+          0.92
+        ],
+        "handicap_history": [
+          {
+            "home_odds": 4.6,
+            "draw_odds": 4.0,
+            "away_odds": 1.53,
+            "return_rate": 89.21,
+            "update_time": "2025-04-15 23:40:29",
+            "home_change": -1,
+            "draw_change": 0,
+            "away_change": 0
+          },
+          {
+            "home_odds": 4.8,
+            "draw_odds": 4.0,
+            "away_odds": 1.53,
+            "return_rate": 89.93,
+            "update_time": "2025-04-15 16:59:08",
+            "home_change": 0,
+            "draw_change": 0,
+            "away_change": 1
+          },
+          {
+            "home_odds": 4.8,
+            "draw_odds": 4.0,
+            "away_odds": 1.5,
+            "return_rate": 88.89,
+            "update_time": "2025-04-14 20:16:44",
+            "home_change": -1,
+            "draw_change": 0,
+            "away_change": 0
+          },
+          {
+            "home_odds": 5.0,
+            "draw_odds": 4.0,
+            "away_odds": 1.5,
+            "return_rate": 89.55,
+            "update_time": "2025-04-12 18:03:54",
+            "home_change": 0,
+            "draw_change": 0,
+            "away_change": 0
+          }
+        ]
+      }
+    ]
+  }
+}
