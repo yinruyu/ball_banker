@@ -1295,6 +1295,54 @@ def clean_temp_html_files(date):
     
     print(f"清理临时HTML文件完成")
 
+def remove_jingcai_data(date):
+    """从handicap_odds和ou_odds目录下的JSON文件中删除竞彩官方数据"""
+    print(f"开始从handicap_odds和ou_odds中删除竞彩官方数据...")
+    
+    # 处理让球赔率文件夹
+    handicap_dir = os.path.join('data', date, 'handicap_odds')
+    if os.path.exists(handicap_dir):
+        for file in os.listdir(handicap_dir):
+            if file.endswith('.json'):
+                file_path = os.path.join(handicap_dir, file)
+                try:
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                    
+                    # 删除竞彩官方数据
+                    if "竞彩官方" in data:
+                        del data["竞彩官方"]
+                        print(f"已从 {file_path} 中删除竞彩官方数据")
+                        
+                        # 保存更新后的数据
+                        with open(file_path, 'w', encoding='utf-8') as f:
+                            json.dump(data, f, ensure_ascii=False, indent=2)
+                except Exception as e:
+                    print(f"处理文件 {file_path} 时出错: {str(e)}")
+    
+    # 处理欧赔文件夹
+    odds_dir = os.path.join('data', date, 'ou_odds')
+    if os.path.exists(odds_dir):
+        for file in os.listdir(odds_dir):
+            if file.endswith('.json'):
+                file_path = os.path.join(odds_dir, file)
+                try:
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                    
+                    # 删除竞彩官方数据
+                    if "竞彩官方" in data:
+                        del data["竞彩官方"]
+                        print(f"已从 {file_path} 中删除竞彩官方数据")
+                        
+                        # 保存更新后的数据
+                        with open(file_path, 'w', encoding='utf-8') as f:
+                            json.dump(data, f, ensure_ascii=False, indent=2)
+                except Exception as e:
+                    print(f"处理文件 {file_path} 时出错: {str(e)}")
+    
+    print(f"删除竞彩官方数据完成")
+
 def add_handicap_to_main_json(date):
     """将让球赔率数据添加到main.json文件中"""
     print(f"开始将让球值添加到main.json文件...")
@@ -1500,6 +1548,9 @@ def main():
         
         # 在所有处理完成后，将让球值添加到main.json文件中
         add_handicap_to_main_json(target_date)
+        
+        # 在处理完所有数据后，从handicap_odds和ou_odds中删除竞彩官方数据
+        remove_jingcai_data(target_date)
                 
     else:
         print(f"未获取到 {target_date} 的比赛数据")

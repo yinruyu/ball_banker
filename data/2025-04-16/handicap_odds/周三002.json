@@ -1,43 +1,4 @@
 {
-  "竞彩官方": {
-    "handicap_list": [
-      {
-        "handicap": "-1",
-        "initial_odds": [
-          5.2,
-          3.8,
-          1.49
-        ],
-        "current_odds": [
-          5.2,
-          3.8,
-          1.49
-        ],
-        "initial_probabilities": [
-          0.1707,
-          0.2336,
-          0.5957
-        ],
-        "current_probabilities": [
-          0.1707,
-          0.2336,
-          0.5957
-        ],
-        "initial_return_rate": 0.8876,
-        "current_return_rate": 0.8876,
-        "initial_kelly": [
-          1.02,
-          0.86,
-          0.86
-        ],
-        "current_kelly": [
-          1.02,
-          0.86,
-          0.86
-        ]
-      }
-    ]
-  },
   "立博": {
     "handicap_list": [
       {
