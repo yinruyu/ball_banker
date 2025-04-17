@@ -1386,6 +1386,104 @@ def add_handicap_to_main_json(date):
         print(f"处理main.json文件时出错: {str(e)}")
         return False
 
+def test_size_data_write(match_id, date):
+    """测试写入大小球数据"""
+    try:
+        # 创建大小球文件夹
+        size_dir = os.path.join('data', date, 'size_odds')
+        os.makedirs(size_dir, exist_ok=True)
+        
+        # HTML文件路径
+        temp_size_html_path = os.path.join(size_dir, f'temp_{match_id}.html')
+        
+        # 检查临时HTML文件是否存在
+        if os.path.exists(temp_size_html_path):
+            print(f"找到临时HTML文件: {temp_size_html_path}")
+            
+            # 读取HTML内容并解析
+            with open(temp_size_html_path, 'r', encoding='utf-8') as f:
+                html_content = f.read()
+                size_data = parse_size_data(html_content)
+            
+            if size_data:
+                # 保存大小球数据
+                size_file_path = os.path.join(size_dir, f'{match_id}.json')
+                print(f"尝试写入数据到: {size_file_path}")
+                with open(size_file_path, 'w', encoding='utf-8') as f:
+                    json.dump(size_data, f, ensure_ascii=False, indent=2)
+                print(f"已成功保存大小球数据到: {size_file_path}")
+                
+                # 验证文件是否已正确写入
+                if os.path.exists(size_file_path):
+                    file_size = os.path.getsize(size_file_path)
+                    print(f"文件大小: {file_size} 字节")
+                    
+                    with open(size_file_path, 'r', encoding='utf-8') as f:
+                        content = f.read()
+                        print(f"文件内容长度: {len(content)} 字符")
+                    
+                    return True
+                else:
+                    print(f"错误：文件未创建 {size_file_path}")
+                    return False
+            else:
+                print(f"无法从HTML文件解析到数据: {temp_size_html_path}")
+                return False
+        else:
+            print(f"临时HTML文件不存在: {temp_size_html_path}")
+            return False
+        
+    except Exception as e:
+        print(f"测试写入数据时出错: {str(e)}")
+        return False
+
+def remove_jingcai_data(date):
+    """删除指定日期的handicap_odds、kelly_history和ou_odds文件夹下的竞彩官方数据"""
+    print(f"开始删除 {date} 竞彩官方数据...")
+    
+    folders = [
+        os.path.join('data', date, 'handicap_odds'),
+        os.path.join('data', date, 'kelly_history'),
+        os.path.join('data', date, 'ou_odds')
+    ]
+    
+    files_processed = 0
+    files_modified = 0
+    
+    for folder_path in folders:
+        if not os.path.exists(folder_path):
+            print(f"文件夹不存在: {folder_path}")
+            continue
+            
+        for file_name in os.listdir(folder_path):
+            if not file_name.endswith('.json'):
+                continue
+                
+            file_path = os.path.join(folder_path, file_name)
+            files_processed += 1
+            
+            try:
+                # 读取JSON文件
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                
+                # 检查并删除竞彩官方数据
+                if '竞彩官方' in data:
+                    del data['竞彩官方']
+                    
+                    # 将修改后的数据写回文件
+                    with open(file_path, 'w', encoding='utf-8') as f:
+                        json.dump(data, f, ensure_ascii=False, indent=2)
+                    
+                    files_modified += 1
+                    print(f"已从 {file_path} 中删除竞彩官方数据")
+            
+            except Exception as e:
+                print(f"处理文件 {file_path} 时出错: {str(e)}")
+    
+    print(f"竞彩官方数据删除完成: 处理了 {files_processed} 个文件, 修改了 {files_modified} 个文件")
+    return files_modified > 0
+
 def main():
     # 创建命令行参数解析器
     parser = argparse.ArgumentParser(description='爬取足球比赛赔率数据')
@@ -1526,6 +1624,9 @@ def main():
         
         # 在所有处理完成后，将让球值添加到main.json文件中
         add_handicap_to_main_json(target_date)
+        
+        # 删除竞彩官方数据
+        remove_jingcai_data(target_date)
                 
     else:
         print(f"未获取到 {target_date} 的比赛数据")
@@ -1555,57 +1656,6 @@ def generate_odds_script(date):
     with open(file_path, 'w', encoding='utf-8') as f:
         json.dump(odds_data, f, ensure_ascii=False, indent=2)
     print(f"赔率数据已保存到: {file_path}")
-
-def test_size_data_write(match_id, date):
-    """测试写入大小球数据"""
-    try:
-        # 创建大小球文件夹
-        size_dir = os.path.join('data', date, 'size_odds')
-        os.makedirs(size_dir, exist_ok=True)
-        
-        # HTML文件路径
-        temp_size_html_path = os.path.join(size_dir, f'temp_{match_id}.html')
-        
-        # 检查临时HTML文件是否存在
-        if os.path.exists(temp_size_html_path):
-            print(f"找到临时HTML文件: {temp_size_html_path}")
-            
-            # 读取HTML内容并解析
-            with open(temp_size_html_path, 'r', encoding='utf-8') as f:
-                html_content = f.read()
-                size_data = parse_size_data(html_content)
-            
-            if size_data:
-                # 保存大小球数据
-                size_file_path = os.path.join(size_dir, f'{match_id}.json')
-                print(f"尝试写入数据到: {size_file_path}")
-                with open(size_file_path, 'w', encoding='utf-8') as f:
-                    json.dump(size_data, f, ensure_ascii=False, indent=2)
-                print(f"已成功保存大小球数据到: {size_file_path}")
-                
-                # 验证文件是否已正确写入
-                if os.path.exists(size_file_path):
-                    file_size = os.path.getsize(size_file_path)
-                    print(f"文件大小: {file_size} 字节")
-                    
-                    with open(size_file_path, 'r', encoding='utf-8') as f:
-                        content = f.read()
-                        print(f"文件内容长度: {len(content)} 字符")
-                    
-                    return True
-                else:
-                    print(f"错误：文件未创建 {size_file_path}")
-                    return False
-            else:
-                print(f"无法从HTML文件解析到数据: {temp_size_html_path}")
-                return False
-        else:
-            print(f"临时HTML文件不存在: {temp_size_html_path}")
-            return False
-        
-    except Exception as e:
-        print(f"测试写入数据时出错: {str(e)}")
-        return False
 
 def parse_odds_history(html_content, fixture_id, date):
     """解析HTML中的赔率历史变化URL并获取数据"""
