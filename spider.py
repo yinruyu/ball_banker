@@ -1013,6 +1013,10 @@ def debug_match(fixture_id, match_id, date):
     asian_dir = os.path.join('data', date, 'asian_odds')
     os.makedirs(asian_dir, exist_ok=True)
     
+    # 创建凯利指数历史文件夹
+    kelly_dir = os.path.join('data', date, 'kelly_history')
+    os.makedirs(kelly_dir, exist_ok=True)
+    
     # 欧赔URL
     odds_url = f'https://odds.500.com/fenxi/ouzhi-{fixture_id}.shtml?ctype=2'
     
@@ -1075,6 +1079,16 @@ def debug_match(fixture_id, match_id, date):
                         for company_name, history_data in odds_history.items():
                             if company_name in odds_data:
                                 odds_data[company_name]['odds_history'] = history_data
+                    
+                    # 获取凯利指数历史数据
+                    kelly_history = parse_kelly_history(html_content, fixture_id)
+                    
+                    # 保存凯利指数历史数据到单独的文件
+                    if kelly_history:
+                        kelly_file_path = os.path.join(kelly_dir, f'{match_id}.json')
+                        with open(kelly_file_path, 'w', encoding='utf-8') as f:
+                            json.dump(kelly_history, f, ensure_ascii=False, indent=2)
+                        print(f"[{match_id}] 凯利指数历史数据已保存到: {kelly_file_path}")
                 
                 # 保存欧赔数据
                 file_path = os.path.join(odds_dir, f'{match_id}.json')
@@ -1290,6 +1304,18 @@ def clean_temp_html_files(date):
                 try:
                     os.remove(file_path)
                     print(f"已删除亚盘临时文件: {file_path}")
+                except Exception as e:
+                    print(f"删除文件 {file_path} 时出错: {str(e)}")
+    
+    # 清理凯利指数文件夹中的临时HTML文件
+    kelly_dir = os.path.join('data', date, 'kelly_history')
+    if os.path.exists(kelly_dir):
+        for file in os.listdir(kelly_dir):
+            if file.startswith('temp_') and file.endswith('.html'):
+                file_path = os.path.join(kelly_dir, file)
+                try:
+                    os.remove(file_path)
+                    print(f"已删除凯利指数临时文件: {file_path}")
                 except Exception as e:
                     print(f"删除文件 {file_path} 时出错: {str(e)}")
     
@@ -1862,7 +1888,7 @@ def parse_size_history(html_content, fixture_id):
 
 def parse_handicap_history(html_content, fixture_id):
     """解析让球历史赔率变化数据"""
-    print("开始解析让球历史赔率变化...")
+    print("开始解析让球历史变化数据...")
     
     soup = BeautifulSoup(html_content, 'html.parser')
     handicap_history_data = {}
@@ -2013,6 +2039,181 @@ def parse_handicap_history(html_content, fixture_id):
         print(f"解析历史让球赔率数据时出错: {str(e)}")
     
     return handicap_history_data
+
+def parse_kelly_history(html_content, fixture_id):
+    """解析凯利指数历史变化数据"""
+    print("开始解析凯利指数历史变化数据...")
+    
+    soup = BeautifulSoup(html_content, 'html.parser')
+    kelly_history_data = {}
+    
+    try:
+        # 查找所有欧赔公司行
+        company_rows = soup.select('tr[id][ttl="zy"]')
+        if not company_rows:
+            print("未找到欧赔公司行，尝试其他选择器")
+            company_rows = soup.select('tr.tableline')
+            if not company_rows:
+                company_rows = soup.select('tr[class*="tr"][id]')
+                if not company_rows:
+                    company_rows = soup.select('tr[id]')
+        
+        if not company_rows:
+            print("未找到任何欧赔公司行，无法获取凯利指数历史数据")
+            return kelly_history_data
+        
+        print(f"找到 {len(company_rows)} 个欧赔公司行")
+        
+        for row in company_rows:
+            try:
+                # 获取公司名称
+                company_name = "未知公司"
+                company_name_elem = row.select_one('td.tb_plgs span.quancheng')
+                if company_name_elem:
+                    company_name = company_name_elem.text.strip()
+                else:
+                    # 尝试其他方式获取公司名称
+                    company_td = row.select_one('td.tb_plgs')
+                    if company_td:
+                        company_name = company_td.text.strip().split('\n')[0].strip()
+                    else:
+                        # 尝试从第一个单元格获取公司名称
+                        first_td = row.select_one('td')
+                        if first_td and first_td.text.strip() and len(first_td.text.strip()) < 30:
+                            company_name = first_td.text.strip()
+                            # 检查是否是可能的公司名称
+                            if not any(keyword in company_name for keyword in ['bet', 'Bet', '威廉', '澳门', '皇冠', '易胜博']):
+                                continue
+                
+                print(f"处理公司凯利指数历史数据: {company_name}")
+                
+                # 获取公司ID
+                company_id = None
+                
+                # 尝试从行ID获取
+                row_id = row.get('id')
+                if row_id and row_id.startswith('tr'):
+                    company_id = row_id[2:]
+                    print(f"从行ID获取到公司ID: {company_id}")
+                
+                # 尝试从链接中获取
+                if not company_id:
+                    company_link = row.select_one('td.tb_plgs a')
+                    if company_link and company_link.get('href'):
+                        href = company_link.get('href')
+                        if 'cid=' in href:
+                            company_id = href.split('cid=')[1].split('&')[0] if '&' in href.split('cid=')[1] else href.split('cid=')[1]
+                            print(f"从链接获取到公司ID: {company_id}")
+                
+                # 尝试从tr的cid属性获取
+                if not company_id:
+                    cid_attr = row.get('cid')
+                    if cid_attr:
+                        company_id = cid_attr
+                        print(f"从tr标签的cid属性获取到公司ID: {company_id}")
+                
+                # 尝试从任意链接中获取id参数
+                if not company_id:
+                    any_link = row.select_one('a[href*="id="]')
+                    if any_link and any_link.get('href'):
+                        href = any_link.get('href')
+                        if 'id=' in href:
+                            company_id = href.split('id=')[1].split('&')[0] if '&' in href.split('id=')[1] else href.split('id=')[1]
+                            print(f"从链接id参数获取到公司ID: {company_id}")
+                
+                # 尝试从复选框ID获取
+                if not company_id:
+                    checkbox = row.select_one('input[type="checkbox"]')
+                    if checkbox and checkbox.get('value'):
+                        company_id = checkbox.get('value')
+                        print(f"从复选框value获取到公司ID: {company_id}")
+                    elif checkbox and checkbox.get('id'):
+                        checkbox_id = checkbox.get('id')
+                        if checkbox_id.startswith('ck'):
+                            company_id = checkbox_id[2:]
+                            print(f"从复选框id获取到公司ID: {company_id}")
+                
+                if company_id:
+                    # 获取当前时间作为初始查询时间
+                    current_time = datetime.now().strftime('%Y-%m-%d+%H%%3A%M%%3A%S')
+                    
+                    # 构建凯利指数历史数据URL
+                    timestamp = int(time.time() * 1000)  # 当前毫秒时间戳
+                    kelly_history_url = f"https://odds.500.com/fenxi1/json/ouzhi.php?_={timestamp}&fid={fixture_id}&cid={company_id}&r=1&time={current_time}&type=kelly"
+                    
+                    print(f"尝试获取 {company_name} 的凯利指数历史数据: {kelly_history_url}")
+                    
+                    # 设置请求头
+                    headers = {
+                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+                        'Accept': 'application/json, text/javascript, */*; q=0.01',
+                        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+                        'Referer': f'https://odds.500.com/fenxi/ouzhi-{fixture_id}.shtml',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                    
+                    try:
+                        # 添加随机延迟避免被限制
+                        time.sleep(random.uniform(0.5, 1.5))
+                        
+                        # 发送请求获取历史数据
+                        response = requests.get(kelly_history_url, headers=headers, timeout=10)
+                        
+                        if response.status_code == 200:
+                            print(f"请求凯利指数历史数据成功，响应长度: {len(response.text)}")
+                            
+                            # 解析JSON响应
+                            try:
+                                # 尝试解析JSON
+                                try:
+                                    history_data = response.json()
+                                except:
+                                    print(f"响应不是有效的JSON，尝试手动解析")
+                                    history_data = response.text.replace('\n', '').replace('\r', '')
+                                    if history_data.startswith('[') and history_data.endswith(']'):
+                                        # 手动解析类JSON格式
+                                        history_data = eval(history_data)
+                                
+                                if history_data and isinstance(history_data, list):
+                                    # 将每条记录构造为[凯胜, 凯平, 凯负, 更新时间]的格式
+                                    parsed_history = []
+                                    
+                                    for item in history_data:
+                                        if len(item) >= 4:
+                                            kelly_item = {
+                                                'kelly_win': float(item[0]),
+                                                'kelly_draw': float(item[1]),
+                                                'kelly_lose': float(item[2]),
+                                                'update_time': item[3]
+                                            }
+                                            parsed_history.append(kelly_item)
+                                    
+                                    if parsed_history:
+                                        kelly_history_data[company_name] = parsed_history
+                                        print(f"成功获取 {company_name} 的凯利指数历史数据, 共 {len(parsed_history)} 条记录")
+                                    else:
+                                        print(f"未解析到 {company_name} 的有效凯利指数历史数据记录")
+                                else:
+                                    print(f"未获取到 {company_name} 的有效凯利指数历史数据, 响应类型: {type(history_data)}")
+                            except Exception as e:
+                                print(f"解析 {company_name} 凯利指数历史JSON响应时出错: {str(e)}")
+                        else:
+                            print(f"请求 {company_name} 凯利指数历史数据失败, 状态码: {response.status_code}")
+                    
+                    except Exception as e:
+                        print(f"获取 {company_name} 凯利指数历史数据时出错: {str(e)}")
+                        continue
+                else:
+                    print(f"未能获取 {company_name} 的公司ID，无法请求凯利指数历史数据")
+            
+            except Exception as e:
+                print(f"解析公司行时出错: {str(e)}")
+                continue
+    
+    except Exception as e:
+        print(f"解析凯利指数历史数据时出错: {str(e)}")
+    
+    return kelly_history_data
 
 if __name__ == '__main__':
     # 检查命令行参数
