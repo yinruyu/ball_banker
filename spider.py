@@ -1360,6 +1360,63 @@ def add_handicap_to_main_json(date):
         print(f"处理main.json文件时出错: {str(e)}")
         return False
 
+def remove_jingcai_data(date):
+    """
+    从ou_odds和handicap_odds文件夹中的所有JSON文件中删除竞彩官方数据
+    """
+    print(f"开始删除{date}的竞彩官方数据...")
+    
+    # 欧赔文件夹
+    ou_odds_dir = os.path.join('data', date, 'ou_odds')
+    # 让球文件夹
+    handicap_dir = os.path.join('data', date, 'handicap_odds')
+    
+    # 处理欧赔文件夹
+    if os.path.exists(ou_odds_dir):
+        for file_name in os.listdir(ou_odds_dir):
+            if file_name.endswith('.json'):
+                file_path = os.path.join(ou_odds_dir, file_name)
+                try:
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                    
+                    # 删除竞彩官方数据
+                    if "竞彩官方" in data:
+                        del data["竞彩官方"]
+                        print(f"已从{file_path}删除竞彩官方数据")
+                        
+                        # 保存更新后的JSON
+                        with open(file_path, 'w', encoding='utf-8') as f:
+                            json.dump(data, f, ensure_ascii=False, indent=2)
+                except Exception as e:
+                    print(f"处理文件{file_path}时出错: {str(e)}")
+    else:
+        print(f"未找到欧赔文件夹: {ou_odds_dir}")
+    
+    # 处理让球文件夹
+    if os.path.exists(handicap_dir):
+        for file_name in os.listdir(handicap_dir):
+            if file_name.endswith('.json'):
+                file_path = os.path.join(handicap_dir, file_name)
+                try:
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                    
+                    # 删除竞彩官方数据
+                    if "竞彩官方" in data:
+                        del data["竞彩官方"]
+                        print(f"已从{file_path}删除竞彩官方数据")
+                        
+                        # 保存更新后的JSON
+                        with open(file_path, 'w', encoding='utf-8') as f:
+                            json.dump(data, f, ensure_ascii=False, indent=2)
+                except Exception as e:
+                    print(f"处理文件{file_path}时出错: {str(e)}")
+    else:
+        print(f"未找到让球文件夹: {handicap_dir}")
+    
+    print(f"删除{date}的竞彩官方数据完成")
+
 def main():
     # 创建命令行参数解析器
     parser = argparse.ArgumentParser(description='爬取足球比赛赔率数据')
@@ -1369,12 +1426,17 @@ def main():
     parser.add_argument('-start', help='指定开始的比赛编号 (例如: 周日001)')
     parser.add_argument('-end', help='指定结束的比赛编号 (例如: 周日003)')
     parser.add_argument('-t', '--threads', type=int, help='设置线程数 (默认: 4)', default=4)
+    parser.add_argument('--match_id', type=str, help='指定比赛ID')
+    parser.add_argument('--fixture_id', type=str, help='指定Fixture ID')
+    parser.add_argument('--mode', type=str, choices=['all', 'main', 'odds', 'size', 'handicap', 'asian', 'debug', 'clean', 'odds_script', 'merge_handicap', 'test_size'], 
+                        help='指定运行模式: all-全部运行, main-只运行主要函数, odds-只爬取欧赔数据, size-只爬取大小球数据, handicap-只爬取让球数据, asian-只爬取亚盘数据, debug-调试模式, clean-清理临时文件, odds_script-生成赔率脚本')
+    
     args = parser.parse_args()
     
     # 使用指定日期或当前日期
     target_date = args.date
     keep_html = args.keep_html
-    target_match = args.match
+    target_match = args.match or args.match_id
     start_match = args.start
     end_match = args.end
     max_threads = args.threads
@@ -1383,6 +1445,133 @@ def main():
     if not os.path.exists('data'):
         os.makedirs('data')
     
+    # 检查mode参数
+    if args.mode:
+        # 新版命令行参数逻辑
+        date = args.date if args.date else datetime.now().strftime('%Y-%m-%d')
+        
+        # 根据模式执行相应的函数
+        if args.mode == 'main' or args.mode == 'all' or args.mode is None:
+            # 创建目录
+            create_directory(date)
+            
+            # 获取比赛数据
+            match_data = get_match_data(date)
+            
+            # 保存到JSON文件
+            save_to_json(match_data, date)
+            
+            # 添加让球数据到main.json
+            add_handicap_to_main_json(date)
+            
+        if args.mode == 'odds' or args.mode == 'all':
+            # 创建目录
+            create_directory(date)
+            
+            # 爬取欧赔数据
+            main_file_path = os.path.join('data', date, 'main.json')
+            if os.path.exists(main_file_path):
+                with open(main_file_path, 'r', encoding='utf-8') as f:
+                    main_data = json.load(f)
+                
+                for match in main_data:
+                    match_id = match.get('match_id')
+                    fixture_id = match.get('fixture_id')
+                    if match_id and fixture_id:
+                        # 处理请求
+                        process_odds_request(fixture_id, match_id, date)
+            else:
+                print(f"未找到main.json文件: {main_file_path}")
+        
+        if args.mode == 'size' or args.mode == 'all':
+            # 创建目录
+            create_directory(date)
+            
+            # 爬取大小球数据
+            main_file_path = os.path.join('data', date, 'main.json')
+            if os.path.exists(main_file_path):
+                with open(main_file_path, 'r', encoding='utf-8') as f:
+                    main_data = json.load(f)
+                
+                for match in main_data:
+                    match_id = match.get('match_id')
+                    fixture_id = match.get('fixture_id')
+                    if match_id and fixture_id:
+                        # 处理请求
+                        process_size_request(fixture_id, match_id, date)
+            else:
+                print(f"未找到main.json文件: {main_file_path}")
+        
+        if args.mode == 'handicap' or args.mode == 'all':
+            # 创建目录
+            create_directory(date)
+            
+            # 爬取让球数据
+            main_file_path = os.path.join('data', date, 'main.json')
+            if os.path.exists(main_file_path):
+                with open(main_file_path, 'r', encoding='utf-8') as f:
+                    main_data = json.load(f)
+                
+                for match in main_data:
+                    match_id = match.get('match_id')
+                    fixture_id = match.get('fixture_id')
+                    if match_id and fixture_id:
+                        # 处理请求
+                        process_handicap_request(fixture_id, match_id, date)
+            else:
+                print(f"未找到main.json文件: {main_file_path}")
+        
+        if args.mode == 'asian' or args.mode == 'all':
+            # 创建目录
+            create_directory(date)
+            
+            # 爬取亚盘数据
+            main_file_path = os.path.join('data', date, 'main.json')
+            if os.path.exists(main_file_path):
+                with open(main_file_path, 'r', encoding='utf-8') as f:
+                    main_data = json.load(f)
+                
+                for match in main_data:
+                    match_id = match.get('match_id')
+                    fixture_id = match.get('fixture_id')
+                    if match_id and fixture_id:
+                        # 处理请求
+                        process_asian_request(fixture_id, match_id, date)
+            else:
+                print(f"未找到main.json文件: {main_file_path}")
+        
+        if args.mode == 'debug':
+            # 调试模式
+            if args.match_id and args.fixture_id:
+                debug_match(args.fixture_id, args.match_id, date)
+            else:
+                print("调试模式需要指定match_id和fixture_id参数")
+        
+        if args.mode == 'clean':
+            # 清理临时文件
+            clean_temp_html_files(date)
+        
+        if args.mode == 'odds_script':
+            # 生成赔率脚本
+            generate_odds_script(date)
+        
+        if args.mode == 'merge_handicap':
+            # 添加让球数据到main.json
+            add_handicap_to_main_json(date)
+        
+        if args.mode == 'test_size':
+            # 测试大小球数据写入
+            if args.match_id:
+                test_size_data_write(args.match_id, date)
+            else:
+                print("test_size模式需要指定match_id参数")
+        
+        # 在所有操作完成后删除竞彩官方数据
+        remove_jingcai_data(date)
+        
+        return
+    
+    # 如果未指定mode，则执行传统逻辑
     print(f"开始爬取 {target_date} 的比赛数据")
     
     # 获取比赛数据
@@ -1500,529 +1689,12 @@ def main():
         
         # 在所有处理完成后，将让球值添加到main.json文件中
         add_handicap_to_main_json(target_date)
+        
+        # 在所有处理完成后，删除竞彩官方数据
+        remove_jingcai_data(target_date)
                 
     else:
         print(f"未获取到 {target_date} 的比赛数据")
 
-def generate_odds_script(date):
-    # 创建ou_odds文件夹
-    odds_dir = os.path.join('data', date, 'ou_odds')
-    os.makedirs(odds_dir, exist_ok=True)
-
-    # 示例赔率数据
-    odds_data = {
-        "威廉希尔": {
-            "initial_odds": [2.0, 3.0, 4.0],
-            "current_odds": [2.1, 3.1, 4.1],
-            "initial_probabilities": [0.5, 0.3, 0.2],
-            "current_probabilities": [0.52, 0.28, 0.2],
-            "initial_return_rate": 0.9,
-            "current_return_rate": 0.92,
-            "initial_kelly": [0.9, 0.8, 0.7],
-            "current_kelly": [0.92, 0.82, 0.72]
-        }
-        # 可以添加更多公司的赔率数据
-    }
-
-    # 保存赔率数据到JSON文件
-    file_path = os.path.join(odds_dir, f'{date}_odds.json')
-    with open(file_path, 'w', encoding='utf-8') as f:
-        json.dump(odds_data, f, ensure_ascii=False, indent=2)
-    print(f"赔率数据已保存到: {file_path}")
-
-def test_size_data_write(match_id, date):
-    """测试写入大小球数据"""
-    try:
-        # 创建大小球文件夹
-        size_dir = os.path.join('data', date, 'size_odds')
-        os.makedirs(size_dir, exist_ok=True)
-        
-        # HTML文件路径
-        temp_size_html_path = os.path.join(size_dir, f'temp_{match_id}.html')
-        
-        # 检查临时HTML文件是否存在
-        if os.path.exists(temp_size_html_path):
-            print(f"找到临时HTML文件: {temp_size_html_path}")
-            
-            # 读取HTML内容并解析
-            with open(temp_size_html_path, 'r', encoding='utf-8') as f:
-                html_content = f.read()
-                size_data = parse_size_data(html_content)
-            
-            if size_data:
-                # 保存大小球数据
-                size_file_path = os.path.join(size_dir, f'{match_id}.json')
-                print(f"尝试写入数据到: {size_file_path}")
-                with open(size_file_path, 'w', encoding='utf-8') as f:
-                    json.dump(size_data, f, ensure_ascii=False, indent=2)
-                print(f"已成功保存大小球数据到: {size_file_path}")
-                
-                # 验证文件是否已正确写入
-                if os.path.exists(size_file_path):
-                    file_size = os.path.getsize(size_file_path)
-                    print(f"文件大小: {file_size} 字节")
-                    
-                    with open(size_file_path, 'r', encoding='utf-8') as f:
-                        content = f.read()
-                        print(f"文件内容长度: {len(content)} 字符")
-                    
-                    return True
-                else:
-                    print(f"错误：文件未创建 {size_file_path}")
-                    return False
-            else:
-                print(f"无法从HTML文件解析到数据: {temp_size_html_path}")
-                return False
-        else:
-            print(f"临时HTML文件不存在: {temp_size_html_path}")
-            return False
-        
-    except Exception as e:
-        print(f"测试写入数据时出错: {str(e)}")
-        return False
-
-def parse_odds_history(html_content, fixture_id, date):
-    """解析HTML中的赔率历史变化URL并获取数据"""
-    print("开始解析赔率历史变化...")
-    
-    soup = BeautifulSoup(html_content, 'html.parser')
-    odds_history_data = {}
-    
-    try:
-        # 查找所有赔率公司行
-        company_rows = soup.select('tr[id][ttl="zy"]')
-        
-        for row in company_rows:
-            try:
-                # 获取公司名称
-                company_name_elem = row.select_one('td.tb_plgs span.quancheng')
-                if not company_name_elem:
-                    continue
-                    
-                company_name = company_name_elem.text.strip()
-                company_id = None
-                
-                # 尝试获取公司ID
-                company_link = row.select_one('td.tb_plgs a')
-                if company_link and company_link.get('href'):
-                    href = company_link.get('href')
-                    if 'cid=' in href:
-                        company_id = href.split('cid=')[1].split('&')[0] if '&' in href.split('cid=')[1] else href.split('cid=')[1]
-                        print(f"从链接获取到 {company_name} 的公司ID: {company_id}")
-                
-                if not company_id:
-                    # 尝试从tr的cid属性获取
-                    cid_attr = row.get('cid')
-                    if cid_attr:
-                        company_id = cid_attr
-                        print(f"从tr标签的cid属性获取到 {company_name} 的公司ID: {company_id}")
-                
-                if not company_id:
-                    # 尝试从复选框ID获取
-                    checkbox = row.select_one('input[type="checkbox"]')
-                    if checkbox and checkbox.get('value'):
-                        company_id = checkbox.get('value')
-                        print(f"从复选框value获取到 {company_name} 的公司ID: {company_id}")
-                    elif checkbox and checkbox.get('id'):
-                        checkbox_id = checkbox.get('id')
-                        if checkbox_id.startswith('ck'):
-                            company_id = checkbox_id[2:]
-                            print(f"从复选框id获取到 {company_name} 的公司ID: {company_id}")
-                
-                if company_id:
-                    # 构建历史赔率URL
-                    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                    timestamp = int(time.time() * 1000)  # 当前毫秒时间戳
-                    encoded_time = current_time.replace(' ', '+').replace(':', '%3A')
-                    history_url = f"https://odds.500.com/fenxi1/json/ouzhi.php?_={timestamp}&fid={fixture_id}&cid={company_id}&r=1&time={encoded_time}&type=europe"
-                    
-                    print(f"尝试获取 {company_name} 的历史赔率数据: {history_url}")
-                    
-                    # 设置请求头
-                    headers = {
-                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-                        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-                        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
-                        'Referer': f'https://odds.500.com/fenxi/ouzhi-{fixture_id}.shtml',
-                        'X-Requested-With': 'XMLHttpRequest'
-                    }
-                    
-                    try:
-                        # 添加随机延迟避免被限制
-                        time.sleep(random.uniform(0.5, 1.5))
-                        
-                        # 发送请求获取历史数据
-                        response = requests.get(history_url, headers=headers, timeout=10)
-                        
-                        if response.status_code == 200:
-                            # 解析JSON响应
-                            history_data = response.json()
-                            if history_data:
-                                # 解析历史数据, 格式为 [[胜, 平, 负, 返还率, 时间, 胜变化, 平变化, 负变化], ...]
-                                parsed_history = []
-                                for item in history_data:
-                                    if len(item) >= 8:
-                                        history_item = {
-                                            'win_odds': float(item[0]),
-                                            'draw_odds': float(item[1]),
-                                            'lose_odds': float(item[2]),
-                                            'return_rate': float(item[3]),
-                                            'update_time': item[4],
-                                            'win_change': int(item[5]),  # 1:上升, 0:不变, -1:下降
-                                            'draw_change': int(item[6]),
-                                            'lose_change': int(item[7])
-                                        }
-                                        parsed_history.append(history_item)
-                                
-                                odds_history_data[company_name] = parsed_history
-                                print(f"成功获取 {company_name} 的历史赔率数据, 共 {len(parsed_history)} 条记录")
-                            else:
-                                print(f"未获取到 {company_name} 的有效历史赔率数据")
-                        else:
-                            print(f"请求 {company_name} 历史赔率失败, 状态码: {response.status_code}")
-                    
-                    except Exception as e:
-                        print(f"获取 {company_name} 历史赔率时出错: {str(e)}")
-                        continue
-                else:
-                    print(f"未能获取 {company_name} 的公司ID")
-            
-            except Exception as e:
-                print(f"解析公司行时出错: {str(e)}")
-                continue
-    
-    except Exception as e:
-        print(f"解析历史赔率数据时出错: {str(e)}")
-    
-    return odds_history_data
-
-def parse_size_history(html_content, fixture_id):
-    """解析大小球历史变化数据"""
-    print("开始解析大小球历史变化数据...")
-    
-    soup = BeautifulSoup(html_content, 'html.parser')
-    size_history_data = {}
-    
-    try:
-        # 查找所有大小球公司行
-        company_rows = soup.select('tr[class*="tr"][id]')
-        if not company_rows:
-            company_rows = soup.select('tr.tableline')
-        if not company_rows:
-            company_rows = soup.select('tr[class*="line"]')
-        
-        print(f"找到 {len(company_rows)} 个公司行")
-        
-        for row in company_rows:
-            try:
-                # 获取公司名称
-                company_name_elem = row.select_one('td.tb_plgs')
-                company_name = "未知公司"
-                
-                if company_name_elem:
-                    # 尝试方式1：通过 span.quancheng
-                    quancheng = company_name_elem.select_one('span.quancheng')
-                    if quancheng:
-                        company_name = quancheng.text.strip()
-                    else:
-                        # 尝试方式2：直接获取 td.tb_plgs 的文本
-                        company_name = company_name_elem.text.strip()
-                        # 清理文本中可能的多余内容
-                        company_name = company_name.split('\n')[0].strip()
-                else:
-                    # 尝试使用第一个单元格作为公司名称
-                    first_td = row.select_one('td')
-                    if first_td and first_td.text.strip() and len(first_td.text.strip()) < 30:
-                        company_name = first_td.text.strip()
-                
-                print(f"处理公司: {company_name}")
-                
-                # 获取公司ID
-                company_id = None
-                
-                # 尝试从行ID获取
-                row_id = row.get('id')
-                if row_id and row_id.startswith('tr'):
-                    company_id = row_id[2:]
-                
-                # 尝试从链接中获取
-                if not company_id:
-                    company_link = row.select_one('a[href*="id="]')
-                    if company_link and company_link.get('href'):
-                        href = company_link.get('href')
-                        if 'id=' in href:
-                            company_id = href.split('id=')[1].split('&')[0] if '&' in href.split('id=')[1] else href.split('id=')[1]
-                
-                # 尝试从复选框ID获取
-                if not company_id:
-                    checkbox = row.select_one('input[type="checkbox"]')
-                    if checkbox and checkbox.get('id'):
-                        checkbox_id = checkbox.get('id')
-                        if checkbox_id.startswith('ck'):
-                            company_id = checkbox_id[2:]
-                
-                if company_id:
-                    # 构建历史大小球数据URL
-                    timestamp = int(time.time() * 1000)  # 当前毫秒时间戳
-                    history_url = f"https://odds.500.com/fenxi1/inc/daxiaoajax.php?fid={fixture_id}&id={company_id}&t={timestamp}"
-                    
-                    print(f"尝试获取 {company_name} 的历史大小球数据: {history_url}")
-                    
-                    # 设置请求头
-                    headers = {
-                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-                        'Accept': 'application/json, text/javascript, */*; q=0.01',
-                        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
-                        'Referer': f'https://odds.500.com/fenxi/daxiao-{fixture_id}.shtml',
-                        'X-Requested-With': 'XMLHttpRequest'
-                    }
-                    
-                    try:
-                        # 添加随机延迟避免被限制
-                        time.sleep(random.uniform(0.5, 1.5))
-                        
-                        # 发送请求获取历史数据
-                        response = requests.get(history_url, headers=headers, timeout=10)
-                        
-                        if response.status_code == 200:
-                            # 解析JSON响应
-                            try:
-                                history_data = response.json()
-                                if history_data and isinstance(history_data, list):
-                                    # 解析历史数据，格式为 ["<tr><td class='tips_down'>0.88</td><td class=''>3/3.5</td><td class='tips_up'>0.92</td><td class=''>04-03 13:06</td></tr>", ...]
-                                    parsed_history = []
-                                    
-                                    for html_item in history_data:
-                                        try:
-                                            # 解析HTML片段
-                                            item_soup = BeautifulSoup(html_item, 'html.parser')
-                                            cells = item_soup.select('td')
-                                            
-                                            if len(cells) >= 4:
-                                                # 判断是否有上升下降指示
-                                                over_cell_class = cells[0].get('class', [])
-                                                over_change = 0  # 默认不变
-                                                if 'tips_up' in over_cell_class:
-                                                    over_change = 1  # 上升
-                                                elif 'tips_down' in over_cell_class:
-                                                    over_change = -1  # 下降
-                                                
-                                                under_cell_class = cells[2].get('class', [])
-                                                under_change = 0  # 默认不变
-                                                if 'tips_up' in under_cell_class:
-                                                    under_change = 1  # 上升
-                                                elif 'tips_down' in under_cell_class:
-                                                    under_change = -1  # 下降
-                                                
-                                                # 解析数据
-                                                over_odds = cells[0].text.strip()
-                                                size_value = cells[1].text.strip()
-                                                under_odds = cells[2].text.strip()
-                                                update_time = cells[3].text.strip()
-                                                
-                                                history_item = {
-                                                    'over_odds': float(over_odds),
-                                                    'size': size_value,
-                                                    'under_odds': float(under_odds),
-                                                    'update_time': update_time,
-                                                    'over_change': over_change,
-                                                    'under_change': under_change
-                                                }
-                                                parsed_history.append(history_item)
-                                        except Exception as e:
-                                            print(f"解析单条历史记录时出错: {str(e)}")
-                                            continue
-                                    
-                                    if parsed_history:
-                                        size_history_data[company_name] = parsed_history
-                                        print(f"成功获取 {company_name} 的历史大小球数据, 共 {len(parsed_history)} 条记录")
-                                    else:
-                                        print(f"未解析到 {company_name} 的有效历史大小球数据记录")
-                                else:
-                                    print(f"未获取到 {company_name} 的有效历史大小球数据, 响应: {response.text[:100]}")
-                            except Exception as e:
-                                print(f"解析 {company_name} 历史大小球JSON响应时出错: {str(e)}")
-                        else:
-                            print(f"请求 {company_name} 历史大小球数据失败, 状态码: {response.status_code}")
-                    
-                    except Exception as e:
-                        print(f"获取 {company_name} 历史大小球数据时出错: {str(e)}")
-                        continue
-                else:
-                    print(f"未能获取 {company_name} 的公司ID，无法请求历史数据")
-            
-            except Exception as e:
-                print(f"解析公司行时出错: {str(e)}")
-                continue
-    
-    except Exception as e:
-        print(f"解析历史大小球数据时出错: {str(e)}")
-    
-    return size_history_data
-
-def parse_handicap_history(html_content, fixture_id):
-    """解析让球历史赔率变化数据"""
-    print("开始解析让球历史赔率变化...")
-    
-    soup = BeautifulSoup(html_content, 'html.parser')
-    handicap_history_data = {}
-    
-    try:
-        # 查找所有让球赔率公司行
-        company_rows = soup.select('tr[id][ttl="zy"]')
-        
-        if not company_rows:
-            print("未找到让球赔率行数据")
-            return handicap_history_data
-        
-        print(f"找到 {len(company_rows)} 个让球公司行")
-        
-        for row in company_rows:
-            try:
-                # 获取公司名称
-                company_name_elem = row.select_one('td.tb_plgs span.quancheng')
-                if not company_name_elem:
-                    continue
-                    
-                company_name = company_name_elem.text.strip()
-                company_id = None
-                
-                # 获取让球值
-                handicap_value = ""
-                handicap_td = row.select_one('td[row="1"]:nth-of-type(3)')
-                if handicap_td:
-                    handicap_value = handicap_td.text.strip()
-                    print(f"找到让球值: {handicap_value}")
-                else:
-                    print(f"警告: 未找到 {company_name} 的让球值")
-                
-                # 尝试获取公司ID
-                company_link = row.select_one('td.tb_plgs a')
-                if company_link and company_link.get('href'):
-                    href = company_link.get('href')
-                    if 'cid=' in href:
-                        company_id = href.split('cid=')[1].split('&')[0] if '&' in href.split('cid=')[1] else href.split('cid=')[1]
-                        print(f"从链接获取到 {company_name} 的公司ID: {company_id}")
-                
-                if not company_id:
-                    # 尝试从tr的cid属性获取
-                    cid_attr = row.get('cid')
-                    if cid_attr:
-                        company_id = cid_attr
-                        print(f"从tr标签的cid属性获取到 {company_name} 的公司ID: {company_id}")
-                
-                if not company_id:
-                    # 尝试从复选框ID获取
-                    checkbox = row.select_one('input[type="checkbox"]')
-                    if checkbox and checkbox.get('value'):
-                        company_id = checkbox.get('value')
-                        print(f"从复选框value获取到 {company_name} 的公司ID: {company_id}")
-                    elif checkbox and checkbox.get('id'):
-                        checkbox_id = checkbox.get('id')
-                        if checkbox_id.startswith('ck'):
-                            company_id = checkbox_id[2:]
-                            print(f"从复选框id获取到 {company_name} 的公司ID: {company_id}")
-                
-                if company_id:
-                    # 构建历史让球赔率URL
-                    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                    timestamp = int(time.time() * 1000)  # 当前毫秒时间戳
-                    encoded_time = current_time.replace(' ', '+').replace(':', '%3A')
-                    
-                    # 处理让球值，确保格式正确
-                    handicap_param = handicap_value.replace('+', '%2B') if handicap_value else "-1"
-                    
-                    # 尝试替换特殊字符格式
-                    if handicap_value == "-1":
-                        handicap_param = "-1"
-                    elif handicap_value == "+1":
-                        handicap_param = "%2B1"
-                    elif handicap_value == "-1.5":
-                        handicap_param = "-1.5"
-                    elif handicap_value == "+1.5":
-                        handicap_param = "%2B1.5"
-                    
-                    print(f"处理后的让球参数值: {handicap_param}")
-                    
-                    history_url = f"https://odds.500.com/fenxi1/json/rspf.php?_={timestamp}&fid={fixture_id}&cid={company_id}&r=1&time={encoded_time}&handicapline={handicap_param}&type=rspf"
-                    
-                    print(f"尝试获取 {company_name} 的历史让球赔率数据: {history_url}")
-                    
-                    # 设置请求头
-                    headers = {
-                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-                        'Accept': 'application/json, text/javascript, */*; q=0.01',
-                        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
-                        'Referer': f'https://odds.500.com/fenxi/rangqiu-{fixture_id}.shtml',
-                        'X-Requested-With': 'XMLHttpRequest'
-                    }
-                    
-                    try:
-                        # 添加随机延迟避免被限制
-                        time.sleep(random.uniform(0.5, 1.5))
-                        
-                        # 发送请求获取历史数据
-                        response = requests.get(history_url, headers=headers, timeout=10)
-                        
-                        if response.status_code == 200:
-                            print(f"请求成功，响应内容: {response.text[:200]}")
-                            # 解析JSON响应
-                            try:
-                                history_data = response.json()
-                                if history_data:
-                                    # 解析历史数据, 格式为 [[主胜, 平, 客胜, 返还率, 时间, 主胜变化, 平变化, 客胜变化], ...]
-                                    parsed_history = []
-                                    for item in history_data:
-                                        if len(item) >= 8:
-                                            history_item = {
-                                                'home_odds': float(item[0]),
-                                                'draw_odds': float(item[1]),
-                                                'away_odds': float(item[2]),
-                                                'return_rate': float(item[3]),
-                                                'update_time': item[4],
-                                                'home_change': int(item[5]),  # 1:上升, 0:不变, -1:下降
-                                                'draw_change': int(item[6]),
-                                                'away_change': int(item[7])
-                                            }
-                                            parsed_history.append(history_item)
-                                    
-                                    # 初始化公司数据(如果不存在)
-                                    if company_name not in handicap_history_data:
-                                        handicap_history_data[company_name] = {}
-                                    
-                                    handicap_history_data[company_name][handicap_value] = parsed_history
-                                    print(f"成功获取 {company_name} 的历史让球赔率数据 (让球值: {handicap_value}), 共 {len(parsed_history)} 条记录")
-                                else:
-                                    print(f"未获取到 {company_name} 的有效历史让球赔率数据，响应内容为空")
-                            except Exception as e:
-                                print(f"解析JSON响应时出错: {str(e)}, 响应内容: {response.text[:200]}")
-                        else:
-                            print(f"请求 {company_name} 历史让球赔率失败, 状态码: {response.status_code}")
-                    
-                    except Exception as e:
-                        print(f"获取 {company_name} 历史让球赔率时出错: {str(e)}")
-                        continue
-                else:
-                    print(f"未能获取 {company_name} 的公司ID")
-            
-            except Exception as e:
-                print(f"解析公司行时出错: {str(e)}")
-                continue
-    
-    except Exception as e:
-        print(f"解析历史让球赔率数据时出错: {str(e)}")
-    
-    return handicap_history_data
-
 if __name__ == '__main__':
-    # 检查命令行参数
-    if len(sys.argv) > 1:
-        if sys.argv[1] in ['-d', '--date', '-m', '--match', '-start', '-end', '--keep-html', '-t', '--threads']:
-            main()  # 运行主函数
-        else:
-            print(f"未知参数: {sys.argv[1]}")
-    else:
-        # 如果直接运行脚本（没有参数），使用不同的文件名运行测试函数
-        test_file = 'test_data'
-        test_size_data_write(test_file, '2025-04-01')
-        print(f"测试数据已写入 {test_file}.json") 
+    main()
