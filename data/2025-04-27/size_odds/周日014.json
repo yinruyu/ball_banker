@@ -1,0 +1,896 @@
+{
+  "威廉希尔": {
+    "current_size": {
+      "over": "0.91",
+      "size": "2.5",
+      "under": "0.85",
+      "update_time": "04-21 16:09"
+    },
+    "initial_size": {
+      "over": "0.83",
+      "size": "2.5",
+      "under": "0.91",
+      "update_time": "04-14 09:29"
+    }
+  },
+  "澳门": {
+    "current_size": {
+      "over": "0.89",
+      "size": "2.5",
+      "under": "0.81",
+      "update_time": "04-21 20:40"
+    },
+    "initial_size": {
+      "over": "0.89",
+      "size": "2.5",
+      "under": "0.81",
+      "update_time": "04-21 20:40"
+    }
+  },
+  "立博": {
+    "current_size": {
+      "over": "0.91",
+      "size": "2.5",
+      "under": "0.80",
+      "update_time": "04-23 21:16"
+    },
+    "initial_size": {
+      "over": "0.83",
+      "size": "2.5",
+      "under": "0.91",
+      "update_time": "04-14 11:03"
+    }
+  },
+  "Bet365": {
+    "current_size": {
+      "over": "0.95",
+      "size": "2.5",
+      "under": "0.95",
+      "update_time": "04-27 14:55"
+    },
+    "initial_size": {
+      "over": "0.95",
+      "size": "2.5",
+      "under": "0.95",
+      "update_time": "04-19 22:00"
+    }
+  },
+  "Interwetten": {
+    "current_size": {
+      "over": "0.90",
+      "size": "2.5",
+      "under": "0.90",
+      "update_time": "04-27 15:13"
+    },
+    "initial_size": {
+      "over": "0.83",
+      "size": "2.5",
+      "under": "0.95",
+      "update_time": "04-21 01:40"
+    },
+    "size_history": [
+      {
+        "over_odds": 0.9,
+        "size": "2.5",
+        "under_odds": 0.9,
+        "update_time": "04-27 15:13",
+        "over_change": 0,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.9,
+        "size": "2.5",
+        "under_odds": 0.85,
+        "update_time": "04-27 14:21",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.95,
+        "size": "2.5",
+        "under_odds": 0.83,
+        "update_time": "04-27 13:47",
+        "over_change": 0,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.95,
+        "size": "2.5",
+        "under_odds": 0.8,
+        "update_time": "04-27 13:32",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.9,
+        "size": "2.5",
+        "under_odds": 0.85,
+        "update_time": "04-27 03:11",
+        "over_change": 0,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.9,
+        "size": "2.5",
+        "under_odds": 0.83,
+        "update_time": "04-27 02:55",
+        "over_change": -1,
+        "under_change": 0
+      },
+      {
+        "over_odds": 0.95,
+        "size": "2.5",
+        "under_odds": 0.83,
+        "update_time": "04-25 18:55",
+        "over_change": 0,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.95,
+        "size": "2.5",
+        "under_odds": 0.8,
+        "update_time": "04-23 15:33",
+        "over_change": 0,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.95,
+        "size": "2.5",
+        "under_odds": 0.83,
+        "update_time": "04-22 20:57",
+        "over_change": 1,
+        "under_change": 0
+      },
+      {
+        "over_odds": 0.9,
+        "size": "2.5",
+        "under_odds": 0.83,
+        "update_time": "04-22 19:45",
+        "over_change": 0,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.9,
+        "size": "2.5",
+        "under_odds": 0.85,
+        "update_time": "04-22 19:32",
+        "over_change": 0,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.9,
+        "size": "2.5",
+        "under_odds": 0.9,
+        "update_time": "04-21 16:13",
+        "over_change": 1,
+        "under_change": 0
+      },
+      {
+        "over_odds": 0.85,
+        "size": "2.5",
+        "under_odds": 0.9,
+        "update_time": "04-21 04:30",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.83,
+        "size": "2.5",
+        "under_odds": 0.95,
+        "update_time": "04-21 01:40",
+        "over_change": 0,
+        "under_change": 0
+      }
+    ]
+  },
+  "皇冠": {
+    "current_size": {
+      "over": "0.96",
+      "size": "2.5",
+      "under": "0.92",
+      "update_time": "04-27 16:21"
+    },
+    "initial_size": {
+      "over": "0.93",
+      "size": "2.5",
+      "under": "0.93",
+      "update_time": "04-17 20:36"
+    },
+    "size_history": [
+      {
+        "over_odds": 0.96,
+        "size": "2.5",
+        "under_odds": 0.92,
+        "update_time": "04-27 16:21",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.95,
+        "size": "2.5",
+        "under_odds": 0.93,
+        "update_time": "04-27 15:54",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.98,
+        "size": "2.5",
+        "under_odds": 0.9,
+        "update_time": "04-27 15:53",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.95,
+        "size": "2.5",
+        "under_odds": 0.93,
+        "update_time": "04-27 15:27",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.93,
+        "size": "2.5",
+        "under_odds": 0.95,
+        "update_time": "04-27 15:24",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.95,
+        "size": "2.5",
+        "under_odds": 0.93,
+        "update_time": "04-27 15:22",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.96,
+        "size": "2.5",
+        "under_odds": 0.92,
+        "update_time": "04-27 15:21",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.98,
+        "size": "2.5",
+        "under_odds": 0.9,
+        "update_time": "04-27 14:46",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.95,
+        "size": "2.5",
+        "under_odds": 0.93,
+        "update_time": "04-27 14:45",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.98,
+        "size": "2.5",
+        "under_odds": 0.9,
+        "update_time": "04-27 14:00",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 1.01,
+        "size": "2.5",
+        "under_odds": 0.87,
+        "update_time": "04-27 13:13",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 1.02,
+        "size": "2.5",
+        "under_odds": 0.86,
+        "update_time": "04-22 19:24",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.98,
+        "size": "2.5",
+        "under_odds": 0.9,
+        "update_time": "04-21 04:16",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.97,
+        "size": "2.5",
+        "under_odds": 0.91,
+        "update_time": "04-21 04:15",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.94,
+        "size": "2.5",
+        "under_odds": 0.94,
+        "update_time": "04-18 13:22",
+        "over_change": 1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.93,
+        "size": "2.5",
+        "under_odds": 0.93,
+        "update_time": "04-17 20:36",
+        "over_change": 0,
+        "under_change": 0
+      }
+    ]
+  },
+  "易胜博": {
+    "current_size": {
+      "over": "0.97",
+      "size": "2.5",
+      "under": "0.92",
+      "update_time": "04-27 16:19"
+    },
+    "initial_size": {
+      "over": "0.99",
+      "size": "2.5",
+      "under": "0.90",
+      "update_time": "04-21 22:29"
+    }
+  },
+  "伟德": {
+    "current_size": {
+      "over": "0.94",
+      "size": "2.5",
+      "under": "0.92",
+      "update_time": "04-27 15:59"
+    },
+    "initial_size": {
+      "over": "0.88",
+      "size": "2.5",
+      "under": "0.93",
+      "update_time": "04-14 12:20"
+    }
+  },
+  "10BET": {
+    "current_size": {
+      "over": "0.90",
+      "size": "2.5",
+      "under": "0.87",
+      "update_time": "04-27 14:49"
+    },
+    "initial_size": {
+      "over": "0.81",
+      "size": "2.5",
+      "under": "0.93",
+      "update_time": "04-14 05:02"
+    },
+    "size_history": [
+      {
+        "over_odds": 0.9,
+        "size": "2.5",
+        "under_odds": 0.87,
+        "update_time": "04-27 14:49",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.92,
+        "size": "2.5",
+        "under_odds": 0.86,
+        "update_time": "04-27 14:26",
+        "over_change": 1,
+        "under_change": 0
+      },
+      {
+        "over_odds": 0.91,
+        "size": "2.5",
+        "under_odds": 0.86,
+        "update_time": "04-27 14:15",
+        "over_change": 0,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.91,
+        "size": "2.5",
+        "under_odds": 0.87,
+        "update_time": "04-27 14:07",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.92,
+        "size": "2.5",
+        "under_odds": 0.86,
+        "update_time": "04-27 13:59",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.93,
+        "size": "2.5",
+        "under_odds": 0.85,
+        "update_time": "04-27 13:57",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.96,
+        "size": "2.5",
+        "under_odds": 0.82,
+        "update_time": "04-27 13:15",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.93,
+        "size": "2.5",
+        "under_odds": 0.84,
+        "update_time": "04-27 13:14",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.92,
+        "size": "2.5",
+        "under_odds": 0.86,
+        "update_time": "04-27 11:13",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.93,
+        "size": "2.5",
+        "under_odds": 0.85,
+        "update_time": "04-27 03:00",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.94,
+        "size": "2.5",
+        "under_odds": 0.84,
+        "update_time": "04-27 02:29",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.95,
+        "size": "2.5",
+        "under_odds": 0.83,
+        "update_time": "04-26 02:43",
+        "over_change": 1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.93,
+        "size": "2.5",
+        "under_odds": 0.81,
+        "update_time": "04-25 18:34",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.94,
+        "size": "2.5",
+        "under_odds": 0.8,
+        "update_time": "04-25 18:32",
+        "over_change": -1,
+        "under_change": 0
+      },
+      {
+        "over_odds": 0.95,
+        "size": "2.5",
+        "under_odds": 0.8,
+        "update_time": "04-23 15:13",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.93,
+        "size": "2.5",
+        "under_odds": 0.81,
+        "update_time": "04-22 20:41",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.92,
+        "size": "2.5",
+        "under_odds": 0.82,
+        "update_time": "04-22 19:30",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.88,
+        "size": "2.5",
+        "under_odds": 0.86,
+        "update_time": "04-21 16:02",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.87,
+        "size": "2.5",
+        "under_odds": 0.87,
+        "update_time": "04-21 04:20",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.86,
+        "size": "2.5",
+        "under_odds": 0.88,
+        "update_time": "04-21 04:14",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.84,
+        "size": "2.5",
+        "under_odds": 0.9,
+        "update_time": "04-15 16:27",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.85,
+        "size": "2.5",
+        "under_odds": 0.89,
+        "update_time": "04-14 16:25",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.86,
+        "size": "2.5",
+        "under_odds": 0.88,
+        "update_time": "04-14 09:18",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.85,
+        "size": "2.5",
+        "under_odds": 0.89,
+        "update_time": "04-14 05:50",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.84,
+        "size": "2.5",
+        "under_odds": 0.9,
+        "update_time": "04-14 05:49",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.83,
+        "size": "2.5",
+        "under_odds": 0.91,
+        "update_time": "04-14 05:07",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.81,
+        "size": "2.5",
+        "under_odds": 0.93,
+        "update_time": "04-14 05:02",
+        "over_change": 0,
+        "under_change": 0
+      }
+    ]
+  },
+  "利记": {
+    "current_size": {
+      "over": "0.95",
+      "size": "2.5",
+      "under": "0.95",
+      "update_time": "04-27 16:33"
+    },
+    "initial_size": {
+      "over": "0.90",
+      "size": "2.5",
+      "under": "0.98",
+      "update_time": "04-20 18:33"
+    },
+    "size_history": [
+      {
+        "over_odds": 0.95,
+        "size": "2.5",
+        "under_odds": 0.95,
+        "update_time": "04-27 16:33",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.97,
+        "size": "2.5",
+        "under_odds": 0.93,
+        "update_time": "04-27 15:50",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.99,
+        "size": "2.5",
+        "under_odds": 0.91,
+        "update_time": "04-27 15:38",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 1.0,
+        "size": "2.5",
+        "under_odds": 0.9,
+        "update_time": "04-27 14:02",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.97,
+        "size": "2.5",
+        "under_odds": 0.93,
+        "update_time": "04-27 12:31",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 1.0,
+        "size": "2.5",
+        "under_odds": 0.9,
+        "update_time": "04-27 12:05",
+        "over_change": 1,
+        "under_change": 0
+      },
+      {
+        "over_odds": 0.98,
+        "size": "2.5",
+        "under_odds": 0.9,
+        "update_time": "04-27 06:32",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 1.02,
+        "size": "2.5",
+        "under_odds": 0.86,
+        "update_time": "04-27 05:25",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 1.01,
+        "size": "2.5",
+        "under_odds": 0.87,
+        "update_time": "04-22 19:22",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.93,
+        "size": "2.5",
+        "under_odds": 0.95,
+        "update_time": "04-21 04:12",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.9,
+        "size": "2.5",
+        "under_odds": 0.98,
+        "update_time": "04-20 18:33",
+        "over_change": 0,
+        "under_change": 0
+      }
+    ]
+  },
+  "Mansion88 (明升)": {
+    "current_size": {
+      "over": "0.94",
+      "size": "2.5",
+      "under": "0.96",
+      "update_time": "04-27 17:55"
+    },
+    "initial_size": {
+      "over": "0.91",
+      "size": "2.5",
+      "under": "0.95",
+      "update_time": "04-14 05:48"
+    }
+  },
+  "香港马会": {
+    "current_size": {
+      "over": "0.78",
+      "size": "2.5",
+      "under": "0.92",
+      "update_time": "04-24 19:32"
+    },
+    "initial_size": {
+      "over": "0.78",
+      "size": "2.5",
+      "under": "0.92",
+      "update_time": "04-24 19:32"
+    }
+  },
+  "金宝博": {
+    "current_size": {
+      "over": "0.97",
+      "size": "2.5",
+      "under": "0.93",
+      "update_time": "04-27 16:23"
+    },
+    "initial_size": {
+      "over": "0.94",
+      "size": "2.5",
+      "under": "0.94",
+      "update_time": "04-17 20:35"
+    },
+    "size_history": [
+      {
+        "over_odds": 0.97,
+        "size": "2.5",
+        "under_odds": 0.93,
+        "update_time": "04-27 16:23",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.99,
+        "size": "2.5",
+        "under_odds": 0.91,
+        "update_time": "04-27 16:17",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.96,
+        "size": "2.5",
+        "under_odds": 0.94,
+        "update_time": "04-27 15:29",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.94,
+        "size": "2.5",
+        "under_odds": 0.96,
+        "update_time": "04-27 15:24",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.96,
+        "size": "2.5",
+        "under_odds": 0.94,
+        "update_time": "04-27 14:45",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 0.99,
+        "size": "2.5",
+        "under_odds": 0.91,
+        "update_time": "04-27 14:01",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 1.02,
+        "size": "2.5",
+        "under_odds": 0.88,
+        "update_time": "04-27 13:15",
+        "over_change": -1,
+        "under_change": 1
+      },
+      {
+        "over_odds": 1.03,
+        "size": "2.5",
+        "under_odds": 0.87,
+        "update_time": "04-22 19:24",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.99,
+        "size": "2.5",
+        "under_odds": 0.91,
+        "update_time": "04-21 04:14",
+        "over_change": 1,
+        "under_change": -1
+      },
+      {
+        "over_odds": 0.96,
+        "size": "2.5",
+        "under_odds": 0.94,
+        "update_time": "04-18 13:20",
+        "over_change": 1,
+        "under_change": 0
+      },
+      {
+        "over_odds": 0.94,
+        "size": "2.5",
+        "under_odds": 0.94,
+        "update_time": "04-17 20:35",
+        "over_change": 0,
+        "under_change": 0
+      }
+    ]
+  },
+  "12BET (壹�E博)": {
+    "current_size": {
+      "over": "0.89",
+      "size": "2.5",
+      "under": "0.95",
+      "update_time": "04-27 15:56"
+    },
+    "initial_size": {
+      "over": "0.88",
+      "size": "2.5",
+      "under": "0.92",
+      "update_time": "04-14 11:01"
+    }
+  },
+  "18Bet": {
+    "current_size": {
+      "over": "0.96",
+      "size": "2.5",
+      "under": "0.88",
+      "update_time": "04-27 17:58"
+    },
+    "initial_size": {
+      "over": "0.82",
+      "size": "2.5",
+      "under": "0.95",
+      "update_time": "04-14 04:48"
+    }
+  },
+  "Betcity": {
+    "current_size": {
+      "over": "1.02",
+      "size": "2.5/3",
+      "under": "0.74",
+      "update_time": "04-14 05:20"
+    },
+    "initial_size": {
+      "over": "1.02",
+      "size": "2.5/3",
+      "under": "0.74",
+      "update_time": "04-14 05:20"
+    }
+  },
+  "Marathon(马博)": {
+    "current_size": {
+      "over": "1.03",
+      "size": "2.5/3",
+      "under": "0.73",
+      "update_time": "04-14 04:49"
+    },
+    "initial_size": {
+      "over": "1.03",
+      "size": "2.5/3",
+      "under": "0.73",
+      "update_time": "04-14 04:49"
+    }
+  },
+  "Wewbet (盈禾)": {
+    "current_size": {
+      "over": "0.96",
+      "size": "2.5",
+      "under": "0.92",
+      "update_time": "04-27 16:20"
+    },
+    "initial_size": {
+      "over": "0.87",
+      "size": "2.5",
+      "under": "0.97",
+      "update_time": "04-14 09:08"
+    }
+  }
+}

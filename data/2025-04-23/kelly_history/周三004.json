@@ -1,0 +1,744 @@
+{
+  "澳门": [
+    {
+      "kelly_win": 0.97,
+      "kelly_draw": 0.85,
+      "kelly_lose": 0.69,
+      "update_time": "2025-04-20 17:12:32"
+    }
+  ],
+  "皇冠": [
+    {
+      "kelly_win": 0.95,
+      "kelly_draw": 0.99,
+      "kelly_lose": 0.96,
+      "update_time": "2025-04-23 12:32:48"
+    },
+    {
+      "kelly_win": 0.97,
+      "kelly_draw": 0.97,
+      "kelly_lose": 0.75,
+      "update_time": "2025-04-23 12:26:35"
+    },
+    {
+      "kelly_win": 0.97,
+      "kelly_draw": 0.97,
+      "kelly_lose": 0.78,
+      "update_time": "2025-04-23 12:24:35"
+    },
+    {
+      "kelly_win": 0.97,
+      "kelly_draw": 0.97,
+      "kelly_lose": 0.82,
+      "update_time": "2025-04-23 12:24:00"
+    },
+    {
+      "kelly_win": 0.97,
+      "kelly_draw": 0.97,
+      "kelly_lose": 0.89,
+      "update_time": "2025-04-23 05:38:30"
+    },
+    {
+      "kelly_win": 0.98,
+      "kelly_draw": 0.96,
+      "kelly_lose": 0.87,
+      "update_time": "2025-04-23 02:07:36"
+    },
+    {
+      "kelly_win": 0.98,
+      "kelly_draw": 0.95,
+      "kelly_lose": 0.86,
+      "update_time": "2025-04-22 01:39:15"
+    },
+    {
+      "kelly_win": 0.98,
+      "kelly_draw": 0.93,
+      "kelly_lose": 0.92,
+      "update_time": "2025-04-22 01:03:58"
+    },
+    {
+      "kelly_win": 1.01,
+      "kelly_draw": 0.93,
+      "kelly_lose": 0.81,
+      "update_time": "2025-04-21 02:12:17"
+    },
+    {
+      "kelly_win": 1.01,
+      "kelly_draw": 0.94,
+      "kelly_lose": 0.77,
+      "update_time": "2025-04-21 00:34:53"
+    },
+    {
+      "kelly_win": 1.02,
+      "kelly_draw": 0.92,
+      "kelly_lose": 0.73,
+      "update_time": "2025-04-20 23:25:20"
+    },
+    {
+      "kelly_win": 1.03,
+      "kelly_draw": 0.9,
+      "kelly_lose": 0.73,
+      "update_time": "2025-04-19 02:45:20"
+    },
+    {
+      "kelly_win": 1.04,
+      "kelly_draw": 0.89,
+      "kelly_lose": 0.71,
+      "update_time": "2025-04-17 05:33:12"
+    },
+    {
+      "kelly_win": 1.06,
+      "kelly_draw": 0.88,
+      "kelly_lose": 0.68,
+      "update_time": "2025-04-14 13:22:54"
+    },
+    {
+      "kelly_win": 1.04,
+      "kelly_draw": 0.9,
+      "kelly_lose": 0.72,
+      "update_time": "2025-04-14 13:18:09"
+    },
+    {
+      "kelly_win": 1.06,
+      "kelly_draw": 0.88,
+      "kelly_lose": 0.68,
+      "update_time": "2025-04-14 13:17:45"
+    },
+    {
+      "kelly_win": 1.04,
+      "kelly_draw": 0.9,
+      "kelly_lose": 0.72,
+      "update_time": "2025-04-14 11:24:23"
+    },
+    {
+      "kelly_win": 1.04,
+      "kelly_draw": 0.89,
+      "kelly_lose": 0.71,
+      "update_time": "2025-04-14 06:57:53"
+    },
+    {
+      "kelly_win": 1.05,
+      "kelly_draw": 0.88,
+      "kelly_lose": 0.69,
+      "update_time": "2025-04-14 06:25:05"
+    }
+  ],
+  "利记": [
+    {
+      "kelly_win": 0.92,
+      "kelly_draw": 0.88,
+      "kelly_lose": 0.88,
+      "update_time": "2025-04-23 13:03:58"
+    },
+    {
+      "kelly_win": 0.92,
+      "kelly_draw": 0.89,
+      "kelly_lose": 0.88,
+      "update_time": "2025-04-23 13:00:24"
+    },
+    {
+      "kelly_win": 0.92,
+      "kelly_draw": 0.89,
+      "kelly_lose": 0.88,
+      "update_time": "2025-04-23 12:59:00"
+    },
+    {
+      "kelly_win": 0.92,
+      "kelly_draw": 0.88,
+      "kelly_lose": 0.88,
+      "update_time": "2025-04-23 12:57:37"
+    },
+    {
+      "kelly_win": 0.92,
+      "kelly_draw": 0.88,
+      "kelly_lose": 0.88,
+      "update_time": "2025-04-23 12:52:48"
+    },
+    {
+      "kelly_win": 0.93,
+      "kelly_draw": 0.87,
+      "kelly_lose": 0.86,
+      "update_time": "2025-04-23 12:31:41"
+    },
+    {
+      "kelly_win": 0.93,
+      "kelly_draw": 0.87,
+      "kelly_lose": 0.86,
+      "update_time": "2025-04-23 12:30:59"
+    },
+    {
+      "kelly_win": 0.93,
+      "kelly_draw": 0.87,
+      "kelly_lose": 0.88,
+      "update_time": "2025-04-23 12:30:18"
+    },
+    {
+      "kelly_win": 0.94,
+      "kelly_draw": 0.86,
+      "kelly_lose": 0.86,
+      "update_time": "2025-04-23 12:29:44"
+    },
+    {
+      "kelly_win": 0.94,
+      "kelly_draw": 0.85,
+      "kelly_lose": 0.83,
+      "update_time": "2025-04-23 12:24:52"
+    },
+    {
+      "kelly_win": 0.94,
+      "kelly_draw": 0.85,
+      "kelly_lose": 0.82,
+      "update_time": "2025-04-23 12:07:24"
+    },
+    {
+      "kelly_win": 0.94,
+      "kelly_draw": 0.82,
+      "kelly_lose": 0.79,
+      "update_time": "2025-04-23 12:06:00"
+    },
+    {
+      "kelly_win": 0.93,
+      "kelly_draw": 0.83,
+      "kelly_lose": 0.79,
+      "update_time": "2025-04-23 09:19:04"
+    },
+    {
+      "kelly_win": 0.94,
+      "kelly_draw": 0.82,
+      "kelly_lose": 0.77,
+      "update_time": "2025-04-23 08:34:12"
+    },
+    {
+      "kelly_win": 0.94,
+      "kelly_draw": 0.82,
+      "kelly_lose": 0.78,
+      "update_time": "2025-04-23 08:20:50"
+    },
+    {
+      "kelly_win": 0.95,
+      "kelly_draw": 0.84,
+      "kelly_lose": 0.78,
+      "update_time": "2025-04-23 07:28:35"
+    },
+    {
+      "kelly_win": 0.94,
+      "kelly_draw": 0.82,
+      "kelly_lose": 0.76,
+      "update_time": "2025-04-23 07:26:53"
+    },
+    {
+      "kelly_win": 0.93,
+      "kelly_draw": 0.83,
+      "kelly_lose": 0.79,
+      "update_time": "2025-04-23 07:18:30"
+    },
+    {
+      "kelly_win": 0.94,
+      "kelly_draw": 0.83,
+      "kelly_lose": 0.78,
+      "update_time": "2025-04-23 07:15:42"
+    },
+    {
+      "kelly_win": 0.94,
+      "kelly_draw": 0.83,
+      "kelly_lose": 0.78,
+      "update_time": "2025-04-23 07:03:02"
+    },
+    {
+      "kelly_win": 0.94,
+      "kelly_draw": 0.86,
+      "kelly_lose": 0.81,
+      "update_time": "2025-04-23 03:13:57"
+    },
+    {
+      "kelly_win": 0.94,
+      "kelly_draw": 0.83,
+      "kelly_lose": 0.78,
+      "update_time": "2025-04-23 03:05:20"
+    },
+    {
+      "kelly_win": 0.95,
+      "kelly_draw": 0.85,
+      "kelly_lose": 0.78,
+      "update_time": "2025-04-23 01:39:52"
+    },
+    {
+      "kelly_win": 0.94,
+      "kelly_draw": 0.82,
+      "kelly_lose": 0.76,
+      "update_time": "2025-04-23 01:38:40"
+    },
+    {
+      "kelly_win": 0.94,
+      "kelly_draw": 0.82,
+      "kelly_lose": 0.75,
+      "update_time": "2025-04-22 14:00:52"
+    },
+    {
+      "kelly_win": 0.94,
+      "kelly_draw": 0.81,
+      "kelly_lose": 0.74,
+      "update_time": "2025-04-22 01:03:14"
+    },
+    {
+      "kelly_win": 0.95,
+      "kelly_draw": 0.8,
+      "kelly_lose": 0.73,
+      "update_time": "2025-04-22 00:57:41"
+    },
+    {
+      "kelly_win": 0.95,
+      "kelly_draw": 0.8,
+      "kelly_lose": 0.72,
+      "update_time": "2025-04-21 18:52:27"
+    },
+    {
+      "kelly_win": 0.96,
+      "kelly_draw": 0.8,
+      "kelly_lose": 0.72,
+      "update_time": "2025-04-21 05:55:20"
+    },
+    {
+      "kelly_win": 0.96,
+      "kelly_draw": 0.79,
+      "kelly_lose": 0.7,
+      "update_time": "2025-04-21 05:46:41"
+    },
+    {
+      "kelly_win": 0.96,
+      "kelly_draw": 0.79,
+      "kelly_lose": 0.68,
+      "update_time": "2025-04-21 05:45:20"
+    },
+    {
+      "kelly_win": 0.96,
+      "kelly_draw": 0.79,
+      "kelly_lose": 0.7,
+      "update_time": "2025-04-20 21:38:01"
+    },
+    {
+      "kelly_win": 0.98,
+      "kelly_draw": 0.78,
+      "kelly_lose": 0.66,
+      "update_time": "2025-04-19 23:12:44"
+    },
+    {
+      "kelly_win": 0.98,
+      "kelly_draw": 0.77,
+      "kelly_lose": 0.65,
+      "update_time": "2025-04-19 05:52:48"
+    },
+    {
+      "kelly_win": 1.0,
+      "kelly_draw": 0.76,
+      "kelly_lose": 0.63,
+      "update_time": "2025-04-19 02:40:48"
+    },
+    {
+      "kelly_win": 1.02,
+      "kelly_draw": 0.78,
+      "kelly_lose": 0.64,
+      "update_time": "2025-04-16 05:57:15"
+    },
+    {
+      "kelly_win": 1.01,
+      "kelly_draw": 0.79,
+      "kelly_lose": 0.64,
+      "update_time": "2025-04-15 00:01:29"
+    }
+  ],
+  "Mansion88 (明升)": [
+    {
+      "kelly_win": 0.95,
+      "kelly_draw": 0.95,
+      "kelly_lose": 1.0,
+      "update_time": "2025-04-23 12:51:21"
+    },
+    {
+      "kelly_win": 0.95,
+      "kelly_draw": 0.94,
+      "kelly_lose": 0.99,
+      "update_time": "2025-04-23 12:33:12"
+    },
+    {
+      "kelly_win": 0.94,
+      "kelly_draw": 0.95,
+      "kelly_lose": 1.01,
+      "update_time": "2025-04-23 12:31:17"
+    },
+    {
+      "kelly_win": 0.95,
+      "kelly_draw": 0.94,
+      "kelly_lose": 0.99,
+      "update_time": "2025-04-23 12:30:16"
+    },
+    {
+      "kelly_win": 0.98,
+      "kelly_draw": 0.9,
+      "kelly_lose": 0.9,
+      "update_time": "2025-04-23 12:22:32"
+    },
+    {
+      "kelly_win": 0.98,
+      "kelly_draw": 0.91,
+      "kelly_lose": 0.9,
+      "update_time": "2025-04-23 12:02:47"
+    },
+    {
+      "kelly_win": 0.97,
+      "kelly_draw": 0.91,
+      "kelly_lose": 0.92,
+      "update_time": "2025-04-23 12:01:30"
+    },
+    {
+      "kelly_win": 0.96,
+      "kelly_draw": 0.92,
+      "kelly_lose": 0.94,
+      "update_time": "2025-04-23 11:55:46"
+    },
+    {
+      "kelly_win": 0.97,
+      "kelly_draw": 0.91,
+      "kelly_lose": 0.92,
+      "update_time": "2025-04-23 11:06:10"
+    },
+    {
+      "kelly_win": 0.97,
+      "kelly_draw": 0.91,
+      "kelly_lose": 0.93,
+      "update_time": "2025-04-23 11:00:52"
+    },
+    {
+      "kelly_win": 0.97,
+      "kelly_draw": 0.91,
+      "kelly_lose": 0.92,
+      "update_time": "2025-04-23 10:17:47"
+    },
+    {
+      "kelly_win": 0.97,
+      "kelly_draw": 0.91,
+      "kelly_lose": 0.93,
+      "update_time": "2025-04-23 09:59:44"
+    },
+    {
+      "kelly_win": 0.96,
+      "kelly_draw": 0.91,
+      "kelly_lose": 0.94,
+      "update_time": "2025-04-23 07:57:57"
+    },
+    {
+      "kelly_win": 0.97,
+      "kelly_draw": 0.91,
+      "kelly_lose": 0.93,
+      "update_time": "2025-04-23 06:38:09"
+    },
+    {
+      "kelly_win": 0.95,
+      "kelly_draw": 0.89,
+      "kelly_lose": 0.87,
+      "update_time": "2025-04-23 06:02:18"
+    },
+    {
+      "kelly_win": 0.96,
+      "kelly_draw": 0.89,
+      "kelly_lose": 0.86,
+      "update_time": "2025-04-23 05:49:40"
+    },
+    {
+      "kelly_win": 0.96,
+      "kelly_draw": 0.88,
+      "kelly_lose": 0.84,
+      "update_time": "2025-04-23 05:28:00"
+    },
+    {
+      "kelly_win": 0.95,
+      "kelly_draw": 0.89,
+      "kelly_lose": 0.87,
+      "update_time": "2025-04-23 02:52:28"
+    },
+    {
+      "kelly_win": 0.95,
+      "kelly_draw": 0.9,
+      "kelly_lose": 0.88,
+      "update_time": "2025-04-23 02:16:05"
+    },
+    {
+      "kelly_win": 0.96,
+      "kelly_draw": 0.89,
+      "kelly_lose": 0.86,
+      "update_time": "2025-04-22 21:57:27"
+    },
+    {
+      "kelly_win": 0.96,
+      "kelly_draw": 0.88,
+      "kelly_lose": 0.86,
+      "update_time": "2025-04-22 19:02:25"
+    },
+    {
+      "kelly_win": 0.96,
+      "kelly_draw": 0.88,
+      "kelly_lose": 0.85,
+      "update_time": "2025-04-22 17:53:24"
+    },
+    {
+      "kelly_win": 0.96,
+      "kelly_draw": 0.88,
+      "kelly_lose": 0.84,
+      "update_time": "2025-04-22 10:41:13"
+    },
+    {
+      "kelly_win": 0.96,
+      "kelly_draw": 0.88,
+      "kelly_lose": 0.83,
+      "update_time": "2025-04-22 09:42:05"
+    },
+    {
+      "kelly_win": 0.96,
+      "kelly_draw": 0.88,
+      "kelly_lose": 0.84,
+      "update_time": "2025-04-22 09:31:23"
+    },
+    {
+      "kelly_win": 0.96,
+      "kelly_draw": 0.88,
+      "kelly_lose": 0.83,
+      "update_time": "2025-04-22 05:26:08"
+    },
+    {
+      "kelly_win": 0.96,
+      "kelly_draw": 0.87,
+      "kelly_lose": 0.82,
+      "update_time": "2025-04-22 01:02:16"
+    },
+    {
+      "kelly_win": 0.97,
+      "kelly_draw": 0.87,
+      "kelly_lose": 0.81,
+      "update_time": "2025-04-21 14:36:16"
+    },
+    {
+      "kelly_win": 0.98,
+      "kelly_draw": 0.86,
+      "kelly_lose": 0.8,
+      "update_time": "2025-04-21 10:54:17"
+    },
+    {
+      "kelly_win": 0.98,
+      "kelly_draw": 0.86,
+      "kelly_lose": 0.78,
+      "update_time": "2025-04-21 02:07:20"
+    },
+    {
+      "kelly_win": 0.98,
+      "kelly_draw": 0.85,
+      "kelly_lose": 0.78,
+      "update_time": "2025-04-21 02:02:31"
+    },
+    {
+      "kelly_win": 0.97,
+      "kelly_draw": 0.88,
+      "kelly_lose": 0.78,
+      "update_time": "2025-04-21 01:27:22"
+    },
+    {
+      "kelly_win": 0.98,
+      "kelly_draw": 0.86,
+      "kelly_lose": 0.76,
+      "update_time": "2025-04-21 00:21:14"
+    },
+    {
+      "kelly_win": 0.99,
+      "kelly_draw": 0.85,
+      "kelly_lose": 0.75,
+      "update_time": "2025-04-20 23:59:56"
+    },
+    {
+      "kelly_win": 1.0,
+      "kelly_draw": 0.84,
+      "kelly_lose": 0.73,
+      "update_time": "2025-04-20 23:56:11"
+    },
+    {
+      "kelly_win": 1.01,
+      "kelly_draw": 0.85,
+      "kelly_lose": 0.71,
+      "update_time": "2025-04-20 18:23:29"
+    },
+    {
+      "kelly_win": 1.02,
+      "kelly_draw": 0.83,
+      "kelly_lose": 0.68,
+      "update_time": "2025-04-20 04:19:10"
+    },
+    {
+      "kelly_win": 1.01,
+      "kelly_draw": 0.84,
+      "kelly_lose": 0.7,
+      "update_time": "2025-04-18 12:13:47"
+    },
+    {
+      "kelly_win": 1.01,
+      "kelly_draw": 0.84,
+      "kelly_lose": 0.71,
+      "update_time": "2025-04-18 10:46:09"
+    },
+    {
+      "kelly_win": 1.0,
+      "kelly_draw": 0.85,
+      "kelly_lose": 0.71,
+      "update_time": "2025-04-17 05:44:21"
+    },
+    {
+      "kelly_win": 1.03,
+      "kelly_draw": 0.82,
+      "kelly_lose": 0.65,
+      "update_time": "2025-04-16 08:57:23"
+    },
+    {
+      "kelly_win": 1.03,
+      "kelly_draw": 0.83,
+      "kelly_lose": 0.64,
+      "update_time": "2025-04-16 08:55:33"
+    },
+    {
+      "kelly_win": 1.03,
+      "kelly_draw": 0.82,
+      "kelly_lose": 0.66,
+      "update_time": "2025-04-16 05:55:45"
+    },
+    {
+      "kelly_win": 1.03,
+      "kelly_draw": 0.81,
+      "kelly_lose": 0.68,
+      "update_time": "2025-04-14 16:35:56"
+    },
+    {
+      "kelly_win": 1.04,
+      "kelly_draw": 0.8,
+      "kelly_lose": 0.65,
+      "update_time": "2025-04-14 13:14:47"
+    },
+    {
+      "kelly_win": 1.01,
+      "kelly_draw": 0.83,
+      "kelly_lose": 0.72,
+      "update_time": "2025-04-14 13:13:50"
+    },
+    {
+      "kelly_win": 1.01,
+      "kelly_draw": 0.83,
+      "kelly_lose": 0.71,
+      "update_time": "2025-04-14 06:50:48"
+    },
+    {
+      "kelly_win": 1.02,
+      "kelly_draw": 0.82,
+      "kelly_lose": 0.68,
+      "update_time": "2025-04-14 06:50:13"
+    },
+    {
+      "kelly_win": 1.02,
+      "kelly_draw": 0.82,
+      "kelly_lose": 0.69,
+      "update_time": "2025-04-14 05:44:38"
+    },
+    {
+      "kelly_win": 1.03,
+      "kelly_draw": 0.81,
+      "kelly_lose": 0.68,
+      "update_time": "2025-04-14 05:43:43"
+    }
+  ],
+  "金宝博": [
+    {
+      "kelly_win": 0.95,
+      "kelly_draw": 0.99,
+      "kelly_lose": 0.96,
+      "update_time": "2025-04-23 12:30:22"
+    },
+    {
+      "kelly_win": 0.97,
+      "kelly_draw": 0.97,
+      "kelly_lose": 0.78,
+      "update_time": "2025-04-23 12:25:01"
+    },
+    {
+      "kelly_win": 0.97,
+      "kelly_draw": 0.97,
+      "kelly_lose": 0.89,
+      "update_time": "2025-04-23 05:32:14"
+    },
+    {
+      "kelly_win": 0.98,
+      "kelly_draw": 0.96,
+      "kelly_lose": 0.87,
+      "update_time": "2025-04-23 02:04:57"
+    },
+    {
+      "kelly_win": 0.98,
+      "kelly_draw": 0.95,
+      "kelly_lose": 0.86,
+      "update_time": "2025-04-22 01:35:08"
+    },
+    {
+      "kelly_win": 0.98,
+      "kelly_draw": 0.93,
+      "kelly_lose": 0.92,
+      "update_time": "2025-04-22 00:59:58"
+    },
+    {
+      "kelly_win": 1.01,
+      "kelly_draw": 0.93,
+      "kelly_lose": 0.81,
+      "update_time": "2025-04-21 02:07:10"
+    },
+    {
+      "kelly_win": 1.01,
+      "kelly_draw": 0.94,
+      "kelly_lose": 0.77,
+      "update_time": "2025-04-21 00:30:10"
+    },
+    {
+      "kelly_win": 1.02,
+      "kelly_draw": 0.92,
+      "kelly_lose": 0.73,
+      "update_time": "2025-04-20 23:23:49"
+    },
+    {
+      "kelly_win": 1.03,
+      "kelly_draw": 0.9,
+      "kelly_lose": 0.73,
+      "update_time": "2025-04-19 02:36:12"
+    },
+    {
+      "kelly_win": 1.04,
+      "kelly_draw": 0.89,
+      "kelly_lose": 0.71,
+      "update_time": "2025-04-17 05:29:49"
+    },
+    {
+      "kelly_win": 1.06,
+      "kelly_draw": 0.88,
+      "kelly_lose": 0.68,
+      "update_time": "2025-04-14 13:15:56"
+    },
+    {
+      "kelly_win": 1.04,
+      "kelly_draw": 0.9,
+      "kelly_lose": 0.72,
+      "update_time": "2025-04-14 11:24:51"
+    },
+    {
+      "kelly_win": 1.04,
+      "kelly_draw": 0.89,
+      "kelly_lose": 0.71,
+      "update_time": "2025-04-14 06:56:20"
+    },
+    {
+      "kelly_win": 1.05,
+      "kelly_draw": 0.88,
+      "kelly_lose": 0.69,
+      "update_time": "2025-04-14 06:24:19"
+    }
+  ]
+}

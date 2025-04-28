@@ -1,0 +1,7316 @@
+{
+  "威廉希尔": {
+    "initial_odds": [
+      2.25,
+      3.4,
+      3.0
+    ],
+    "current_odds": [
+      1.85,
+      3.5,
+      4.0
+    ],
+    "initial_probabilities": [
+      0.4146,
+      0.2744,
+      0.311
+    ],
+    "current_probabilities": [
+      0.5022,
+      0.2655,
+      0.2323
+    ],
+    "initial_return_rate": 0.9329,
+    "current_return_rate": 0.9291,
+    "initial_kelly": [
+      1.16,
+      0.89,
+      0.67
+    ],
+    "current_kelly": [
+      0.95,
+      0.92,
+      0.89
+    ],
+    "odds_history": [
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.5,
+        "lose_odds": 4.0,
+        "return_rate": 92.91,
+        "update_time": "2025-04-27 17:14:54",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.6,
+        "lose_odds": 4.4,
+        "return_rate": 92.9,
+        "update_time": "2025-04-27 16:41:12",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.6,
+        "lose_odds": 4.5,
+        "return_rate": 93.33,
+        "update_time": "2025-04-27 16:30:28",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.7,
+        "lose_odds": 4.4,
+        "return_rate": 93.55,
+        "update_time": "2025-04-27 15:16:04",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.7,
+        "lose_odds": 4.5,
+        "return_rate": 93.99,
+        "update_time": "2025-04-27 14:24:04",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.7,
+        "lose_odds": 4.4,
+        "return_rate": 93.55,
+        "update_time": "2025-04-27 14:13:00",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.6,
+        "lose_odds": 4.4,
+        "return_rate": 94.29,
+        "update_time": "2025-04-27 13:41:22",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.5,
+        "lose_odds": 4.2,
+        "return_rate": 93.44,
+        "update_time": "2025-04-27 12:36:40",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.4,
+        "lose_odds": 4.2,
+        "return_rate": 93.22,
+        "update_time": "2025-04-27 12:26:42",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.5,
+        "lose_odds": 4.2,
+        "return_rate": 93.44,
+        "update_time": "2025-04-27 12:04:58",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.4,
+        "return_rate": 93.59,
+        "update_time": "2025-04-25 19:49:32",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.5,
+        "return_rate": 94.03,
+        "update_time": "2025-04-24 19:22:58",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.4,
+        "lose_odds": 4.4,
+        "return_rate": 93.65,
+        "update_time": "2025-04-23 13:25:32",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.4,
+        "lose_odds": 4.33,
+        "return_rate": 93.84,
+        "update_time": "2025-04-23 13:15:03",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.4,
+        "lose_odds": 4.4,
+        "return_rate": 93.65,
+        "update_time": "2025-04-23 10:23:01",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.4,
+        "lose_odds": 4.33,
+        "return_rate": 93.84,
+        "update_time": "2025-04-23 10:12:56",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.4,
+        "lose_odds": 4.4,
+        "return_rate": 93.65,
+        "update_time": "2025-04-23 09:18:49",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.4,
+        "lose_odds": 4.2,
+        "return_rate": 93.22,
+        "update_time": "2025-04-23 08:56:53",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.4,
+        "lose_odds": 4.4,
+        "return_rate": 93.65,
+        "update_time": "2025-04-23 07:31:28",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.4,
+        "lose_odds": 4.2,
+        "return_rate": 93.22,
+        "update_time": "2025-04-21 17:44:44",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.4,
+        "lose_odds": 4.0,
+        "return_rate": 92.19,
+        "update_time": "2025-04-21 10:41:54",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.4,
+        "lose_odds": 4.2,
+        "return_rate": 93.22,
+        "update_time": "2025-04-21 09:49:06",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.4,
+        "lose_odds": 4.0,
+        "return_rate": 92.19,
+        "update_time": "2025-04-21 02:39:34",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.4,
+        "lose_odds": 4.2,
+        "return_rate": 93.22,
+        "update_time": "2025-04-21 01:36:38",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.4,
+        "lose_odds": 4.0,
+        "return_rate": 92.19,
+        "update_time": "2025-04-21 00:33:40",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.4,
+        "lose_odds": 4.2,
+        "return_rate": 93.22,
+        "update_time": "2025-04-20 17:32:19",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.4,
+        "lose_odds": 4.0,
+        "return_rate": 92.19,
+        "update_time": "2025-04-20 01:14:46",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.91,
+        "draw_odds": 3.4,
+        "lose_odds": 4.0,
+        "return_rate": 93.66,
+        "update_time": "2025-04-20 01:05:14",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.4,
+        "lose_odds": 4.0,
+        "return_rate": 92.19,
+        "update_time": "2025-04-19 23:22:20",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.91,
+        "draw_odds": 3.4,
+        "lose_odds": 4.0,
+        "return_rate": 93.66,
+        "update_time": "2025-04-19 23:07:44",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.4,
+        "lose_odds": 4.0,
+        "return_rate": 92.19,
+        "update_time": "2025-04-19 20:19:51",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.91,
+        "draw_odds": 3.3,
+        "lose_odds": 3.9,
+        "return_rate": 92.34,
+        "update_time": "2025-04-19 20:05:07",
+        "win_change": -1,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.0,
+        "draw_odds": 3.4,
+        "lose_odds": 3.6,
+        "return_rate": 93.29,
+        "update_time": "2025-04-19 00:26:31",
+        "win_change": -1,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.05,
+        "draw_odds": 3.5,
+        "lose_odds": 3.4,
+        "return_rate": 93.66,
+        "update_time": "2025-04-18 15:10:32",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.05,
+        "draw_odds": 3.4,
+        "lose_odds": 3.3,
+        "return_rate": 92.17,
+        "update_time": "2025-04-18 02:40:40",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 2.1,
+        "draw_odds": 3.4,
+        "lose_odds": 3.3,
+        "return_rate": 93.17,
+        "update_time": "2025-04-18 01:32:45",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.15,
+        "draw_odds": 3.4,
+        "lose_odds": 3.2,
+        "return_rate": 93.31,
+        "update_time": "2025-04-18 00:57:20",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.15,
+        "draw_odds": 3.4,
+        "lose_odds": 3.1,
+        "return_rate": 92.44,
+        "update_time": "2025-04-17 22:49:07",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.25,
+        "draw_odds": 3.4,
+        "lose_odds": 3.0,
+        "return_rate": 93.29,
+        "update_time": "2025-04-17 22:30:10",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 0
+      }
+    ]
+  },
+  "澳门": {
+    "initial_odds": [
+      1.82,
+      3.43,
+      3.71
+    ],
+    "current_odds": [
+      1.9,
+      3.3,
+      3.55
+    ],
+    "initial_probabilities": [
+      0.4948,
+      0.2625,
+      0.2427
+    ],
+    "current_probabilities": [
+      0.4737,
+      0.2727,
+      0.2535
+    ],
+    "initial_return_rate": 0.9005,
+    "current_return_rate": 0.9001,
+    "initial_kelly": [
+      0.94,
+      0.9,
+      0.82
+    ],
+    "current_kelly": [
+      0.98,
+      0.87,
+      0.79
+    ],
+    "odds_history": [
+      {
+        "win_odds": 1.9,
+        "draw_odds": 3.3,
+        "lose_odds": 3.55,
+        "return_rate": 90.01,
+        "update_time": "2025-04-27 17:16:20",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.45,
+        "lose_odds": 4.0,
+        "return_rate": 89.99,
+        "update_time": "2025-04-23 13:42:32",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.43,
+        "lose_odds": 3.71,
+        "return_rate": 90.05,
+        "update_time": "2025-04-21 19:15:17",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 0
+      }
+    ]
+  },
+  "立博": {
+    "initial_odds": [
+      1.85,
+      3.6,
+      4.0
+    ],
+    "current_odds": [
+      1.85,
+      3.5,
+      4.2
+    ],
+    "initial_probabilities": [
+      0.506,
+      0.26,
+      0.234
+    ],
+    "current_probabilities": [
+      0.5079,
+      0.2684,
+      0.2237
+    ],
+    "initial_return_rate": 0.9361,
+    "current_return_rate": 0.9395,
+    "initial_kelly": [
+      0.95,
+      0.94,
+      0.89
+    ],
+    "current_kelly": [
+      0.95,
+      0.92,
+      0.93
+    ],
+    "odds_history": [
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.5,
+        "lose_odds": 4.2,
+        "return_rate": 93.95,
+        "update_time": "2025-04-27 17:25:20",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.6,
+        "lose_odds": 4.2,
+        "return_rate": 94.13,
+        "update_time": "2025-04-27 17:25:16",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.5,
+        "lose_odds": 4.0,
+        "return_rate": 92.91,
+        "update_time": "2025-04-27 17:17:03",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.6,
+        "lose_odds": 4.2,
+        "return_rate": 93.33,
+        "update_time": "2025-04-27 17:08:47",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.7,
+        "lose_odds": 4.4,
+        "return_rate": 93.55,
+        "update_time": "2025-04-27 16:00:14",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.7,
+        "lose_odds": 4.6,
+        "return_rate": 93.84,
+        "update_time": "2025-04-27 14:28:48",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.7,
+        "lose_odds": 4.4,
+        "return_rate": 93.55,
+        "update_time": "2025-04-27 13:36:51",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.6,
+        "lose_odds": 4.2,
+        "return_rate": 93.33,
+        "update_time": "2025-04-27 13:15:53",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.6,
+        "lose_odds": 4.2,
+        "return_rate": 94.13,
+        "update_time": "2025-04-27 13:11:43",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.5,
+        "lose_odds": 4.33,
+        "return_rate": 94.06,
+        "update_time": "2025-04-27 03:36:54",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.6,
+        "lose_odds": 4.4,
+        "return_rate": 94.29,
+        "update_time": "2025-04-24 19:19:53",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.5,
+        "lose_odds": 4.2,
+        "return_rate": 93.44,
+        "update_time": "2025-04-23 06:36:08",
+        "win_change": -1,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.6,
+        "lose_odds": 4.0,
+        "return_rate": 93.61,
+        "update_time": "2025-04-20 18:16:42",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 0
+      }
+    ]
+  },
+  "Bet365": {
+    "initial_odds": [
+      1.9,
+      3.7,
+      3.7
+    ],
+    "current_odds": [
+      1.85,
+      3.6,
+      4.33
+    ],
+    "initial_probabilities": [
+      0.4933,
+      0.2533,
+      0.2533
+    ],
+    "current_probabilities": [
+      0.5152,
+      0.2647,
+      0.2201
+    ],
+    "initial_return_rate": 0.9373,
+    "current_return_rate": 0.953,
+    "initial_kelly": [
+      0.98,
+      0.97,
+      0.82
+    ],
+    "current_kelly": [
+      0.95,
+      0.94,
+      0.96
+    ],
+    "odds_history": [
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.6,
+        "lose_odds": 4.33,
+        "return_rate": 95.3,
+        "update_time": "2025-04-27 17:16:31",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.9,
+        "draw_odds": 3.5,
+        "lose_odds": 4.1,
+        "return_rate": 94.7,
+        "update_time": "2025-04-27 17:16:20",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.6,
+        "lose_odds": 4.5,
+        "return_rate": 94.74,
+        "update_time": "2025-04-27 16:39:20",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.7,
+        "lose_odds": 4.75,
+        "return_rate": 95.04,
+        "update_time": "2025-04-27 15:40:07",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.72,
+        "draw_odds": 3.75,
+        "lose_odds": 4.75,
+        "return_rate": 94.47,
+        "update_time": "2025-04-27 14:38:41",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.75,
+        "lose_odds": 4.75,
+        "return_rate": 94.77,
+        "update_time": "2025-04-27 14:36:23",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.7,
+        "draw_odds": 3.75,
+        "lose_odds": 5.0,
+        "return_rate": 94.8,
+        "update_time": "2025-04-27 14:16:40",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.75,
+        "lose_odds": 4.75,
+        "return_rate": 94.77,
+        "update_time": "2025-04-27 13:35:59",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.6,
+        "lose_odds": 4.33,
+        "return_rate": 94.77,
+        "update_time": "2025-04-27 13:24:18",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.5,
+        "lose_odds": 4.5,
+        "return_rate": 94.84,
+        "update_time": "2025-04-27 11:15:12",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.75,
+        "return_rate": 95.08,
+        "update_time": "2025-04-27 11:13:33",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.5,
+        "lose_odds": 4.5,
+        "return_rate": 94.84,
+        "update_time": "2025-04-27 10:12:12",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.75,
+        "return_rate": 95.08,
+        "update_time": "2025-04-27 08:31:13",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.5,
+        "lose_odds": 4.5,
+        "return_rate": 94.84,
+        "update_time": "2025-04-26 19:11:36",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.75,
+        "lose_odds": 4.33,
+        "return_rate": 94.95,
+        "update_time": "2025-04-25 20:55:18",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.8,
+        "lose_odds": 4.33,
+        "return_rate": 93.85,
+        "update_time": "2025-04-23 06:41:48",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.7,
+        "lose_odds": 3.9,
+        "return_rate": 93.7,
+        "update_time": "2025-04-19 19:57:14",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.9,
+        "draw_odds": 3.7,
+        "lose_odds": 3.7,
+        "return_rate": 93.73,
+        "update_time": "2025-04-19 17:31:45",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 0
+      }
+    ]
+  },
+  "Interwetten": {
+    "initial_odds": [
+      1.9,
+      3.45,
+      3.95
+    ],
+    "current_odds": [
+      1.83,
+      3.55,
+      4.2
+    ],
+    "initial_probabilities": [
+      0.4922,
+      0.2711,
+      0.2367
+    ],
+    "current_probabilities": [
+      0.5125,
+      0.2642,
+      0.2233
+    ],
+    "initial_return_rate": 0.9352,
+    "current_return_rate": 0.9379,
+    "initial_kelly": [
+      0.98,
+      0.9,
+      0.88
+    ],
+    "current_kelly": [
+      0.94,
+      0.93,
+      0.93
+    ],
+    "odds_history": [
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.55,
+        "lose_odds": 4.2,
+        "return_rate": 93.79,
+        "update_time": "2025-04-27 17:20:23",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.55,
+        "lose_odds": 4.4,
+        "return_rate": 93.94,
+        "update_time": "2025-04-27 17:03:32",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.65,
+        "lose_odds": 4.4,
+        "return_rate": 93.79,
+        "update_time": "2025-04-27 14:20:45",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.6,
+        "lose_odds": 4.3,
+        "return_rate": 93.82,
+        "update_time": "2025-04-27 14:02:17",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.5,
+        "lose_odds": 4.2,
+        "return_rate": 93.44,
+        "update_time": "2025-04-26 16:44:43",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.55,
+        "lose_odds": 4.3,
+        "return_rate": 93.48,
+        "update_time": "2025-04-24 12:58:06",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.55,
+        "lose_odds": 4.2,
+        "return_rate": 93.79,
+        "update_time": "2025-04-23 06:47:12",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.9,
+        "draw_odds": 3.5,
+        "lose_odds": 3.95,
+        "return_rate": 93.88,
+        "update_time": "2025-04-22 18:29:07",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.9,
+        "draw_odds": 3.45,
+        "lose_odds": 3.95,
+        "return_rate": 93.52,
+        "update_time": "2025-04-21 19:22:49",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 0
+      }
+    ]
+  },
+  "SNAI": {
+    "initial_odds": [
+      2.25,
+      3.45,
+      2.8
+    ],
+    "current_odds": [
+      1.8,
+      3.5,
+      4.1
+    ],
+    "initial_probabilities": [
+      0.4072,
+      0.2656,
+      0.3272
+    ],
+    "current_probabilities": [
+      0.512,
+      0.2633,
+      0.2248
+    ],
+    "initial_return_rate": 0.9162,
+    "current_return_rate": 0.9215,
+    "initial_kelly": [
+      1.16,
+      0.9,
+      0.62
+    ],
+    "current_kelly": [
+      0.93,
+      0.92,
+      0.91
+    ],
+    "odds_history": [
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.1,
+        "return_rate": 92.15,
+        "update_time": "2025-04-27 17:21:15",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.55,
+        "lose_odds": 4.4,
+        "return_rate": 92.56,
+        "update_time": "2025-04-27 16:47:02",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.55,
+        "lose_odds": 4.5,
+        "return_rate": 92.99,
+        "update_time": "2025-04-27 16:41:56",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.6,
+        "lose_odds": 4.5,
+        "return_rate": 92.76,
+        "update_time": "2025-04-27 16:02:31",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.7,
+        "draw_odds": 3.6,
+        "lose_odds": 4.5,
+        "return_rate": 91.89,
+        "update_time": "2025-04-27 15:52:59",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.7,
+        "draw_odds": 3.65,
+        "lose_odds": 4.5,
+        "return_rate": 92.21,
+        "update_time": "2025-04-27 14:43:04",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.7,
+        "draw_odds": 3.65,
+        "lose_odds": 4.6,
+        "return_rate": 92.63,
+        "update_time": "2025-04-27 14:27:53",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.7,
+        "draw_odds": 3.65,
+        "lose_odds": 4.5,
+        "return_rate": 92.21,
+        "update_time": "2025-04-27 14:22:25",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.6,
+        "lose_odds": 4.5,
+        "return_rate": 92.76,
+        "update_time": "2025-04-27 14:06:58",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.6,
+        "lose_odds": 4.4,
+        "return_rate": 92.33,
+        "update_time": "2025-04-27 13:43:35",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.55,
+        "lose_odds": 4.4,
+        "return_rate": 92.56,
+        "update_time": "2025-04-27 13:38:56",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.45,
+        "lose_odds": 4.4,
+        "return_rate": 93.22,
+        "update_time": "2025-04-27 13:20:25",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.45,
+        "lose_odds": 4.25,
+        "return_rate": 92.53,
+        "update_time": "2025-04-27 12:08:21",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.45,
+        "lose_odds": 4.4,
+        "return_rate": 93.22,
+        "update_time": "2025-04-27 10:15:25",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.45,
+        "lose_odds": 4.4,
+        "return_rate": 92.41,
+        "update_time": "2025-04-27 08:36:59",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.45,
+        "lose_odds": 4.25,
+        "return_rate": 92.53,
+        "update_time": "2025-04-27 06:57:04",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.45,
+        "lose_odds": 4.25,
+        "return_rate": 91.73,
+        "update_time": "2025-04-26 22:26:05",
+        "win_change": 1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.4,
+        "lose_odds": 4.25,
+        "return_rate": 90.84,
+        "update_time": "2025-04-26 22:21:18",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.45,
+        "lose_odds": 4.25,
+        "return_rate": 91.19,
+        "update_time": "2025-04-26 16:50:12",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.45,
+        "lose_odds": 4.4,
+        "return_rate": 91.86,
+        "update_time": "2025-04-26 10:45:02",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.5,
+        "lose_odds": 4.25,
+        "return_rate": 91.54,
+        "update_time": "2025-04-26 05:26:58",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.5,
+        "lose_odds": 4.4,
+        "return_rate": 92.22,
+        "update_time": "2025-04-26 04:40:07",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.5,
+        "lose_odds": 4.25,
+        "return_rate": 91.54,
+        "update_time": "2025-04-26 00:12:15",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.45,
+        "lose_odds": 4.25,
+        "return_rate": 91.19,
+        "update_time": "2025-04-25 22:54:30",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.5,
+        "lose_odds": 4.25,
+        "return_rate": 91.54,
+        "update_time": "2025-04-25 20:28:30",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.55,
+        "lose_odds": 4.25,
+        "return_rate": 91.88,
+        "update_time": "2025-04-25 18:57:54",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.55,
+        "lose_odds": 4.4,
+        "return_rate": 92.56,
+        "update_time": "2025-04-25 17:41:35",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.55,
+        "lose_odds": 4.25,
+        "return_rate": 91.88,
+        "update_time": "2025-04-25 17:36:47",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.5,
+        "lose_odds": 4.4,
+        "return_rate": 92.22,
+        "update_time": "2025-04-25 16:26:40",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.55,
+        "lose_odds": 4.4,
+        "return_rate": 92.0,
+        "update_time": "2025-04-25 12:17:30",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.7,
+        "draw_odds": 3.55,
+        "lose_odds": 4.4,
+        "return_rate": 91.14,
+        "update_time": "2025-04-24 12:46:44",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.55,
+        "lose_odds": 4.4,
+        "return_rate": 92.0,
+        "update_time": "2025-04-24 10:30:58",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.55,
+        "lose_odds": 4.25,
+        "return_rate": 91.88,
+        "update_time": "2025-04-24 08:21:09",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.55,
+        "lose_odds": 4.4,
+        "return_rate": 92.0,
+        "update_time": "2025-04-24 06:09:52",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.55,
+        "lose_odds": 4.25,
+        "return_rate": 91.88,
+        "update_time": "2025-04-23 06:50:25",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.1,
+        "return_rate": 92.15,
+        "update_time": "2025-04-23 06:37:01",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.45,
+        "lose_odds": 4.0,
+        "return_rate": 91.29,
+        "update_time": "2025-04-22 16:10:29",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.45,
+        "lose_odds": 4.0,
+        "return_rate": 92.06,
+        "update_time": "2025-04-21 17:45:48",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.45,
+        "lose_odds": 4.0,
+        "return_rate": 91.29,
+        "update_time": "2025-04-21 16:24:46",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.45,
+        "lose_odds": 4.0,
+        "return_rate": 92.06,
+        "update_time": "2025-04-19 22:15:22",
+        "win_change": -1,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.9,
+        "draw_odds": 3.5,
+        "lose_odds": 3.55,
+        "return_rate": 91.43,
+        "update_time": "2025-04-19 20:05:31",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.95,
+        "draw_odds": 3.5,
+        "lose_odds": 3.5,
+        "return_rate": 92.23,
+        "update_time": "2025-04-19 14:42:39",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.92,
+        "draw_odds": 3.5,
+        "lose_odds": 3.5,
+        "return_rate": 91.55,
+        "update_time": "2025-04-19 12:36:57",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.95,
+        "draw_odds": 3.5,
+        "lose_odds": 3.5,
+        "return_rate": 92.23,
+        "update_time": "2025-04-19 01:05:35",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.95,
+        "draw_odds": 3.5,
+        "lose_odds": 3.45,
+        "return_rate": 91.88,
+        "update_time": "2025-04-18 21:00:43",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.97,
+        "draw_odds": 3.5,
+        "lose_odds": 3.4,
+        "return_rate": 91.96,
+        "update_time": "2025-04-18 17:15:47",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.0,
+        "draw_odds": 3.5,
+        "lose_odds": 3.3,
+        "return_rate": 91.85,
+        "update_time": "2025-04-18 13:10:01",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.0,
+        "draw_odds": 3.5,
+        "lose_odds": 3.25,
+        "return_rate": 91.46,
+        "update_time": "2025-04-18 04:48:25",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.0,
+        "draw_odds": 3.5,
+        "lose_odds": 3.2,
+        "return_rate": 91.06,
+        "update_time": "2025-04-18 03:03:12",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.05,
+        "draw_odds": 3.5,
+        "lose_odds": 3.1,
+        "return_rate": 91.23,
+        "update_time": "2025-04-18 01:19:59",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.25,
+        "draw_odds": 3.45,
+        "lose_odds": 2.8,
+        "return_rate": 91.62,
+        "update_time": "2025-04-15 17:56:16",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 0
+      }
+    ]
+  },
+  "皇冠": {
+    "initial_odds": [
+      2.21,
+      3.65,
+      2.83
+    ],
+    "current_odds": [
+      1.91,
+      3.55,
+      4.05
+    ],
+    "initial_probabilities": [
+      0.419,
+      0.2537,
+      0.3272
+    ],
+    "current_probabilities": [
+      0.4976,
+      0.2677,
+      0.2347
+    ],
+    "initial_return_rate": 0.9261,
+    "current_return_rate": 0.9504,
+    "initial_kelly": [
+      1.14,
+      0.96,
+      0.63
+    ],
+    "current_kelly": [
+      0.99,
+      0.93,
+      0.9
+    ],
+    "odds_history": [
+      {
+        "win_odds": 1.9,
+        "draw_odds": 3.55,
+        "lose_odds": 4.1,
+        "return_rate": 95.07,
+        "update_time": "2025-04-27 17:27:24",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.91,
+        "draw_odds": 3.55,
+        "lose_odds": 4.05,
+        "return_rate": 95.04,
+        "update_time": "2025-04-27 17:26:33",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.88,
+        "draw_odds": 3.65,
+        "lose_odds": 4.1,
+        "return_rate": 95.26,
+        "update_time": "2025-04-27 17:24:49",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.87,
+        "draw_odds": 3.7,
+        "lose_odds": 4.1,
+        "return_rate": 95.34,
+        "update_time": "2025-04-27 17:23:54",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.86,
+        "draw_odds": 3.7,
+        "lose_odds": 4.15,
+        "return_rate": 95.34,
+        "update_time": "2025-04-27 17:22:56",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.92,
+        "draw_odds": 3.65,
+        "lose_odds": 3.9,
+        "return_rate": 95.13,
+        "update_time": "2025-04-27 17:18:56",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.91,
+        "draw_odds": 3.65,
+        "lose_odds": 3.8,
+        "return_rate": 94.28,
+        "update_time": "2025-04-27 17:17:58",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.9,
+        "draw_odds": 3.65,
+        "lose_odds": 3.95,
+        "return_rate": 94.93,
+        "update_time": "2025-04-27 17:14:43",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.88,
+        "draw_odds": 3.65,
+        "lose_odds": 3.95,
+        "return_rate": 94.42,
+        "update_time": "2025-04-27 17:13:51",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.86,
+        "draw_odds": 3.65,
+        "lose_odds": 4.1,
+        "return_rate": 94.74,
+        "update_time": "2025-04-27 17:12:12",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.86,
+        "draw_odds": 3.7,
+        "lose_odds": 4.1,
+        "return_rate": 95.07,
+        "update_time": "2025-04-27 17:11:19",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.75,
+        "lose_odds": 4.15,
+        "return_rate": 95.4,
+        "update_time": "2025-04-27 17:07:54",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.75,
+        "lose_odds": 4.3,
+        "return_rate": 95.36,
+        "update_time": "2025-04-27 16:39:49",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.75,
+        "lose_odds": 4.35,
+        "return_rate": 95.33,
+        "update_time": "2025-04-27 16:26:09",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.75,
+        "lose_odds": 4.3,
+        "return_rate": 94.81,
+        "update_time": "2025-04-27 16:23:37",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.78,
+        "draw_odds": 3.95,
+        "lose_odds": 4.3,
+        "return_rate": 95.46,
+        "update_time": "2025-04-27 15:41:29",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.95,
+        "lose_odds": 4.3,
+        "return_rate": 95.18,
+        "update_time": "2025-04-27 15:30:26",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.78,
+        "draw_odds": 3.95,
+        "lose_odds": 4.25,
+        "return_rate": 95.21,
+        "update_time": "2025-04-27 14:55:52",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.95,
+        "lose_odds": 4.4,
+        "return_rate": 95.07,
+        "update_time": "2025-04-27 14:54:16",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.74,
+        "draw_odds": 3.95,
+        "lose_odds": 4.5,
+        "return_rate": 95.23,
+        "update_time": "2025-04-27 14:12:03",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.9,
+        "lose_odds": 4.45,
+        "return_rate": 95.01,
+        "update_time": "2025-04-27 14:06:57",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.8,
+        "lose_odds": 4.5,
+        "return_rate": 95.21,
+        "update_time": "2025-04-27 13:36:45",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.78,
+        "draw_odds": 3.8,
+        "lose_odds": 3.85,
+        "return_rate": 92.19,
+        "update_time": "2025-04-27 13:34:15",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.8,
+        "lose_odds": 3.85,
+        "return_rate": 94.03,
+        "update_time": "2025-04-27 13:31:39",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.8,
+        "lose_odds": 3.95,
+        "return_rate": 94.09,
+        "update_time": "2025-04-27 13:23:13",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.8,
+        "lose_odds": 4.15,
+        "return_rate": 95.19,
+        "update_time": "2025-04-27 13:09:01",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.75,
+        "lose_odds": 4.25,
+        "return_rate": 95.38,
+        "update_time": "2025-04-27 12:01:03",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.75,
+        "lose_odds": 4.2,
+        "return_rate": 95.4,
+        "update_time": "2025-04-27 04:44:11",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.55,
+        "lose_odds": 3.95,
+        "return_rate": 92.74,
+        "update_time": "2025-04-26 22:24:28",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.55,
+        "lose_odds": 4.0,
+        "return_rate": 92.75,
+        "update_time": "2025-04-26 22:22:11",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.55,
+        "lose_odds": 4.1,
+        "return_rate": 92.49,
+        "update_time": "2025-04-23 06:38:27",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.86,
+        "draw_odds": 3.55,
+        "lose_odds": 3.85,
+        "return_rate": 92.67,
+        "update_time": "2025-04-20 03:24:43",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.9,
+        "draw_odds": 3.5,
+        "lose_odds": 3.75,
+        "return_rate": 92.7,
+        "update_time": "2025-04-19 19:51:10",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.97,
+        "draw_odds": 3.45,
+        "lose_odds": 3.5,
+        "return_rate": 92.32,
+        "update_time": "2025-04-18 18:48:24",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.97,
+        "draw_odds": 3.55,
+        "lose_odds": 3.45,
+        "return_rate": 92.66,
+        "update_time": "2025-04-18 13:15:40",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.97,
+        "draw_odds": 3.6,
+        "lose_odds": 3.4,
+        "return_rate": 92.63,
+        "update_time": "2025-04-18 04:37:22",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.0,
+        "draw_odds": 3.6,
+        "lose_odds": 3.3,
+        "return_rate": 92.52,
+        "update_time": "2025-04-18 04:33:30",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.05,
+        "draw_odds": 3.55,
+        "lose_odds": 3.2,
+        "return_rate": 92.42,
+        "update_time": "2025-04-17 22:39:42",
+        "win_change": -1,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.07,
+        "draw_odds": 3.6,
+        "lose_odds": 3.15,
+        "return_rate": 92.74,
+        "update_time": "2025-04-17 22:35:08",
+        "win_change": -1,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.21,
+        "draw_odds": 3.65,
+        "lose_odds": 2.83,
+        "return_rate": 92.61,
+        "update_time": "2025-04-17 22:26:41",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 0
+      }
+    ]
+  },
+  "易胜博": {
+    "initial_odds": [
+      1.85,
+      3.7,
+      3.9
+    ],
+    "current_odds": [
+      1.9,
+      3.5,
+      4.1
+    ],
+    "initial_probabilities": [
+      0.5065,
+      0.2532,
+      0.2403
+    ],
+    "current_probabilities": [
+      0.4984,
+      0.2706,
+      0.231
+    ],
+    "initial_return_rate": 0.937,
+    "current_return_rate": 0.947,
+    "initial_kelly": [
+      0.95,
+      0.97,
+      0.87
+    ],
+    "current_kelly": [
+      0.98,
+      0.92,
+      0.91
+    ],
+    "odds_history": [
+      {
+        "win_odds": 1.9,
+        "draw_odds": 3.5,
+        "lose_odds": 4.1,
+        "return_rate": 94.7,
+        "update_time": "2025-04-27 17:15:32",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.6,
+        "lose_odds": 4.5,
+        "return_rate": 94.74,
+        "update_time": "2025-04-27 16:38:46",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.7,
+        "lose_odds": 4.8,
+        "return_rate": 95.24,
+        "update_time": "2025-04-27 15:38:52",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.8,
+        "lose_odds": 4.8,
+        "return_rate": 95.28,
+        "update_time": "2025-04-27 14:35:50",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.7,
+        "draw_odds": 3.8,
+        "lose_odds": 5.0,
+        "return_rate": 95.11,
+        "update_time": "2025-04-27 14:15:46",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.8,
+        "lose_odds": 4.8,
+        "return_rate": 95.28,
+        "update_time": "2025-04-27 13:35:06",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.6,
+        "lose_odds": 4.3,
+        "return_rate": 94.63,
+        "update_time": "2025-04-27 13:22:48",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.5,
+        "lose_odds": 4.5,
+        "return_rate": 94.84,
+        "update_time": "2025-04-27 11:18:54",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.8,
+        "return_rate": 95.27,
+        "update_time": "2025-04-27 11:13:11",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.5,
+        "lose_odds": 4.5,
+        "return_rate": 94.84,
+        "update_time": "2025-04-27 10:15:54",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.8,
+        "return_rate": 95.27,
+        "update_time": "2025-04-27 08:30:41",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.5,
+        "lose_odds": 4.5,
+        "return_rate": 94.84,
+        "update_time": "2025-04-26 19:11:41",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.8,
+        "lose_odds": 4.3,
+        "return_rate": 95.12,
+        "update_time": "2025-04-26 10:24:21",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.8,
+        "lose_odds": 4.1,
+        "return_rate": 94.11,
+        "update_time": "2025-04-26 05:27:33",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.8,
+        "lose_odds": 3.9,
+        "return_rate": 93.01,
+        "update_time": "2025-04-26 05:19:20",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.8,
+        "lose_odds": 4.1,
+        "return_rate": 94.11,
+        "update_time": "2025-04-25 20:54:06",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.6,
+        "lose_odds": 4.1,
+        "return_rate": 92.83,
+        "update_time": "2025-04-24 01:52:18",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.8,
+        "lose_odds": 4.3,
+        "return_rate": 93.71,
+        "update_time": "2025-04-23 06:41:27",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.7,
+        "lose_odds": 4.1,
+        "return_rate": 93.48,
+        "update_time": "2025-04-23 06:35:09",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.7,
+        "lose_odds": 3.9,
+        "return_rate": 93.7,
+        "update_time": "2025-04-22 12:04:16",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 0
+      }
+    ]
+  },
+  "伟德": {
+    "initial_odds": [
+      1.83,
+      3.5,
+      4.2
+    ],
+    "current_odds": [
+      1.85,
+      3.7,
+      4.2
+    ],
+    "initial_probabilities": [
+      0.5106,
+      0.267,
+      0.2225
+    ],
+    "current_probabilities": [
+      0.5153,
+      0.2577,
+      0.227
+    ],
+    "initial_return_rate": 0.9344,
+    "current_return_rate": 0.9534,
+    "initial_kelly": [
+      0.94,
+      0.92,
+      0.93
+    ],
+    "current_kelly": [
+      0.95,
+      0.97,
+      0.93
+    ],
+    "odds_history": [
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.6,
+        "lose_odds": 4.33,
+        "return_rate": 95.3,
+        "update_time": "2025-04-27 17:28:26",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.7,
+        "lose_odds": 4.2,
+        "return_rate": 95.34,
+        "update_time": "2025-04-27 17:22:00",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.75,
+        "lose_odds": 4.1,
+        "return_rate": 95.14,
+        "update_time": "2025-04-27 17:16:51",
+        "win_change": 1,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.7,
+        "lose_odds": 4.33,
+        "return_rate": 95.45,
+        "update_time": "2025-04-27 17:11:39",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.75,
+        "lose_odds": 4.4,
+        "return_rate": 95.28,
+        "update_time": "2025-04-27 17:06:21",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.75,
+        "lose_odds": 4.5,
+        "return_rate": 95.74,
+        "update_time": "2025-04-27 16:51:17",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.7,
+        "lose_odds": 4.5,
+        "return_rate": 95.42,
+        "update_time": "2025-04-27 16:48:43",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.7,
+        "lose_odds": 4.6,
+        "return_rate": 95.86,
+        "update_time": "2025-04-27 16:42:12",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.7,
+        "lose_odds": 4.6,
+        "return_rate": 94.42,
+        "update_time": "2025-04-27 16:40:52",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.75,
+        "lose_odds": 4.6,
+        "return_rate": 94.74,
+        "update_time": "2025-04-27 16:38:19",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.8,
+        "lose_odds": 4.6,
+        "return_rate": 95.06,
+        "update_time": "2025-04-27 16:28:11",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.75,
+        "lose_odds": 4.75,
+        "return_rate": 95.36,
+        "update_time": "2025-04-27 16:15:38",
+        "win_change": 1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.7,
+        "lose_odds": 4.5,
+        "return_rate": 93.41,
+        "update_time": "2025-04-27 15:14:36",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.7,
+        "lose_odds": 4.6,
+        "return_rate": 93.84,
+        "update_time": "2025-04-27 15:06:51",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.7,
+        "draw_odds": 3.75,
+        "lose_odds": 4.6,
+        "return_rate": 93.26,
+        "update_time": "2025-04-27 15:02:58",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.72,
+        "draw_odds": 3.7,
+        "lose_odds": 4.6,
+        "return_rate": 93.54,
+        "update_time": "2025-04-27 15:00:38",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.7,
+        "lose_odds": 4.6,
+        "return_rate": 93.84,
+        "update_time": "2025-04-27 15:00:21",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.7,
+        "draw_odds": 3.75,
+        "lose_odds": 4.6,
+        "return_rate": 93.26,
+        "update_time": "2025-04-27 14:35:55",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.7,
+        "draw_odds": 3.7,
+        "lose_odds": 4.75,
+        "return_rate": 93.54,
+        "update_time": "2025-04-27 14:32:03",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.7,
+        "draw_odds": 3.75,
+        "lose_odds": 4.75,
+        "return_rate": 93.86,
+        "update_time": "2025-04-27 14:24:20",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.7,
+        "draw_odds": 3.7,
+        "lose_odds": 4.75,
+        "return_rate": 93.54,
+        "update_time": "2025-04-27 14:16:42",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.7,
+        "draw_odds": 3.75,
+        "lose_odds": 4.6,
+        "return_rate": 93.26,
+        "update_time": "2025-04-27 14:12:51",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.7,
+        "lose_odds": 4.6,
+        "return_rate": 93.84,
+        "update_time": "2025-04-27 14:11:34",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.7,
+        "lose_odds": 4.5,
+        "return_rate": 93.41,
+        "update_time": "2025-04-27 13:34:53",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.7,
+        "lose_odds": 4.33,
+        "return_rate": 93.23,
+        "update_time": "2025-04-27 13:33:39",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.6,
+        "lose_odds": 4.2,
+        "return_rate": 93.33,
+        "update_time": "2025-04-27 13:17:10",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.6,
+        "lose_odds": 4.4,
+        "return_rate": 94.29,
+        "update_time": "2025-04-27 13:15:55",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.6,
+        "lose_odds": 4.33,
+        "return_rate": 93.96,
+        "update_time": "2025-04-27 13:14:40",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.6,
+        "lose_odds": 4.2,
+        "return_rate": 93.33,
+        "update_time": "2025-04-27 13:13:23",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.33,
+        "return_rate": 93.26,
+        "update_time": "2025-04-27 13:09:40",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.4,
+        "return_rate": 93.59,
+        "update_time": "2025-04-27 13:04:35",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.33,
+        "return_rate": 93.26,
+        "update_time": "2025-04-27 12:55:27",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.4,
+        "return_rate": 93.59,
+        "update_time": "2025-04-27 12:32:33",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.33,
+        "return_rate": 93.26,
+        "update_time": "2025-04-27 12:31:17",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.4,
+        "return_rate": 93.59,
+        "update_time": "2025-04-27 12:23:41",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.33,
+        "return_rate": 93.26,
+        "update_time": "2025-04-27 12:09:43",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.4,
+        "return_rate": 93.59,
+        "update_time": "2025-04-27 11:58:06",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.33,
+        "return_rate": 93.26,
+        "update_time": "2025-04-27 11:54:22",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.4,
+        "return_rate": 93.59,
+        "update_time": "2025-04-26 11:36:10",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.6,
+        "lose_odds": 4.5,
+        "return_rate": 93.33,
+        "update_time": "2025-04-26 11:27:43",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.5,
+        "lose_odds": 4.5,
+        "return_rate": 92.65,
+        "update_time": "2025-04-26 10:50:13",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.4,
+        "return_rate": 93.59,
+        "update_time": "2025-04-26 10:43:12",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.5,
+        "return_rate": 94.03,
+        "update_time": "2025-04-26 10:26:30",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.6,
+        "lose_odds": 4.5,
+        "return_rate": 93.33,
+        "update_time": "2025-04-26 10:25:06",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.5,
+        "return_rate": 94.03,
+        "update_time": "2025-04-26 10:20:50",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.6,
+        "lose_odds": 4.5,
+        "return_rate": 93.33,
+        "update_time": "2025-04-26 10:08:23",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.5,
+        "return_rate": 94.03,
+        "update_time": "2025-04-26 09:18:21",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.6,
+        "lose_odds": 4.5,
+        "return_rate": 93.33,
+        "update_time": "2025-04-26 09:11:20",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.5,
+        "return_rate": 94.03,
+        "update_time": "2025-04-26 08:58:48",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.6,
+        "lose_odds": 4.5,
+        "return_rate": 93.33,
+        "update_time": "2025-04-26 08:54:45",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.5,
+        "return_rate": 94.03,
+        "update_time": "2025-04-26 06:19:11",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.4,
+        "return_rate": 93.59,
+        "update_time": "2025-04-26 05:17:43",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.6,
+        "lose_odds": 4.5,
+        "return_rate": 93.33,
+        "update_time": "2025-04-26 05:16:21",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.4,
+        "return_rate": 93.59,
+        "update_time": "2025-04-26 01:24:49",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.6,
+        "lose_odds": 4.5,
+        "return_rate": 93.33,
+        "update_time": "2025-04-26 01:21:52",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.4,
+        "return_rate": 93.59,
+        "update_time": "2025-04-26 00:56:48",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.6,
+        "lose_odds": 4.5,
+        "return_rate": 93.33,
+        "update_time": "2025-04-26 00:55:27",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.4,
+        "return_rate": 93.59,
+        "update_time": "2025-04-25 20:55:17",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.6,
+        "lose_odds": 4.5,
+        "return_rate": 93.33,
+        "update_time": "2025-04-25 19:43:45",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.6,
+        "lose_odds": 4.6,
+        "return_rate": 93.76,
+        "update_time": "2025-04-25 17:28:12",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.5,
+        "lose_odds": 4.6,
+        "return_rate": 93.06,
+        "update_time": "2025-04-25 16:30:45",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.6,
+        "lose_odds": 4.6,
+        "return_rate": 93.76,
+        "update_time": "2025-04-25 06:44:55",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.5,
+        "lose_odds": 4.75,
+        "return_rate": 93.66,
+        "update_time": "2025-04-24 19:26:46",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.7,
+        "lose_odds": 4.4,
+        "return_rate": 93.55,
+        "update_time": "2025-04-24 19:20:12",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.6,
+        "lose_odds": 4.4,
+        "return_rate": 92.9,
+        "update_time": "2025-04-24 12:01:53",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.7,
+        "lose_odds": 4.4,
+        "return_rate": 93.55,
+        "update_time": "2025-04-24 10:04:41",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.6,
+        "lose_odds": 4.4,
+        "return_rate": 92.9,
+        "update_time": "2025-04-23 12:03:08",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.7,
+        "lose_odds": 4.4,
+        "return_rate": 93.55,
+        "update_time": "2025-04-23 10:17:47",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.6,
+        "lose_odds": 4.4,
+        "return_rate": 92.9,
+        "update_time": "2025-04-23 10:00:58",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.7,
+        "lose_odds": 4.4,
+        "return_rate": 93.55,
+        "update_time": "2025-04-23 09:18:19",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.6,
+        "lose_odds": 4.4,
+        "return_rate": 92.9,
+        "update_time": "2025-04-23 08:46:10",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.7,
+        "lose_odds": 4.4,
+        "return_rate": 93.55,
+        "update_time": "2025-04-23 08:16:27",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.6,
+        "lose_odds": 4.4,
+        "return_rate": 92.9,
+        "update_time": "2025-04-23 07:16:10",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.6,
+        "lose_odds": 4.4,
+        "return_rate": 94.29,
+        "update_time": "2025-04-23 06:56:50",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.6,
+        "lose_odds": 4.4,
+        "return_rate": 92.9,
+        "update_time": "2025-04-23 06:46:34",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.6,
+        "lose_odds": 4.2,
+        "return_rate": 93.33,
+        "update_time": "2025-04-23 06:35:04",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.5,
+        "lose_odds": 4.2,
+        "return_rate": 93.44,
+        "update_time": "2025-04-21 19:06:56",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.4,
+        "lose_odds": 4.33,
+        "return_rate": 93.33,
+        "update_time": "2025-04-21 18:42:17",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.5,
+        "lose_odds": 4.2,
+        "return_rate": 93.44,
+        "update_time": "2025-04-21 18:30:34",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 0
+      }
+    ]
+  },
+  "Bwin": {
+    "initial_odds": [
+      1.87,
+      3.6,
+      4.1
+    ],
+    "current_odds": [
+      1.88,
+      3.5,
+      4.1
+    ],
+    "initial_probabilities": [
+      0.5062,
+      0.2629,
+      0.2309
+    ],
+    "current_probabilities": [
+      0.5011,
+      0.2692,
+      0.2298
+    ],
+    "initial_return_rate": 0.9466,
+    "current_return_rate": 0.942,
+    "initial_kelly": [
+      0.96,
+      0.94,
+      0.91
+    ],
+    "current_kelly": [
+      0.97,
+      0.92,
+      0.91
+    ],
+    "odds_history": [
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.5,
+        "lose_odds": 4.2,
+        "return_rate": 93.95,
+        "update_time": "2025-04-27 17:26:51",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.88,
+        "draw_odds": 3.5,
+        "lose_odds": 4.1,
+        "return_rate": 94.2,
+        "update_time": "2025-04-27 17:17:46",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.6,
+        "lose_odds": 4.33,
+        "return_rate": 94.5,
+        "update_time": "2025-04-27 17:09:18",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.7,
+        "lose_odds": 4.4,
+        "return_rate": 94.12,
+        "update_time": "2025-04-27 16:01:34",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.75,
+        "lose_odds": 4.6,
+        "return_rate": 94.15,
+        "update_time": "2025-04-27 14:27:36",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.75,
+        "lose_odds": 4.5,
+        "return_rate": 94.89,
+        "update_time": "2025-04-27 13:38:11",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.7,
+        "lose_odds": 4.33,
+        "return_rate": 95.18,
+        "update_time": "2025-04-27 13:16:29",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.6,
+        "lose_odds": 4.33,
+        "return_rate": 94.77,
+        "update_time": "2025-04-27 03:38:13",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.6,
+        "lose_odds": 4.5,
+        "return_rate": 94.74,
+        "update_time": "2025-04-24 19:19:57",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.6,
+        "lose_odds": 4.2,
+        "return_rate": 94.13,
+        "update_time": "2025-04-23 06:37:57",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.87,
+        "draw_odds": 3.6,
+        "lose_odds": 4.1,
+        "return_rate": 94.66,
+        "update_time": "2025-04-20 18:19:10",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 0
+      }
+    ]
+  },
+  "Pinnacle平博": {
+    "initial_odds": [
+      1.93,
+      3.52,
+      4.28
+    ],
+    "current_odds": [
+      1.89,
+      3.54,
+      4.44
+    ],
+    "initial_probabilities": [
+      0.5002,
+      0.2743,
+      0.2256
+    ],
+    "current_probabilities": [
+      0.5103,
+      0.2725,
+      0.2172
+    ],
+    "initial_return_rate": 0.9654,
+    "current_return_rate": 0.9645,
+    "initial_kelly": [
+      1.0,
+      0.92,
+      0.95
+    ],
+    "current_kelly": [
+      0.97,
+      0.93,
+      0.99
+    ],
+    "odds_history": [
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.64,
+        "lose_odds": 4.86,
+        "return_rate": 96.52,
+        "update_time": "2025-04-27 17:28:14",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.89,
+        "draw_odds": 3.54,
+        "lose_odds": 4.44,
+        "return_rate": 96.45,
+        "update_time": "2025-04-27 17:25:00",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.89,
+        "draw_odds": 3.57,
+        "lose_odds": 4.43,
+        "return_rate": 96.62,
+        "update_time": "2025-04-27 17:23:57",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.87,
+        "draw_odds": 3.63,
+        "lose_odds": 4.43,
+        "return_rate": 96.53,
+        "update_time": "2025-04-27 17:21:34",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.86,
+        "draw_odds": 3.66,
+        "lose_odds": 4.44,
+        "return_rate": 96.52,
+        "update_time": "2025-04-27 17:20:30",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.92,
+        "draw_odds": 3.62,
+        "lose_odds": 4.19,
+        "return_rate": 96.55,
+        "update_time": "2025-04-27 17:16:13",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.93,
+        "draw_odds": 3.59,
+        "lose_odds": 4.18,
+        "return_rate": 96.53,
+        "update_time": "2025-04-27 17:15:09",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.94,
+        "draw_odds": 3.58,
+        "lose_odds": 4.14,
+        "return_rate": 96.49,
+        "update_time": "2025-04-27 17:14:05",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.9,
+        "draw_odds": 3.65,
+        "lose_odds": 4.25,
+        "return_rate": 96.56,
+        "update_time": "2025-04-27 17:13:01",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.88,
+        "draw_odds": 3.67,
+        "lose_odds": 4.31,
+        "return_rate": 96.49,
+        "update_time": "2025-04-27 17:10:52",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.73,
+        "lose_odds": 4.49,
+        "return_rate": 96.41,
+        "update_time": "2025-04-27 17:05:31",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.77,
+        "lose_odds": 4.59,
+        "return_rate": 96.56,
+        "update_time": "2025-04-27 16:52:39",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.74,
+        "lose_odds": 4.59,
+        "return_rate": 96.36,
+        "update_time": "2025-04-27 16:51:35",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.76,
+        "lose_odds": 4.64,
+        "return_rate": 96.43,
+        "update_time": "2025-04-27 16:48:23",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.71,
+        "lose_odds": 4.65,
+        "return_rate": 96.42,
+        "update_time": "2025-04-27 16:46:15",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.7,
+        "lose_odds": 4.64,
+        "return_rate": 96.6,
+        "update_time": "2025-04-27 16:36:38",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.7,
+        "lose_odds": 4.67,
+        "return_rate": 96.73,
+        "update_time": "2025-04-27 16:36:37",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.74,
+        "lose_odds": 4.67,
+        "return_rate": 96.71,
+        "update_time": "2025-04-27 16:33:25",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.79,
+        "draw_odds": 3.76,
+        "lose_odds": 4.73,
+        "return_rate": 96.52,
+        "update_time": "2025-04-27 16:03:13",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.79,
+        "draw_odds": 3.76,
+        "lose_odds": 4.7,
+        "return_rate": 96.4,
+        "update_time": "2025-04-27 15:55:44",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.79,
+        "draw_odds": 3.79,
+        "lose_odds": 4.69,
+        "return_rate": 96.55,
+        "update_time": "2025-04-27 15:48:15",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.78,
+        "draw_odds": 3.84,
+        "lose_odds": 4.68,
+        "return_rate": 96.54,
+        "update_time": "2025-04-27 15:34:21",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.86,
+        "lose_odds": 4.74,
+        "return_rate": 96.62,
+        "update_time": "2025-04-27 15:13:45",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.74,
+        "draw_odds": 3.93,
+        "lose_odds": 4.82,
+        "return_rate": 96.47,
+        "update_time": "2025-04-27 14:55:40",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.76,
+        "draw_odds": 3.87,
+        "lose_odds": 4.72,
+        "return_rate": 96.3,
+        "update_time": "2025-04-27 14:53:24",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.76,
+        "draw_odds": 3.89,
+        "lose_odds": 4.72,
+        "return_rate": 96.42,
+        "update_time": "2025-04-27 14:52:19",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.74,
+        "draw_odds": 3.92,
+        "lose_odds": 4.82,
+        "return_rate": 96.41,
+        "update_time": "2025-04-27 14:48:03",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.74,
+        "draw_odds": 3.93,
+        "lose_odds": 4.82,
+        "return_rate": 96.47,
+        "update_time": "2025-04-27 14:32:00",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.89,
+        "lose_odds": 4.82,
+        "return_rate": 96.53,
+        "update_time": "2025-04-27 14:10:23",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.85,
+        "lose_odds": 4.72,
+        "return_rate": 96.47,
+        "update_time": "2025-04-27 14:05:03",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.84,
+        "lose_odds": 4.72,
+        "return_rate": 96.41,
+        "update_time": "2025-04-27 13:56:32",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.85,
+        "lose_odds": 4.72,
+        "return_rate": 96.47,
+        "update_time": "2025-04-27 13:38:21",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.86,
+        "lose_odds": 4.72,
+        "return_rate": 96.53,
+        "update_time": "2025-04-27 13:34:05",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.76,
+        "draw_odds": 3.88,
+        "lose_odds": 4.76,
+        "return_rate": 96.53,
+        "update_time": "2025-04-27 13:33:01",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.85,
+        "lose_odds": 4.68,
+        "return_rate": 96.3,
+        "update_time": "2025-04-27 13:31:57",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.76,
+        "lose_odds": 4.37,
+        "return_rate": 96.59,
+        "update_time": "2025-04-27 13:29:49",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.73,
+        "lose_odds": 4.38,
+        "return_rate": 96.44,
+        "update_time": "2025-04-27 13:24:28",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.74,
+        "lose_odds": 4.48,
+        "return_rate": 96.43,
+        "update_time": "2025-04-27 13:23:24",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.71,
+        "lose_odds": 4.49,
+        "return_rate": 96.55,
+        "update_time": "2025-04-27 13:19:56",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.72,
+        "lose_odds": 4.59,
+        "return_rate": 96.51,
+        "update_time": "2025-04-27 13:15:39",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.74,
+        "lose_odds": 4.59,
+        "return_rate": 96.65,
+        "update_time": "2025-04-27 13:12:27",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.72,
+        "lose_odds": 4.6,
+        "return_rate": 96.56,
+        "update_time": "2025-04-27 13:11:22",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.6,
+        "lose_odds": 4.61,
+        "return_rate": 96.6,
+        "update_time": "2025-04-27 13:04:57",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.87,
+        "draw_odds": 3.52,
+        "lose_odds": 4.62,
+        "return_rate": 96.59,
+        "update_time": "2025-04-27 13:01:44",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.89,
+        "draw_odds": 3.5,
+        "lose_odds": 4.54,
+        "return_rate": 96.61,
+        "update_time": "2025-04-27 12:54:17",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.88,
+        "draw_odds": 3.51,
+        "lose_odds": 4.54,
+        "return_rate": 96.42,
+        "update_time": "2025-04-27 12:53:12",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.87,
+        "draw_odds": 3.56,
+        "lose_odds": 4.54,
+        "return_rate": 96.53,
+        "update_time": "2025-04-27 11:50:07",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.6,
+        "lose_odds": 4.67,
+        "return_rate": 96.58,
+        "update_time": "2025-04-27 08:29:18",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.58,
+        "lose_odds": 4.61,
+        "return_rate": 96.45,
+        "update_time": "2025-04-27 07:40:06",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.57,
+        "lose_odds": 4.61,
+        "return_rate": 96.38,
+        "update_time": "2025-04-27 06:18:00",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.55,
+        "lose_odds": 4.57,
+        "return_rate": 96.06,
+        "update_time": "2025-04-27 01:38:42",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.54,
+        "lose_odds": 4.57,
+        "return_rate": 95.98,
+        "update_time": "2025-04-26 22:17:02",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.88,
+        "draw_odds": 3.51,
+        "lose_odds": 4.47,
+        "return_rate": 96.1,
+        "update_time": "2025-04-26 22:15:56",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.56,
+        "lose_odds": 4.66,
+        "return_rate": 95.97,
+        "update_time": "2025-04-26 18:19:13",
+        "win_change": 1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.52,
+        "lose_odds": 4.59,
+        "return_rate": 94.84,
+        "update_time": "2025-04-25 19:37:52",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.79,
+        "draw_odds": 3.64,
+        "lose_odds": 4.54,
+        "return_rate": 94.91,
+        "update_time": "2025-04-25 17:24:19",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.56,
+        "lose_odds": 4.55,
+        "return_rate": 94.95,
+        "update_time": "2025-04-25 17:23:14",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.55,
+        "lose_odds": 4.55,
+        "return_rate": 94.88,
+        "update_time": "2025-04-25 16:25:16",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.54,
+        "lose_odds": 4.55,
+        "return_rate": 94.81,
+        "update_time": "2025-04-25 16:24:11",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.6,
+        "lose_odds": 4.55,
+        "return_rate": 94.96,
+        "update_time": "2025-04-25 15:54:40",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.78,
+        "draw_odds": 3.61,
+        "lose_odds": 4.65,
+        "return_rate": 94.89,
+        "update_time": "2025-04-25 15:34:03",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.63,
+        "lose_odds": 4.7,
+        "return_rate": 94.95,
+        "update_time": "2025-04-23 20:58:46",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.76,
+        "draw_odds": 3.66,
+        "lose_odds": 4.7,
+        "return_rate": 94.86,
+        "update_time": "2025-04-23 06:30:39",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.86,
+        "draw_odds": 3.53,
+        "lose_odds": 4.29,
+        "return_rate": 94.87,
+        "update_time": "2025-04-22 19:32:49",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.87,
+        "draw_odds": 3.51,
+        "lose_odds": 4.28,
+        "return_rate": 94.94,
+        "update_time": "2025-04-20 04:16:41",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.51,
+        "lose_odds": 4.35,
+        "return_rate": 94.76,
+        "update_time": "2025-04-19 20:45:29",
+        "win_change": 1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.47,
+        "lose_odds": 4.29,
+        "return_rate": 93.92,
+        "update_time": "2025-04-19 19:45:05",
+        "win_change": -1,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.93,
+        "draw_odds": 3.52,
+        "lose_odds": 4.28,
+        "return_rate": 96.54,
+        "update_time": "2025-04-19 19:42:26",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 0
+      }
+    ]
+  },
+  "10BET": {
+    "initial_odds": [
+      2.27,
+      3.55,
+      2.7
+    ],
+    "current_odds": [
+      1.83,
+      3.7,
+      4.1
+    ],
+    "initial_probabilities": [
+      0.4032,
+      0.2578,
+      0.339
+    ],
+    "current_probabilities": [
+      0.5152,
+      0.2548,
+      0.23
+    ],
+    "initial_return_rate": 0.9153,
+    "current_return_rate": 0.9428,
+    "initial_kelly": [
+      1.17,
+      0.93,
+      0.6
+    ],
+    "current_kelly": [
+      0.94,
+      0.97,
+      0.91
+    ],
+    "odds_history": [
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.7,
+        "lose_odds": 4.1,
+        "return_rate": 94.28,
+        "update_time": "2025-04-27 17:16:54",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.7,
+        "lose_odds": 4.5,
+        "return_rate": 96.25,
+        "update_time": "2025-04-27 17:15:02",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.7,
+        "lose_odds": 4.5,
+        "return_rate": 95.97,
+        "update_time": "2025-04-27 17:13:15",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.78,
+        "draw_odds": 3.7,
+        "lose_odds": 4.5,
+        "return_rate": 94.85,
+        "update_time": "2025-04-27 16:46:21",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.7,
+        "lose_odds": 4.6,
+        "return_rate": 95.0,
+        "update_time": "2025-04-27 16:38:56",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.75,
+        "lose_odds": 4.55,
+        "return_rate": 95.11,
+        "update_time": "2025-04-27 16:08:40",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.75,
+        "lose_odds": 4.6,
+        "return_rate": 95.33,
+        "update_time": "2025-04-27 14:17:43",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.7,
+        "lose_odds": 4.6,
+        "return_rate": 95.0,
+        "update_time": "2025-04-27 14:14:13",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.78,
+        "draw_odds": 3.7,
+        "lose_odds": 4.45,
+        "return_rate": 94.63,
+        "update_time": "2025-04-27 13:47:39",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.78,
+        "draw_odds": 3.7,
+        "lose_odds": 4.4,
+        "return_rate": 94.4,
+        "update_time": "2025-04-27 13:40:35",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.78,
+        "draw_odds": 3.65,
+        "lose_odds": 4.45,
+        "return_rate": 94.3,
+        "update_time": "2025-04-27 13:38:48",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.6,
+        "lose_odds": 4.33,
+        "return_rate": 94.5,
+        "update_time": "2025-04-26 16:35:22",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.6,
+        "lose_odds": 4.33,
+        "return_rate": 94.23,
+        "update_time": "2025-04-25 18:17:14",
+        "win_change": 1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.55,
+        "lose_odds": 4.3,
+        "return_rate": 93.48,
+        "update_time": "2025-04-25 16:38:36",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.78,
+        "draw_odds": 3.6,
+        "lose_odds": 4.4,
+        "return_rate": 93.73,
+        "update_time": "2025-04-24 13:13:30",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.55,
+        "lose_odds": 4.3,
+        "return_rate": 94.28,
+        "update_time": "2025-04-24 12:44:24",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.55,
+        "lose_odds": 4.3,
+        "return_rate": 93.74,
+        "update_time": "2025-04-23 06:40:57",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.5,
+        "lose_odds": 4.2,
+        "return_rate": 93.44,
+        "update_time": "2025-04-23 06:37:47",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.5,
+        "lose_odds": 4.1,
+        "return_rate": 93.44,
+        "update_time": "2025-04-23 06:34:45",
+        "win_change": 1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.45,
+        "lose_odds": 3.9,
+        "return_rate": 91.76,
+        "update_time": "2025-04-19 20:25:53",
+        "win_change": -1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.86,
+        "draw_odds": 3.5,
+        "lose_odds": 4.0,
+        "return_rate": 93.17,
+        "update_time": "2025-04-19 20:25:45",
+        "win_change": 1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.45,
+        "lose_odds": 3.9,
+        "return_rate": 91.76,
+        "update_time": "2025-04-19 20:25:37",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.88,
+        "draw_odds": 3.4,
+        "lose_odds": 3.8,
+        "return_rate": 91.81,
+        "update_time": "2025-04-19 20:09:14",
+        "win_change": -1,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.9,
+        "draw_odds": 3.45,
+        "lose_odds": 3.65,
+        "return_rate": 91.73,
+        "update_time": "2025-04-19 19:49:52",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.96,
+        "draw_odds": 3.45,
+        "lose_odds": 3.45,
+        "return_rate": 91.75,
+        "update_time": "2025-04-19 00:24:57",
+        "win_change": -1,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.97,
+        "draw_odds": 3.5,
+        "lose_odds": 3.35,
+        "return_rate": 91.59,
+        "update_time": "2025-04-18 16:23:38",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.01,
+        "draw_odds": 3.5,
+        "lose_odds": 3.25,
+        "return_rate": 91.67,
+        "update_time": "2025-04-18 04:39:48",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.05,
+        "draw_odds": 3.5,
+        "lose_odds": 3.2,
+        "return_rate": 92.08,
+        "update_time": "2025-04-18 01:22:58",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.09,
+        "draw_odds": 3.45,
+        "lose_odds": 3.1,
+        "return_rate": 91.67,
+        "update_time": "2025-04-18 00:44:48",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.14,
+        "draw_odds": 3.45,
+        "lose_odds": 3.0,
+        "return_rate": 91.7,
+        "update_time": "2025-04-18 00:42:56",
+        "win_change": -1,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.17,
+        "draw_odds": 3.5,
+        "lose_odds": 2.9,
+        "return_rate": 91.63,
+        "update_time": "2025-04-17 22:30:39",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.26,
+        "draw_odds": 3.45,
+        "lose_odds": 2.8,
+        "return_rate": 91.79,
+        "update_time": "2025-04-11 01:40:09",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 2.2,
+        "draw_odds": 3.45,
+        "lose_odds": 2.9,
+        "return_rate": 91.81,
+        "update_time": "2025-04-10 22:27:08",
+        "win_change": -1,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.27,
+        "draw_odds": 3.55,
+        "lose_odds": 2.7,
+        "return_rate": 91.53,
+        "update_time": "2025-04-07 16:37:47",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 0
+      }
+    ]
+  },
+  "Coral": {
+    "initial_odds": [
+      1.85,
+      3.6,
+      4.0
+    ],
+    "current_odds": [
+      1.83,
+      3.6,
+      4.2
+    ],
+    "initial_probabilities": [
+      0.506,
+      0.26,
+      0.234
+    ],
+    "current_probabilities": [
+      0.5144,
+      0.2615,
+      0.2241
+    ],
+    "initial_return_rate": 0.9361,
+    "current_return_rate": 0.9413,
+    "initial_kelly": [
+      0.95,
+      0.94,
+      0.89
+    ],
+    "current_kelly": [
+      0.94,
+      0.94,
+      0.93
+    ],
+    "odds_history": [
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.5,
+        "lose_odds": 4.2,
+        "return_rate": 93.95,
+        "update_time": "2025-04-27 17:27:08",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.6,
+        "lose_odds": 4.2,
+        "return_rate": 94.13,
+        "update_time": "2025-04-27 17:24:14",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.6,
+        "lose_odds": 4.0,
+        "return_rate": 93.09,
+        "update_time": "2025-04-27 17:24:13",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.91,
+        "draw_odds": 3.6,
+        "lose_odds": 4.0,
+        "return_rate": 95.12,
+        "update_time": "2025-04-27 17:15:00",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.6,
+        "lose_odds": 4.33,
+        "return_rate": 94.77,
+        "update_time": "2025-04-27 17:08:36",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.7,
+        "lose_odds": 4.4,
+        "return_rate": 94.96,
+        "update_time": "2025-04-27 16:02:09",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.75,
+        "lose_odds": 4.6,
+        "return_rate": 94.15,
+        "update_time": "2025-04-27 14:28:39",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.75,
+        "lose_odds": 4.5,
+        "return_rate": 94.31,
+        "update_time": "2025-04-27 13:36:56",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.7,
+        "lose_odds": 4.33,
+        "return_rate": 95.45,
+        "update_time": "2025-04-27 13:15:43",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.6,
+        "lose_odds": 4.33,
+        "return_rate": 94.77,
+        "update_time": "2025-04-27 03:39:52",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.6,
+        "lose_odds": 4.5,
+        "return_rate": 94.74,
+        "update_time": "2025-04-24 19:20:46",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.6,
+        "lose_odds": 4.2,
+        "return_rate": 94.66,
+        "update_time": "2025-04-23 06:37:43",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.6,
+        "lose_odds": 4.0,
+        "return_rate": 93.61,
+        "update_time": "2025-04-20 18:17:52",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 0
+      }
+    ]
+  },
+  "利记": {
+    "initial_odds": [
+      1.82,
+      3.18,
+      3.81
+    ],
+    "current_odds": [
+      1.86,
+      3.33,
+      3.97
+    ],
+    "initial_probabilities": [
+      0.4878,
+      0.2792,
+      0.233
+    ],
+    "current_probabilities": [
+      0.4933,
+      0.2755,
+      0.2311
+    ],
+    "initial_return_rate": 0.8878,
+    "current_return_rate": 0.9176,
+    "initial_kelly": [
+      0.94,
+      0.83,
+      0.85
+    ],
+    "current_kelly": [
+      0.96,
+      0.87,
+      0.88
+    ],
+    "odds_history": [
+      {
+        "win_odds": 1.79,
+        "draw_odds": 3.54,
+        "lose_odds": 4.55,
+        "return_rate": 94.26,
+        "update_time": "2025-04-27 17:28:39",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.39,
+        "lose_odds": 4.26,
+        "return_rate": 92.14,
+        "update_time": "2025-04-27 17:28:26",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.35,
+        "lose_odds": 4.02,
+        "return_rate": 91.68,
+        "update_time": "2025-04-27 17:27:42",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.35,
+        "lose_odds": 4.03,
+        "return_rate": 91.73,
+        "update_time": "2025-04-27 17:26:59",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.86,
+        "draw_odds": 3.33,
+        "lose_odds": 3.97,
+        "return_rate": 91.76,
+        "update_time": "2025-04-27 17:26:17",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.89,
+        "draw_odds": 3.29,
+        "lose_odds": 3.89,
+        "return_rate": 91.73,
+        "update_time": "2025-04-27 17:25:34",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.88,
+        "draw_odds": 3.31,
+        "lose_odds": 3.91,
+        "return_rate": 91.76,
+        "update_time": "2025-04-27 17:24:50",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.33,
+        "lose_odds": 4.05,
+        "return_rate": 91.68,
+        "update_time": "2025-04-27 17:24:08",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.38,
+        "lose_odds": 3.98,
+        "return_rate": 91.69,
+        "update_time": "2025-04-27 17:23:25",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.4,
+        "lose_odds": 4.01,
+        "return_rate": 92.0,
+        "update_time": "2025-04-27 17:22:42",
+        "win_change": -1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.87,
+        "draw_odds": 3.53,
+        "lose_odds": 4.09,
+        "return_rate": 94.11,
+        "update_time": "2025-04-27 17:21:19",
+        "win_change": 1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.43,
+        "lose_odds": 3.97,
+        "return_rate": 92.0,
+        "update_time": "2025-04-27 17:21:16",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.43,
+        "lose_odds": 3.93,
+        "return_rate": 91.79,
+        "update_time": "2025-04-27 17:20:36",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.9,
+        "draw_odds": 3.37,
+        "lose_odds": 3.77,
+        "return_rate": 91.89,
+        "update_time": "2025-04-27 17:15:01",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.9,
+        "draw_odds": 3.37,
+        "lose_odds": 3.76,
+        "return_rate": 91.83,
+        "update_time": "2025-04-27 17:14:19",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.88,
+        "draw_odds": 3.4,
+        "lose_odds": 3.82,
+        "return_rate": 91.93,
+        "update_time": "2025-04-27 17:13:37",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.86,
+        "draw_odds": 3.41,
+        "lose_odds": 3.89,
+        "return_rate": 91.92,
+        "update_time": "2025-04-27 17:12:54",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.86,
+        "draw_odds": 3.41,
+        "lose_odds": 3.88,
+        "return_rate": 91.86,
+        "update_time": "2025-04-27 17:12:08",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.46,
+        "lose_odds": 4.06,
+        "return_rate": 92.19,
+        "update_time": "2025-04-27 17:08:31",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.45,
+        "lose_odds": 4.06,
+        "return_rate": 92.11,
+        "update_time": "2025-04-27 17:07:46",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.79,
+        "draw_odds": 3.49,
+        "lose_odds": 4.17,
+        "return_rate": 92.17,
+        "update_time": "2025-04-27 16:58:59",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.79,
+        "draw_odds": 3.48,
+        "lose_odds": 4.18,
+        "return_rate": 92.14,
+        "update_time": "2025-04-27 16:49:46",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.79,
+        "draw_odds": 3.48,
+        "lose_odds": 4.19,
+        "return_rate": 92.19,
+        "update_time": "2025-04-27 16:47:30",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.79,
+        "draw_odds": 3.48,
+        "lose_odds": 4.18,
+        "return_rate": 92.14,
+        "update_time": "2025-04-27 16:45:22",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.79,
+        "draw_odds": 3.49,
+        "lose_odds": 4.16,
+        "return_rate": 92.12,
+        "update_time": "2025-04-27 16:42:30",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.79,
+        "draw_odds": 3.48,
+        "lose_odds": 4.19,
+        "return_rate": 92.19,
+        "update_time": "2025-04-27 16:34:37",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.52,
+        "lose_odds": 4.35,
+        "return_rate": 92.13,
+        "update_time": "2025-04-27 16:22:23",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.52,
+        "lose_odds": 4.36,
+        "return_rate": 92.18,
+        "update_time": "2025-04-27 15:59:26",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.39,
+        "lose_odds": 4.17,
+        "return_rate": 90.4,
+        "update_time": "2025-04-27 15:57:58",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.41,
+        "lose_odds": 4.14,
+        "return_rate": 90.4,
+        "update_time": "2025-04-27 15:54:23",
+        "win_change": -1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.78,
+        "draw_odds": 3.53,
+        "lose_odds": 4.25,
+        "return_rate": 92.56,
+        "update_time": "2025-04-27 14:56:06",
+        "win_change": 1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.43,
+        "lose_odds": 4.12,
+        "return_rate": 90.44,
+        "update_time": "2025-04-27 14:55:04",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.42,
+        "lose_odds": 4.14,
+        "return_rate": 90.47,
+        "update_time": "2025-04-27 14:35:21",
+        "win_change": -1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.78,
+        "draw_odds": 3.5,
+        "lose_odds": 4.29,
+        "return_rate": 92.54,
+        "update_time": "2025-04-27 14:33:09",
+        "win_change": 1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.4,
+        "lose_odds": 4.16,
+        "return_rate": 90.42,
+        "update_time": "2025-04-27 14:32:33",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.41,
+        "lose_odds": 4.14,
+        "return_rate": 90.4,
+        "update_time": "2025-04-27 14:10:45",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.43,
+        "lose_odds": 4.11,
+        "return_rate": 90.39,
+        "update_time": "2025-04-27 14:01:01",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.39,
+        "lose_odds": 4.17,
+        "return_rate": 90.4,
+        "update_time": "2025-04-27 14:00:16",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.79,
+        "draw_odds": 3.36,
+        "lose_odds": 4.01,
+        "return_rate": 90.44,
+        "update_time": "2025-04-27 13:43:04",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.79,
+        "draw_odds": 3.36,
+        "lose_odds": 4.0,
+        "return_rate": 90.39,
+        "update_time": "2025-04-27 13:34:41",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.79,
+        "draw_odds": 3.37,
+        "lose_odds": 3.98,
+        "return_rate": 90.36,
+        "update_time": "2025-04-27 13:33:16",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.79,
+        "draw_odds": 3.36,
+        "lose_odds": 4.0,
+        "return_rate": 90.39,
+        "update_time": "2025-04-27 13:31:50",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.31,
+        "lose_odds": 3.8,
+        "return_rate": 90.19,
+        "update_time": "2025-04-27 13:30:24",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.3,
+        "lose_odds": 3.8,
+        "return_rate": 90.12,
+        "update_time": "2025-04-27 13:21:28",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.28,
+        "lose_odds": 3.83,
+        "return_rate": 90.13,
+        "update_time": "2025-04-27 13:20:04",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.87,
+        "draw_odds": 3.24,
+        "lose_odds": 3.77,
+        "return_rate": 90.2,
+        "update_time": "2025-04-27 13:19:25",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.3,
+        "lose_odds": 3.86,
+        "return_rate": 90.45,
+        "update_time": "2025-04-27 13:15:57",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.29,
+        "lose_odds": 3.86,
+        "return_rate": 90.38,
+        "update_time": "2025-04-27 13:14:35",
+        "win_change": -1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.87,
+        "draw_odds": 3.39,
+        "lose_odds": 3.99,
+        "return_rate": 92.56,
+        "update_time": "2025-04-27 13:13:21",
+        "win_change": 1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.29,
+        "lose_odds": 3.87,
+        "return_rate": 90.43,
+        "update_time": "2025-04-27 13:13:12",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.3,
+        "lose_odds": 3.85,
+        "return_rate": 90.4,
+        "update_time": "2025-04-27 13:12:31",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.28,
+        "lose_odds": 3.89,
+        "return_rate": 90.46,
+        "update_time": "2025-04-27 13:11:51",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.26,
+        "lose_odds": 3.91,
+        "return_rate": 90.42,
+        "update_time": "2025-04-27 13:08:23",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.26,
+        "lose_odds": 3.92,
+        "return_rate": 90.47,
+        "update_time": "2025-04-27 12:07:41",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.15,
+        "lose_odds": 3.76,
+        "return_rate": 88.74,
+        "update_time": "2025-04-27 12:06:15",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.16,
+        "lose_odds": 3.76,
+        "return_rate": 88.82,
+        "update_time": "2025-04-27 12:05:35",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.18,
+        "lose_odds": 3.81,
+        "return_rate": 88.78,
+        "update_time": "2025-04-27 08:13:56",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.18,
+        "lose_odds": 3.82,
+        "return_rate": 88.83,
+        "update_time": "2025-04-27 06:44:34",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.17,
+        "lose_odds": 3.83,
+        "return_rate": 88.81,
+        "update_time": "2025-04-27 06:43:53",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.29,
+        "lose_odds": 4.04,
+        "return_rate": 90.83,
+        "update_time": "2025-04-26 16:03:49",
+        "win_change": 1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.79,
+        "draw_odds": 3.2,
+        "lose_odds": 3.92,
+        "return_rate": 88.79,
+        "update_time": "2025-04-26 16:01:51",
+        "win_change": -1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.31,
+        "lose_odds": 4.02,
+        "return_rate": 90.88,
+        "update_time": "2025-04-25 06:45:42",
+        "win_change": 1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.79,
+        "draw_odds": 3.22,
+        "lose_odds": 3.9,
+        "return_rate": 88.84,
+        "update_time": "2025-04-25 06:43:37",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.79,
+        "draw_odds": 3.19,
+        "lose_odds": 3.94,
+        "return_rate": 88.81,
+        "update_time": "2025-04-24 19:19:18",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.16,
+        "lose_odds": 3.88,
+        "return_rate": 88.76,
+        "update_time": "2025-04-24 18:17:16",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.19,
+        "lose_odds": 3.85,
+        "return_rate": 88.83,
+        "update_time": "2025-04-24 13:49:24",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.13,
+        "lose_odds": 3.76,
+        "return_rate": 88.58,
+        "update_time": "2025-04-21 19:27:44",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.15,
+        "lose_odds": 3.86,
+        "return_rate": 88.81,
+        "update_time": "2025-04-21 19:27:08",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.18,
+        "lose_odds": 3.81,
+        "return_rate": 88.78,
+        "update_time": "2025-04-20 23:35:44",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 0
+      }
+    ]
+  },
+  "Unibet (优胜客)": {
+    "initial_odds": [
+      2.16,
+      3.5,
+      3.2
+    ],
+    "current_odds": [
+      1.83,
+      3.45,
+      4.35
+    ],
+    "initial_probabilities": [
+      0.4363,
+      0.2692,
+      0.2945
+    ],
+    "current_probabilities": [
+      0.5125,
+      0.2719,
+      0.2156
+    ],
+    "initial_return_rate": 0.9423,
+    "current_return_rate": 0.9379,
+    "initial_kelly": [
+      1.11,
+      0.92,
+      0.71
+    ],
+    "current_kelly": [
+      0.94,
+      0.9,
+      0.97
+    ],
+    "odds_history": [
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.5,
+        "lose_odds": 4.4,
+        "return_rate": 93.86,
+        "update_time": "2025-04-27 17:27:18",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.45,
+        "lose_odds": 4.35,
+        "return_rate": 93.79,
+        "update_time": "2025-04-27 17:22:28",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.5,
+        "return_rate": 94.03,
+        "update_time": "2025-04-27 17:20:03",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.74,
+        "draw_odds": 3.5,
+        "lose_odds": 4.8,
+        "return_rate": 93.57,
+        "update_time": "2025-04-27 14:20:18",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.5,
+        "lose_odds": 4.7,
+        "return_rate": 94.03,
+        "update_time": "2025-04-27 13:48:23",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.74,
+        "draw_odds": 3.5,
+        "lose_odds": 4.8,
+        "return_rate": 93.57,
+        "update_time": "2025-04-27 13:45:56",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.45,
+        "lose_odds": 4.5,
+        "return_rate": 93.94,
+        "update_time": "2025-04-26 17:35:45",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.5,
+        "return_rate": 94.03,
+        "update_time": "2025-04-26 17:24:58",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.45,
+        "lose_odds": 4.5,
+        "return_rate": 93.94,
+        "update_time": "2025-04-26 17:09:33",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.5,
+        "return_rate": 94.03,
+        "update_time": "2025-04-26 17:01:43",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.4,
+        "lose_odds": 4.5,
+        "return_rate": 93.83,
+        "update_time": "2025-04-26 16:53:56",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.5,
+        "return_rate": 94.03,
+        "update_time": "2025-04-26 16:51:21",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.45,
+        "lose_odds": 4.5,
+        "return_rate": 93.67,
+        "update_time": "2025-04-26 16:43:32",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.45,
+        "lose_odds": 4.5,
+        "return_rate": 93.94,
+        "update_time": "2025-04-26 16:33:09",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.79,
+        "draw_odds": 3.5,
+        "lose_odds": 4.5,
+        "return_rate": 93.76,
+        "update_time": "2025-04-26 16:09:39",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.78,
+        "draw_odds": 3.5,
+        "lose_odds": 4.7,
+        "return_rate": 94.31,
+        "update_time": "2025-04-26 12:43:56",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.5,
+        "lose_odds": 4.8,
+        "return_rate": 93.85,
+        "update_time": "2025-04-26 12:15:38",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.78,
+        "draw_odds": 3.5,
+        "lose_odds": 4.7,
+        "return_rate": 94.31,
+        "update_time": "2025-04-26 04:57:49",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.5,
+        "lose_odds": 4.8,
+        "return_rate": 93.85,
+        "update_time": "2025-04-26 03:46:32",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.5,
+        "lose_odds": 4.75,
+        "return_rate": 94.23,
+        "update_time": "2025-04-25 23:34:40",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.79,
+        "draw_odds": 3.45,
+        "lose_odds": 4.6,
+        "return_rate": 93.82,
+        "update_time": "2025-04-25 21:42:40",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.5,
+        "lose_odds": 4.6,
+        "return_rate": 93.63,
+        "update_time": "2025-04-25 16:40:59",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.55,
+        "lose_odds": 4.6,
+        "return_rate": 93.41,
+        "update_time": "2025-04-25 16:33:19",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.72,
+        "draw_odds": 3.6,
+        "lose_odds": 4.75,
+        "return_rate": 93.48,
+        "update_time": "2025-04-24 17:15:44",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.67,
+        "draw_odds": 3.75,
+        "lose_odds": 5.0,
+        "return_rate": 93.86,
+        "update_time": "2025-04-24 05:34:19",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.76,
+        "draw_odds": 3.65,
+        "lose_odds": 4.5,
+        "return_rate": 93.95,
+        "update_time": "2025-04-23 14:02:32",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.55,
+        "lose_odds": 4.2,
+        "return_rate": 94.31,
+        "update_time": "2025-04-22 16:06:46",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.86,
+        "draw_odds": 3.55,
+        "lose_odds": 4.1,
+        "return_rate": 94.05,
+        "update_time": "2025-04-22 15:59:31",
+        "win_change": 1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.4,
+        "lose_odds": 4.1,
+        "return_rate": 92.46,
+        "update_time": "2025-04-21 16:50:14",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.91,
+        "draw_odds": 3.4,
+        "lose_odds": 3.9,
+        "return_rate": 93.1,
+        "update_time": "2025-04-19 20:17:18",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.96,
+        "draw_odds": 3.4,
+        "lose_odds": 3.75,
+        "return_rate": 93.37,
+        "update_time": "2025-04-19 20:14:45",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.02,
+        "draw_odds": 3.4,
+        "lose_odds": 3.65,
+        "return_rate": 94.06,
+        "update_time": "2025-04-19 20:11:57",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.1,
+        "draw_odds": 3.4,
+        "lose_odds": 3.4,
+        "return_rate": 93.95,
+        "update_time": "2025-04-19 20:08:54",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.05,
+        "draw_odds": 3.55,
+        "lose_odds": 3.35,
+        "return_rate": 93.63,
+        "update_time": "2025-04-18 19:09:34",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.14,
+        "draw_odds": 3.55,
+        "lose_odds": 3.2,
+        "return_rate": 94.21,
+        "update_time": "2025-04-18 01:00:55",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.28,
+        "draw_odds": 3.5,
+        "lose_odds": 2.95,
+        "return_rate": 94.05,
+        "update_time": "2025-04-11 19:00:04",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 2.3,
+        "draw_odds": 3.5,
+        "lose_odds": 2.95,
+        "return_rate": 94.39,
+        "update_time": "2025-04-11 01:40:55",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 2.16,
+        "draw_odds": 3.5,
+        "lose_odds": 3.2,
+        "return_rate": 94.23,
+        "update_time": "2025-04-10 22:31:05",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 0
+      }
+    ]
+  },
+  "SportingBet (博天堂)": {
+    "initial_odds": [
+      1.87,
+      3.6,
+      4.1
+    ],
+    "current_odds": [
+      1.85,
+      3.5,
+      4.2
+    ],
+    "initial_probabilities": [
+      0.5062,
+      0.2629,
+      0.2309
+    ],
+    "current_probabilities": [
+      0.5079,
+      0.2684,
+      0.2237
+    ],
+    "initial_return_rate": 0.9466,
+    "current_return_rate": 0.9395,
+    "initial_kelly": [
+      0.96,
+      0.94,
+      0.91
+    ],
+    "current_kelly": [
+      0.95,
+      0.92,
+      0.93
+    ],
+    "odds_history": [
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.5,
+        "lose_odds": 4.2,
+        "return_rate": 93.95,
+        "update_time": "2025-04-27 17:25:36",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.6,
+        "lose_odds": 4.2,
+        "return_rate": 94.13,
+        "update_time": "2025-04-27 17:23:07",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.88,
+        "draw_odds": 3.5,
+        "lose_odds": 4.1,
+        "return_rate": 94.2,
+        "update_time": "2025-04-27 17:15:35",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.6,
+        "lose_odds": 4.33,
+        "return_rate": 94.5,
+        "update_time": "2025-04-27 17:08:08",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.7,
+        "lose_odds": 4.4,
+        "return_rate": 94.12,
+        "update_time": "2025-04-27 16:00:36",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.75,
+        "lose_odds": 4.6,
+        "return_rate": 94.15,
+        "update_time": "2025-04-27 14:27:14",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.75,
+        "lose_odds": 4.5,
+        "return_rate": 94.89,
+        "update_time": "2025-04-27 13:36:20",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.7,
+        "lose_odds": 4.33,
+        "return_rate": 95.18,
+        "update_time": "2025-04-27 13:14:01",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.6,
+        "lose_odds": 4.33,
+        "return_rate": 94.77,
+        "update_time": "2025-04-27 03:37:24",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.6,
+        "lose_odds": 4.5,
+        "return_rate": 94.74,
+        "update_time": "2025-04-24 19:20:18",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.6,
+        "lose_odds": 4.2,
+        "return_rate": 94.13,
+        "update_time": "2025-04-23 06:36:29",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.87,
+        "draw_odds": 3.6,
+        "lose_odds": 4.1,
+        "return_rate": 94.66,
+        "update_time": "2025-04-20 18:18:21",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 0
+      }
+    ]
+  },
+  "IBCBET (沙巴)": {
+    "initial_odds": [
+      1.87,
+      3.45,
+      3.9
+    ],
+    "current_odds": [
+      1.77,
+      3.7,
+      4.65
+    ],
+    "initial_probabilities": [
+      0.4947,
+      0.2681,
+      0.2372
+    ],
+    "current_probabilities": [
+      0.5379,
+      0.2573,
+      0.2048
+    ],
+    "initial_return_rate": 0.925,
+    "current_return_rate": 0.9521,
+    "initial_kelly": [
+      0.96,
+      0.9,
+      0.87
+    ],
+    "current_kelly": [
+      0.91,
+      0.97,
+      1.03
+    ],
+    "odds_history": [
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.7,
+        "lose_odds": 4.65,
+        "return_rate": 95.21,
+        "update_time": "2025-04-27 16:14:05",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.75,
+        "lose_odds": 4.55,
+        "return_rate": 95.11,
+        "update_time": "2025-04-27 13:34:50",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.55,
+        "lose_odds": 4.4,
+        "return_rate": 95.28,
+        "update_time": "2025-04-27 12:14:38",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.55,
+        "lose_odds": 4.5,
+        "return_rate": 95.21,
+        "update_time": "2025-04-27 10:56:24",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.6,
+        "lose_odds": 4.55,
+        "return_rate": 95.23,
+        "update_time": "2025-04-27 09:37:50",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.55,
+        "lose_odds": 3.9,
+        "return_rate": 92.71,
+        "update_time": "2025-04-27 07:03:24",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.5,
+        "lose_odds": 3.9,
+        "return_rate": 92.36,
+        "update_time": "2025-04-27 04:21:13",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.55,
+        "lose_odds": 4.0,
+        "return_rate": 92.75,
+        "update_time": "2025-04-27 02:59:32",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.5,
+        "lose_odds": 3.95,
+        "return_rate": 92.39,
+        "update_time": "2025-04-26 22:55:07",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.55,
+        "lose_odds": 4.05,
+        "return_rate": 92.76,
+        "update_time": "2025-04-26 18:55:58",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.55,
+        "lose_odds": 4.0,
+        "return_rate": 92.75,
+        "update_time": "2025-04-26 17:04:11",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.55,
+        "lose_odds": 4.05,
+        "return_rate": 92.76,
+        "update_time": "2025-04-26 07:41:10",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.5,
+        "lose_odds": 4.05,
+        "return_rate": 92.41,
+        "update_time": "2025-04-25 22:23:13",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.55,
+        "lose_odds": 4.1,
+        "return_rate": 92.76,
+        "update_time": "2025-04-25 19:17:50",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.5,
+        "lose_odds": 4.1,
+        "return_rate": 92.67,
+        "update_time": "2025-04-25 17:20:21",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.55,
+        "lose_odds": 4.15,
+        "return_rate": 92.75,
+        "update_time": "2025-04-25 07:47:21",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.15,
+        "return_rate": 92.4,
+        "update_time": "2025-04-24 20:01:48",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.5,
+        "lose_odds": 4.1,
+        "return_rate": 92.41,
+        "update_time": "2025-04-24 14:34:41",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.5,
+        "lose_odds": 4.05,
+        "return_rate": 92.67,
+        "update_time": "2025-04-23 21:21:23",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.5,
+        "lose_odds": 4.05,
+        "return_rate": 92.41,
+        "update_time": "2025-04-23 08:10:30",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.88,
+        "draw_odds": 3.45,
+        "lose_odds": 3.85,
+        "return_rate": 92.46,
+        "update_time": "2025-04-21 21:53:45",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.87,
+        "draw_odds": 3.45,
+        "lose_odds": 3.9,
+        "return_rate": 92.5,
+        "update_time": "2025-04-21 14:21:09",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 0
+      }
+    ]
+  },
+  "Mansion88 (明升)": {
+    "initial_odds": [
+      1.87,
+      3.45,
+      3.9
+    ],
+    "current_odds": [
+      1.9,
+      3.5,
+      4.2
+    ],
+    "initial_probabilities": [
+      0.4947,
+      0.2681,
+      0.2372
+    ],
+    "current_probabilities": [
+      0.5012,
+      0.2721,
+      0.2267
+    ],
+    "initial_return_rate": 0.925,
+    "current_return_rate": 0.9523,
+    "initial_kelly": [
+      0.96,
+      0.9,
+      0.87
+    ],
+    "current_kelly": [
+      0.98,
+      0.92,
+      0.93
+    ],
+    "odds_history": [
+      {
+        "win_odds": 1.9,
+        "draw_odds": 3.5,
+        "lose_odds": 4.2,
+        "return_rate": 95.23,
+        "update_time": "2025-04-27 17:23:06",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.87,
+        "draw_odds": 3.6,
+        "lose_odds": 4.2,
+        "return_rate": 95.18,
+        "update_time": "2025-04-27 17:20:24",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.95,
+        "draw_odds": 3.55,
+        "lose_odds": 3.9,
+        "return_rate": 95.15,
+        "update_time": "2025-04-27 17:16:55",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.96,
+        "draw_odds": 3.55,
+        "lose_odds": 3.85,
+        "return_rate": 95.09,
+        "update_time": "2025-04-27 17:14:30",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.94,
+        "draw_odds": 3.55,
+        "lose_odds": 3.95,
+        "return_rate": 95.21,
+        "update_time": "2025-04-27 17:14:02",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.92,
+        "draw_odds": 3.6,
+        "lose_odds": 4.0,
+        "return_rate": 95.36,
+        "update_time": "2025-04-27 17:11:56",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.86,
+        "draw_odds": 3.65,
+        "lose_odds": 4.2,
+        "return_rate": 95.27,
+        "update_time": "2025-04-27 17:06:17",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.65,
+        "lose_odds": 4.35,
+        "return_rate": 95.21,
+        "update_time": "2025-04-27 17:01:49",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.7,
+        "lose_odds": 4.5,
+        "return_rate": 95.42,
+        "update_time": "2025-04-27 16:47:38",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.65,
+        "lose_odds": 4.55,
+        "return_rate": 95.3,
+        "update_time": "2025-04-27 16:30:51",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.65,
+        "lose_odds": 4.5,
+        "return_rate": 95.08,
+        "update_time": "2025-04-27 16:15:42",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.7,
+        "lose_odds": 4.65,
+        "return_rate": 95.21,
+        "update_time": "2025-04-27 15:48:05",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.75,
+        "lose_odds": 4.55,
+        "return_rate": 95.11,
+        "update_time": "2025-04-27 14:52:53",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.8,
+        "lose_odds": 4.55,
+        "return_rate": 95.43,
+        "update_time": "2025-04-27 14:50:11",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.8,
+        "lose_odds": 4.5,
+        "return_rate": 95.21,
+        "update_time": "2025-04-27 14:35:13",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.8,
+        "lose_odds": 4.55,
+        "return_rate": 95.43,
+        "update_time": "2025-04-27 14:32:15",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.75,
+        "lose_odds": 4.6,
+        "return_rate": 95.33,
+        "update_time": "2025-04-27 14:17:37",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.75,
+        "lose_odds": 4.55,
+        "return_rate": 95.11,
+        "update_time": "2025-04-27 14:15:47",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.8,
+        "lose_odds": 4.55,
+        "return_rate": 95.43,
+        "update_time": "2025-04-27 14:12:33",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.78,
+        "draw_odds": 3.75,
+        "lose_odds": 4.5,
+        "return_rate": 95.18,
+        "update_time": "2025-04-27 13:53:24",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.8,
+        "lose_odds": 4.55,
+        "return_rate": 95.43,
+        "update_time": "2025-04-27 13:38:17",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.75,
+        "lose_odds": 4.55,
+        "return_rate": 95.11,
+        "update_time": "2025-04-27 13:34:00",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.76,
+        "draw_odds": 3.8,
+        "lose_odds": 4.6,
+        "return_rate": 95.35,
+        "update_time": "2025-04-27 13:32:27",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.7,
+        "lose_odds": 4.25,
+        "return_rate": 95.33,
+        "update_time": "2025-04-27 13:27:19",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.87,
+        "draw_odds": 3.65,
+        "lose_odds": 4.15,
+        "return_rate": 95.27,
+        "update_time": "2025-04-27 13:26:10",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.7,
+        "lose_odds": 4.2,
+        "return_rate": 95.34,
+        "update_time": "2025-04-27 13:23:19",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.86,
+        "draw_odds": 3.65,
+        "lose_odds": 4.2,
+        "return_rate": 95.27,
+        "update_time": "2025-04-27 13:20:31",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.65,
+        "lose_odds": 4.35,
+        "return_rate": 95.21,
+        "update_time": "2025-04-27 13:17:55",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.7,
+        "lose_odds": 4.3,
+        "return_rate": 95.3,
+        "update_time": "2025-04-27 13:15:30",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.7,
+        "lose_odds": 4.35,
+        "return_rate": 95.27,
+        "update_time": "2025-04-27 13:15:14",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.65,
+        "lose_odds": 4.3,
+        "return_rate": 95.24,
+        "update_time": "2025-04-27 13:12:19",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.6,
+        "lose_odds": 4.35,
+        "return_rate": 95.4,
+        "update_time": "2025-04-27 13:09:31",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.55,
+        "lose_odds": 4.35,
+        "return_rate": 95.05,
+        "update_time": "2025-04-27 13:07:15",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.87,
+        "draw_odds": 3.55,
+        "lose_odds": 4.3,
+        "return_rate": 95.33,
+        "update_time": "2025-04-27 13:04:11",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.88,
+        "draw_odds": 3.5,
+        "lose_odds": 4.3,
+        "return_rate": 95.22,
+        "update_time": "2025-04-27 12:55:31",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.87,
+        "draw_odds": 3.55,
+        "lose_odds": 4.3,
+        "return_rate": 95.33,
+        "update_time": "2025-04-27 12:36:21",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.88,
+        "draw_odds": 3.55,
+        "lose_odds": 4.25,
+        "return_rate": 95.34,
+        "update_time": "2025-04-27 12:29:04",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.55,
+        "lose_odds": 4.35,
+        "return_rate": 95.05,
+        "update_time": "2025-04-27 12:23:40",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.55,
+        "lose_odds": 4.4,
+        "return_rate": 95.28,
+        "update_time": "2025-04-27 11:50:31",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.55,
+        "lose_odds": 4.5,
+        "return_rate": 95.21,
+        "update_time": "2025-04-27 11:14:20",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.6,
+        "lose_odds": 4.6,
+        "return_rate": 95.45,
+        "update_time": "2025-04-27 11:04:50",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.55,
+        "lose_odds": 4.5,
+        "return_rate": 95.21,
+        "update_time": "2025-04-27 10:38:05",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.6,
+        "lose_odds": 4.45,
+        "return_rate": 95.33,
+        "update_time": "2025-04-27 10:04:32",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.6,
+        "lose_odds": 4.55,
+        "return_rate": 95.23,
+        "update_time": "2025-04-27 09:17:21",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.6,
+        "lose_odds": 4.6,
+        "return_rate": 95.45,
+        "update_time": "2025-04-27 08:30:20",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.55,
+        "lose_odds": 4.55,
+        "return_rate": 95.15,
+        "update_time": "2025-04-27 08:28:42",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.55,
+        "lose_odds": 4.4,
+        "return_rate": 95.28,
+        "update_time": "2025-04-27 07:39:32",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.55,
+        "lose_odds": 3.9,
+        "return_rate": 92.71,
+        "update_time": "2025-04-27 06:18:39",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.5,
+        "lose_odds": 3.9,
+        "return_rate": 92.36,
+        "update_time": "2025-04-27 03:36:59",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.55,
+        "lose_odds": 4.0,
+        "return_rate": 92.75,
+        "update_time": "2025-04-27 01:39:31",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.5,
+        "lose_odds": 3.95,
+        "return_rate": 92.39,
+        "update_time": "2025-04-26 22:17:27",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.55,
+        "lose_odds": 4.05,
+        "return_rate": 92.76,
+        "update_time": "2025-04-26 18:21:07",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.55,
+        "lose_odds": 4.0,
+        "return_rate": 92.75,
+        "update_time": "2025-04-26 15:52:32",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.55,
+        "lose_odds": 4.05,
+        "return_rate": 92.76,
+        "update_time": "2025-04-26 06:17:35",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.5,
+        "lose_odds": 4.05,
+        "return_rate": 92.41,
+        "update_time": "2025-04-25 19:37:57",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.55,
+        "lose_odds": 4.1,
+        "return_rate": 92.76,
+        "update_time": "2025-04-25 17:25:30",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.5,
+        "lose_odds": 4.1,
+        "return_rate": 92.67,
+        "update_time": "2025-04-25 16:24:38",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.5,
+        "lose_odds": 4.1,
+        "return_rate": 92.41,
+        "update_time": "2025-04-25 15:54:22",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.55,
+        "lose_odds": 4.15,
+        "return_rate": 92.75,
+        "update_time": "2025-04-25 06:43:07",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.5,
+        "lose_odds": 4.15,
+        "return_rate": 92.4,
+        "update_time": "2025-04-24 19:19:45",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.5,
+        "lose_odds": 4.1,
+        "return_rate": 92.41,
+        "update_time": "2025-04-24 13:48:50",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.5,
+        "lose_odds": 4.05,
+        "return_rate": 92.67,
+        "update_time": "2025-04-23 20:59:58",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.5,
+        "lose_odds": 4.05,
+        "return_rate": 92.41,
+        "update_time": "2025-04-23 06:31:20",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.5,
+        "lose_odds": 4.0,
+        "return_rate": 92.66,
+        "update_time": "2025-04-23 06:30:33",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.88,
+        "draw_odds": 3.45,
+        "lose_odds": 3.85,
+        "return_rate": 92.46,
+        "update_time": "2025-04-21 19:27:49",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.87,
+        "draw_odds": 3.45,
+        "lose_odds": 3.9,
+        "return_rate": 92.5,
+        "update_time": "2025-04-21 16:34:19",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 0
+      }
+    ]
+  },
+  "金宝博": {
+    "initial_odds": [
+      2.21,
+      3.65,
+      2.83
+    ],
+    "current_odds": [
+      1.9,
+      3.55,
+      4.1
+    ],
+    "initial_probabilities": [
+      0.419,
+      0.2537,
+      0.3272
+    ],
+    "current_probabilities": [
+      0.5003,
+      0.2678,
+      0.2319
+    ],
+    "initial_return_rate": 0.9261,
+    "current_return_rate": 0.9507,
+    "initial_kelly": [
+      1.14,
+      0.96,
+      0.63
+    ],
+    "current_kelly": [
+      0.98,
+      0.93,
+      0.91
+    ],
+    "odds_history": [
+      {
+        "win_odds": 1.9,
+        "draw_odds": 3.55,
+        "lose_odds": 4.1,
+        "return_rate": 95.07,
+        "update_time": "2025-04-27 17:26:11",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.91,
+        "draw_odds": 3.55,
+        "lose_odds": 4.05,
+        "return_rate": 95.04,
+        "update_time": "2025-04-27 17:25:31",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.92,
+        "draw_odds": 3.55,
+        "lose_odds": 4.05,
+        "return_rate": 95.29,
+        "update_time": "2025-04-27 17:24:50",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.9,
+        "draw_odds": 3.65,
+        "lose_odds": 4.05,
+        "return_rate": 95.49,
+        "update_time": "2025-04-27 17:23:30",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.87,
+        "draw_odds": 3.7,
+        "lose_odds": 4.1,
+        "return_rate": 95.34,
+        "update_time": "2025-04-27 17:21:30",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.86,
+        "draw_odds": 3.7,
+        "lose_odds": 4.15,
+        "return_rate": 95.34,
+        "update_time": "2025-04-27 17:20:50",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.92,
+        "draw_odds": 3.65,
+        "lose_odds": 3.9,
+        "return_rate": 95.13,
+        "update_time": "2025-04-27 17:16:49",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.94,
+        "draw_odds": 3.65,
+        "lose_odds": 3.8,
+        "return_rate": 95.0,
+        "update_time": "2025-04-27 17:13:16",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.9,
+        "draw_odds": 3.65,
+        "lose_odds": 3.95,
+        "return_rate": 94.93,
+        "update_time": "2025-04-27 17:13:05",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.89,
+        "draw_odds": 3.65,
+        "lose_odds": 3.95,
+        "return_rate": 94.68,
+        "update_time": "2025-04-27 17:12:06",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.86,
+        "draw_odds": 3.65,
+        "lose_odds": 4.1,
+        "return_rate": 94.74,
+        "update_time": "2025-04-27 17:09:07",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.75,
+        "lose_odds": 4.15,
+        "return_rate": 95.4,
+        "update_time": "2025-04-27 17:07:29",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.82,
+        "draw_odds": 3.75,
+        "lose_odds": 4.3,
+        "return_rate": 95.36,
+        "update_time": "2025-04-27 16:37:37",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.81,
+        "draw_odds": 3.75,
+        "lose_odds": 4.35,
+        "return_rate": 95.33,
+        "update_time": "2025-04-27 16:23:30",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.75,
+        "lose_odds": 4.3,
+        "return_rate": 94.81,
+        "update_time": "2025-04-27 16:20:08",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.78,
+        "draw_odds": 3.95,
+        "lose_odds": 4.3,
+        "return_rate": 95.46,
+        "update_time": "2025-04-27 15:38:49",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.95,
+        "lose_odds": 4.3,
+        "return_rate": 95.18,
+        "update_time": "2025-04-27 15:28:28",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.78,
+        "draw_odds": 3.95,
+        "lose_odds": 4.25,
+        "return_rate": 95.21,
+        "update_time": "2025-04-27 14:53:51",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.95,
+        "lose_odds": 4.4,
+        "return_rate": 95.07,
+        "update_time": "2025-04-27 14:52:08",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.74,
+        "draw_odds": 3.95,
+        "lose_odds": 4.5,
+        "return_rate": 95.23,
+        "update_time": "2025-04-27 14:09:21",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.75,
+        "draw_odds": 3.9,
+        "lose_odds": 4.45,
+        "return_rate": 95.01,
+        "update_time": "2025-04-27 14:04:57",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.77,
+        "draw_odds": 3.8,
+        "lose_odds": 4.5,
+        "return_rate": 95.21,
+        "update_time": "2025-04-27 13:34:19",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.78,
+        "draw_odds": 3.8,
+        "lose_odds": 3.85,
+        "return_rate": 92.19,
+        "update_time": "2025-04-27 13:31:44",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.85,
+        "draw_odds": 3.8,
+        "lose_odds": 3.85,
+        "return_rate": 94.03,
+        "update_time": "2025-04-27 13:29:40",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.8,
+        "lose_odds": 3.85,
+        "return_rate": 93.52,
+        "update_time": "2025-04-27 13:27:47",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.8,
+        "lose_odds": 3.95,
+        "return_rate": 94.09,
+        "update_time": "2025-04-27 13:22:09",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.8,
+        "lose_odds": 4.15,
+        "return_rate": 95.19,
+        "update_time": "2025-04-27 13:07:42",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.75,
+        "lose_odds": 4.25,
+        "return_rate": 95.38,
+        "update_time": "2025-04-27 11:57:58",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.75,
+        "lose_odds": 4.2,
+        "return_rate": 95.4,
+        "update_time": "2025-04-27 04:42:19",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.55,
+        "lose_odds": 3.95,
+        "return_rate": 92.74,
+        "update_time": "2025-04-26 22:26:49",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.55,
+        "lose_odds": 4.0,
+        "return_rate": 92.75,
+        "update_time": "2025-04-26 22:21:18",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.84,
+        "draw_odds": 3.55,
+        "lose_odds": 3.95,
+        "return_rate": 92.74,
+        "update_time": "2025-04-26 22:21:14",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.83,
+        "draw_odds": 3.55,
+        "lose_odds": 4.0,
+        "return_rate": 92.75,
+        "update_time": "2025-04-26 22:17:26",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.8,
+        "draw_odds": 3.55,
+        "lose_odds": 4.1,
+        "return_rate": 92.49,
+        "update_time": "2025-04-23 06:34:05",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.86,
+        "draw_odds": 3.55,
+        "lose_odds": 3.85,
+        "return_rate": 92.67,
+        "update_time": "2025-04-20 03:19:22",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.9,
+        "draw_odds": 3.5,
+        "lose_odds": 3.75,
+        "return_rate": 92.7,
+        "update_time": "2025-04-19 19:47:29",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.97,
+        "draw_odds": 3.45,
+        "lose_odds": 3.5,
+        "return_rate": 92.32,
+        "update_time": "2025-04-18 18:45:28",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 0
+      },
+      {
+        "win_odds": 1.97,
+        "draw_odds": 3.5,
+        "lose_odds": 3.5,
+        "return_rate": 92.67,
+        "update_time": "2025-04-18 18:43:42",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.97,
+        "draw_odds": 3.55,
+        "lose_odds": 3.45,
+        "return_rate": 92.66,
+        "update_time": "2025-04-18 13:11:58",
+        "win_change": 0,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.97,
+        "draw_odds": 3.6,
+        "lose_odds": 3.4,
+        "return_rate": 92.63,
+        "update_time": "2025-04-18 04:32:45",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.0,
+        "draw_odds": 3.6,
+        "lose_odds": 3.3,
+        "return_rate": 92.52,
+        "update_time": "2025-04-18 04:28:45",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.05,
+        "draw_odds": 3.55,
+        "lose_odds": 3.2,
+        "return_rate": 92.42,
+        "update_time": "2025-04-17 22:33:50",
+        "win_change": -1,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.07,
+        "draw_odds": 3.6,
+        "lose_odds": 3.15,
+        "return_rate": 92.74,
+        "update_time": "2025-04-17 22:27:14",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.12,
+        "draw_odds": 3.6,
+        "lose_odds": 3.0,
+        "return_rate": 92.35,
+        "update_time": "2025-04-17 22:26:44",
+        "win_change": -1,
+        "draw_change": -1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 2.21,
+        "draw_odds": 3.65,
+        "lose_odds": 2.83,
+        "return_rate": 92.61,
+        "update_time": "2025-04-17 22:21:21",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 0
+      }
+    ]
+  },
+  "香港马会": {
+    "initial_odds": [
+      1.73,
+      3.3,
+      3.95
+    ],
+    "current_odds": [
+      1.73,
+      3.35,
+      3.9
+    ],
+    "initial_probabilities": [
+      0.5096,
+      0.2672,
+      0.2232
+    ],
+    "current_probabilities": [
+      0.5102,
+      0.2635,
+      0.2263
+    ],
+    "initial_return_rate": 0.8817,
+    "current_return_rate": 0.8826,
+    "initial_kelly": [
+      0.89,
+      0.87,
+      0.88
+    ],
+    "current_kelly": [
+      0.89,
+      0.88,
+      0.87
+    ],
+    "odds_history": [
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.35,
+        "lose_odds": 3.9,
+        "return_rate": 88.26,
+        "update_time": "2025-04-27 17:16:20",
+        "win_change": 1,
+        "draw_change": 0,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.69,
+        "draw_odds": 3.35,
+        "lose_odds": 4.1,
+        "return_rate": 88.17,
+        "update_time": "2025-04-27 17:14:22",
+        "win_change": 1,
+        "draw_change": -1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.64,
+        "draw_odds": 3.45,
+        "lose_odds": 4.3,
+        "return_rate": 88.33,
+        "update_time": "2025-04-27 13:35:24",
+        "win_change": -1,
+        "draw_change": 1,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.69,
+        "draw_odds": 3.35,
+        "lose_odds": 4.1,
+        "return_rate": 88.17,
+        "update_time": "2025-04-27 13:14:28",
+        "win_change": 0,
+        "draw_change": 1,
+        "lose_change": -1
+      },
+      {
+        "win_odds": 1.69,
+        "draw_odds": 3.3,
+        "lose_odds": 4.15,
+        "return_rate": 88.05,
+        "update_time": "2025-04-27 12:14:17",
+        "win_change": -1,
+        "draw_change": 0,
+        "lose_change": 1
+      },
+      {
+        "win_odds": 1.73,
+        "draw_odds": 3.3,
+        "lose_odds": 3.95,
+        "return_rate": 88.17,
+        "update_time": "2025-04-24 19:30:46",
+        "win_change": 0,
+        "draw_change": 0,
+        "lose_change": 0
+      }
+    ]
+  },
+  "12BET (壹�E博)": {
+    "initial_odds": [
+      1.87,
+      3.45,
+      3.9
+    ],
+    "current_odds": [
+      1.87,
+      3.6,
+      4.2
+    ],
+    "initial_probabilities": [
+      0.4947,
+      0.2681,
+      0.2372
+    ],
+    "current_probabilities": [
+      0.509,
+      0.2644,
+      0.2266
+    ],
+    "initial_return_rate": 0.925,
+    "current_return_rate": 0.9518,
+    "initial_kelly": [
+      0.96,
+      0.9,
+      0.87
+    ],
+    "current_kelly": [
+      0.96,
+      0.94,
+      0.93
+    ]
+  }
+}
