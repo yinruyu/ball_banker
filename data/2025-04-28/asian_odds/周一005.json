@@ -1,0 +1,2488 @@
+{
+  "威廉希尔": {
+    "current_asian": {
+      "home_odds": "0.990",
+      "handicap": "平手/半球 ",
+      "away_odds": "0.800",
+      "update_time": "04-28 09:03",
+      "status": "升"
+    },
+    "initial_asian": {
+      "home_odds": "0.750",
+      "handicap": "平手",
+      "away_odds": "1.050",
+      "update_time": "04-15 19:18"
+    }
+  },
+  "澳门": {
+    "current_asian": {
+      "home_odds": "1.100",
+      "handicap": "平手/半球",
+      "away_odds": "0.760",
+      "update_time": "04-28 07:24",
+      "status": ""
+    },
+    "initial_asian": {
+      "home_odds": "1.160",
+      "handicap": "平手/半球",
+      "away_odds": "0.700",
+      "update_time": "04-21 23:23"
+    }
+  },
+  "Bet365": {
+    "current_asian": {
+      "home_odds": "0.820",
+      "handicap": "平手",
+      "away_odds": "1.080",
+      "update_time": "04-28 16:54",
+      "status": ""
+    },
+    "initial_asian": {
+      "home_odds": "0.840",
+      "handicap": "平手",
+      "away_odds": "1.060",
+      "update_time": "04-21 20:20"
+    }
+  },
+  "Interwetten": {
+    "current_asian": {
+      "home_odds": "0.730",
+      "handicap": "平手",
+      "away_odds": "1.000",
+      "update_time": "04-24 20:15",
+      "status": ""
+    },
+    "initial_asian": {
+      "home_odds": "0.730",
+      "handicap": "平手",
+      "away_odds": "1.000",
+      "update_time": "04-21 20:42"
+    }
+  },
+  "皇冠": {
+    "current_asian": {
+      "home_odds": "1.090",
+      "handicap": "平手/半球 ",
+      "away_odds": "0.790",
+      "update_time": "04-24 21:08",
+      "status": "升"
+    },
+    "initial_asian": {
+      "home_odds": "0.930",
+      "handicap": "平手",
+      "away_odds": "0.950",
+      "update_time": "04-22 02:58"
+    },
+    "asian_history": [
+      {
+        "home_odds": "1.090",
+        "handicap": "平手/半球 升",
+        "away_odds": "0.790",
+        "update_time": "04-24 21:08",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.790",
+        "handicap": "平手",
+        "away_odds": "1.090",
+        "update_time": "04-24 19:54",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.850",
+        "handicap": "平手",
+        "away_odds": "1.030",
+        "update_time": "04-22 05:52",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.900",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-22 05:50",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.930",
+        "handicap": "平手",
+        "away_odds": "0.950",
+        "update_time": "04-22 02:58",
+        "home_change": 0,
+        "away_change": 0
+      }
+    ]
+  },
+  "易胜博": {
+    "current_asian": {
+      "home_odds": "0.810",
+      "handicap": "平手",
+      "away_odds": "1.100",
+      "update_time": "04-28 17:28",
+      "status": ""
+    },
+    "initial_asian": {
+      "home_odds": "0.820",
+      "handicap": "平手",
+      "away_odds": "1.090",
+      "update_time": "04-28 14:01"
+    }
+  },
+  "伟德": {
+    "current_asian": {
+      "home_odds": "0.700",
+      "handicap": "平手",
+      "away_odds": "0.990",
+      "update_time": "04-28 14:36",
+      "status": ""
+    },
+    "initial_asian": {
+      "home_odds": "0.700",
+      "handicap": "平手",
+      "away_odds": "0.990",
+      "update_time": "04-14 10:03"
+    },
+    "asian_history": [
+      {
+        "home_odds": "0.700",
+        "handicap": "平手",
+        "away_odds": "0.990",
+        "update_time": "04-28 14:36",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-28 14:23",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.700",
+        "handicap": "平手",
+        "away_odds": "0.990",
+        "update_time": "04-28 13:19",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-28 13:17",
+        "home_change": 0,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.990",
+        "update_time": "04-28 13:16",
+        "home_change": 1,
+        "away_change": 0
+      },
+      {
+        "home_odds": "0.700",
+        "handicap": "平手 降",
+        "away_odds": "0.990",
+        "update_time": "04-28 13:14",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.990",
+        "handicap": "平手/半球 升",
+        "away_odds": "0.700",
+        "update_time": "04-28 04:59",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.700",
+        "handicap": "平手",
+        "away_odds": "0.990",
+        "update_time": "04-24 19:56",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-24 19:52",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.720",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-24 18:57",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-24 18:49",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.720",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-24 18:27",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.730",
+        "handicap": "平手",
+        "away_odds": "0.950",
+        "update_time": "04-24 18:24",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.750",
+        "handicap": "平手",
+        "away_odds": "0.930",
+        "update_time": "04-24 06:44",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.760",
+        "handicap": "平手",
+        "away_odds": "0.920",
+        "update_time": "04-24 05:46",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.910",
+        "update_time": "04-24 05:36",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.760",
+        "handicap": "平手",
+        "away_odds": "0.920",
+        "update_time": "04-24 04:42",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.910",
+        "update_time": "04-24 04:34",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.760",
+        "handicap": "平手",
+        "away_odds": "0.920",
+        "update_time": "04-24 03:43",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.910",
+        "update_time": "04-24 00:30",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.760",
+        "handicap": "平手",
+        "away_odds": "0.920",
+        "update_time": "04-24 00:07",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.910",
+        "update_time": "04-24 00:03",
+        "home_change": 0,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.900",
+        "update_time": "04-23 17:40",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "0.890",
+        "update_time": "04-23 13:42",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.900",
+        "update_time": "04-23 13:39",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "0.890",
+        "update_time": "04-23 13:38",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.900",
+        "update_time": "04-23 13:36",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "0.890",
+        "update_time": "04-23 11:24",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.900",
+        "update_time": "04-23 11:09",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "0.890",
+        "update_time": "04-23 11:07",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.900",
+        "update_time": "04-23 10:38",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "0.890",
+        "update_time": "04-23 10:21",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.900",
+        "update_time": "04-23 09:51",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "0.890",
+        "update_time": "04-23 09:22",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.900",
+        "update_time": "04-23 08:46",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "0.890",
+        "update_time": "04-23 08:19",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.900",
+        "update_time": "04-23 07:52",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "0.890",
+        "update_time": "04-23 07:18",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.900",
+        "update_time": "04-23 05:56",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "0.890",
+        "update_time": "04-23 03:41",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.790",
+        "handicap": "平手",
+        "away_odds": "0.880",
+        "update_time": "04-23 03:40",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "0.890",
+        "update_time": "04-23 02:56",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.900",
+        "update_time": "04-23 02:55",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "0.890",
+        "update_time": "04-23 01:31",
+        "home_change": -1,
+        "away_change": 0
+      },
+      {
+        "home_odds": "0.790",
+        "handicap": "平手",
+        "away_odds": "0.890",
+        "update_time": "04-23 01:30",
+        "home_change": 1,
+        "away_change": 0
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "0.890",
+        "update_time": "04-22 23:59",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.900",
+        "update_time": "04-22 19:54",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "0.890",
+        "update_time": "04-22 18:07",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.900",
+        "update_time": "04-22 17:51",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "0.890",
+        "update_time": "04-22 17:02",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.900",
+        "update_time": "04-22 16:43",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "0.890",
+        "update_time": "04-22 16:04",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.900",
+        "update_time": "04-22 15:42",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "0.890",
+        "update_time": "04-22 15:00",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.900",
+        "update_time": "04-22 14:59",
+        "home_change": 0,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.910",
+        "update_time": "04-22 14:58",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.760",
+        "handicap": "平手",
+        "away_odds": "0.920",
+        "update_time": "04-22 14:55",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.750",
+        "handicap": "平手",
+        "away_odds": "0.930",
+        "update_time": "04-22 12:38",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.760",
+        "handicap": "平手",
+        "away_odds": "0.920",
+        "update_time": "04-22 12:36",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.900",
+        "update_time": "04-22 12:34",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "0.890",
+        "update_time": "04-22 05:52",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.790",
+        "handicap": "平手",
+        "away_odds": "0.880",
+        "update_time": "04-22 05:50",
+        "home_change": -1,
+        "away_change": 0
+      },
+      {
+        "home_odds": "0.800",
+        "handicap": "平手",
+        "away_odds": "0.880",
+        "update_time": "04-22 05:49",
+        "home_change": 0,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.800",
+        "handicap": "平手",
+        "away_odds": "0.870",
+        "update_time": "04-22 04:47",
+        "home_change": 0,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.800",
+        "handicap": "平手",
+        "away_odds": "0.880",
+        "update_time": "04-22 04:45",
+        "home_change": 0,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.800",
+        "handicap": "平手",
+        "away_odds": "0.870",
+        "update_time": "04-22 04:43",
+        "home_change": 0,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.800",
+        "handicap": "平手",
+        "away_odds": "0.880",
+        "update_time": "04-22 04:42",
+        "home_change": 0,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.800",
+        "handicap": "平手",
+        "away_odds": "0.870",
+        "update_time": "04-22 03:45",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.790",
+        "handicap": "平手",
+        "away_odds": "0.880",
+        "update_time": "04-22 03:26",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.800",
+        "handicap": "平手",
+        "away_odds": "0.870",
+        "update_time": "04-22 03:03",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.790",
+        "handicap": "平手",
+        "away_odds": "0.880",
+        "update_time": "04-22 03:02",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "0.890",
+        "update_time": "04-22 02:56",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.900",
+        "update_time": "04-22 02:54",
+        "home_change": 0,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "0.910",
+        "update_time": "04-22 02:53",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.750",
+        "handicap": "平手",
+        "away_odds": "0.920",
+        "update_time": "04-22 02:51",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.740",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-22 02:29",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.730",
+        "handicap": "平手",
+        "away_odds": "0.950",
+        "update_time": "04-21 21:41",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.720",
+        "handicap": "平手",
+        "away_odds": "0.960",
+        "update_time": "04-21 21:38",
+        "home_change": 0,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.720",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-21 20:53",
+        "home_change": 0,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.720",
+        "handicap": "平手",
+        "away_odds": "0.960",
+        "update_time": "04-21 20:52",
+        "home_change": -1,
+        "away_change": 0
+      },
+      {
+        "home_odds": "0.730",
+        "handicap": "平手",
+        "away_odds": "0.960",
+        "update_time": "04-21 20:49",
+        "home_change": 0,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.730",
+        "handicap": "平手",
+        "away_odds": "0.950",
+        "update_time": "04-21 20:35",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.720",
+        "handicap": "平手",
+        "away_odds": "0.960",
+        "update_time": "04-21 20:30",
+        "home_change": 0,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.720",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-21 20:18",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.700",
+        "handicap": "平手",
+        "away_odds": "0.990",
+        "update_time": "04-21 20:12",
+        "home_change": -1,
+        "away_change": 0
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.990",
+        "update_time": "04-19 18:23",
+        "home_change": 0,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-19 11:52",
+        "home_change": 0,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.990",
+        "update_time": "04-19 11:51",
+        "home_change": 0,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-19 11:01",
+        "home_change": 0,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.990",
+        "update_time": "04-19 11:00",
+        "home_change": 0,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-19 09:15",
+        "home_change": 0,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.990",
+        "update_time": "04-19 09:14",
+        "home_change": 0,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-19 08:54",
+        "home_change": 0,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.990",
+        "update_time": "04-19 08:52",
+        "home_change": 0,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-19 08:36",
+        "home_change": 0,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.990",
+        "update_time": "04-19 08:34",
+        "home_change": 0,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-19 06:45",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.700",
+        "handicap": "平手",
+        "away_odds": "0.990",
+        "update_time": "04-15 17:59",
+        "home_change": -1,
+        "away_change": 0
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.990",
+        "update_time": "04-15 17:56",
+        "home_change": 0,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-15 08:29",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.720",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-15 08:26",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-15 00:25",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.720",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-14 15:58",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-14 15:49",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.700",
+        "handicap": "平手",
+        "away_odds": "0.990",
+        "update_time": "04-14 13:59",
+        "home_change": -1,
+        "away_change": 0
+      },
+      {
+        "home_odds": "0.710",
+        "handicap": "平手",
+        "away_odds": "0.990",
+        "update_time": "04-14 13:58",
+        "home_change": 1,
+        "away_change": 0
+      },
+      {
+        "home_odds": "0.700",
+        "handicap": "平手",
+        "away_odds": "0.990",
+        "update_time": "04-14 10:03",
+        "home_change": 0,
+        "away_change": 0
+      }
+    ]
+  },
+  "Pinnacle平博": {
+    "current_asian": {
+      "home_odds": "1.080",
+      "handicap": "平手/半球 ",
+      "away_odds": "0.790",
+      "update_time": "04-28 04:55",
+      "status": "升"
+    },
+    "initial_asian": {
+      "home_odds": "0.870",
+      "handicap": "平手",
+      "away_odds": "0.950",
+      "update_time": "04-14 05:00"
+    },
+    "asian_history": [
+      {
+        "home_odds": "1.080",
+        "handicap": "平手/半球 升",
+        "away_odds": "0.790",
+        "update_time": "04-28 04:55",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.850",
+        "handicap": "平手",
+        "away_odds": "1.070",
+        "update_time": "04-24 06:38",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.880",
+        "handicap": "平手",
+        "away_odds": "1.030",
+        "update_time": "04-23 23:52",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.890",
+        "handicap": "平手",
+        "away_odds": "1.010",
+        "update_time": "04-23 17:45",
+        "home_change": -1,
+        "away_change": 0
+      },
+      {
+        "home_odds": "0.900",
+        "handicap": "平手",
+        "away_odds": "1.010",
+        "update_time": "04-23 17:37",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.910",
+        "handicap": "平手",
+        "away_odds": "1.000",
+        "update_time": "04-23 02:46",
+        "home_change": 1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.900",
+        "handicap": "平手",
+        "away_odds": "0.990",
+        "update_time": "04-22 14:49",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "1.070",
+        "update_time": "04-22 12:33",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.910",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-22 02:53",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.920",
+        "handicap": "平手",
+        "away_odds": "0.960",
+        "update_time": "04-22 02:50",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.850",
+        "handicap": "平手",
+        "away_odds": "1.050",
+        "update_time": "04-22 02:26",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "1.070",
+        "update_time": "04-21 23:57",
+        "home_change": 0,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "1.080",
+        "update_time": "04-21 21:37",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.810",
+        "handicap": "平手",
+        "away_odds": "1.090",
+        "update_time": "04-21 20:47",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "1.070",
+        "update_time": "04-21 20:10",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.810",
+        "handicap": "平手",
+        "away_odds": "1.100",
+        "update_time": "04-21 20:08",
+        "home_change": 0,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.810",
+        "handicap": "平手",
+        "away_odds": "1.110",
+        "update_time": "04-21 04:12",
+        "home_change": 1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.790",
+        "handicap": "平手",
+        "away_odds": "1.090",
+        "update_time": "04-20 21:36",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.880",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-14 06:26",
+        "home_change": 0,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.880",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-14 05:48",
+        "home_change": 1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.870",
+        "handicap": "平手",
+        "away_odds": "0.950",
+        "update_time": "04-14 05:00",
+        "home_change": 0,
+        "away_change": 0
+      }
+    ]
+  },
+  "10BET": {
+    "current_asian": {
+      "home_odds": "0.770",
+      "handicap": "平手",
+      "away_odds": "1.050",
+      "update_time": "04-24 18:37",
+      "status": ""
+    },
+    "initial_asian": {
+      "home_odds": "0.850",
+      "handicap": "平手",
+      "away_odds": "0.950",
+      "update_time": "04-14 05:02"
+    }
+  },
+  "利记": {
+    "current_asian": {
+      "home_odds": "1.080",
+      "handicap": "平手/半球 ",
+      "away_odds": "0.800",
+      "update_time": "04-28 05:14",
+      "status": "升"
+    },
+    "initial_asian": {
+      "home_odds": "0.800",
+      "handicap": "平手",
+      "away_odds": "1.080",
+      "update_time": "04-14 19:16"
+    }
+  },
+  "香港马会": {
+    "current_asian": {
+      "home_odds": "1.120",
+      "handicap": "平手/半球",
+      "away_odds": "0.730",
+      "update_time": "04-28 14:05",
+      "status": ""
+    },
+    "initial_asian": {
+      "home_odds": "1.070",
+      "handicap": "平手/半球",
+      "away_odds": "0.720",
+      "update_time": "04-24 19:33"
+    }
+  },
+  "18Bet": {
+    "current_asian": {
+      "home_odds": "1.070",
+      "handicap": "平手/半球 ",
+      "away_odds": "0.770",
+      "update_time": "04-28 07:17",
+      "status": "升"
+    },
+    "initial_asian": {
+      "home_odds": "0.850",
+      "handicap": "平手",
+      "away_odds": "0.920",
+      "update_time": "04-14 04:48"
+    }
+  },
+  "Betsson": {
+    "current_asian": {
+      "home_odds": "1.050",
+      "handicap": "平手/半球",
+      "away_odds": "0.780",
+      "update_time": "04-28 12:14",
+      "status": ""
+    },
+    "initial_asian": {
+      "home_odds": "1.000",
+      "handicap": "平手/半球",
+      "away_odds": "0.800",
+      "update_time": "04-28 09:25"
+    }
+  },
+  "BetOnline": {
+    "current_asian": {
+      "home_odds": "1.070",
+      "handicap": "平手/半球 ",
+      "away_odds": "0.790",
+      "update_time": "04-28 11:22",
+      "status": "升"
+    },
+    "initial_asian": {
+      "home_odds": "0.880",
+      "handicap": "平手",
+      "away_odds": "0.940",
+      "update_time": "04-22 02:52"
+    }
+  },
+  "Bovada.lv": {
+    "current_asian": {
+      "home_odds": "0.800",
+      "handicap": "平手",
+      "away_odds": "1.050",
+      "update_time": "04-24 18:33",
+      "status": ""
+    },
+    "initial_asian": {
+      "home_odds": "0.800",
+      "handicap": "平手",
+      "away_odds": "1.050",
+      "update_time": "04-22 02:33"
+    },
+    "asian_history": [
+      {
+        "home_odds": "0.800",
+        "handicap": "平手",
+        "away_odds": "1.050",
+        "update_time": "04-24 18:33",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.820",
+        "handicap": "平手",
+        "away_odds": "1.020",
+        "update_time": "04-24 03:41",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "1.000",
+        "update_time": "04-22 20:01",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.820",
+        "handicap": "平手",
+        "away_odds": "1.020",
+        "update_time": "04-22 12:50",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "1.000",
+        "update_time": "04-22 03:07",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.820",
+        "handicap": "平手",
+        "away_odds": "1.020",
+        "update_time": "04-22 03:05",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "1.000",
+        "update_time": "04-22 03:04",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.820",
+        "handicap": "平手",
+        "away_odds": "1.020",
+        "update_time": "04-22 02:57",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.800",
+        "handicap": "平手",
+        "away_odds": "1.050",
+        "update_time": "04-22 02:55",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.820",
+        "handicap": "平手",
+        "away_odds": "1.020",
+        "update_time": "04-22 02:54",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.800",
+        "handicap": "平手",
+        "away_odds": "1.050",
+        "update_time": "04-22 02:33",
+        "home_change": 0,
+        "away_change": 0
+      }
+    ]
+  },
+  "Betcity": {
+    "current_asian": {
+      "home_odds": "0.860",
+      "handicap": "平手",
+      "away_odds": "1.000",
+      "update_time": "04-23 23:54",
+      "status": ""
+    },
+    "initial_asian": {
+      "home_odds": "0.900",
+      "handicap": "平手",
+      "away_odds": "0.960",
+      "update_time": "04-14 05:19"
+    }
+  },
+  "Dafabet (大发)": {
+    "current_asian": {
+      "home_odds": "1.090",
+      "handicap": "平手/半球 ",
+      "away_odds": "0.810",
+      "update_time": "04-28 09:13",
+      "status": "升"
+    },
+    "initial_asian": {
+      "home_odds": "0.800",
+      "handicap": "平手",
+      "away_odds": "1.080",
+      "update_time": "04-20 21:37"
+    },
+    "asian_history": [
+      {
+        "home_odds": "1.090",
+        "handicap": "平手/半球",
+        "away_odds": "0.810",
+        "update_time": "04-28 09:13",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "1.080",
+        "handicap": "平手/半球",
+        "away_odds": "0.820",
+        "update_time": "04-28 05:00",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "1.070",
+        "handicap": "平手/半球 升",
+        "away_odds": "0.830",
+        "update_time": "04-28 04:56",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.820",
+        "handicap": "平手",
+        "away_odds": "1.060",
+        "update_time": "04-24 06:40",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.850",
+        "handicap": "平手",
+        "away_odds": "1.030",
+        "update_time": "04-23 23:54",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.870",
+        "handicap": "平手",
+        "away_odds": "1.010",
+        "update_time": "04-23 17:38",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.880",
+        "handicap": "平手",
+        "away_odds": "1.000",
+        "update_time": "04-23 02:47",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.890",
+        "handicap": "平手",
+        "away_odds": "0.990",
+        "update_time": "04-22 14:51",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.820",
+        "handicap": "平手",
+        "away_odds": "1.060",
+        "update_time": "04-22 12:33",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.900",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-22 02:53",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.920",
+        "handicap": "平手",
+        "away_odds": "0.960",
+        "update_time": "04-22 02:51",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "1.050",
+        "update_time": "04-22 02:28",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.820",
+        "handicap": "平手",
+        "away_odds": "1.060",
+        "update_time": "04-21 23:57",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.810",
+        "handicap": "平手",
+        "away_odds": "1.070",
+        "update_time": "04-21 21:37",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.800",
+        "handicap": "平手",
+        "away_odds": "1.080",
+        "update_time": "04-21 20:48",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.820",
+        "handicap": "平手",
+        "away_odds": "1.060",
+        "update_time": "04-21 20:11",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.790",
+        "handicap": "平手",
+        "away_odds": "1.090",
+        "update_time": "04-21 20:09",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.800",
+        "handicap": "平手",
+        "away_odds": "1.080",
+        "update_time": "04-20 21:37",
+        "home_change": 0,
+        "away_change": 0
+      }
+    ]
+  },
+  "Marathon(马博)": {
+    "current_asian": {
+      "home_odds": "0.770",
+      "handicap": "平手",
+      "away_odds": "1.050",
+      "update_time": "04-24 18:24",
+      "status": ""
+    },
+    "initial_asian": {
+      "home_odds": "0.770",
+      "handicap": "平手",
+      "away_odds": "1.050",
+      "update_time": "04-14 15:49"
+    },
+    "asian_history": [
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "1.050",
+        "update_time": "04-24 18:24",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.820",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-24 17:58",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.810",
+        "handicap": "平手",
+        "away_odds": "1.000",
+        "update_time": "04-24 17:45",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.820",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-24 14:27",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.810",
+        "handicap": "平手",
+        "away_odds": "1.000",
+        "update_time": "04-24 13:32",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.820",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-24 13:22",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.810",
+        "handicap": "平手",
+        "away_odds": "1.000",
+        "update_time": "04-24 12:34",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.820",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-24 09:43",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.810",
+        "handicap": "平手",
+        "away_odds": "1.000",
+        "update_time": "04-24 08:59",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.820",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-24 08:42",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.810",
+        "handicap": "平手",
+        "away_odds": "1.000",
+        "update_time": "04-24 07:57",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.820",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-24 06:49",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-24 05:45",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.840",
+        "handicap": "平手",
+        "away_odds": "0.960",
+        "update_time": "04-24 05:37",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-24 04:46",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.840",
+        "handicap": "平手",
+        "away_odds": "0.960",
+        "update_time": "04-24 02:36",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-24 02:09",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.840",
+        "handicap": "平手",
+        "away_odds": "0.960",
+        "update_time": "04-24 01:33",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-24 01:09",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.840",
+        "handicap": "平手",
+        "away_odds": "0.960",
+        "update_time": "04-24 00:33",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.820",
+        "handicap": "平手",
+        "away_odds": "0.980",
+        "update_time": "04-24 00:24",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-24 00:03",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.840",
+        "handicap": "平手",
+        "away_odds": "0.960",
+        "update_time": "04-23 23:54",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.850",
+        "handicap": "平手",
+        "away_odds": "0.950",
+        "update_time": "04-23 17:02",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.840",
+        "handicap": "平手",
+        "away_odds": "0.960",
+        "update_time": "04-23 16:53",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-23 16:27",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.850",
+        "handicap": "平手",
+        "away_odds": "0.950",
+        "update_time": "04-23 16:06",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.840",
+        "handicap": "平手",
+        "away_odds": "0.960",
+        "update_time": "04-23 16:04",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-23 16:03",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.850",
+        "handicap": "平手",
+        "away_odds": "0.950",
+        "update_time": "04-23 16:01",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-23 14:28",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.870",
+        "handicap": "平手",
+        "away_odds": "0.930",
+        "update_time": "04-23 14:25",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-23 14:21",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-23 14:19",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-23 13:38",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.840",
+        "handicap": "平手",
+        "away_odds": "0.960",
+        "update_time": "04-23 13:36",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.850",
+        "handicap": "平手",
+        "away_odds": "0.950",
+        "update_time": "04-23 13:00",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-23 12:32",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.870",
+        "handicap": "平手",
+        "away_odds": "0.930",
+        "update_time": "04-23 12:26",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-23 12:20",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-23 12:06",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-23 12:04",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-23 12:02",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-23 11:23",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.840",
+        "handicap": "平手",
+        "away_odds": "0.960",
+        "update_time": "04-23 11:21",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-23 11:19",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.870",
+        "handicap": "平手",
+        "away_odds": "0.930",
+        "update_time": "04-23 11:18",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.840",
+        "handicap": "平手",
+        "away_odds": "0.960",
+        "update_time": "04-23 11:14",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.850",
+        "handicap": "平手",
+        "away_odds": "0.950",
+        "update_time": "04-23 10:42",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.840",
+        "handicap": "平手",
+        "away_odds": "0.960",
+        "update_time": "04-23 09:52",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-23 08:48",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-23 08:17",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.850",
+        "handicap": "平手",
+        "away_odds": "0.950",
+        "update_time": "04-23 08:00",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-23 07:52",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-23 07:18",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.850",
+        "handicap": "平手",
+        "away_odds": "0.950",
+        "update_time": "04-23 07:01",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-23 06:41",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.870",
+        "handicap": "平手",
+        "away_odds": "0.930",
+        "update_time": "04-23 06:15",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.850",
+        "handicap": "平手",
+        "away_odds": "0.950",
+        "update_time": "04-23 06:01",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-23 05:12",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.870",
+        "handicap": "平手",
+        "away_odds": "0.930",
+        "update_time": "04-23 04:53",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-23 04:14",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.870",
+        "handicap": "平手",
+        "away_odds": "0.930",
+        "update_time": "04-23 03:17",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-23 03:15",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.870",
+        "handicap": "平手",
+        "away_odds": "0.930",
+        "update_time": "04-23 03:13",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-23 02:28",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.870",
+        "handicap": "平手",
+        "away_odds": "0.930",
+        "update_time": "04-23 02:26",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-23 02:24",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.870",
+        "handicap": "平手",
+        "away_odds": "0.930",
+        "update_time": "04-23 02:23",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.850",
+        "handicap": "平手",
+        "away_odds": "0.950",
+        "update_time": "04-23 00:02",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-22 20:00",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-22 18:03",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-22 18:01",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-22 18:00",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-22 17:55",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-22 16:59",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.840",
+        "handicap": "平手",
+        "away_odds": "0.960",
+        "update_time": "04-22 16:44",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-22 15:59",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.850",
+        "handicap": "平手",
+        "away_odds": "0.950",
+        "update_time": "04-22 15:50",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-22 15:48",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.850",
+        "handicap": "平手",
+        "away_odds": "0.950",
+        "update_time": "04-22 15:46",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.830",
+        "handicap": "平手",
+        "away_odds": "0.970",
+        "update_time": "04-22 15:42",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-22 14:59",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.810",
+        "handicap": "平手",
+        "away_odds": "1.000",
+        "update_time": "04-22 12:34",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.870",
+        "handicap": "平手",
+        "away_odds": "0.930",
+        "update_time": "04-22 07:49",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-22 07:47",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.870",
+        "handicap": "平手",
+        "away_odds": "0.930",
+        "update_time": "04-22 06:50",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-22 06:44",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.870",
+        "handicap": "平手",
+        "away_odds": "0.930",
+        "update_time": "04-22 04:55",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-22 04:49",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.870",
+        "handicap": "平手",
+        "away_odds": "0.930",
+        "update_time": "04-22 04:47",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-22 04:40",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.870",
+        "handicap": "平手",
+        "away_odds": "0.930",
+        "update_time": "04-22 03:48",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.850",
+        "handicap": "平手",
+        "away_odds": "0.950",
+        "update_time": "04-22 03:26",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.870",
+        "handicap": "平手",
+        "away_odds": "0.930",
+        "update_time": "04-22 03:02",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.860",
+        "handicap": "平手",
+        "away_odds": "0.940",
+        "update_time": "04-22 02:58",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.810",
+        "handicap": "平手",
+        "away_odds": "1.000",
+        "update_time": "04-22 02:28",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.790",
+        "handicap": "平手",
+        "away_odds": "1.020",
+        "update_time": "04-21 21:40",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "1.030",
+        "update_time": "04-21 20:52",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.790",
+        "handicap": "平手",
+        "away_odds": "1.020",
+        "update_time": "04-21 20:50",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "1.030",
+        "update_time": "04-21 20:48",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.790",
+        "handicap": "平手",
+        "away_odds": "1.020",
+        "update_time": "04-21 20:31",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "1.050",
+        "update_time": "04-20 21:37",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.780",
+        "handicap": "平手",
+        "away_odds": "1.030",
+        "update_time": "04-15 00:20",
+        "home_change": -1,
+        "away_change": 1
+      },
+      {
+        "home_odds": "0.790",
+        "handicap": "平手",
+        "away_odds": "1.020",
+        "update_time": "04-14 15:57",
+        "home_change": 1,
+        "away_change": -1
+      },
+      {
+        "home_odds": "0.770",
+        "handicap": "平手",
+        "away_odds": "1.050",
+        "update_time": "04-14 15:49",
+        "home_change": 0,
+        "away_change": 0
+      }
+    ]
+  },
+  "Novibet": {
+    "current_asian": {
+      "home_odds": "0.800",
+      "handicap": "平手",
+      "away_odds": "1.000",
+      "update_time": "04-22 12:41",
+      "status": ""
+    },
+    "initial_asian": {
+      "home_odds": "0.830",
+      "handicap": "平手",
+      "away_odds": "0.910",
+      "update_time": "04-14 05:02"
+    }
+  },
+  "Stoiximan.gr": {
+    "current_asian": {
+      "home_odds": "1.070",
+      "handicap": "平手/半球",
+      "away_odds": "0.780",
+      "update_time": "04-28 04:58",
+      "status": ""
+    },
+    "initial_asian": {
+      "home_odds": "1.070",
+      "handicap": "平手/半球",
+      "away_odds": "0.800",
+      "update_time": "04-28 04:56"
+    }
+  },
+  "Wewbet (盈禾)": {
+    "current_asian": {
+      "home_odds": "1.090",
+      "handicap": "平手/半球 ",
+      "away_odds": "0.810",
+      "update_time": "04-28 15:38",
+      "status": "升"
+    },
+    "initial_asian": {
+      "home_odds": "0.800",
+      "handicap": "平手",
+      "away_odds": "1.080",
+      "update_time": "04-20 03:05"
+    }
+  },
+  "Draftkings": {
+    "current_asian": {
+      "home_odds": "0.800",
+      "handicap": "平手",
+      "away_odds": "0.950",
+      "update_time": "04-22 21:59",
+      "status": ""
+    },
+    "initial_asian": {
+      "home_odds": "0.770",
+      "handicap": "平手",
+      "away_odds": "1.050",
+      "update_time": "04-20 21:42"
+    }
+  }
+}
