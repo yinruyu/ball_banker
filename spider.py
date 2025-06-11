@@ -10,18 +10,6 @@ import sys
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import traceback
-import logging
-
-# 设置日志记录
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.StreamHandler(),
-        logging.FileHandler('spider.log', 'a', 'utf-8')
-    ]
-)
-logger = logging.getLogger(__name__)
 
 # 添加重试机制的函数
 def make_request_with_retry(url, headers, max_retries=3, retry_delay=2, timeout=10):
@@ -32,13 +20,13 @@ def make_request_with_retry(url, headers, max_retries=3, retry_delay=2, timeout=
             
             # 处理503错误或其他服务器错误
             if response.status_code >= 500:
-                logger.warning(f"服务器错误 (状态码: {response.status_code})，尝试重试 ({attempt+1}/{max_retries})...")
+                print(f"服务器错误 (状态码: {response.status_code})，尝试重试 ({attempt+1}/{max_retries})...")
                 time.sleep(retry_delay * (attempt + 1))  # 指数退避策略
                 continue
                 
             # 处理403错误
             if response.status_code == 403:
-                logger.warning(f"访问被拒绝 (403 Forbidden)，更换请求头并重试...")
+                print(f"访问被拒绝 (403 Forbidden)，更换请求头并重试...")
                 # 更新User-Agent
                 headers['User-Agent'] = f'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{random.randint(80, 110)}.0.{random.randint(1000, 9999)}.{random.randint(10, 999)} Safari/537.36'
                 time.sleep(retry_delay * (attempt + 1))
@@ -46,13 +34,13 @@ def make_request_with_retry(url, headers, max_retries=3, retry_delay=2, timeout=
                 
             # 处理其他HTTP错误
             if response.status_code != 200:
-                logger.warning(f"请求失败，状态码: {response.status_code}，尝试重试 ({attempt+1}/{max_retries})...")
+                print(f"请求失败，状态码: {response.status_code}，尝试重试 ({attempt+1}/{max_retries})...")
                 time.sleep(retry_delay * (attempt + 1))
                 continue
             
             # 检查响应内容是否为空
             if not response.text.strip():
-                logger.warning(f"响应内容为空，尝试重试 ({attempt+1}/{max_retries})...")
+                print(f"响应内容为空，尝试重试 ({attempt+1}/{max_retries})...")
                 time.sleep(retry_delay * (attempt + 1))
                 continue
                 
@@ -60,11 +48,11 @@ def make_request_with_retry(url, headers, max_retries=3, retry_delay=2, timeout=
             return response
             
         except requests.exceptions.RequestException as e:
-            logger.warning(f"请求异常: {str(e)}，尝试重试 ({attempt+1}/{max_retries})...")
+            print(f"请求异常: {str(e)}，尝试重试 ({attempt+1}/{max_retries})...")
             time.sleep(retry_delay * (attempt + 1))
     
     # 所有重试都失败，返回None
-    logger.error(f"请求失败，已达到最大重试次数: {max_retries}")
+    print(f"请求失败，已达到最大重试次数: {max_retries}")
     return None
 
 def create_directory(date):
@@ -1136,6 +1124,10 @@ def debug_match(fixture_id, match_id, date):
     kelly_dir = os.path.join('data', date, 'kelly_history')
     os.makedirs(kelly_dir, exist_ok=True)
     
+    # 创建必发交易数据文件夹
+    bifa_dir = os.path.join('data', date, 'bifa_data')
+    os.makedirs(bifa_dir, exist_ok=True)
+    
     # 欧赔URL
     odds_url = f'https://odds.500.com/fenxi/ouzhi-{fixture_id}.shtml?ctype=2'
     
@@ -1148,13 +1140,15 @@ def debug_match(fixture_id, match_id, date):
     # 亚盘URL
     asian_url = f'https://odds.500.com/fenxi/yazhi-{fixture_id}.shtml'
     
+    # 必发交易URL
+    bifa_url = f'https://odds.500.com/fenxi/touzhu-{fixture_id}.shtml'
+    
     # 模拟浏览器请求头
     headers = {
         'User-Agent': f'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{random.randint(80, 110)}.0.{random.randint(1000, 9999)}.{random.randint(10, 999)} Safari/537.36',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
         'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
         'Connection': 'keep-alive',
-        'Referer': 'https://odds.500.com/',
         'Upgrade-Insecure-Requests': '1'
     }
     
@@ -1370,8 +1364,63 @@ def debug_match(fixture_id, match_id, date):
             print(f"[{match_id}] 获取亚盘数据出错: {str(e)}")
             error_count += 1
         
+        # 获取必发交易数据
+        print(f"[{match_id}] 正在获取必发交易数据")
+        try:
+            # 使用重试机制获取必发交易数据
+            response = make_request_with_retry(bifa_url, headers)
+            
+            # 添加随机延迟，减轻并发压力
+            time.sleep(random.uniform(0.5, 2))
+            
+            if not response or response.status_code == 403:
+                print(f"[{match_id}] 访问被拒绝 (403 Forbidden): {bifa_url}")
+                error_count += 1
+            else:
+                response.encoding = 'gb2312'  # 设置编码
+                
+                # 临时保存必发交易HTML文件
+                temp_bifa_html_path = os.path.join(bifa_dir, f'temp_{match_id}.html')
+                with open(temp_bifa_html_path, 'w', encoding='utf-8') as f:
+                    f.write(response.text)
+                
+                # 解析必发交易HTML内容
+                with open(temp_bifa_html_path, 'r', encoding='utf-8') as f:
+                    bifa_html_content = f.read()
+                    bifa_data = parse_bifa_data(bifa_html_content)
+                
+                # 保存必发交易数据（始终保持JSON格式，不转换为txt）
+                bifa_file_path = os.path.join(bifa_dir, f'{match_id}.json')
+                with open(bifa_file_path, 'w', encoding='utf-8') as f:
+                    json.dump(bifa_data, f, ensure_ascii=False, indent=2)
+                
+                # 检查是否有实际数据（不仅仅是空的结构）
+                has_actual_data = False
+                if bifa_data.get("hot_analysis") and len(bifa_data["hot_analysis"]) > 0:
+                    has_actual_data = True
+                elif bifa_data.get("trade_analysis") and len(bifa_data["trade_analysis"]) > 0:
+                    has_actual_data = True
+                elif bifa_data.get("big_trade") and len(bifa_data["big_trade"]) > 0:
+                    has_actual_data = True
+                elif bifa_data.get("trade_details") and len(bifa_data["trade_details"]) > 0:
+                    has_actual_data = True
+                
+                if has_actual_data:
+                    success_count += 1
+                    print(f"[{match_id}] 必发交易数据已保存到: {bifa_file_path}")
+                elif "no_data_reason" in bifa_data:
+                    print(f"[{match_id}] 警告：{bifa_data.get('no_data_reason')}")
+                    # 虽然没有实际数据，但文件已保存，不算作错误
+                    success_count += 1
+                else:
+                    print(f"[{match_id}] 警告：解析到的必发交易数据为空")
+                    error_count += 1
+        except Exception as e:
+            print(f"[{match_id}] 获取必发交易数据出错: {str(e)}")
+            error_count += 1
+        
         # 返回处理结果
-        print(f"[{match_id}] 数据获取完成: 成功 {success_count}/4, 失败 {error_count}/4")
+        print(f"[{match_id}] 数据获取完成: 成功 {success_count}/5, 失败 {error_count}/5")
         return success_count > 0
     
     except Exception as e:
@@ -1439,6 +1488,18 @@ def clean_temp_html_files(date):
                 try:
                     os.remove(file_path)
                     print(f"已删除凯利指数临时文件: {file_path}")
+                except Exception as e:
+                    print(f"删除文件 {file_path} 时出错: {str(e)}")
+    
+    # 清理必发交易数据文件夹中的临时HTML文件
+    bifa_dir = os.path.join('data', date, 'bifa_data')
+    if os.path.exists(bifa_dir):
+        for file in os.listdir(bifa_dir):
+            if file.startswith('temp_') and file.endswith('.html'):
+                file_path = os.path.join(bifa_dir, file)
+                try:
+                    os.remove(file_path)
+                    print(f"已删除必发交易临时文件: {file_path}")
                 except Exception as e:
                     print(f"删除文件 {file_path} 时出错: {str(e)}")
     
@@ -1612,23 +1673,25 @@ def remove_jingcai_data(date):
     return files_modified > 0
 
 def convert_json_to_compact(date):
-    """将JSON文件转换为更易读的紧凑格式，以加快读取速度并提高可读性，并删除原JSON文件"""
+    """将JSON数据转换为紧凑格式，并存储为易读的TXT文件"""
     print(f"开始将 {date} 的数据转换为紧凑格式...")
     
-    folders = [
-        os.path.join('data', date, 'asian_odds'),
-        os.path.join('data', date, 'ou_odds'),
-        os.path.join('data', date, 'size_odds'),
-        # os.path.join('data', date, 'handicap_odds'),
-        os.path.join('data', date, 'kelly_history')
-    ]
+    # 获取所有数据文件夹
+    data_dir = os.path.join('data', date)
+    # 不转换必发交易数据
+    folder_types = ['ou_odds', 'size_odds', 'asian_odds', 'kelly_history']
+    
+    # 创建紧凑数据文件夹
+    compact_dir = os.path.join(data_dir, 'compact')
+    os.makedirs(compact_dir, exist_ok=True)
     
     files_processed = 0
     files_converted = 0
     files_deleted = 0
     compact_folders_removed = 0
     
-    for folder_path in folders:
+    for folder_type in folder_types:
+        folder_path = os.path.join(data_dir, folder_type)
         if not os.path.exists(folder_path):
             print(f"文件夹不存在: {folder_path}")
             continue
@@ -1683,6 +1746,10 @@ def convert_json_to_compact(date):
                 with open(json_path, 'r', encoding='utf-8') as f:
                     data = json.load(f)
                 
+                # 如果是bifa_data目录，跳过文本文件的创建
+                if 'bifa_data' in folder_path:
+                    continue
+                    
                 # 将数据转换为紧凑格式
                 with open(txt_path, 'w', encoding='utf-8') as f:
                     # 添加文件头部的数据格式说明
@@ -1879,6 +1946,19 @@ def convert_json_to_compact(date):
     if compact_folders_removed > 0:
         print(f"已删除 {compact_folders_removed} 个compact文件夹")
     print(f"数据已转换为易读的TXT格式，并删除了原JSON文件，读取时可大幅提高速度并增强可读性")
+    
+    # 删除compact文件夹
+    try:
+        if os.path.exists(compact_dir):
+            # 确保compact文件夹为空
+            if len(os.listdir(compact_dir)) == 0:
+                os.rmdir(compact_dir)
+                print(f"已删除空的compact文件夹: {compact_dir}")
+            else:
+                print(f"无法删除compact文件夹，因为它不为空: {compact_dir}")
+    except Exception as e:
+        print(f"删除compact文件夹时出错: {str(e)}")
+    
     return files_converted > 0
 
 def main():
@@ -1973,10 +2053,12 @@ def main():
         size_dir = os.path.join('data', target_date, 'size_odds')
         # handicap_dir = os.path.join('data', target_date, 'handicap_odds')
         asian_dir = os.path.join('data', target_date, 'asian_odds')
+        bifa_dir = os.path.join('data', target_date, 'bifa_data')
         os.makedirs(odds_dir, exist_ok=True)
         os.makedirs(size_dir, exist_ok=True)
         # os.makedirs(handicap_dir, exist_ok=True)
         os.makedirs(asian_dir, exist_ok=True)
+        os.makedirs(bifa_dir, exist_ok=True)
 
         successful_matches = 0
         failed_matches = 0
@@ -1989,31 +2071,39 @@ def main():
                 for match in matches if 'fixture_id' in match
             }
             
-            # 处理任务结果
-            for future in as_completed(future_to_match):
-                match = future_to_match[future]
-                try:
-                    result = future.result()
-                    if result:
-                        print(f"成功处理比赛: {match['match_id']} - {match.get('home_team', '')} vs {match.get('away_team', '')}")
-                        successful_matches += 1
-                    else:
-                        print(f"处理比赛失败: {match['match_id']}")
+            try:
+                # 处理任务结果
+                for future in as_completed(future_to_match):
+                    match = future_to_match[future]
+                    try:
+                        result = future.result()
+                        if result:
+                            print(f"成功处理比赛: {match['match_id']} - {match.get('home_team', '')} vs {match.get('away_team', '')}")
+                            successful_matches += 1
+                        else:
+                            print(f"处理比赛失败: {match['match_id']}")
+                            failed_matches += 1
+                            
+                        # 特殊处理周二001的结果
+                        if match['match_id'] == '周二001':
+                            size_file_path = os.path.join('data', target_date, 'size_odds', f"{match['match_id']}.json")
+                            if os.path.exists(size_file_path):
+                                with open(size_file_path, 'r', encoding='utf-8') as f:
+                                    data = f.read()
+                                    if data.strip() == '{}' or len(data) < 10:
+                                        print(f"周二001数据为空，尝试重新解析...")
+                                        # 重新调用测试函数尝试解析数据
+                                        test_size_data_write(match['match_id'], target_date)
+                    except Exception as e:
+                        print(f"处理比赛 {match['match_id']} 时出错: {str(e)}")
                         failed_matches += 1
-                        
-                    # 特殊处理周二001的结果
-                    if match['match_id'] == '周二001':
-                        size_file_path = os.path.join('data', target_date, 'size_odds', f"{match['match_id']}.json")
-                        if os.path.exists(size_file_path):
-                            with open(size_file_path, 'r', encoding='utf-8') as f:
-                                data = f.read()
-                                if data.strip() == '{}' or len(data) < 10:
-                                    print(f"周二001数据为空，尝试重新解析...")
-                                    # 重新调用测试函数尝试解析数据
-                                    test_size_data_write(match['match_id'], target_date)
-                except Exception as e:
-                    print(f"处理比赛 {match['match_id']} 时出错: {str(e)}")
-                    failed_matches += 1
+            except KeyboardInterrupt:
+                print("\n程序被用户中断，正在取消剩余任务...")
+                # 取消所有未完成的任务
+                for future in future_to_match:
+                    if not future.done():
+                        future.cancel()
+                print("已取消所有未完成的任务，正在进行清理操作...")
         
         print(f"所有比赛处理完成: 成功 {successful_matches} 场, 失败 {failed_matches} 场")
         
@@ -2027,10 +2117,10 @@ def main():
         # 删除竞彩官方数据
         remove_jingcai_data(target_date)
         
-        # 转换为紧凑格式
+        # 转换为紧凑格式（不包括必发数据）
         if not no_compact:
             convert_json_to_compact(target_date)
-            print("已生成紧凑格式文件，后续分析时使用compact文件夹中的文件可大幅提高读取速度")
+            print("已生成紧凑格式文件，后续分析时使用JSON格式（必发数据）和TXT格式（其他数据）可大幅提高读取速度")
                 
     else:
         print(f"未获取到 {target_date} 的比赛数据")
@@ -2707,6 +2797,521 @@ def parse_kelly_history(html_content, fixture_id):
         print(f"解析凯利指数历史数据时出错: {str(e)}")
     
     return kelly_history_data
+
+# 添加新的解析必发交易数据的函数
+def parse_bifa_data(html_content):
+    """解析必发交易数据页面"""
+    soup = BeautifulSoup(html_content, 'html.parser')
+    bifa_data = {
+        "hot_analysis": {}, # 热度分析
+        "trade_analysis": {}, # 交易分析
+        "big_trade": {}, # 必发大额交易
+        "trade_details": [] # 交易明细
+    }
+
+    # 检查页面是否包含必发交易数据
+    has_bifa_data = False
+    
+    # 首先检查是否有旧版的必发交易数据结构
+    if soup.select_one('div.danchangtouzhu') or soup.select_one('div.bf-analyse-data') or \
+       soup.select_one('div.bigeye-data') or soup.select_one('table.bf-table'):
+        has_bifa_data = True
+    
+    # 检查新版的必发交易数据结构
+    if soup.select_one('div.M_box.record') or soup.select_one('div.czxl-tb') or \
+       soup.select_one('table.bif-yab'):
+        has_bifa_data = True
+
+    if not has_bifa_data:
+        print("警告：未在页面中找到必发交易数据结构，可能该比赛没有必发交易数据")
+        bifa_data["no_data_reason"] = "页面中不存在必发交易数据结构"
+        return bifa_data
+
+    try:
+        # 1. 尝试解析新版热度分析和交易分析数据（通常在第一个表格中）
+        bifa_table = soup.select_one('div.M_box table')
+        if bifa_table:
+            # 创建热度分析中需要的字段
+            teams = ["home", "draw", "away"]
+            team_names = {"home": "主胜", "draw": "平局", "away": "客胜"}
+            for team in teams:
+                bifa_data["hot_analysis"][team] = {
+                    "name": team_names[team],
+                    "odds": "",
+                    "prob": "",
+                    "north_single": "",
+                    "trade_ratio": "",
+                    "trade_price": "",
+                    "volume": "",
+                    "profit": "",
+                    "bifa_index": "",
+                    "hot_index": "",
+                    "profit_index": ""
+                }
+            
+            # 获取表格行
+            rows = bifa_table.select('tr')
+            if len(rows) >= 3:  # 至少包含标题行和三个选项行
+                # 热度分析数据通常在前三行
+                try:
+                    # 获取每行的单元格
+                    for row_idx, row in enumerate(rows[1:4]):  # 跳过标题行，处理三个选项行
+                        cells = row.select('td')
+                        if len(cells) >= 7:
+                            # 找到对应的行（主胜、平局、客胜）
+                            team_name = cells[0].text.strip() if cells[0] else ""
+                            
+                            # 定义标签
+                            label = ""
+                            if "哈萨克" in team_name or "主" in team_name:
+                                label = "home"
+                                bifa_data["hot_analysis"]["home"]["name"] = team_name
+                            elif "平局" in team_name or "平" in team_name:
+                                label = "draw"
+                                bifa_data["hot_analysis"]["draw"]["name"] = team_name
+                            elif "北马其顿" in team_name or "客" in team_name or row_idx == 2:  # 假设第三行是客胜
+                                label = "away"
+                                bifa_data["hot_analysis"]["away"]["name"] = team_name
+                            else:
+                                continue
+                            
+                            # 获取赔率和概率数据
+                            if len(cells) > 1:
+                                odds_text = cells[1].text.strip() if cells[1] else ""
+                                if odds_text and not odds_text.startswith("赔率"):
+                                    try:
+                                        bifa_data["hot_analysis"][label]["odds"] = float(odds_text)
+                                    except ValueError:
+                                        bifa_data["hot_analysis"][label]["odds"] = odds_text
+                            
+                            if len(cells) > 1:
+                                prob_text = cells[2].text.strip() if cells[2] else ""
+                                if prob_text:
+                                    bifa_data["hot_analysis"][label]["prob"] = prob_text
+                            
+                            # 获取北单数据
+                            if len(cells) > 2:
+                                bd_text = cells[3].text.strip() if cells[3] else ""
+                                bifa_data["hot_analysis"][label]["north_single"] = bd_text
+                            
+                            # 获取交易比例
+                            if len(cells) > 3:
+                                trade_ratio = cells[4].text.strip() if cells[4] else ""
+                                if trade_ratio:
+                                    bifa_data["hot_analysis"][label]["trade_ratio"] = trade_ratio
+                            
+                            # 获取成交价
+                            if len(cells) > 4:
+                                trade_price = cells[5].text.strip() if cells[5] else ""
+                                if trade_price:
+                                    try:
+                                        bifa_data["hot_analysis"][label]["trade_price"] = float(trade_price)
+                                    except ValueError:
+                                        bifa_data["hot_analysis"][label]["trade_price"] = trade_price
+                            
+                            # 获取必发成交量
+                            bet_volume = cells[6].text.strip() if len(cells) > 5 else ""
+                            if bet_volume:
+                                try:
+                                    bifa_data["hot_analysis"][label]["volume"] = int(bet_volume.replace(',', ''))
+                                except ValueError:
+                                    bifa_data["hot_analysis"][label]["volume"] = bet_volume
+
+                            # 获取庄家盈亏
+                            profit_loss = cells[7].text.strip() if len(cells) > 6 else ""
+                            if profit_loss:
+                                try:
+                                    bifa_data["hot_analysis"][label]["profit"] = int(profit_loss.replace(',', ''))
+                                except ValueError:
+                                    bifa_data["hot_analysis"][label]["profit"] = profit_loss
+                            
+                            # 获取必发指数
+                            bifa_index = cells[8].text.strip() if len(cells) > 7 else ""
+                            if bifa_index:
+                                bifa_data["hot_analysis"][label]["bifa_index"] = bifa_index
+                            
+                            # 获取冷热指数
+                            hot_cold_index = cells[9].text.strip() if len(cells) > 8 else ""
+                            if hot_cold_index:
+                                try:
+                                    bifa_data["hot_analysis"][label]["hot_index"] = int(hot_cold_index) if hot_cold_index != "-" else hot_cold_index
+                                except ValueError:
+                                    bifa_data["hot_analysis"][label]["hot_index"] = hot_cold_index
+                            
+                            # 获取盈亏指数
+                            profit_index = cells[10].text.strip() if len(cells) > 9 else ""
+                            if profit_index:
+                                try:
+                                    bifa_data["hot_analysis"][label]["profit_index"] = int(profit_index)
+                                except ValueError:
+                                    bifa_data["hot_analysis"][label]["profit_index"] = profit_index
+                    
+                    # 特殊处理: 使用交易明细数据，确保正确解析客胜数据
+                    for detail in bifa_data["trade_details"]:
+                        if "北马其顿" in detail["type"] or "客" in detail["type"]:
+                            if detail["action"] and not bifa_data["hot_analysis"]["away"]["odds"]:
+                                try:
+                                    bifa_data["hot_analysis"]["away"]["odds"] = float(detail["action"])
+                                except ValueError:
+                                    bifa_data["hot_analysis"]["away"]["odds"] = detail["action"]
+                            
+                            if detail["amount"] and not bifa_data["hot_analysis"]["away"]["prob"]:
+                                bifa_data["hot_analysis"]["away"]["prob"] = detail["amount"]
+                            
+                            if detail["time"] and not bifa_data["hot_analysis"]["away"]["north_single"]:
+                                bifa_data["hot_analysis"]["away"]["north_single"] = detail["time"]
+                            
+                            if detail["percentage"] and not bifa_data["hot_analysis"]["away"]["trade_ratio"]:
+                                bifa_data["hot_analysis"]["away"]["trade_ratio"] = detail["percentage"] + "%"
+                                
+                    # 解析数据提点（通常在最后几行）
+                    data_tips_rows = [row for row in rows if len(row.select('td')) > 1 and '数据提点' in row.text]
+                    if data_tips_rows:
+                        # 找到数据提点所在行的索引
+                        tip_idx = rows.index(data_tips_rows[0])
+                        bifa_data["hot_analysis"]["tips"] = []
+                        # 获取数据提点后的所有行
+                        for row in rows[tip_idx+1:]:
+                            tip_text = row.text.strip()
+                            if tip_text and not tip_text.startswith('数据提点'):
+                                bifa_data["hot_analysis"]["tips"].append(tip_text)
+                
+                except Exception as e:
+                    print(f"解析热度分析数据时出错: {str(e)}")
+                    traceback.print_exc()
+                
+        # 2. 解析必发交易数据
+        trade_info_div = soup.select_one('div.czxl-tb.M_content')
+        if trade_info_div:
+            # 总交易额
+            total_trade_text = trade_info_div.select_one('span.czxl-zxl em')
+            if total_trade_text:
+                try:
+                    bifa_data["trade_analysis"]["total_volume"] = int(total_trade_text.text.strip().replace(',', ''))
+                except ValueError:
+                    bifa_data["trade_analysis"]["total_volume"] = total_trade_text.text.strip()
+            
+            # 交易明细（主胜、平局、客胜的交易量）
+            data_details = trade_info_div.select('div.data-detail li')
+            bet_labels = ['home', 'draw', 'away']
+            for i, detail in enumerate(data_details):
+                if i < len(bet_labels):
+                    try:
+                        bifa_data["trade_analysis"][f"{bet_labels[i]}_volume"] = int(detail.text.strip().replace(',', ''))
+                    except ValueError:
+                        bifa_data["trade_analysis"][f"{bet_labels[i]}_volume"] = detail.text.strip()
+        
+        # 3. 解析必发大额交易数据
+        big_trade_div = soup.select('.czxl-tb.M_content')
+        if len(big_trade_div) > 1:  # 第二个是大额交易数据
+            big_trade_section = big_trade_div[1]
+            
+            # 总交易额
+            total_big_trade_text = big_trade_section.select_one('span.czxl-zxl em')
+            if total_big_trade_text:
+                try:
+                    bifa_data["big_trade"]["total_volume"] = int(total_big_trade_text.text.strip().replace(',', ''))
+                except ValueError:
+                    bifa_data["big_trade"]["total_volume"] = total_big_trade_text.text.strip()
+            
+            # 交易明细（主胜、平局、客胜的交易量）
+            big_data_details = big_trade_section.select('div.data-detail li')
+            bet_labels = ['home', 'draw', 'away']
+            for i, detail in enumerate(big_data_details):
+                if i < len(bet_labels):
+                    try:
+                        bifa_data["big_trade"][f"{bet_labels[i]}_volume"] = int(detail.text.strip().replace(',', ''))
+                    except ValueError:
+                        bifa_data["big_trade"][f"{bet_labels[i]}_volume"] = detail.text.strip()
+        
+        # 4. 解析交易明细表格（必发大额交易明细）
+        # 查找标题包含"必发大额交易明细"的div下的表格
+        trade_details_table = None
+        trade_details_divs = soup.select('div.M_title')
+        for div in trade_details_divs:
+            if '必发大额交易明细' in div.text:
+                trade_details_table = div.find_next('table', class_='pub_table')
+                break
+        
+        if trade_details_table:
+            print("找到必发大额交易明细表格")
+            rows = trade_details_table.select('tr')
+            # 跳过表头
+            for row in rows[1:]:  # 跳过表头行
+                cells = row.select('td')
+                if len(cells) >= 5:
+                    try:
+                        detail = {
+                            "type": cells[0].text.strip(),  # 综合（主/平/客）
+                            "action": cells[1].text.strip(),  # 属性（买/卖）
+                            "amount": cells[2].text.strip().replace(',', ''),  # 成交量
+                            "time": cells[3].text.strip(),  # 交易时间
+                            "percentage": cells[4].text.strip().replace('%', '')  # 交易比例
+                        }
+                        bifa_data["trade_details"].append(detail)
+                    except Exception as e:
+                        print(f"解析交易明细行时出错: {str(e)}")
+        
+        # 5. 解析必发交易量与赔率表格（模拟盈亏 - 第一部分）
+        trade_odds_table = soup.select('table.bif-yab.bif-tabr-one')
+        if len(trade_odds_table) >= 1:
+            rows = trade_odds_table[0].select('tr')
+            bet_labels = ['home', 'draw', 'away']
+            bet_names = ['主胜', '平局', '客胜']
+            
+            # 创建一个模拟盈亏数据的字典
+            if "simulation" not in bifa_data:
+                bifa_data["simulation"] = {
+                    "odds": [],
+                    "profit": []
+                }
+            
+            for i, row in enumerate(rows[1:4]):  # 跳过表头，取三行数据
+                if i < len(bet_labels):
+                    cells = row.select('td')
+                    if len(cells) >= 3:
+                        odds_item = {
+                            "type": bet_names[i],
+                            "volume": "",
+                            "odds": ""
+                        }
+                        
+                        # 交易量
+                        volume_text = cells[1].text.strip()
+                        try:
+                            odds_item["volume"] = int(volume_text.replace(',', ''))
+                            bifa_data["trade_analysis"][f"{bet_labels[i]}_volume"] = int(volume_text.replace(',', ''))
+                            
+                            # 额外更新热度分析中的成交量数据
+                            if not bifa_data["hot_analysis"][bet_labels[i]]["volume"]:
+                                bifa_data["hot_analysis"][bet_labels[i]]["volume"] = int(volume_text.replace(',', ''))
+                        except ValueError:
+                            odds_item["volume"] = volume_text
+                            bifa_data["trade_analysis"][f"{bet_labels[i]}_volume"] = volume_text
+                        
+                        # 赔率
+                        odds_text = cells[2].text.strip()
+                        try:
+                            odds_item["odds"] = float(odds_text)
+                            bifa_data["trade_analysis"][f"{bet_labels[i]}_odds"] = float(odds_text)
+                            
+                            # 额外更新热度分析中的赔率数据
+                            if not bifa_data["hot_analysis"][bet_labels[i]]["trade_price"]:
+                                bifa_data["hot_analysis"][bet_labels[i]]["trade_price"] = float(odds_text)
+                        except ValueError:
+                            odds_item["odds"] = odds_text
+                            bifa_data["trade_analysis"][f"{bet_labels[i]}_odds"] = odds_text
+                        
+                        bifa_data["simulation"]["odds"].append(odds_item)
+        
+        # 6. 解析庄家盈亏表格（模拟盈亏 - 第二部分）
+        if len(trade_odds_table) >= 2:
+            rows = trade_odds_table[1].select('tr')
+            bet_labels = ['home', 'draw', 'away']
+            bet_names = ['主胜', '平局', '客胜']
+            
+            for i, row in enumerate(rows[1:4]):  # 跳过表头，取三行数据
+                if i < len(bet_labels):
+                    cells = row.select('td')
+                    if len(cells) >= 3:
+                        profit_item = {
+                            "type": bet_names[i],
+                            "profit": "",
+                            "profit_index": ""
+                        }
+                        
+                        # 庄家盈亏
+                        profit_text = cells[1].text.strip()
+                        try:
+                            profit_item["profit"] = int(profit_text.replace(',', ''))
+                            bifa_data["trade_analysis"][f"{bet_labels[i]}_profit"] = int(profit_text.replace(',', ''))
+                            
+                            # 额外更新热度分析中的盈亏数据
+                            if not bifa_data["hot_analysis"][bet_labels[i]]["profit"]:
+                                bifa_data["hot_analysis"][bet_labels[i]]["profit"] = int(profit_text.replace(',', ''))
+                        except ValueError:
+                            profit_item["profit"] = profit_text
+                            bifa_data["trade_analysis"][f"{bet_labels[i]}_profit"] = profit_text
+                        
+                        # 盈亏指数
+                        index_text = cells[2].text.strip()
+                        try:
+                            profit_item["profit_index"] = int(index_text)
+                            bifa_data["trade_analysis"][f"{bet_labels[i]}_profit_index"] = int(index_text)
+                            
+                            # 额外更新热度分析中的盈亏指数数据
+                            if not bifa_data["hot_analysis"][bet_labels[i]]["profit_index"]:
+                                bifa_data["hot_analysis"][bet_labels[i]]["profit_index"] = int(index_text)
+                        except ValueError:
+                            profit_item["profit_index"] = index_text
+                            bifa_data["trade_analysis"][f"{bet_labels[i]}_profit_index"] = index_text
+                        
+                        bifa_data["simulation"]["profit"].append(profit_item)
+        
+        # 7. 兼容旧版HTML结构的解析
+        # 旧版热度分析
+        hot_analysis_section = soup.select_one('div.danchangtouzhu')
+        if hot_analysis_section:
+            # 获取主队、客队和平局的投注量
+            bet_amounts = hot_analysis_section.select('div.chartball span')
+            bet_labels = ['home', 'draw', 'away']
+            
+            for i, amount in enumerate(bet_amounts):
+                if i < len(bet_labels):
+                    value_text = amount.text.strip().replace(',', '').replace('注', '')
+                    try:
+                        bifa_data["hot_analysis"][bet_labels[i]]["volume"] = int(value_text)
+                    except ValueError:
+                        bifa_data["hot_analysis"][bet_labels[i]]["volume"] = 0
+            
+            # 获取热度指数变化
+            heat_index = hot_analysis_section.select_one('div.danzi-value span')
+            if heat_index:
+                bifa_data["hot_analysis"]["heat_index"] = heat_index.text.strip()
+            
+            # 获取变化趋势
+            trend_elements = hot_analysis_section.select('div.change-item')
+            for elem in trend_elements:
+                label = elem.select_one('p')
+                value = elem.select_one('span')
+                if label and value:
+                    label_text = label.text.strip()
+                    value_text = value.text.strip()
+                    
+                    if '主' in label_text:
+                        bifa_data["hot_analysis"]["home"]["trend"] = value_text
+                    elif '平' in label_text:
+                        bifa_data["hot_analysis"]["draw"]["trend"] = value_text
+                    elif '客' in label_text:
+                        bifa_data["hot_analysis"]["away"]["trend"] = value_text
+
+        # 旧版交易分析
+        trade_analysis_section = soup.select_one('div.bf-analyse-data')
+        if trade_analysis_section:
+            data_items = trade_analysis_section.select('div.analyse-data-item')
+            for item in data_items:
+                label = item.select_one('p')
+                value = item.select_one('p.data-value')
+                if label and value:
+                    label_text = label.text.strip().replace('：', '')
+                    value_text = value.text.strip()
+                    
+                    # 转换为适当的数据类型
+                    if '金额' in label_text:
+                        try:
+                            value_text = value_text.replace(',', '').replace('元', '')
+                            bifa_data["trade_analysis"][label_text] = float(value_text)
+                        except ValueError:
+                            bifa_data["trade_analysis"][label_text] = value_text
+                    else:
+                        bifa_data["trade_analysis"][label_text] = value_text
+
+        # 旧版必发大额交易
+        big_trade_section = soup.select_one('div.bigeye-data')
+        if big_trade_section:
+            data_items = big_trade_section.select('div.bigeye-data-item')
+            for item in data_items:
+                label = item.select_one('p.label')
+                value = item.select_one('p.value')
+                if label and value:
+                    label_text = label.text.strip().replace('：', '')
+                    value_text = value.text.strip()
+                    
+                    # 转换为适当的数据类型
+                    if '金额' in label_text or '占比' in label_text:
+                        try:
+                            value_text = value_text.replace(',', '').replace('元', '').replace('%', '')
+                            bifa_data["big_trade"][label_text] = float(value_text)
+                        except ValueError:
+                            bifa_data["big_trade"][label_text] = value_text
+                    else:
+                        bifa_data["big_trade"][label_text] = value_text
+
+        # 旧版交易明细
+        trade_details_table = soup.select_one('table.bf-table')
+        if trade_details_table:
+            rows = trade_details_table.select('tr:not(.head)')
+            for row in rows:
+                cells = row.select('td')
+                if len(cells) >= 6:
+                    try:
+                        detail = {
+                            "time": cells[0].text.strip(),
+                            "amount": cells[1].text.strip().replace(',', ''),
+                            "odds": cells[2].text.strip(),
+                            "selection": cells[3].text.strip(),
+                            "type": cells[4].text.strip(),
+                            "status": cells[5].text.strip()
+                        }
+                        bifa_data["trade_details"].append(detail)
+                    except Exception as e:
+                        print(f"解析交易明细行时出错: {str(e)}")
+    
+        # 8. 如果trade_details为空，尝试其他方法找到必发大额交易明细数据
+        if len(bifa_data["trade_details"]) == 0:
+            print("尝试其他方法查找必发大额交易明细数据...")
+            
+            # 尝试方法1：使用更宽松的选择器
+            try:
+                any_trade_table = soup.select_one('table.pub_table')
+                if any_trade_table:
+                    print("找到一个可能的交易表格")
+                    header_row = any_trade_table.select_one('tr')
+                    if header_row and '成交量' in header_row.text and '交易时间' in header_row.text and '交易比例' in header_row.text:
+                        print("该表格包含交易明细数据")
+                        rows = any_trade_table.select('tr')
+                        # 跳过表头
+                        for row in rows[1:]:  # 跳过表头行
+                            cells = row.select('td')
+                            if len(cells) >= 5:
+                                try:
+                                    detail = {
+                                        "type": cells[0].text.strip(),  # 综合（主/平/客）
+                                        "action": cells[1].text.strip(),  # 属性（买/卖）
+                                        "amount": cells[2].text.strip().replace(',', ''),  # 成交量
+                                        "time": cells[3].text.strip(),  # 交易时间
+                                        "percentage": cells[4].text.strip().replace('%', '')  # 交易比例
+                                    }
+                                    bifa_data["trade_details"].append(detail)
+                                except Exception as e:
+                                    print(f"解析交易明细行时出错: {str(e)}")
+            except Exception as e:
+                print(f"尝试使用宽松选择器查找交易表格时出错: {str(e)}")
+            
+            # 尝试方法2：使用文本查找方式
+            if len(bifa_data["trade_details"]) == 0:
+                try:
+                    all_tables = soup.select('table.pub_table')
+                    for table in all_tables:
+                        if '属性' in table.text and '成交量' in table.text and '交易时间' in table.text:
+                            print("找到包含交易明细的表格")
+                            rows = table.select('tr')
+                            # 跳过表头
+                            for row in rows[1:]:  # 跳过表头行
+                                cells = row.select('td')
+                                if len(cells) >= 5:
+                                    try:
+                                        detail = {
+                                            "type": cells[0].text.strip(),  # 综合（主/平/客）
+                                            "action": cells[1].text.strip(),  # 属性（买/卖）
+                                            "amount": cells[2].text.strip().replace(',', ''),  # 成交量
+                                            "time": cells[3].text.strip(),  # 交易时间
+                                            "percentage": cells[4].text.strip().replace('%', '')  # 交易比例
+                                        }
+                                        bifa_data["trade_details"].append(detail)
+                                    except Exception as e:
+                                        print(f"解析交易明细行时出错: {str(e)}")
+                            break
+                except Exception as e:
+                    print(f"尝试通过文本查找交易表格时出错: {str(e)}")
+            
+            # 删除原来的big_trade_details相关代码，不再需要这个字段
+                
+    except Exception as e:
+        print(f"解析必发交易数据时出错: {str(e)}")
+        traceback.print_exc()  # 添加详细的错误堆栈跟踪
+    
+    return bifa_data
 
 if __name__ == '__main__':
     # 检查命令行参数
