@@ -1104,29 +1104,23 @@ def parse_asian_history(html_content, fixture_id):
     return asian_history_data
 
 def debug_match(fixture_id, match_id, date):
-    # 创建欧赔文件夹
-    odds_dir = os.path.join('data', date, 'ou_odds')
-    os.makedirs(odds_dir, exist_ok=True)
+    # 为每场比赛创建单独的文件夹
+    match_dir = os.path.join('data', date, match_id)
+    os.makedirs(match_dir, exist_ok=True)
     
-    # 创建大小球文件夹
-    size_dir = os.path.join('data', date, 'size_odds')
-    os.makedirs(size_dir, exist_ok=True)
+    # 旧的文件夹路径(用于临时文件)
+    temp_odds_dir = os.path.join('data', date, 'temp_ou_odds')
+    temp_size_dir = os.path.join('data', date, 'temp_size_odds')
+    temp_asian_dir = os.path.join('data', date, 'temp_asian_odds')
+    temp_bifa_dir = os.path.join('data', date, 'temp_bifa_data')
+    temp_kelly_dir = os.path.join('data', date, 'temp_kelly_history')
     
-    # 创建让球文件夹
-    # handicap_dir = os.path.join('data', date, 'handicap_odds')
-    # os.makedirs(handicap_dir, exist_ok=True)
-    
-    # 创建亚盘文件夹
-    asian_dir = os.path.join('data', date, 'asian_odds')
-    os.makedirs(asian_dir, exist_ok=True)
-    
-    # 创建凯利指数历史文件夹
-    kelly_dir = os.path.join('data', date, 'kelly_history')
-    os.makedirs(kelly_dir, exist_ok=True)
-    
-    # 创建必发交易数据文件夹
-    bifa_dir = os.path.join('data', date, 'bifa_data')
-    os.makedirs(bifa_dir, exist_ok=True)
+    # 创建临时文件夹(用于HTML)
+    os.makedirs(temp_odds_dir, exist_ok=True)
+    os.makedirs(temp_size_dir, exist_ok=True)
+    os.makedirs(temp_asian_dir, exist_ok=True)
+    os.makedirs(temp_bifa_dir, exist_ok=True)
+    os.makedirs(temp_kelly_dir, exist_ok=True)
     
     # 欧赔URL
     odds_url = f'https://odds.500.com/fenxi/ouzhi-{fixture_id}.shtml?ctype=2'
@@ -1177,7 +1171,7 @@ def debug_match(fixture_id, match_id, date):
                 response.encoding = 'gb2312'  # 设置编码
                 
                 # 临时保存HTML文件
-                temp_html_path = os.path.join(odds_dir, f'temp_{match_id}.html')
+                temp_html_path = os.path.join(temp_odds_dir, f'temp_{match_id}.html')
                 with open(temp_html_path, 'w', encoding='utf-8') as f:
                     f.write(response.text)
                 
@@ -1198,15 +1192,15 @@ def debug_match(fixture_id, match_id, date):
                     # 获取凯利指数历史数据
                     kelly_history = parse_kelly_history(html_content, fixture_id)
                     
-                    # 保存凯利指数历史数据到单独的文件
+                    # 保存凯利指数历史数据到比赛文件夹中
                     if kelly_history:
-                        kelly_file_path = os.path.join(kelly_dir, f'{match_id}.json')
+                        kelly_file_path = os.path.join(match_dir, 'kelly_history.json')
                         with open(kelly_file_path, 'w', encoding='utf-8') as f:
                             json.dump(kelly_history, f, ensure_ascii=False, indent=2)
                         print(f"[{match_id}] 凯利指数历史数据已保存到: {kelly_file_path}")
                 
-                # 保存欧赔数据
-                file_path = os.path.join(odds_dir, f'{match_id}.json')
+                # 保存欧赔数据到比赛文件夹中
+                file_path = os.path.join(match_dir, 'ou_odds.json')
                 with open(file_path, 'w', encoding='utf-8') as f:
                     json.dump(odds_data, f, ensure_ascii=False, indent=2)
                 
@@ -1235,7 +1229,7 @@ def debug_match(fixture_id, match_id, date):
                 response.encoding = 'gb2312'  # 设置编码
                 
                 # 临时保存大小球HTML文件
-                temp_size_html_path = os.path.join(size_dir, f'temp_{match_id}.html')
+                temp_size_html_path = os.path.join(temp_size_dir, f'temp_{match_id}.html')
                 with open(temp_size_html_path, 'w', encoding='utf-8') as f:
                     f.write(response.text)
                 
@@ -1253,8 +1247,8 @@ def debug_match(fixture_id, match_id, date):
                             if company_name in size_data:
                                 size_data[company_name]['size_history'] = history_data
                 
-                # 保存大小球数据
-                size_file_path = os.path.join(size_dir, f'{match_id}.json')
+                # 保存大小球数据到比赛文件夹中
+                size_file_path = os.path.join(match_dir, 'size_odds.json')
                 with open(size_file_path, 'w', encoding='utf-8') as f:
                     json.dump(size_data, f, ensure_ascii=False, indent=2)
                 
@@ -1280,40 +1274,7 @@ def debug_match(fixture_id, match_id, date):
                 print(f"[{match_id}] 访问被拒绝 (403 Forbidden): {handicap_url}")
                 error_count += 1
             else:
-                # 临时保存让球HTML文件
-                # temp_handicap_html_path = os.path.join(handicap_dir, f'temp_{match_id}.html')
-                # with open(temp_handicap_html_path, 'w', encoding='utf-8') as f:
-                #     f.write(response.text)
-                
-                # # 解析让球HTML内容
-                # with open(temp_handicap_html_path, 'r', encoding='utf-8') as f:
-                #     handicap_html_content = f.read()
-                #     handicap_data = parse_handicap_data(handicap_html_content)
-                    
-                #     # 获取让球历史赔率变化数据
-                #     handicap_history = parse_handicap_history(handicap_html_content, fixture_id)
-                    
-                #     # 将历史赔率数据添加到让球数据中
-                #     if handicap_history:
-                #         for company_name, handicap_values in handicap_history.items():
-                #             if company_name in handicap_data:
-                #                 for handicap_value, history_data in handicap_values.items():
-                #                     # 查找对应让球值的数据
-                #                     for handicap_item in handicap_data[company_name]['handicap_list']:
-                #                         if handicap_item['handicap'] == handicap_value:
-                #                             handicap_item['handicap_history'] = history_data
-                #                             break
-                
-                # # 保存让球数据
-                # handicap_file_path = os.path.join(handicap_dir, f'{match_id}.json')
-                # with open(handicap_file_path, 'w', encoding='utf-8') as f:
-                #     json.dump(handicap_data, f, ensure_ascii=False, indent=2)
-                
-                # if handicap_data:
                 success_count += 1
-                # else:
-                #     print(f"[{match_id}] 警告：未解析到让球数据")
-                #     error_count += 1
         except Exception as e:
             print(f"[{match_id}] 获取让球数据出错: {str(e)}")
             error_count += 1
@@ -1332,7 +1293,7 @@ def debug_match(fixture_id, match_id, date):
                 error_count += 1
             else:
                 # 临时保存亚盘HTML文件
-                temp_asian_html_path = os.path.join(asian_dir, f'temp_{match_id}.html')
+                temp_asian_html_path = os.path.join(temp_asian_dir, f'temp_{match_id}.html')
                 with open(temp_asian_html_path, 'w', encoding='utf-8') as f:
                     f.write(response.text)
                 
@@ -1350,8 +1311,8 @@ def debug_match(fixture_id, match_id, date):
                             if company_name in asian_data:
                                 asian_data[company_name]['asian_history'] = company_history
                 
-                # 保存亚盘数据
-                asian_file_path = os.path.join(asian_dir, f'{match_id}.json')
+                # 保存亚盘数据到比赛文件夹中
+                asian_file_path = os.path.join(match_dir, 'asian_odds.json')
                 with open(asian_file_path, 'w', encoding='utf-8') as f:
                     json.dump(asian_data, f, ensure_ascii=False, indent=2)
                 
@@ -1380,7 +1341,7 @@ def debug_match(fixture_id, match_id, date):
                 response.encoding = 'gb2312'  # 设置编码
                 
                 # 临时保存必发交易HTML文件
-                temp_bifa_html_path = os.path.join(bifa_dir, f'temp_{match_id}.html')
+                temp_bifa_html_path = os.path.join(temp_bifa_dir, f'temp_{match_id}.html')
                 with open(temp_bifa_html_path, 'w', encoding='utf-8') as f:
                     f.write(response.text)
                 
@@ -1389,8 +1350,8 @@ def debug_match(fixture_id, match_id, date):
                     bifa_html_content = f.read()
                     bifa_data = parse_bifa_data(bifa_html_content)
                 
-                # 保存必发交易数据（始终保持JSON格式，不转换为txt）
-                bifa_file_path = os.path.join(bifa_dir, f'{match_id}.json')
+                # 保存必发交易数据到比赛文件夹中
+                bifa_file_path = os.path.join(match_dir, 'bifa_data.json')
                 with open(bifa_file_path, 'w', encoding='utf-8') as f:
                     json.dump(bifa_data, f, ensure_ascii=False, indent=2)
                 
@@ -1431,77 +1392,33 @@ def clean_temp_html_files(date):
     """清理临时HTML文件"""
     print(f"开始清理 {date} 的临时HTML文件...")
     
-    # 清理欧赔文件夹中的临时HTML文件
-    odds_dir = os.path.join('data', date, 'ou_odds')
-    if os.path.exists(odds_dir):
-        for file in os.listdir(odds_dir):
-            if file.startswith('temp_') and file.endswith('.html'):
-                file_path = os.path.join(odds_dir, file)
-                try:
-                    os.remove(file_path)
-                    print(f"已删除欧赔临时文件: {file_path}")
-                except Exception as e:
-                    print(f"删除文件 {file_path} 时出错: {str(e)}")
+    # 清理临时文件夹
+    temp_dirs = [
+        os.path.join('data', date, 'temp_ou_odds'),
+        os.path.join('data', date, 'temp_size_odds'),
+        os.path.join('data', date, 'temp_asian_odds'),
+        os.path.join('data', date, 'temp_bifa_data'),
+        os.path.join('data', date, 'temp_kelly_history')
+    ]
     
-    # 清理大小球文件夹中的临时HTML文件
-    size_dir = os.path.join('data', date, 'size_odds')
-    if os.path.exists(size_dir):
-        for file in os.listdir(size_dir):
-            if file.startswith('temp_') and file.endswith('.html'):
-                file_path = os.path.join(size_dir, file)
-                try:
-                    os.remove(file_path)
-                    print(f"已删除大小球临时文件: {file_path}")
-                except Exception as e:
-                    print(f"删除文件 {file_path} 时出错: {str(e)}")
-    
-    # 清理让球文件夹中的临时HTML文件
-    # handicap_dir = os.path.join('data', date, 'handicap_odds')
-    # if os.path.exists(handicap_dir):
-    #     for file in os.listdir(handicap_dir):
-    #         if file.startswith('temp_') and file.endswith('.html'):
-    #             file_path = os.path.join(handicap_dir, file)
-    #             try:
-    #                 os.remove(file_path)
-    #                 print(f"已删除让球临时文件: {file_path}")
-    #             except Exception as e:
-    #                 print(f"删除文件 {file_path} 时出错: {str(e)}")
-    
-    # 清理亚盘文件夹中的临时HTML文件
-    asian_dir = os.path.join('data', date, 'asian_odds')
-    if os.path.exists(asian_dir):
-        for file in os.listdir(asian_dir):
-            if file.startswith('temp_') and file.endswith('.html'):
-                file_path = os.path.join(asian_dir, file)
-                try:
-                    os.remove(file_path)
-                    print(f"已删除亚盘临时文件: {file_path}")
-                except Exception as e:
-                    print(f"删除文件 {file_path} 时出错: {str(e)}")
-    
-    # 清理凯利指数文件夹中的临时HTML文件
-    kelly_dir = os.path.join('data', date, 'kelly_history')
-    if os.path.exists(kelly_dir):
-        for file in os.listdir(kelly_dir):
-            if file.startswith('temp_') and file.endswith('.html'):
-                file_path = os.path.join(kelly_dir, file)
-                try:
-                    os.remove(file_path)
-                    print(f"已删除凯利指数临时文件: {file_path}")
-                except Exception as e:
-                    print(f"删除文件 {file_path} 时出错: {str(e)}")
-    
-    # 清理必发交易数据文件夹中的临时HTML文件
-    bifa_dir = os.path.join('data', date, 'bifa_data')
-    if os.path.exists(bifa_dir):
-        for file in os.listdir(bifa_dir):
-            if file.startswith('temp_') and file.endswith('.html'):
-                file_path = os.path.join(bifa_dir, file)
-                try:
-                    os.remove(file_path)
-                    print(f"已删除必发交易临时文件: {file_path}")
-                except Exception as e:
-                    print(f"删除文件 {file_path} 时出错: {str(e)}")
+    for temp_dir in temp_dirs:
+        if os.path.exists(temp_dir):
+            for file in os.listdir(temp_dir):
+                if file.startswith('temp_') and file.endswith('.html'):
+                    file_path = os.path.join(temp_dir, file)
+                    try:
+                        os.remove(file_path)
+                        print(f"已删除临时文件: {file_path}")
+                    except Exception as e:
+                        print(f"删除文件 {file_path} 时出错: {str(e)}")
+            
+            # 删除空的临时文件夹
+            try:
+                if len(os.listdir(temp_dir)) == 0:
+                    os.rmdir(temp_dir)
+                    print(f"已删除空的临时文件夹: {temp_dir}")
+            except Exception as e:
+                print(f"删除文件夹 {temp_dir} 时出错: {str(e)}")
     
     print(f"清理临时HTML文件完成")
 
@@ -1518,71 +1435,20 @@ def add_handicap_to_main_json(date):
     # 由于让球文件已被注释，不再需要读取
     print(f"让球文件已被注释，跳过添加让球值到main.json")
     return True
-    
-    # try:
-    #     with open(main_file_path, 'r', encoding='utf-8') as f:
-    #         main_data = json.load(f)
-        
-    #     # 让球赔率文件夹路径
-    #     handicap_dir = os.path.join('data', date, 'handicap_odds')
-    #     if not os.path.exists(handicap_dir):
-    #         print(f"未找到让球赔率文件夹: {handicap_dir}")
-    #         return False
-        
-    #     # 遍历所有比赛
-    #     for match in main_data:
-    #         match_id = match.get('match_id')
-    #         if not match_id:
-    #             continue
-            
-    #         # 让球赔率文件路径
-    #         handicap_file_path = os.path.join(handicap_dir, f'{match_id}.json')
-    #         if not os.path.exists(handicap_file_path):
-    #             print(f"未找到让球赔率文件: {handicap_file_path}")
-    #             continue
-            
-    #         try:
-    #             with open(handicap_file_path, 'r', encoding='utf-8') as f:
-    #                 handicap_data = json.load(f)
-                
-    #             # 获取竞彩官方的让球值
-    #             if "竞彩官方" in handicap_data and "handicap_list" in handicap_data["竞彩官方"]:
-    #                 handicap_list = handicap_data["竞彩官方"]["handicap_list"]
-    #                 if handicap_list and len(handicap_list) > 0:
-    #                     handicap_value = handicap_list[0].get("handicap", "")
-                        
-    #                     # 添加让球值到main数据中
-    #                     match["handicap"] = handicap_value
-    #                     print(f"已为 {match_id} 添加让球值: {handicap_value}")
-    #                 else:
-    #                     print(f"未找到 {match_id} 的让球值数据")
-    #             else:
-    #                 print(f"未找到 {match_id} 的竞彩官方让球数据")
-            
-    #         except Exception as e:
-    #             print(f"处理 {match_id} 的让球数据时出错: {str(e)}")
-    #             continue
-        
-    #     # 保存更新后的main.json文件
-    #     with open(main_file_path, 'w', encoding='utf-8') as f:
-    #         json.dump(main_data, f, ensure_ascii=False, indent=2)
-        
-    #     print(f"让球值已成功添加到main.json文件")
-    #     return True
-    
-    # except Exception as e:
-    #     print(f"处理main.json文件时出错: {str(e)}")
-    #     return False
 
 def test_size_data_write(match_id, date):
     """测试写入大小球数据"""
     try:
-        # 创建大小球文件夹
-        size_dir = os.path.join('data', date, 'size_odds')
-        os.makedirs(size_dir, exist_ok=True)
+        # 创建比赛文件夹
+        match_dir = os.path.join('data', date, match_id)
+        os.makedirs(match_dir, exist_ok=True)
+        
+        # 临时文件夹路径
+        temp_size_dir = os.path.join('data', date, 'temp_size_odds')
+        os.makedirs(temp_size_dir, exist_ok=True)
         
         # HTML文件路径
-        temp_size_html_path = os.path.join(size_dir, f'temp_{match_id}.html')
+        temp_size_html_path = os.path.join(temp_size_dir, f'temp_{match_id}.html')
         
         # 检查临时HTML文件是否存在
         if os.path.exists(temp_size_html_path):
@@ -1594,8 +1460,8 @@ def test_size_data_write(match_id, date):
                 size_data = parse_size_data(html_content)
             
             if size_data:
-                # 保存大小球数据
-                size_file_path = os.path.join(size_dir, f'{match_id}.json')
+                # 保存大小球数据到比赛文件夹
+                size_file_path = os.path.join(match_dir, 'size_odds.json')
                 print(f"尝试写入数据到: {size_file_path}")
                 with open(size_file_path, 'w', encoding='utf-8') as f:
                     json.dump(size_data, f, ensure_ascii=False, indent=2)
@@ -1626,28 +1492,46 @@ def test_size_data_write(match_id, date):
         return False
 
 def remove_jingcai_data(date):
-    """删除指定日期的handicap_odds、kelly_history和ou_odds文件夹下的竞彩官方数据"""
+    """删除指定日期所有比赛文件夹中的竞彩官方数据"""
     print(f"开始删除 {date} 竞彩官方数据...")
     
-    folders = [
-        # os.path.join('data', date, 'handicap_odds'),
-        os.path.join('data', date, 'kelly_history'),
-        os.path.join('data', date, 'ou_odds')
-    ]
+    # 获取日期目录下所有比赛文件夹
+    date_dir = os.path.join('data', date)
+    if not os.path.exists(date_dir):
+        print(f"日期目录不存在: {date_dir}")
+        return False
+    
+    # 获取所有比赛文件夹
+    match_folders = []
+    for item in os.listdir(date_dir):
+        item_path = os.path.join(date_dir, item)
+        if os.path.isdir(item_path) and not item.startswith('temp_'):
+            if item not in ['ou_odds', 'size_odds', 'asian_odds', 'kelly_history', 'bifa_data']:
+                match_folders.append(item)
+    
+    if not match_folders:
+        print(f"未找到任何比赛文件夹")
+        return False
+    
+    print(f"找到 {len(match_folders)} 个比赛文件夹")
+    
+    # 需要处理的文件类型
+    file_types = ['ou_odds.json', 'kelly_history.json']
     
     files_processed = 0
     files_modified = 0
     
-    for folder_path in folders:
-        if not os.path.exists(folder_path):
-            print(f"文件夹不存在: {folder_path}")
-            continue
+    # 处理每个比赛文件夹
+    for match_id in match_folders:
+        match_dir = os.path.join(date_dir, match_id)
+        
+        # 处理每种文件类型
+        for file_type in file_types:
+            file_path = os.path.join(match_dir, file_type)
             
-        for file_name in os.listdir(folder_path):
-            if not file_name.endswith('.json'):
+            if not os.path.exists(file_path):
                 continue
                 
-            file_path = os.path.join(folder_path, file_name)
             files_processed += 1
             
             try:
@@ -1676,69 +1560,51 @@ def convert_json_to_compact(date):
     """将JSON数据转换为紧凑格式，并存储为易读的TXT文件"""
     print(f"开始将 {date} 的数据转换为紧凑格式...")
     
-    # 获取所有数据文件夹
-    data_dir = os.path.join('data', date)
-    # 不转换必发交易数据
-    folder_types = ['ou_odds', 'size_odds', 'asian_odds', 'kelly_history']
+    # 获取日期目录下所有比赛文件夹
+    date_dir = os.path.join('data', date)
+    if not os.path.exists(date_dir):
+        print(f"日期目录不存在: {date_dir}")
+        return False
     
-    # 创建紧凑数据文件夹
-    compact_dir = os.path.join(data_dir, 'compact')
-    os.makedirs(compact_dir, exist_ok=True)
+    # 获取所有比赛文件夹
+    match_folders = []
+    for item in os.listdir(date_dir):
+        item_path = os.path.join(date_dir, item)
+        if os.path.isdir(item_path) and not item.startswith('temp_'):
+            if item not in ['ou_odds', 'size_odds', 'asian_odds', 'kelly_history', 'bifa_data']:
+                match_folders.append(item)
+    
+    if not match_folders:
+        print(f"未找到任何比赛文件夹")
+        return False
+    
+    print(f"找到 {len(match_folders)} 个比赛文件夹")
+    
+    # 数据类型和对应文件名
+    data_types = {
+        'ou_odds.json': {'name': '欧赔数据', 'txt_name': 'ou_odds.txt'},
+        'size_odds.json': {'name': '大小球数据', 'txt_name': 'size_odds.txt'},
+        'asian_odds.json': {'name': '亚盘数据', 'txt_name': 'asian_odds.txt'},
+        'kelly_history.json': {'name': '凯利指数数据', 'txt_name': 'kelly_history.txt'}
+        # 必发数据保持JSON格式，不转换
+    }
     
     files_processed = 0
     files_converted = 0
     files_deleted = 0
-    compact_folders_removed = 0
     
-    for folder_type in folder_types:
-        folder_path = os.path.join(data_dir, folder_type)
-        if not os.path.exists(folder_path):
-            print(f"文件夹不存在: {folder_path}")
-            continue
+    # 处理每个比赛文件夹
+    for match_id in match_folders:
+        match_dir = os.path.join(date_dir, match_id)
         
-        # 检查并删除已存在的compact文件夹
-        compact_folder = os.path.join(folder_path, 'compact')
-        if os.path.exists(compact_folder):
-            # 首先检查compact文件夹中是否有txt文件需要移动到上层目录
-            for compact_file in os.listdir(compact_folder):
-                if compact_file.endswith('.txt'):
-                    try:
-                        # 检查是否有重名文件
-                        src_path = os.path.join(compact_folder, compact_file)
-                        dst_path = os.path.join(folder_path, compact_file)
-                        
-                        # 如果目标路径已存在，先删除目标文件
-                        if os.path.exists(dst_path):
-                            os.remove(dst_path)
-                            
-                        # 移动文件
-                        os.rename(src_path, dst_path)
-                        print(f"已将文件 {compact_file} 从compact文件夹移动到主目录")
-                    except Exception as e:
-                        print(f"移动文件 {compact_file} 时出错: {str(e)}")
+        # 处理每种数据类型
+        for json_file, type_info in data_types.items():
+            json_path = os.path.join(match_dir, json_file)
+            txt_path = os.path.join(match_dir, type_info['txt_name'])
             
-            try:
-                # 删除所有compact文件夹中的剩余文件
-                remaining_files = os.listdir(compact_folder)
-                for remaining_file in remaining_files:
-                    try:
-                        os.remove(os.path.join(compact_folder, remaining_file))
-                    except Exception as e:
-                        print(f"删除compact文件夹中的文件 {remaining_file} 时出错: {str(e)}")
-                
-                # 删除compact文件夹
-                os.rmdir(compact_folder)
-                compact_folders_removed += 1
-                print(f"已删除compact文件夹: {compact_folder}")
-            except Exception as e:
-                print(f"删除compact文件夹 {compact_folder} 时出错: {str(e)}")
-        
-        for file_name in os.listdir(folder_path):
-            if not file_name.endswith('.json') or file_name.startswith('temp_'):
+            if not os.path.exists(json_path):
                 continue
                 
-            json_path = os.path.join(folder_path, file_name)
-            txt_path = os.path.join(folder_path, file_name.replace('.json', '.txt'))
             files_processed += 1
             
             try:
@@ -1746,29 +1612,22 @@ def convert_json_to_compact(date):
                 with open(json_path, 'r', encoding='utf-8') as f:
                     data = json.load(f)
                 
-                # 如果是bifa_data目录，跳过文本文件的创建
-                if 'bifa_data' in folder_path:
-                    continue
-                    
                 # 将数据转换为紧凑格式
                 with open(txt_path, 'w', encoding='utf-8') as f:
                     # 添加文件头部的数据格式说明
-                    folder_name = os.path.basename(folder_path)
+                    data_type = type_info['name']
                     
-                    if 'asian_odds' in folder_path:
-                        f.write("# 亚盘赔率数据 - 格式说明\n")
+                    if 'asian_odds' in json_file:
+                        f.write(f"# {data_type} - 格式说明\n")
                         f.write("# 公司名|初盘盘口,初盘主赔率,初盘客赔率,初盘更新时间|即时盘口,即时主赔率,即时客赔率,即时更新时间,即时状态|历史变化[盘口,主赔率,客赔率,更新时间]\n")
-                    elif 'ou_odds' in folder_path:
-                        f.write("# 欧赔赔率数据 - 格式说明\n")
+                    elif 'ou_odds' in json_file:
+                        f.write(f"# {data_type} - 格式说明\n")
                         f.write("# 公司名|初盘胜,初盘平,初盘负,初返还率,初胜率,初平率,初负率,初凯利胜,初凯利平,初凯利负|即时胜,即时平,即时负,即返还率,即胜率,即平率,即负率,即凯利胜,即凯利平,即凯利负|历史变化[胜赔,平赔,负赔,返还率,更新时间,胜变化,平变化,负变化]\n")
-                    elif 'size_odds' in folder_path:
-                        f.write("# 大小球赔率数据 - 格式说明\n")
+                    elif 'size_odds' in json_file:
+                        f.write(f"# {data_type} - 格式说明\n")
                         f.write("# 公司名|初盘盘口,初盘大球赔率,初盘小球赔率|即时盘口,即时大球赔率,即时小球赔率|历史变化[盘口,大球赔率,小球赔率,更新时间]\n")
-                    elif 'handicap_odds' in folder_path:
-                        f.write("# 让球赔率数据 - 格式说明\n")
-                        f.write("# 公司名|初盘让球,初盘主胜赔率,初盘客胜赔率|即时让球,即时主胜赔率,即时客胜赔率|历史变化[让球,主胜赔率,平局赔率,客胜赔率,更新时间]\n")
-                    elif 'kelly_history' in folder_path:
-                        f.write("# 凯利指数数据 - 格式说明\n")
+                    elif 'kelly_history' in json_file:
+                        f.write(f"# {data_type} - 格式说明\n")
                         f.write("# 公司名|初始凯利[胜,平,负,更新时间]|历史变化[胜,平,负,更新时间],...\n")
                     
                     f.write("\n")
@@ -1778,7 +1637,7 @@ def convert_json_to_compact(date):
                         line_parts = [company]
                         
                         # 根据不同类型的数据使用不同的格式化方式
-                        if 'asian_odds' in folder_path:
+                        if 'asian_odds' in json_file:
                             # 亚盘数据特殊处理，结构是嵌套的
                             if 'initial_asian' in company_data:
                                 initial_asian = company_data['initial_asian']
@@ -1802,7 +1661,7 @@ def convert_json_to_compact(date):
                                     history.append(history_item)
                             line_parts.append(",".join(history))
                         
-                        elif 'ou_odds' in folder_path:
+                        elif 'ou_odds' in json_file:
                             # 初盘数据
                             initial_odds = company_data.get('initial_odds', ['', '', ''])
                             initial_probs = company_data.get('initial_probabilities', ['', '', ''])
@@ -1825,7 +1684,7 @@ def convert_json_to_compact(date):
                                     history.append(history_item)
                             line_parts.append(",".join(history))
                         
-                        elif 'size_odds' in folder_path:
+                        elif 'size_odds' in json_file:
                             # 初盘数据 - 注意size_odds的结构
                             initial_size = company_data.get('initial_size', {})
                             initial = f"{initial_size.get('size', '')},{initial_size.get('over', '')},{initial_size.get('under', '')},{initial_size.get('update_time', '')}"
@@ -1844,54 +1703,7 @@ def convert_json_to_compact(date):
                                     history.append(history_item)
                             line_parts.append(",".join(history))
                         
-                        elif 'handicap_odds' in folder_path:
-                            # 让球数据使用handicap_list结构，需要为每个让球值生成独立的一行
-                            if 'handicap_list' in company_data and company_data['handicap_list']:
-                                # 遍历每个让球值
-                                for handicap_item in company_data['handicap_list']:
-                                    # 创建新的行部分数组，保留公司名
-                                    handicap_line_parts = [company]
-                                    
-                                    # 初盘数据
-                                    initial_odds = handicap_item.get('initial_odds', ['', ''])
-                                    initial = f"{handicap_item.get('handicap', '')},{initial_odds[0] if len(initial_odds) > 0 else ''},{initial_odds[1] if len(initial_odds) > 1 else ''}"
-                                    handicap_line_parts.append(initial)
-                                    
-                                    # 即时盘数据
-                                    current_odds = handicap_item.get('current_odds', ['', ''])
-                                    current = f"{handicap_item.get('handicap', '')},{current_odds[0] if len(current_odds) > 0 else ''},{current_odds[1] if len(current_odds) > 1 else ''}"
-                                    handicap_line_parts.append(current)
-                                    
-                                    # 历史变化
-                                    history = []
-                                    # 先检查handicap_item是否有handicap_history
-                                    if 'handicap_history' in handicap_item and handicap_item['handicap_history']:
-                                        for h in handicap_item['handicap_history']:
-                                            # 修复：包含draw_odds(平局赔率)
-                                            history_item = f"[{handicap_item.get('handicap', '')},{h.get('home_odds', '')},{h.get('draw_odds', '')},{h.get('away_odds', '')},{h.get('update_time', '')}]"
-                                            history.append(history_item)
-                                    # 如果handicap_item没有handicap_history，检查公司数据是否有相应让球值的历史记录
-                                    elif 'handicap_history' in company_data:
-                                        # 获取当前让球值
-                                        current_handicap = handicap_item.get('handicap', '')
-                                        # 检查公司数据中是否有该让球值的历史记录
-                                        if current_handicap in company_data['handicap_history']:
-                                            for h in company_data['handicap_history'][current_handicap]:
-                                                history_item = f"[{current_handicap},{h.get('home_odds', '')},{h.get('draw_odds', '')},{h.get('away_odds', '')},{h.get('update_time', '')}]"
-                                                history.append(history_item)
-                                    handicap_line_parts.append(",".join(history))
-                                    
-                                    # 使用竖线(|)作为主要分隔符将所有部分连接起来，为每个让球值写入单独的一行
-                                    f.write("|".join(handicap_line_parts) + "\n")
-                                
-                                # 由于我们已经写入了所有让球值的行，跳过外部的写入
-                                continue
-                            else:
-                                line_parts.append(",,")
-                                line_parts.append(",,")
-                                line_parts.append("")
-                        
-                        elif 'kelly_history' in folder_path:
+                        elif 'kelly_history' in json_file:
                             # 凯利指数数据是一个数组，而不是对象
                             kelly_history = []
                             
@@ -1943,21 +1755,7 @@ def convert_json_to_compact(date):
                 traceback.print_exc()  # 添加这行以打印详细的错误堆栈
     
     print(f"数据转换完成: 处理了 {files_processed} 个文件, 转换了 {files_converted} 个文件, 删除了 {files_deleted} 个原JSON文件")
-    if compact_folders_removed > 0:
-        print(f"已删除 {compact_folders_removed} 个compact文件夹")
     print(f"数据已转换为易读的TXT格式，并删除了原JSON文件，读取时可大幅提高速度并增强可读性")
-    
-    # 删除compact文件夹
-    try:
-        if os.path.exists(compact_dir):
-            # 确保compact文件夹为空
-            if len(os.listdir(compact_dir)) == 0:
-                os.rmdir(compact_dir)
-                print(f"已删除空的compact文件夹: {compact_dir}")
-            else:
-                print(f"无法删除compact文件夹，因为它不为空: {compact_dir}")
-    except Exception as e:
-        print(f"删除compact文件夹时出错: {str(e)}")
     
     return files_converted > 0
 
@@ -2048,17 +1846,25 @@ def main():
         # 使用多线程处理比赛数据
         print(f"使用 {max_threads} 个线程处理 {len(matches)} 场比赛...")
         
-        # 创建目录结构（防止线程竞争创建目录）
-        odds_dir = os.path.join('data', target_date, 'ou_odds')
-        size_dir = os.path.join('data', target_date, 'size_odds')
-        # handicap_dir = os.path.join('data', target_date, 'handicap_odds')
-        asian_dir = os.path.join('data', target_date, 'asian_odds')
-        bifa_dir = os.path.join('data', target_date, 'bifa_data')
-        os.makedirs(odds_dir, exist_ok=True)
-        os.makedirs(size_dir, exist_ok=True)
-        # os.makedirs(handicap_dir, exist_ok=True)
-        os.makedirs(asian_dir, exist_ok=True)
-        os.makedirs(bifa_dir, exist_ok=True)
+        # 创建临时目录结构（防止线程竞争创建目录）
+        temp_odds_dir = os.path.join('data', target_date, 'temp_ou_odds')
+        temp_size_dir = os.path.join('data', target_date, 'temp_size_odds')
+        temp_asian_dir = os.path.join('data', target_date, 'temp_asian_odds')
+        temp_bifa_dir = os.path.join('data', target_date, 'temp_bifa_data')
+        temp_kelly_dir = os.path.join('data', target_date, 'temp_kelly_history')
+        
+        os.makedirs(temp_odds_dir, exist_ok=True)
+        os.makedirs(temp_size_dir, exist_ok=True)
+        os.makedirs(temp_asian_dir, exist_ok=True)
+        os.makedirs(temp_bifa_dir, exist_ok=True)
+        os.makedirs(temp_kelly_dir, exist_ok=True)
+        
+        # 为每场比赛创建单独的文件夹
+        for match in matches:
+            match_id = match.get('match_id')
+            if match_id:
+                match_dir = os.path.join('data', target_date, match_id)
+                os.makedirs(match_dir, exist_ok=True)
 
         successful_matches = 0
         failed_matches = 0
@@ -2086,7 +1892,7 @@ def main():
                             
                         # 特殊处理周二001的结果
                         if match['match_id'] == '周二001':
-                            size_file_path = os.path.join('data', target_date, 'size_odds', f"{match['match_id']}.json")
+                            size_file_path = os.path.join('data', target_date, match['match_id'], 'size_odds.json')
                             if os.path.exists(size_file_path):
                                 with open(size_file_path, 'r', encoding='utf-8') as f:
                                     data = f.read()
