@@ -11,6 +11,60 @@ import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import traceback
 
+# 添加博彩公司名称映射函数
+def replace_company_names(company_name):
+    """将带星号的博彩公司名称替换为完整名称"""
+    company_map = {
+        "威***": "威廉希尔",
+        "澳*": "澳门",
+        "立*": "立博",
+        "36*": "365bet",
+        "Inter*": "Interwetten",
+        "SN**": "SNAI",
+        "皇*": "皇冠",
+        "易**": "易胜博",
+        "韦*": "韦德",
+        "10*": "10BET",
+        "平*": "平博",
+        "利*": "利记",
+        "马*": "马博",
+        "12*": "12bet",
+        "明*": "明陞",
+        "18*": "18Bet",
+        "盈*": "盈禾",
+        "金宝*": "金宝博",
+        "伟*": "伟德",
+        "YSB*": "YSB体育",
+        "必*": "必发",
+        "bet3*": "bet365",
+        "SP*": "SportingBet",
+        "优*": "优胜客",
+        "乐天*": "乐天堂",
+        "金宝博": "金宝博",
+        "Crown*": "Crown",
+        "明升": "明升",
+        "BET*": "BETCMP",
+        "IM*": "IM体育",
+        "巴黎*": "巴黎人",
+        "沙巴*": "沙巴体育",
+        "官方": "官方",
+        # 添加其他可能的映射
+    }
+    
+    # 检查是否能够直接映射
+    if company_name in company_map:
+        return company_map[company_name]
+    
+    # 如果不能直接映射，尝试使用正则表达式进行部分匹配
+    for masked, full in company_map.items():
+        # 创建一个正则表达式，将*替换为通配符
+        pattern = masked.replace("*", ".*")
+        if re.match(f"^{pattern}$", company_name):
+            return full
+    
+    # 如果没有匹配，则返回原始名称
+    return company_name
+
 # 添加重试机制的函数
 def make_request_with_retry(url, headers, max_retries=3, retry_delay=2, timeout=10):
     """发送请求并在失败时进行重试"""
@@ -207,6 +261,9 @@ def parse_odds_data(html_content):
         else:
             company_name = "未知公司"
         
+        # 使用replace_company_names函数转换为完整名称
+        company_name = replace_company_names(company_name)
+        
         # 初始化该公司的数据结构
         company_data = {
             'initial_odds': [],
@@ -390,6 +447,9 @@ def parse_size_data(html_content):
                 # 如果找不到公司名称，跳过该行
                 print("未找到公司名称，跳过该行")
                 continue
+            
+        # 使用replace_company_names函数转换为完整名称
+        company_name = replace_company_names(company_name)
             
         print(f"解析公司: {company_name}")
         
@@ -693,6 +753,9 @@ def parse_asian_handicap_data(html_content):
                     if not any(keyword in company_name for keyword in ['bet', 'Bet', '威廉', '澳门', '皇冠', '易胜博']):
                         print(f"跳过非公司名称的行: {company_name[:20]}...")
                         continue
+        
+        # 使用replace_company_names函数转换为完整名称
+        company_name = replace_company_names(company_name)
         
         print(f"解析公司: {company_name}")
         
@@ -1612,6 +1675,12 @@ def convert_json_to_compact(date):
                 with open(json_path, 'r', encoding='utf-8') as f:
                     data = json.load(f)
                 
+                # 替换公司名称 - 创建一个新的数据结构，使用替换后的公司名作为键
+                updated_data = {}
+                for company, company_data in data.items():
+                    full_name = replace_company_names(company)
+                    updated_data[full_name] = company_data
+                
                 # 将数据转换为紧凑格式
                 with open(txt_path, 'w', encoding='utf-8') as f:
                     # 添加文件头部的数据格式说明
@@ -1632,8 +1701,8 @@ def convert_json_to_compact(date):
                     
                     f.write("\n")
                     
-                    # 处理每个公司的数据
-                    for company, company_data in data.items():
+                    # 处理每个公司的数据 - 使用更新后的数据结构
+                    for company, company_data in updated_data.items():
                         line_parts = [company]
                         
                         # 根据不同类型的数据使用不同的格式化方式
@@ -2473,6 +2542,9 @@ def parse_kelly_history(html_content, fixture_id):
                             # 检查是否是可能的公司名称
                             if not any(keyword in company_name for keyword in ['bet', 'Bet', '威廉', '澳门', '皇冠', '易胜博']):
                                 continue
+                
+                # 使用replace_company_names函数转换为完整名称
+                company_name = replace_company_names(company_name)
                 
                 print(f"处理公司凯利指数历史数据: {company_name}")
                 
