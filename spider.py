@@ -1249,8 +1249,12 @@ def debug_match(fixture_id, match_id, date):
                     # 将历史赔率数据添加到欧赔数据中
                     if odds_history:
                         for company_name, history_data in odds_history.items():
+                            # 尝试使用原始公司名和替换后的公司名
+                            replaced_company_name = replace_company_names(company_name)
                             if company_name in odds_data:
                                 odds_data[company_name]['odds_history'] = history_data
+                            elif replaced_company_name in odds_data:
+                                odds_data[replaced_company_name]['odds_history'] = history_data
                     
                     # 获取凯利指数历史数据
                     kelly_history = parse_kelly_history(html_content, fixture_id)
@@ -1307,8 +1311,12 @@ def debug_match(fixture_id, match_id, date):
                     # 将历史赔率数据添加到大小球数据中
                     if size_history:
                         for company_name, history_data in size_history.items():
+                            # 尝试使用原始公司名和替换后的公司名
+                            replaced_company_name = replace_company_names(company_name)
                             if company_name in size_data:
                                 size_data[company_name]['size_history'] = history_data
+                            elif replaced_company_name in size_data:
+                                size_data[replaced_company_name]['size_history'] = history_data
                 
                 # 保存大小球数据到比赛文件夹中
                 size_file_path = os.path.join(match_dir, 'size_odds.json')
@@ -1370,9 +1378,13 @@ def debug_match(fixture_id, match_id, date):
                     
                     # 将历史数据添加到亚盘数据中
                     if asian_history:
-                        for company_name, company_history in asian_history.items():
+                        for company_name, history_data in asian_history.items():
+                            # 尝试使用原始公司名和替换后的公司名
+                            replaced_company_name = replace_company_names(company_name)
                             if company_name in asian_data:
-                                asian_data[company_name]['asian_history'] = company_history
+                                asian_data[company_name]['asian_history'] = history_data
+                            elif replaced_company_name in asian_data:
+                                asian_data[replaced_company_name]['asian_history'] = history_data
                 
                 # 保存亚盘数据到比赛文件夹中
                 asian_file_path = os.path.join(match_dir, 'asian_odds.json')
@@ -1675,10 +1687,59 @@ def convert_json_to_compact(date):
                 with open(json_path, 'r', encoding='utf-8') as f:
                     data = json.load(f)
                 
+                # 凯利历史数据的结构与其他不同，需要特殊处理
+                if 'kelly_history' in json_file:
+                    # 凯利历史数据是一个字典，其中每个键是公司名，值是历史记录列表
+                    with open(txt_path, 'w', encoding='utf-8') as f:
+                        # 添加文件头部的数据格式说明
+                        data_type = type_info['name']
+                        f.write(f"# {data_type} - 格式说明\n")
+                        f.write("# 公司名|初始凯利[胜,平,负,更新时间]|历史变化[胜,平,负,更新时间],...\n\n")
+                        
+                        # 处理每个公司的数据
+                        for company, history_data in data.items():
+                            # 使用映射后的公司名
+                            full_name = replace_company_names(company)
+                            line_parts = [full_name]
+                            
+                            if history_data and isinstance(history_data, list):
+                                # 使用最早的记录作为初始值
+                                initial_record = history_data[-1] if history_data else {}
+                                initial = f"[{initial_record.get('kelly_win', '')},{initial_record.get('kelly_draw', '')},{initial_record.get('kelly_lose', '')},{initial_record.get('update_time', '')}]"
+                                line_parts.append(initial)
+                                
+                                # 所有记录作为历史变化
+                                history_items = []
+                                for item in history_data:
+                                    history_item = f"[{item.get('kelly_win', '')},{item.get('kelly_draw', '')},{item.get('kelly_lose', '')},{item.get('update_time', '')}]"
+                                    history_items.append(history_item)
+                                
+                                line_parts.append(",".join(history_items))
+                            else:
+                                # 如果没有历史数据，添加空值
+                                line_parts.append("[]")
+                                line_parts.append("")
+                            
+                            # 使用竖线(|)作为主要分隔符将所有部分连接起来
+                            f.write("|".join(line_parts) + "\n")
+                    
+                    # 成功转换为txt格式后，删除原JSON文件
+                    try:
+                        os.remove(json_path)
+                        files_deleted += 1
+                    except Exception as e:
+                        print(f"删除文件 {json_path} 时出错: {str(e)}")
+                    
+                    files_converted += 1
+                    continue
+                
                 # 替换公司名称 - 创建一个新的数据结构，使用替换后的公司名作为键
                 updated_data = {}
                 for company, company_data in data.items():
+                    # 恢复使用公司名称映射
                     full_name = replace_company_names(company)
+                    # 保留原始公司名称，以便后续能找到对应的历史数据
+                    company_data['original_company_name'] = company
                     updated_data[full_name] = company_data
                 
                 # 将数据转换为紧凑格式
@@ -1724,8 +1785,21 @@ def convert_json_to_compact(date):
                             
                             # 历史变化
                             history = []
+                            # 亚盘历史数据，处理多种可能的键名
                             if 'asian_history' in company_data and company_data['asian_history']:
                                 for h in company_data['asian_history']:
+                                    history_item = f"[{h.get('handicap', '')},{h.get('home_odds', '')},{h.get('away_odds', '')},{h.get('update_time', '')}]"
+                                    history.append(history_item)
+                            # 向上查找历史数据：在原始公司名下查找
+                            elif 'original_company_name' in company_data and company_data['original_company_name'] in data:
+                                original_data = data[company_data['original_company_name']]
+                                if 'asian_history' in original_data:
+                                    for h in original_data['asian_history']:
+                                        history_item = f"[{h.get('handicap', '')},{h.get('home_odds', '')},{h.get('away_odds', '')},{h.get('update_time', '')}]"
+                                        history.append(history_item)
+                            # 尝试在原始数据中查找替换后的公司名
+                            elif company in data and 'asian_history' in data[company]:
+                                for h in data[company]['asian_history']:
                                     history_item = f"[{h.get('handicap', '')},{h.get('home_odds', '')},{h.get('away_odds', '')},{h.get('update_time', '')}]"
                                     history.append(history_item)
                             line_parts.append(",".join(history))
@@ -1747,8 +1821,21 @@ def convert_json_to_compact(date):
                             
                             # 历史变化
                             history = []
+                            # 欧赔历史数据，处理多种可能的键名
                             if 'odds_history' in company_data and company_data['odds_history']:
                                 for h in company_data['odds_history']:
+                                    history_item = f"[{h.get('win_odds', '')},{h.get('draw_odds', '')},{h.get('lose_odds', '')},{h.get('return_rate', '')},{h.get('update_time', '')},{h.get('win_change', '')},{h.get('draw_change', '')},{h.get('lose_change', '')}]"
+                                    history.append(history_item)
+                            # 向上查找历史数据：在原始公司名下查找
+                            elif 'original_company_name' in company_data and company_data['original_company_name'] in data:
+                                original_data = data[company_data['original_company_name']]
+                                if 'odds_history' in original_data:
+                                    for h in original_data['odds_history']:
+                                        history_item = f"[{h.get('win_odds', '')},{h.get('draw_odds', '')},{h.get('lose_odds', '')},{h.get('return_rate', '')},{h.get('update_time', '')},{h.get('win_change', '')},{h.get('draw_change', '')},{h.get('lose_change', '')}]"
+                                        history.append(history_item)
+                            # 尝试在原始数据中查找替换后的公司名
+                            elif company in data and 'odds_history' in data[company]:
+                                for h in data[company]['odds_history']:
                                     history_item = f"[{h.get('win_odds', '')},{h.get('draw_odds', '')},{h.get('lose_odds', '')},{h.get('return_rate', '')},{h.get('update_time', '')},{h.get('win_change', '')},{h.get('draw_change', '')},{h.get('lose_change', '')}]"
                                     history.append(history_item)
                             line_parts.append(",".join(history))
@@ -1766,43 +1853,29 @@ def convert_json_to_compact(date):
                             
                             # 历史变化
                             history = []
+                            # 大小球历史数据，处理多种可能的键名
                             if 'size_history' in company_data and company_data['size_history']:
                                 for h in company_data['size_history']:
                                     history_item = f"[{h.get('size', '')},{h.get('over_odds', '')},{h.get('under_odds', '')},{h.get('update_time', '')}]"
                                     history.append(history_item)
+                            # 向上查找历史数据：在原始公司名下查找
+                            elif 'original_company_name' in company_data and company_data['original_company_name'] in data:
+                                original_data = data[company_data['original_company_name']]
+                                if 'size_history' in original_data:
+                                    for h in original_data['size_history']:
+                                        history_item = f"[{h.get('size', '')},{h.get('over_odds', '')},{h.get('under_odds', '')},{h.get('update_time', '')}]"
+                                        history.append(history_item)
+                            # 尝试在原始数据中查找替换后的公司名
+                            elif company in data and 'size_history' in data[company]:
+                                for h in data[company]['size_history']:
+                                    history_item = f"[{h.get('size', '')},{h.get('over_odds', '')},{h.get('under_odds', '')},{h.get('update_time', '')}]"
+                                    history.append(history_item)
                             line_parts.append(",".join(history))
                         
-                        elif 'kelly_history' in json_file:
-                            # 凯利指数数据是一个数组，而不是对象
-                            kelly_history = []
-                            
-                            # 检查是否为列表类型
-                            if isinstance(company_data, list) and company_data:
-                                # 使用第一条记录作为初始值
-                                initial_record = company_data[-1] if company_data else {}
-                                initial = f"[{initial_record.get('kelly_win', '')},{initial_record.get('kelly_draw', '')},{initial_record.get('kelly_lose', '')},{initial_record.get('update_time', '')}]"
-                                line_parts.append(initial)
-                                
-                                # 所有记录作为历史变化
-                                history_items = []
-                                for item in company_data:
-                                    history_item = f"[{item.get('kelly_win', '')},{item.get('kelly_draw', '')},{item.get('kelly_lose', '')},{item.get('update_time', '')}]"
-                                    history_items.append(history_item)
-                                
-                                line_parts.append(",".join(history_items))
-                            else:
-                                # 如果不是列表，保留旧的处理方式作为备选
-                                initial_kelly = company_data.get('initial_kelly', ['', '', '']) if isinstance(company_data, dict) else ['', '', '']
-                                initial = f"{initial_kelly[0] if len(initial_kelly) > 0 else ''},{initial_kelly[1] if len(initial_kelly) > 1 else ''},{initial_kelly[2] if len(initial_kelly) > 2 else ''}"
-                                line_parts.append(initial)
-                                
-                                current_kelly = company_data.get('current_kelly', ['', '', '']) if isinstance(company_data, dict) else ['', '', '']
-                                current = f"{current_kelly[0] if len(current_kelly) > 0 else ''},{current_kelly[1] if len(current_kelly) > 1 else ''},{current_kelly[2] if len(current_kelly) > 2 else ''}"
-                                line_parts.append(current)
+                        # kelly_history 数据已在前面特殊处理
                         
                         # 使用竖线(|)作为主要分隔符将所有部分连接起来
-                        f.write("|".join(line_parts) + "\n")
-                
+                        f.write("|".join(line_parts) + "\n")                
                 files_converted += 1
                 
                 # 成功转换为txt格式后，删除原JSON文件
